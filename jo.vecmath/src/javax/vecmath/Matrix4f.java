@@ -1715,7 +1715,8 @@ package javax.vecmath;
      * Also note that since this routine is slow anyway, we won't worry
      * about allocating a little bit of garbage.
      */
-     final void invertGeneral(Matrix4f  m1) {
+     @SuppressWarnings("unused")
+    final void invertGeneral(Matrix4f  m1) {
       double temp[] = new double[16];
       double result[] = new double[16];
       int row_perm[] = new int[4];

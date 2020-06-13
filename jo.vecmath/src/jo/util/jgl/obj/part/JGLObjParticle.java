@@ -4,7 +4,6 @@ import javax.vecmath.Color4f;
 
 import jo.util.jgl.logic.Color4fLogic;
 import jo.util.jgl.obj.tri.JGLObj;
-import jo.util.utils.MathUtils;
 
 public class JGLObjParticle extends JGLObj
 {

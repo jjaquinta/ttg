@@ -91,7 +91,9 @@ package javax.vecmath;
     //double[]    tmp_rot = new double[9];  // scratch matrix
     //double[]    tmp_scale = new double[3];  // scratch matrix
     private static final double EPS = 1.110223024E-16;
+    @SuppressWarnings("unused")
     private static final double ERR_EPS = 1.0E-8;
+    @SuppressWarnings("unused")
     private static double xin,yin,zin,xout,yout,zout;
 
     /**
@@ -1082,7 +1084,8 @@ package javax.vecmath;
      * Also note that since this routine is slow anyway, we won't worry
      * about allocating a little bit of garbage.
      */
-     private final void invertGeneral(Matrix3d  m1) {
+     @SuppressWarnings("unused")
+    private final void invertGeneral(Matrix3d  m1) {
       double result[] = new double[9];
       int row_perm[] = new int[3];
       int i, r, c;
@@ -2079,7 +2082,8 @@ package javax.vecmath;
      * @param t  the tuple to be multiplied by this matrix
      * @param result  the tuple into which the product is placed
      */
-     public final void transform(Tuple3d t, Tuple3d result) {
+     @SuppressWarnings("unused")
+    public final void transform(Tuple3d t, Tuple3d result) {
      double x,y,z;
         x = m00* t.x + m01*t.y + m02*t.z;
         y = m10* t.x + m11*t.y + m12*t.z;
@@ -2111,6 +2115,7 @@ package javax.vecmath;
       return;
     }
 
+    @SuppressWarnings("unused")
     static void compute_svd( double[] m, double[] outScale, double[] outRot) {
       int i,j;
       double g,scale;
@@ -2384,6 +2389,7 @@ package javax.vecmath;
 
     }
 
+    @SuppressWarnings("unused")
     static void svdReorder( double[] m, double[] t1, double[] t2, double[] scales,
                       double[] outRot, double[] outScale) {
 
@@ -2531,6 +2537,7 @@ package javax.vecmath;
       }
     }
 
+    @SuppressWarnings("unused")
     static  int compute_qr( double[] s, double[] e, double[] u, double[] v) {
 
       int i,j,k;
@@ -2945,7 +2952,8 @@ static int compute_2X2( double f, double g, double h, double[] single_values,
    }
     return 0;
  }
-  static double compute_rot( double f, double g, double[] sin, double[] cos, int index, int first) {
+  @SuppressWarnings("unused")
+static double compute_rot( double f, double g, double[] sin, double[] cos, int index, int first) {
     int i__1;
     double d__1, d__2;
     double cs,sn;

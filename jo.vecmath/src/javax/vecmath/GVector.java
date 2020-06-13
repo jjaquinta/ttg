@@ -376,7 +376,8 @@ import java.lang.Math;
       * @param vector1 the first vector
       * @param vector2 the second vector
       */  
-     public final void sub(GVector vector1, GVector vector2) 
+     @SuppressWarnings("unused")
+    public final void sub(GVector vector1, GVector vector2) 
       {
           int i,l;
           

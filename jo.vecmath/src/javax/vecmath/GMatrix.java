@@ -1958,6 +1958,7 @@ import java.lang.Math;
       }
     }
 
+    @SuppressWarnings("unused")
     static int computeSVD(GMatrix mat, GMatrix U, GMatrix W, GMatrix V) {
       int i, j, k;
       int nr, nc, si;
@@ -2257,6 +2258,7 @@ import java.lang.Math;
       return rank;
     }
 
+    @SuppressWarnings("unused")
     static void compute_qr(int start, int end, double[] s, double[] e,
                      GMatrix u, GMatrix v) {
 
@@ -2425,6 +2427,7 @@ import java.lang.Math;
       return;
     }
 
+    @SuppressWarnings("unused")
     private static void print_se(double[] s, double[] e) {
       System.out.println("\ns =" + s[0] + " " + s[1] + " " + s[2]);
       System.out.println("e =" + e[0] + " " + e[1]);
@@ -2444,6 +2447,7 @@ import java.lang.Math;
       }
     }
 
+    @SuppressWarnings("unused")
     private static void chase_up(double[] s, double[] e, int k, GMatrix v) {
       double f, g, r;
       double[] cosr = new double[1];
@@ -2478,6 +2482,7 @@ import java.lang.Math;
       update_v_split(i, k+1, v, cosr, sinr, t, m);
     }
     
+    @SuppressWarnings("unused")
     private static void chase_across(double[] s, double[] e, int k, GMatrix u) {
       double f, g, r;
       double[] cosl = new double[1];
@@ -2598,7 +2603,7 @@ import java.lang.Math;
 
       mtmp.mul(u, mtmp);
       mtmp.mul(mtmp, v);
-      System.out.println("\n m = \n" + mtmp.toString(mtmp));
+      System.out.println("\n m = \n" + GMatrix.toString(mtmp));
             
     }
 
@@ -2901,6 +2906,7 @@ import java.lang.Math;
       return 0;
     }
 
+    @SuppressWarnings("unused")
     static double compute_rot(double f, double g, double[] sin, double[] cos) {
       int i__1;
       double d__1, d__2;

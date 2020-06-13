@@ -1978,7 +1978,8 @@ import java.lang.Math;
      * Also note that since this routine is slow anyway, we won't worry
      * about allocating a little bit of garbage.
      */
-     final void invertGeneral(Matrix4d  m1) {
+     @SuppressWarnings("unused")
+    final void invertGeneral(Matrix4d  m1) {
       double result[] = new double[16];
       int row_perm[] = new int[4];
       int i, r, c;
@@ -3105,7 +3106,8 @@ import java.lang.Math;
    * @param vec  the double precision vector to be transformed
    * @param vecOut  the vector into which the transformed values are placed
    */
-     public final void transform(Tuple4d vec, Tuple4d vecOut)
+     @SuppressWarnings("unused")
+    public final void transform(Tuple4d vec, Tuple4d vecOut)
     {
            double x,y,z,w;
            x = (m00*vec.x + m01*vec.y
