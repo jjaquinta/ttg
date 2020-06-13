@@ -32,6 +32,7 @@ public class ShipPlanConvert
     
     private static int MAX_THREADS = 1;
 
+    @SuppressWarnings("unused")
     private static void scanShips(final File dir, File dean)
     {
         File[] files = dean.listFiles();

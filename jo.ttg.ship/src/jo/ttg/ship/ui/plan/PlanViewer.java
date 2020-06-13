@@ -16,14 +16,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileFilter;
-import javax.vecmath.Point3i;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONUtils;
 
 import jo.ttg.ship.beans.plan.ShipImageSettingsBean;
 import jo.ttg.ship.beans.plan.ShipPlanBean;
-import jo.ttg.ship.beans.plan.ShipSquareBean;
 import jo.ttg.ship.logic.plan.img.ShipPlanImageLogic;
 import jo.util.ui.swing.utils.ListenerUtils;
 
@@ -32,8 +30,6 @@ public class PlanViewer extends JPanel
     private ShipPlanBean    mPlan;
     private BufferedImage[] mDecks;
     private int             mDeck;
-    private Point3i         mPoint;
-    private ShipSquareBean  mSquare;
     private ShipImageSettingsBean mSettings;
 
     private JButton         mOpen;
