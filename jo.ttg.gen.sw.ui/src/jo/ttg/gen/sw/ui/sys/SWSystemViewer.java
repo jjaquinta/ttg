@@ -8,7 +8,6 @@ import java.awt.Rectangle;
 
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.sys.BodyPopulated;
-import jo.ttg.beans.sys.BodyStarBean;
 import jo.ttg.core.ui.swing.ctrl.SystemView;
 import jo.ttg.core.ui.swing.ctrl.TTGActionEvent;
 import jo.ttg.gen.sw.data.RuntimeBean;
