@@ -24,28 +24,28 @@ import jo.util.ui.swing.logic.FontUtils;
 /**
  * @author jjaquinta
  *
- * To change the template for this generated type comment go to
- * Window>Preferences>Java>Code Generation>Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window>Preferences>Java>Code Generation>Code and Comments
  */
 public class ShipStatsPanel extends JPanel
 {
-    private ShipStats   mStats;
-    
-    private JTextArea    mCraftID;
-    private JTextArea    mHull;
-    private JTextArea    mPower;
-    private JTextArea    mLoco;
-    private JTextArea    mCommo;
-    private JTextArea    mSensors;
-    private JTextArea    mOff;
-    private JTextArea    mDef;
-    private JTextArea    mControl;
-    private JTextArea    mAccomm;
-    private JTextArea    mOther;
-    private JLabel   mErrorLabel;
-    private JList    mErrors;
-    private JTextArea    mErrorDesc;
-    
+    private ShipStats     mStats;
+
+    private JTextArea     mCraftID;
+    private JTextArea     mHull;
+    private JTextArea     mPower;
+    private JTextArea     mLoco;
+    private JTextArea     mCommo;
+    private JTextArea     mSensors;
+    private JTextArea     mOff;
+    private JTextArea     mDef;
+    private JTextArea     mControl;
+    private JTextArea     mAccomm;
+    private JTextArea     mOther;
+    private JLabel        mErrorLabel;
+    private JList<String> mErrors;
+    private JTextArea     mErrorDesc;
+
     public ShipStatsPanel()
     {
         initInstantiate();
@@ -53,14 +53,14 @@ public class ShipStatsPanel extends JPanel
         initLayout();
     }
 
-
     /**
      * 
      */
     protected void initInstantiate()
     {
         Font def = getFont();
-        Font fixed = FontUtils.getFont("Courier", def.getSize() - 2, def.getStyle());
+        Font fixed = FontUtils.getFont("Courier", def.getSize() - 2,
+                def.getStyle());
         mCraftID = newJTextArea();
         mHull = newJTextArea();
         mPower = newJTextArea();
@@ -75,7 +75,7 @@ public class ShipStatsPanel extends JPanel
         mAccomm = newJTextArea();
         mOther = newJTextArea();
         mErrorLabel = new JLabel("Errors:");
-        mErrors = new JList(new DefaultListModel());
+        mErrors = new JList<>(new DefaultListModel<String>());
         mErrorDesc = newJTextArea();
     }
 
@@ -118,7 +118,7 @@ public class ShipStatsPanel extends JPanel
     protected void initLink()
     {
         mErrors.addListSelectionListener(new ListSelectionListener() {
-            
+
             @Override
             public void valueChanged(ListSelectionEvent e)
             {
@@ -126,7 +126,7 @@ public class ShipStatsPanel extends JPanel
             }
         });
     }
-    
+
     private JTextArea newJTextArea()
     {
         JTextArea ctrl = new JTextArea();
@@ -173,7 +173,7 @@ public class ShipStatsPanel extends JPanel
             mLoco.setText(mStats.sLoco());
             mCommo.setText(mStats.sCommo());
             mSensors.setText(mStats.sSensors());
-            //String off = mStats.sOff();
+            // String off = mStats.sOff();
             mOff.setText(mStats.sOff());
             mDef.setText(mStats.sDef());
             mControl.setText(mStats.sControl());
@@ -181,25 +181,27 @@ public class ShipStatsPanel extends JPanel
             mOther.setText(mStats.sOther());
             mErrors.removeAll();
             for (ShipStatsError err : mStats.getErrors())
-                ((DefaultListModel)mErrors.getModel()).addElement(err.getErrorMessage());
+                ((DefaultListModel<String>)mErrors.getModel())
+                        .addElement(err.getErrorMessage());
             setVisible(true);
         }
     }
 
     private void doErrorChange()
-    {        
+    {
         ShipStatsError err = getError();
         if (err == null)
             mErrorDesc.setText("");
         else
             mErrorDesc.setText(err.getDescription());
     }
-    
+
     public ShipStatsError getError()
     {
-        return (ShipStatsError)mStats.getErrors().get(mErrors.getSelectedIndex());
+        return (ShipStatsError)mStats.getErrors()
+                .get(mErrors.getSelectedIndex());
     }
-    
+
     public void setDisplayErrors(boolean visible)
     {
         mErrorLabel.setVisible(visible);

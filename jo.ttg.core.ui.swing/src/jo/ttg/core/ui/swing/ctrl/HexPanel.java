@@ -277,7 +277,7 @@ public class HexPanel extends JComponent
 		fillWorlds();
 		fillPolygons();
 		Graphics2D g2 = (Graphics2D)g;
-		int oddness = ((mOrigin.getX() % 2 == 0) ? 0 : 1);
+		//int oddness = ((mOrigin.getX() % 2 == 0) ? 0 : 1);
 		Dimension focusOrigin = null;
 		Polygon focusPoly = null;
 		MainWorldBean focusWorld = null;

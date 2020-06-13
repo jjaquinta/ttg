@@ -19,31 +19,31 @@ import jo.util.ui.swing.TableLayout;
 /**
  * @author jjaquinta
  *
- * To change the template for this generated type comment go to
- * Window>Preferences>Java>Code Generation>Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window>Preferences>Java>Code Generation>Code and Comments
  */
 public class CharStatsPanel extends JPanel
 {
-	private CharBean	mChar;
-	
-	private JLabel	mName;
-	private JLabel	mTitle;
-	private JLabel	mSTR;
-	private JLabel	mDEX;
-	private JLabel	mEND;
-	private JLabel	mINT;
-	private JLabel	mEDU;
-	private JLabel	mSOC;
-	private JLabel	mService;
-	private JLabel	mTerms;
-	private JLabel	mAge;
-	private JLabel	mGender;
-	private JLabel	mMoney;
-	private JLabel	mSalary;
-	private JList	mSkills;
+    private CharBean      mChar;
 
-	public CharStatsPanel()
-	{
+    private JLabel        mName;
+    private JLabel        mTitle;
+    private JLabel        mSTR;
+    private JLabel        mDEX;
+    private JLabel        mEND;
+    private JLabel        mINT;
+    private JLabel        mEDU;
+    private JLabel        mSOC;
+    private JLabel        mService;
+    private JLabel        mTerms;
+    private JLabel        mAge;
+    private JLabel        mGender;
+    private JLabel        mMoney;
+    private JLabel        mSalary;
+    private JList<String> mSkills;
+
+    public CharStatsPanel()
+    {
         initInstantiate();
         initLink();
         initLayout();
@@ -68,7 +68,7 @@ public class CharStatsPanel extends JPanel
         mGender = new JLabel();
         mMoney = new JLabel();
         mSalary = new JLabel();
-        mSkills = new JList(new DefaultListModel());
+        mSkills = new JList<String>(new DefaultListModel<String>());
     }
 
     /**
@@ -105,7 +105,7 @@ public class CharStatsPanel extends JPanel
         add("+,. fill=h", mSOC);
         add("+,. anchor=w", new JLabel("Salary:"));
         add("+,. fill=h", mSalary);
-        
+
         add("1,+ 4x1 anchor=nw", new JLabel("Skills:"));
         add("1,+ 4x1 fill=hv", new JScrollPane(mSkills));
     }
@@ -115,63 +115,64 @@ public class CharStatsPanel extends JPanel
      */
     protected void initLink()
     {
-	}
+    }
 
-	/**
-	 * @return
-	 */
-	public CharBean getChar()
-	{
-		return mChar;
-	}
+    /**
+     * @return
+     */
+    public CharBean getChar()
+    {
+        return mChar;
+    }
 
-	/**
-	 * @param stats
-	 */
-	public void setChar(CharBean stats)
-	{
-		mChar = stats;
-		if (mChar == null)
-		{
-			mName.setText("");
-			mTitle.setText("");
-			mSTR.setText("");
-			mDEX.setText("");
-			mEND.setText("");
-			mINT.setText("");
-			mEDU.setText("");
-			mSOC.setText("");
-			mService.setText("");
-			mTerms.setText("");
-			mAge.setText("");
-			mGender.setText("");
-			mMoney.setText("");
-			mSalary.setText("");
-			mSkills.removeAll();
-		}
-		else
-		{
-			int[] upp = stats.getUpp();
-			mName.setText(stats.getName());
-			mTitle.setText(stats.getTitle());
-			mSTR.setText(String.valueOf(DisplayUtils.int2upp(upp[0])));
-			mDEX.setText(String.valueOf(DisplayUtils.int2upp(upp[1])));
-			mEND.setText(String.valueOf(DisplayUtils.int2upp(upp[2])));
-			mINT.setText(String.valueOf(DisplayUtils.int2upp(upp[3])));
-			mEDU.setText(String.valueOf(DisplayUtils.int2upp(upp[4])));
-			mSOC.setText(String.valueOf(DisplayUtils.int2upp(upp[5])));
-			mService.setText(stats.getService());
-			mTerms.setText(String.valueOf(stats.getTerms()));
-			mAge.setText(String.valueOf(stats.getAge()));
-			mGender.setText(stats.isMale() ? "Male" : "Female");
-			mMoney.setText(DisplayUtils.formatCurrency(stats.getMoney()));
-			mSalary.setText(DisplayUtils.formatCurrency(stats.getSalary()));
+    /**
+     * @param stats
+     */
+    public void setChar(CharBean stats)
+    {
+        mChar = stats;
+        if (mChar == null)
+        {
+            mName.setText("");
+            mTitle.setText("");
+            mSTR.setText("");
+            mDEX.setText("");
+            mEND.setText("");
+            mINT.setText("");
+            mEDU.setText("");
+            mSOC.setText("");
+            mService.setText("");
+            mTerms.setText("");
+            mAge.setText("");
+            mGender.setText("");
+            mMoney.setText("");
+            mSalary.setText("");
             mSkills.removeAll();
-			for (String skill : stats.getSkills().keySet())
-			{
-				skill += "-" + stats.getSkill(skill);
-				((DefaultListModel)mSkills.getModel()).addElement(skill);
-			}
-		}
-	}
+        }
+        else
+        {
+            int[] upp = stats.getUpp();
+            mName.setText(stats.getName());
+            mTitle.setText(stats.getTitle());
+            mSTR.setText(String.valueOf(DisplayUtils.int2upp(upp[0])));
+            mDEX.setText(String.valueOf(DisplayUtils.int2upp(upp[1])));
+            mEND.setText(String.valueOf(DisplayUtils.int2upp(upp[2])));
+            mINT.setText(String.valueOf(DisplayUtils.int2upp(upp[3])));
+            mEDU.setText(String.valueOf(DisplayUtils.int2upp(upp[4])));
+            mSOC.setText(String.valueOf(DisplayUtils.int2upp(upp[5])));
+            mService.setText(stats.getService());
+            mTerms.setText(String.valueOf(stats.getTerms()));
+            mAge.setText(String.valueOf(stats.getAge()));
+            mGender.setText(stats.isMale() ? "Male" : "Female");
+            mMoney.setText(DisplayUtils.formatCurrency(stats.getMoney()));
+            mSalary.setText(DisplayUtils.formatCurrency(stats.getSalary()));
+            mSkills.removeAll();
+            for (String skill : stats.getSkills().keySet())
+            {
+                skill += "-" + stats.getSkill(skill);
+                ((DefaultListModel<String>)mSkills.getModel())
+                        .addElement(skill);
+            }
+        }
+    }
 }

@@ -12,7 +12,7 @@ package jo.ttg.core.ui.swing.logic;
  * To change the template for this generated type comment go to
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
-public class FormattedNumber implements Comparable
+public class FormattedNumber implements Comparable<FormattedNumber>
 {
     private double  mValue;
     private String  mFormat;
@@ -31,11 +31,11 @@ public class FormattedNumber implements Comparable
     /* (non-Javadoc)
      * @see java.lang.Comparable#compareTo(java.lang.Object)
      */
-    public int compareTo(Object o)
+    public int compareTo(FormattedNumber o)
     {
         try
         {
-            return (int)Math.ceil(mValue - ((FormattedNumber)o).mValue);
+            return (int)Math.ceil(mValue - o.mValue);
         }
         catch (ClassCastException e)
         {
