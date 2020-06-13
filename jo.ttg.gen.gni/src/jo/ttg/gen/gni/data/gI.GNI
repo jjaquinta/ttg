@@ -1,0 +1,427 @@
+Sector: Glimmerdrift Reaches
+Alt:    Sector gI
+DOS:    glimdrft
+Coord:  gI
+
+A: Darkling
+B: Thorstone
+C: Tri-Empire
+D: Marla
+E: Glowing
+F: Kraxin
+G: Williamsburg
+H: Tasman
+I: Even
+J: Poonch
+K: Sosie
+L: Ryazan
+M: Verge
+N: Zairae
+O: Sepik
+P: Daro
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Verglavia          0105 E338772-6                     200 Na K4 V M4 D
+Platteworld        0118 A230A99-D   Na                701 Na F9 V M4 D
+Natal              0121 C001611-C   As                301 Na M8 V M7 D
+Havan              0129 D478877-5                     900 Im F0 V M8 D
+Messara            0131 E452300-5                     100 Im M2 V M9 D
+Mou                0132 A000576-C   As                901 Im G0 V
+Yagawa             0134 B110830-A   Na                601 Im F2 V
+Galnor             0139 B357649-A   Ni                600 Im F3 V
+Bursa              0202 D5406B5-5   Ni                701 Na F4 V
+Portugia           0211 C8649A9-9                     500 Na F2 V M6 D
+Kalima             0224 E000669-9   As                801 Kx G8 V M1 D
+Tellmar            0225 A9599A8-C   Ni                200 Kx G3 V
+Tralmar            0227 C110500-B   Ni                601 Kx G5 V M5 D
+Carlyle            0229 AAB1560-C   Ni                501 Im M7 V M3 D
+Norristown         0230 EAAA494-A   Wa                300 Im A2 V K3 D
+Hangstar           0234 D221320-6   Ni                900 Im F0 V
+Phasis             0236 D453744-5   Ag                700 Im G1 V
+Kofu               0306 A000368-C   As                601 Na K0 III M2 V
+Reinbear           0316 X000523-D   As                301 Na K4 V M7 D
+Frenzo             0325 XAAA664-8   Wa                700 Kx G3 V
+Blumorn            0327 E130576-8   Ni                501 Kx M8 V
+Pindare            0331 AAA1974-A 2                   801 Im G4 V M4 D
+Sterling           0333 A000799-A   As                901 Im M7 III M7 V
+Zucko              0337 B120163-C   Ni                201 Im G5 IV M7 V
+Taji               0338 C232566-9   Ni                801 Im K8 IV M0 V
+Sugarbush          0339 C564223-8   Ni                200 Im F2 V
+Parda              0340 EAB1449-A   Ni                500 Im K9 V
+Clearwater         0409 B3777B2-7   Ag                200 Na F5 V
+Loda               0418 B000400-C   As                801 Na M9 V
+Ramin              0423 B767873-9   Ni                801 Kx F9 V
+Kinsharth          0424 X765779-5   Ri Ag           R 501 Kx K4 V
+Hyline             0427 BA8A549-B   Wa                900 Kx F2 V M3 D
+Dustie             0428 D000300-9   As                201 Kx G1 V
+Frisney            0432 B554A66-B                     901 Im F7 V
+Valdai             0433 A000349-B   As                801 Im G2 V M7 D
+Verona             0435 A675356-9   Ni                400 Im M4 V
+Franklin           0436 C130AA4-B   In                501 Im M4 V M3 D M6 D
+St. John           0512 C232872-A   Na                801 Na M4 V M3 D
+Krantell           0523 XAB25A5-8   Ni                100 Kx M1 V M3 D
+Farmin             0525 AAAA476-C   Wa                200 Kx M8 V
+Even               0527 A120965-C   In                301 Kx F5 V
+Halsey             0534 D200727-8 S Na                901 Im M6 III
+Giyul              0539 EAC2000-0                     000 Im M4 V M3 V
+Andorus            0540 X0008B9-8   As                601 Im G7 V
+Depew              0603 X7C7000-0 S                   001 Cs A0 V
+Glowing            0620 C0007A5-A   As                801 Kx G6 V M8 D M5 D
+Farwall            0621 A664668-B   Ri Ag             301 Kx M9 V M0 D
+Shanza             0624 B589536-B   Ni                901 Kx F2 V M0 D
+Endit              0626 BA92794-B N                   401 Kx F2 V
+Landing            0627 C000838-A   As                101 Kx F0 V
+Nuway              0628 A876996-C                     800 Kx G8 V M2 D
+Putdown            0629 C000753-B   As In             401 Kx F3 III M1 V
+Icewind            0635 A100115-C   Ni                601 Im M0 V M2 D
+Khartago           0637 B210944-B N In                401 Im M2 D M7 D
+Garati             0706 CA98440-4   Ni                400 Na M3 V
+Harahan            0710 B863400-7   Ni                200 Na F5 V M9 D
+Slovak             0715 XAC2365-B   Ni                200 Na M3 V M2 D
+K'ro               0720 C200572-8   Ni                101 Kx G9 IV
+K'stat             0721 DAB2556-8   Ni                500 Kx G2 V
+K'free             0723 D000583-9   As                901 Kx M6 V
+Trazewell          0725 X000000-0   As                000 Kx G0 V
+Frenty             0726 XAA1200-7   Ni                700 Kx M3 V
+Zafire             0728 C546667-A   Ag                401 Kx F4 V
+Grendel            0729 X130272-7   Ni                101 Kx M0 V
+Hrothgar           0730 A654300-E   Ni                600 Kx F5 V M4 D
+Herot              0731 X000888-8   As                601 Kx F8 V M2 D
+Kildonovan         0733 CAA9AD9-C                     900 Na G9 V M2 D
+Halifax            0738 C786677-8   Ri Ag             800 Im F5 V M8 D
+Imbabura           0739 E000886-8   As                101 Im G8 V
+Mantua             0803 A9CA657-C   Ni Wa             601 Na F3 V
+Geats              0818 C658894-8                     400 Kx F3 V M0 D
+Beowulf            0821 E000640-A   As                901 Kx F3 V
+Flast              0824 X220500-6   Ni                601 Kx M1 V M4 D
+Plash              0826 B130476-B   Ni                501 Kx M0 V
+Zara               0830 C000769-8   As                701 Kx M0 V M5 D
+Istok              0834 X110400-8   Ni                401 Na K9 V M6 D
+Marchand           0902 A427868-C                     301 Na F1 V
+Sporades           0913 A160500-E   Ni                300 Na F5 V M5 D
+Pola               0919 C000579-9   As                501 Kx M6 V
+Trento             0921 AAA2564-D N Ni                901 Kx K0 V
+Randabar           0924 A886411-C   Ni                801 Kx F8 V
+Katmere            0927 CABA798-A   Wa                500 Kx G5 V
+Trieste            0928 X100261-8   Ni                801 Kx M4 V
+Gorizia            0931 C000894-9   As                401 Kx F0 V
+Fuime              0932 E100421-9                     401 Kx M4 V M9 D
+Kali               0935 A222963-8   In                201 Za F4 V M1 D
+Ko Hu              0936 BABA511-8   Wa                600 Za M4 V
+Carla              0940 C000755-B   As                901 In G3 V
+Axel               1007 C63A300-A   Wa                400 Gl G6 V M4 D
+Girth              1008 C9A8500-A   Ni                101 Gl K0 V
+Turhan             1010 D732100-6   Ni                200 Gl K8 V
+Zuica              1014 EAB1200-A   Ni                100 Na G2 V
+Bolzano            1016 BABA400-B   Wa                401 Kx M2 V
+Fridwell           1019 AAA3557-C   Ni                900 Kx M1 V
+Neot               1021 EAC2576-9   Ni                101 Kx M6 V M0 D
+Wastin             1022 DAB9200-8   Ni                500 Kx M3 V M8 D
+Flubit             1024 CAB1467-A                     200 Kx M8 V
+Maceio             1035 C897775-9   Ag                301 Za F6 V
+Madidi             1036 E1209C9-8   In                601 Za M0 V
+Paranom            1101 E000368-9   As                701 Im M9 II
+Krintokal          1103 E432210-A   Ni                200 Im K7 V
+Scorpian           1104 C727525-A   Ni                101 Im M9 V M3 D
+Wilmar             1107 A649772-A                     900 Gl K5 V
+Cornet             1109 D586787-5                     201 Gl M1 V M6 D
+Tarlak             1112 C230572-9   Ni                801 Gl G4 V
+Zathlid            1117 EAA4413-8                     701 Kx G3 V
+Iberia             1118 AAB48B9-A                     301 Kx F7 V M0 D
+Lazica             1119 CAC9567-7   Ni                200 Kx K4 V
+Krax               1120 A782995-D   Ca                401 Kx F4 V
+Kushan             1123 X232000-0                     000 Kx G9 V
+Suevi              1124 D000500-A   As                701 Kx M4 V M1 D
+Ord                1127 BAB1300-A   Ni                700 Na M7 V
+Ficin              1129 D1105A5-A   Ni                801 Na M5 V M1 D M6 D
+Keewat             1133 X230AB9-8   In                101 Za F6 V
+Chutes             1134 AAC5751-9                     800 Za G0 IV M7 VI
+Schneider          1135 B000443-A   As                101 Za K5 V
+Prospect           1137 C130A77-9   In                801 Za F2 V M6 D
+Harkness           1201 XAC4350-B   Ni                800 Im M3 V
+Petra              1203 A568777-9 S Ri Ag             601 Im K0 V M4 D
+Meritus            1206 D727673-6   Ni                100 Gl M7 V M6 D
+Thorstone          1210 A664624-8   Ni                301 Gl F7 V
+Tinworld           1211 C257376-6   Ni                800 Gl K4 V
+Tokeebanga         1212 C000300-9   As                101 Gl M4 V M6 D
+Uzi                1213 B564594-8   Ag                700 Gl M3 V
+Asding             1216 A221798-D   Na                100 Kx M2 V
+Siling             1218 C0008A6-A   As                301 Kx F0 V
+Alan               1220 A000300-B   As                701 Kx F5 IV
+Kutrigur           1222 X000000-0   As                001 Kx K4 V
+Poonch             1225 B232853-C   Na                301 Na F3 V
+Qazvin             1229 A000300-8   As                501 Za M6 IV
+Irdon              1230 C86A468-8   Wa                800 Za M8 V
+Skagway            1231 D200555-9   Ni                901 Za M3 V
+Rhin               1235 EAA1144-C   Ni                501 Za M7 V M0 D
+Zipple             1238 E948AD9-B                     200 Za M0 V
+Arcan's            1306 A85A594-A   Wa                601 Gl G2 V
+Idiothar           1308 C7B2748-8                     200 Gl K4 V M5 V
+Redworld           1314 A000438-A   As                201 Gl G5 V M1 D
+Utigur             1317 B342A98-E   In                701 Kx F4 V
+Sabirian           1319 X000300-9   As                401 Kx M0 VI
+Slina              1323 E000554-9   As                201 Kx M2 V
+Port Peters        1327 AAC9459-C   Ni                201 Na M6 V
+Susquashanna       1329 E757635-8   Ag                100 Za F3 V M0 D
+Bethguerra         1331 A000677-A   As                701 Za K0 V
+Sivash             1333 B100674-B   Na                801 Za G2 V M5 D
+Hyde               1335 A665966-E                     800 Za F2 V
+Suddengrave        1338 D210AA6-9   In                301 Za G3 V M1 D
+Szolnok            1339 EAB2111-8   Ni                700 Za M6 IV
+Fatima             1401 A742887-9                     701 Im K1 V
+Cairo              1402 AA95477-D N Ni                800 Im G4 V M1 D
+Mildreth           1406 D895957-6                     701 Gl F8 V
+Paramond           1408 A729774-9                     501 Gl M7 IV M4 V
+Waterstone         1411 A000944-A   As                901 Gl F8 V
+Loo                1412 EAC3768-A                     700 Gl M7 IV M5 D
+Frama              1419 C264740-5                     101 Kx F5 V
+Krina              1420 AAB4988-B N                   300 Kx K2 D M6 D
+Caba               1421 BAC1347-C   Ni                801 Kx M1 IV
+Afin               1422 A4998A6-E   Ni                501 Kx F2 V
+Artin              1423 XAC1210-A                     800 Kx M5 V M5 D
+Tamia              1425 XAB1766-8                     400 Na M7 V K3 D
+Djis               1430 C110574-9   Ni                701 Za A4 V
+Taor               1431 X000226-A   As                100 Za K5 V
+Liberty            1434 A1106B9-D   Na                801 Za G4 V M2 D
+Sheboygan          1435 B220132-D   Ni                501 Za G3 V M1 D M9 D
+Trebic             1438 CAC9466-9   Ni                900 Za K9 V
+Valeris            1510 E554500-6   Ag                201 Gl M0 V M2 D
+Quicksilver        1511 E0007A5-A   As                601 Gl M2 IV
+Yangky             1513 C200578-A   Ni                901 Gl K5 V M6 D
+Whiteplains        1515 D695387-6   Ni                900 Gl F5 III
+Zrintel            1517 C212474-A   Ni                200 Kx M8 III
+Rasma              1519 C684763-7   Ri Ag           A 301 Kx F4 V M8 D
+Uzlovaya           1527 B1106B6-9   Na                101 Na K5 V M8 D
+Felicia            1528 BAC1586-C   Ni                700 Na K2 V
+Dell               1530 B110159-8   Ni                901 Za M5 V
+Pasak              1532 D000110-A   As                401 Za M9 V
+Swift              1533 DA5AAA7-A   Wa                900 Za G0 V
+Cheetah            1534 X120400-C   Ni                901 Za M6 V
+Vale               1536 C657594-A   Ag                800 Za G2 V M7 D
+Yamdrok            1537 B787879-B   Ag                501 Za F2 V
+Treslin            1538 E654554-9   Ag                901 Za G5 V
+Davnet             1602 D558672-9   Ag                700 Im M2 V
+Liana              1605 B756879-7   Ni                301 Gl F2 V M5 D
+Vicat              1606 D7AA200-9   Wa                601 Gl M5 V M5 D
+Bairdis            1607 AA63872-9                     400 Gl F9 V M8 D
+Bellmawr           1608 AAA6530-A   Ni                101 Gl M6 V M4 D
+Amorica            1609 D6416B9-6   Ni                401 Gl F0 V M0 D
+Balhk              1610 A727585-A   Ni                901 Gl M7 II M3 D
+Minotaur           1612 X100767-A   Na                901 Gl K8 V M4 D
+Lodestone          1613 X200474-A   Ni                601 Gl M3 III
+Logansport         1614 A110527-B   Ni                601 Gl K3 V
+Tinto              1618 AAB4788-A                     400 Kx F6 V M8 D
+Zrotax             1620 B2319A5-9   In                300 Kx M5 V M5 D
+Lindin             1621 D000200-A   As                401 Kx M8 V
+Raka               1623 C000494-B   As                601 Kx M5 IV
+Szczcinski         1626 EAB1375-8   Ni                600 Na M1 III
+Alexandria         1630 D200568-8   Ni                201 Za K0 V
+Joes Hermtage      1633 C432321-6   Ni                301 Za M2 II
+Lecht              1638 E543100-7   Ni                500 Za G8 V M5 D
+Flameask           1707 D557747-3   Ag                801 Gl F4 V
+Brondel            1710 E642457-5   Ni                700 Gl F5 V
+Labila             1713 D493578-5   Ni                400 Gl G9 V M2 D
+Russell            1715 X000346-8   As                301 Gl K9 VI
+Rimma              1717 D110385-7   Ni                801 Kx K6 V
+Linmar             1719 A000300-B   As                201 Kx M0 II
+Lindran            1722 D000440-A   As                301 Kx M2 IV M2 VI
+Vassel             1725 A000576-B   As                501 Na M2 V
+El Dorado          1729 C200536-8   Ni                701 Na M4 IV
+Borja              1731 X130500-8   Ni                601 Za F0 V M7 D
+Calleyville        1732 A200532-8   Ni                101 Za M3 V M2 D
+Decanesia          1733 BAB1400-8   Ni                101 Za M3 V
+Karol              1735 B594596-8   Ag                600 Za F8 V M3 D
+Machpelah          1736 A000956-B   As In             201 Za G4 V
+Hucknail           1738 E100555-8   Ni                601 Za M5 V K7 D
+Citadel            1802 A473669-A   Ni                201 Im F8 V
+Macelight          1810 B000AB6-D   As In             401 Gl G7 V
+Sakkara            1811 A2108B6-A   Na                801 Gl F1 V M5 D M4 D
+Sansabia           1812 C598100-6   Ni                300 Gl F8 V M9 D
+Nitsaw             1817 A654400-B   Ni                701 Kx K1 V M6 D
+Oelm               1818 DAA5342-A   Ni                500 Kx M5 V M0 V
+Estin              1820 B492479-9   Na                200 Kx F1 V M8 D
+Krasi              1822 C130257-C   Ni                601 Kx K5 V M9 D
+Astrid             1823 EAB9372-5   Ni                901 Kx K0 V
+Cerinola           1827 EAA1568-A   Ni                900 Na G5 V
+Jain               1832 X210400-8   Ni                201 Za G1 V M7 V
+Realmuster         1901 C000899-B   As                801 Im K2 D
+Parasit            1902 CAC1787-A                     201 Im K6 V
+Aldrus             1906 C865465-6   Ni                401 Gl M1 V M3 V M8 D
+Bakcyon            1909 B7449B6-C   In                200 Gl F5 V
+Gaucho             1912 A220744-A   Na                201 Gl M2 V
+Sao                1913 B210676-A   Na                801 Gl M3 V
+Jeffer-Scott       1914 BA99588-A   Ni                400 Gl F2 V M4 D
+Spalding           1916 B232676-9   Na                701 Na M7 II M0 D
+Almin              1918 DAA9489-5   Ni                100 Kx M2 V M9 D
+Akbar              1919 D000469-A   As                300 Kx M3 V M6 D
+Abin               1922 A654754-D   Ag                800 Kx F3 V M0 D
+Andres             1925 E000786-8   As                101 Na K3 V
+Firenzi            1926 A798100-C   Ni                300 Na M0 VI
+Galax              1929 A000169-C   As                601 Na G1 V
+Hio                1934 AAC1340-9   Ni                700 Na M2 V
+Bertville          1935 B000116-9   As                201 Na K1 VI
+Luga               1937 C1105A9-A   Ni                601 Na M2 V
+Minit              1940 D221A86-A   In                700 Na M6 V
+Prophet            2005 X000479-8   As                401 Gl K5 VI
+Seraul             2007 D210200-A   Ni                501 Gl M6 VI
+Stetson            2014 DAC9437-A   Ni                400 Gl M6 V M5 D
+Bourre             2020 X231658-3   Na              A 301 Kx M4 V M2 D
+Sosie              2021 D000788-9   In                801 Kx A2 V
+Taglia             2026 B1305A6-9   Ni                501 Na A1 V G6 D
+Hazzard            2030 X232883-8   Na                901 Na F9 V M5 D
+Navajo             2031 EAA2635-A   Ni                501 Na M0 V
+Monitor            2039 C000400-C   As                101 Na G7 V
+Steelsten          2107 B748645-6   Ag                500 Gl G1 V
+Quabinisar         2109 XAC2961-A                     501 Gl F3 V
+Yanika             2112 D210373-6   Ni                201 Gl M1 V
+Charlotte          2113 B100300-A   Ni                101 Gl K6 V
+Dolly Vee          2114 AAB4377-A   Ni                900 Gl F7 V M3 D
+Vincennes          2117 A210500-A   Ni                501 Na M3 VI K2 D
+Lacako             2118 A000476-D   As                201 Na G2 V M8 D
+Czar               2124 C1007C7-8   Na                601 Na M6 V M6 D
+Rumfill            2126 E476400-5   Ni                700 Na F9 V
+Sahara             2128 AA58356-C   Ni                301 Na F7 V M3 D
+Phigalia           2132 A120516-B   Ni                201 Na M1 V
+Sepik              2134 B232966-B   In                300 Na M0 V M6 VI
+Madryn             2137 CAB9988-C                     401 Na F4 V M7 D
+Ixobis-Kher        2202 A87A465-A   Ni                400 Ma G4 V
+Simulacrim         2209 D200223-8   Ni                601 Gl M3 V
+Spider Sea         2211 A758400-A   Ni                100 Gl G3 V M2 D
+Williamsburg       2219 B000989-D   As In             801 Na F9 V
+Longion            2221 XAC25A5-A   Ni                100 Na M1 V M0 V
+Gazelle            2222 X000523-A   As                601 Na M5 V
+Britlan            2224 EAB1384-A   Ni                200 Na M0 V
+Kalahari           2239 C645412-7   Ni                801 Na K4 V M3 D M0 D
+Ixobis-Lar         2302 D586673-5   Ri Ag             300 Ma F4 V
+Ixobis-Rit         2303 A120400-D   Ni                401 Ma G5 IV M0 D M2 D
+Woodruff           2312 EAB2587-A   Ni                500 Na M7 V
+Bolshevik          2315 A000279-B   As                701 Mn M4 V M3 D
+Kanata             2316 B347553-9   Ag                501 Mn F7 V M5 D
+Cazor              2318 E120100-A   Ni                101 Mn M4 V
+Casino             2327 B000383-A   As                901 Na G0 V
+Numidios           2328 D130272-A   Ni                501 Na M6 V
+Outjo              2329 AAAA579-C   Wa                700 Na F9 V M5 D
+Sudetic            2332 E000488-8   As                300 Na M4 V
+Zarvas             2337 X1306B5-8   Ni                201 Na G2 V
+Ixobis-Mag         2403 D120236-8   Ni                800 Ma M1 V K9 D
+Ixobis-Daw         2404 B854500-8   Ag                901 Ma F5 V
+Ixobis-Mon         2406 D854565-5   Ag                400 Ma F6 V
+Ixobis-Ron         2407 A000772-A   As                501 As M4 V
+Cloverdale         2413 CAA1400-A   Ni                501 Mn G3 V
+Tschen             2414 EAC1944-A                     900 Mn F9 V
+Sussex             2416 B120400-A   Ni                301 Mn M9 V
+Dondo              2417 A688100-C   Ni                400 Mn K0 V M2 D
+Doom Master        2419 EAC1576-A   Ni                501 Na M8 V
+Qa                 2423 CAC96A7-A   Ni                400 Na M0 II
+Pegu               2425 B000400-C   As                901 Na M5 III
+Dozur              2429 EAC1661-A   Ni                500 Na G9 III M2 V
+Thames             2435 A200567-C   Ni                801 Na M7 V
+Tirolios           2438 BACA994-A   Wa                600 Na F9 V M0 D
+Meceno             2502 E000455-A   As                301 Ma G0 V M3 D M7 D
+Nasik              2509 E354494-7   Ni                800 Ma F1 V
+Agon               2513 E220549-8                     101 Mn G3 V
+Guadelupe          2516 DA69647-5   Ri Na             801 Mn F5 V
+Hernosadd          2519 EABA972-8   Wa                100 Mn M2 V M0 D
+Ryazan             2522 E59AA94-7   Wa In             701 Na F9 V M0 D
+Fitla              2524 C231300-9   Ni                500 Na M5 V M3 D
+Sergy              2529 DABA546-8   Wa Ni             501 Na M4 IV
+Tusruga            2534 C000555-A   As                701 Na M1 V M2 D
+Priluki            2602 C966300-9   Ni                801 Ma K2 V
+Tampo              2604 B682100-A   Ni                300 Ma F7 V
+Arbay              2606 A375300-A   Ni                900 Ma F1 V M4 D
+Apolis             2611 XAB9500-8   Ni                200 Mn M1 V
+Apan               2612 D372586-7   Ni                301 Mn A2 V
+Kinja              2613 AAC4500-A   Ni                300 Mn K4 VI M3 D
+Kotah              2615 A110620-A   Na                800 Mn M0 V
+Londonderry        2619 A000675-A   As                601 Mn M2 V
+Sokolov            2622 X110100-8   Ni                600 Na M0 V
+Spoleto            2625 XAAA878-A   Wa                701 Na F3 V
+Staat              2626 D210894-7   Na                701 Na G0 V M1 D
+Tai Hu             2627 AAA1483-C   Ni                100 Na K2 III M9 VI
+Turburan           2628 A542689-8   In                900 Na M2 V M9 D
+Mali               2630 X120994-8   In                901 Na F5 V
+Vinyl              2633 C569566-9   Ag                900 Na G6 V M6 D
+Witlock            2636 E100415-6   Ni                501 Na K2 V
+Wisloka            2638 X210596-6   Ni                601 Na K1 V
+Autonomy           2639 AAA5147-D   Ni                600 Na G3 V M5 D
+Hestralia          2702 C130561-9   Ni                901 Ma M7 III
+Dorah              2708 B000A99-A   As In             601 Ma F2 V M1 D
+Parcensee          2710 C0008C9-C   As                901 Mn F5 V
+Luxeuil            2711 C554156-7   Ni                700 Mn F6 V
+Niv                2714 A100400-B   Ni                200 Mn F0 III M4 D
+Ocra               2715 A000588-A   As                801 Mn M4 IV M5 V
+Carpathia          2716 CAA1A57-A                     600 Mn F2 V M8 D
+Esefer             2718 C000496-B   As                801 Mn M4 III M5 V
+Joyosa             2722 AAC9723-9                     401 Na G3 V M4 D
+Polydor            2735 B0008B9-B   As                801 Na G0 V M3 D
+Garrison           2804 C212300-A   Ni                600 Ma M1 V M9 D
+Guafo              2807 B000597-A   As                301 Ma M8 V
+Inisheer           2810 A49A356-D   Wa                200 Mn K0 V
+Sanulia            2812 XAB9766-A                     601 Mn G8 V
+Coneworld          2814 A857988-B                     500 Mn F5 V
+Sulivan            2816 BABA300-A   Ni                301 Mn M9 V
+Tasmania           2817 C756357-8   Ni                100 Mn M4 V M8 D
+Thunder            2820 CAB2200-A   Ni                901 Mn K3 V
+Windover           2822 BAC2689-A   Ni                901 Na K7 V
+Winooski           2824 A456272-C   Ni                900 Na K4 V
+Weschester         2827 B5858A5-9   Ag                300 Na F3 V M8 D
+Jeni               2829 A232694-9   Na                601 Na M4 V
+Symz               2831 C110111-7   Ni                201 Na M1 V
+Bangor             2833 D222849-5   Na                500 Na F2 V
+Caria              2838 EAB1140-6   Ni                300 Na G4 VI M7 D
+Kamiri             2903 A968368-A   Ni                100 Ma F1 V
+Kentland           2906 B6826A6-9   Ni                201 Ma F1 V
+Lahr               2909 E110255-B   Ni                801 Na F8 V M9 D
+Dona               2911 X212883-8   Na                901 Mn F1 V
+Oblast             2912 A485340-B   Ni                700 Mn F2 V
+Usob               2918 BAA1495-B   Ni                300 Mn M1 V
+New Virginia       2919 A348546-B   Ag                201 Mn G4 V
+Wexham             2920 EAA1200-8   Ni                900 Mn M0 III M4 V
+Zamki              2926 CAB18A7-9   Ni                100 Na G0 V
+Mergatroid         2929 EAC1A84-A                     300 Na G2 V M4 D
+Chavez             2932 X000500-A   As                900 Na M4 IV
+Natalie            2936 A867338-B   Ni                600 Na F0 V M4 D
+Xuyen              3002 B222235-9   Ni                100 Ma M2 V
+Olmok              3003 D000337-A   As                201 Ma G1 III
+Meyertins          3005 DAA2664-A   Ni                700 Ma M3 II
+Shirol             3013 D100687-8   Na                501 Mn G0 IV M2 V
+Zamboanga          3014 E110686-B   Na                501 Mn K4 V
+Appalachia         3016 A200263-B   Ni                101 Mn M8 V M3 D
+Blumenu            3018 XAB1100-A   Ni                400 Mn M8 IV
+Bartica            3023 C100797-8   Na                401 Na M2 V
+Cork               3025 C130657-A   Na                801 Na K3 V
+Iloilo             3029 CAB18A7-A                     601 Na F7 V M5 D
+Dublon             3034 B120654-B   Na                201 Na M4 V
+Salt Lick          3036 C230284-7   Ni                101 Na G3 V M8 D
+I'Boi              3039 DAC2662-5   Ni                300 Rn M2 V M2 D
+Monteballuna       3108 D000456-9   As                201 Na F7 V M8 D M2 D
+Archangel          3110 B348200-9   Ni                100 Na F8 V M9 D
+Claw               3112 XAC2949-A                     701 Mn F0 V
+Clarendon          3117 C788658-7   Ri Ag             701 Mn A1 V K3 D
+Benin              3118 XAA9499-A   Ni                900 Mn M9 IV
+Jauf               3121 C767200-4   Ni                100 Mn K1 V M2 D
+Kara Su            3122 A110200-C   Ni                401 Mn M2 V
+Ninaken            3125 B232472-A   Ni                700 Na M0 V K8 D M4 D
+Lindsey            3131 E000477-8   As                100 Na M3 V M3 D
+Manawatu           3134 X130876-5   Na                501 Na K3 V M2 D
+Olabada            3205 D565898-4   Ni                601 Na F2 V M4 D
+Graysands          3209 BAA8200-A   Ni                800 Na M8 V M4 D
+Gysburg            3212 A210276-A   Ni                300 Mn G8 V M6 D
+Iriga              3214 A698775-9   Ag                201 Mn F7 V
+Kalix              3215 EACA100-A   Wa                500 Mn M2 V
+Labria             3218 X120657-8   Na                901 Mn G2 V
+Manning            3219 E346300-6   Ni                100 Mn F6 V
+Mifraz             3220 D964699-5   Ri Ag             501 Mn F9 V
+Sarowar            3227 AAC2647-9   Ni                601 Na M3 V M7 D M1 VI
+Daro               3235 A200664-B   Na                201 Na G3 V
+T'Fto              3238 B000100-D   As                501 Rn A8 V M1 D
+Rofa               3239 B978477-8 N Ni                200 Rn F7 V

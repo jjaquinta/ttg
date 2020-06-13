@@ -1,0 +1,346 @@
+Sector: Empty Quarter
+Alt:    Sector eI
+DOS:    emptyq
+Coord:  eI
+
+A: Engarmi
+B: Daskomo
+C: Link
+D: Kosh
+E: Requiem
+F: Flandry
+G: Cotan
+H: Nisaga
+I: Lentuli
+J: Tsuchida
+K: Hebrin
+L: Beta Niobe
+M: Nulinad
+N: Tairtsu
+O: Irash
+P: Nosso Nosso
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Amagasaki          0110 C656623-6   Ag Ni C:3         910 Jr M3 V M8 D
+Nightraven         0111 D581402-5   Lo Ni             800 Jr M5 V M2 D
+Shockwave          0116 C7A0637-8   De Ni             101 Jr M2 III
+Teutoburger...     0127 B574546-9   Ag Ni C:0         902 Im K2 V
+Waskuei            0128 A130334-C   Lo Ni Po De       323 Im G1 V M9 D M6 D
+Asaklon V          0132 B400377-8   Lo Ni Va          614 Im M4 V M4 D
+El Quahira         0134 B26138C-B   Lo Ni             914 Im M8 V
+Rundeau            0138 A787777-6   Ag Ri             821 Im K0 VI
+ZUKHISA            0139 B556998-A   Hi                713 Im M9 V
+Longshot           0140 D435364-3 S O:0139            614 Im M3 V M6 D M5 D
+Orzabal            0201 C673102-8   Lo Ni             223 Jr M6 VI M2 D
+Arrikeshmundin     0204 B372352-7   Lo Ni           R 501 Jr M0 V M8 D
+Pax Deorum         0205 B8B058A-8   De Ni             122 Jr M9 V
+Iipkhudi           0206 A472511-B   Ni                812 Jr M7 III
+IKON               0208 C668986-8   Hi Ni             514 Jr M4 V
+Vrafavgag Tak      0213 B777643-4   Ag Ni           A 614 Jr K2 III
+T'Pring            0216 E584679-0   Ag Ni Ri          201 Jr M4 V
+St. David's...     0227 B510435-7   Lo Ni             602 Im K0 IV M2 VI M3 D
+MIKIK              0228 X450998-6   Hi Po In        R 402 Im G9 IV
+Thessalia          0229 A415244-D   Lo Ni             903 Im M8 V
+Toyama             0231 C557550-6   Ag Ni             603 Im K3 D M5 D
+Ci Xian            0232 D664003-4   Lo Ni             113 Im G0 IV
+Iternum            0234 D328578-6   Ni                201 Im M7 VI
+Iigaashigiri       0238 B200244-8   Lo Ni Va          200 Im K9 VI M9 D
+Hildegard          0302 A330756-B   De Na Po          111 Jr G2 V
+Edash Mas...       0305 B338478-C   Lo Ni             932 Jr M7 V
+Dungii             0308 C201264-9   Ic Lo Ni O:0208   103 Jr K3 V
+Kamakura           0311 C9A049C-9   Lo Ni De        A 102 Jr M4 V
+Heian-Kyo          0314 B200548-7   Ni Va           A 212 Jr M2 V M2 D
+Teikoku            0325 A8C7475-B   Lo De             504 Na M4 V M8 D
+Hipper             0327 D656771-5   Ag Ni             120 Im M8 V
+Bonotsu            0328 A8B0433-B   Lo De Ni          502 Na K8 IV M8 V
+Akec Tedidim       0329 E475231-6   Lo Ni             903 Im M0 V
+GUDINA             0334 C53499B-5   Hi In Sw          513 Im M7 V
+Carthage           0337 B654724-7   Ag                213 Im M1 V
+NULINAD            0338 A455986-B   Hi Cx             504 Im M0 V
+Kashima            0339 C96A864-9   Wa Ri O:0338      602 Im M7 V
+Ossa Dal           0340 B344573-8   Ag Ni           A 304 Im M1 IV
+Gagiiranur         0406 B320203-8   De Lo Ni Po Na  A 901 Jr M5 V
+Shodoshima         0410 C55A879-5   Wa                511 Jr K3 II M3 V
+Nushiimga          0414 C525235-7   Lo Ni           A 400 Jr K9 VI M1 D
+Marhaban           0426 A4697DG-E   Cp Sw             801 Im K8 IV
+Miser              0435 A213611-A   Na Ni Ic          302 Im M6 V
+Nyambii Dal        0439 C75A462-A   Lo Ni Wa O:0338   902 Im F4 IV
+Ryt Thoudhutz      0501 C232464-9   Ni Po Lo C2 O:0 0 822 Jr A0 IV
+Asummirap          0510 B663779-7   Ri                914 Jr K0 V
+Shirakawa          0511 A9B0695-9   De Ni           A 512 Jr M9 V M9 D
+Kaadlushuur        0514 A535111-B   Lo Ni Cp        A 704 Jr M7 V M7 D
+Lirumriish         0515 A45075A-A   De                501 Jr G9 VI M4 D
+ENINSISH           0535 C000ABB-9   As Hi In Na       113 Im M9 V
+SASHAR             0536 D59799C-6   Hi In             204 Im K5 V
+Huifa              0537 C120322-8   De Lo Ni Po       424 Im M1 V
+Maistoelat         0601 A500243-8   De Lo Ni Va       704 Jr M0 V K0 D
+Solstice           0605 C99A466-9   Ni Wa Lo Mr       300 Jr M4 V
+Tsu                0613 C55289B-5   Po                602 Jr K5 V
+Turas Mor          0616 C231350-7   Lo Ni Na Po       911 Jr K9 VI
+Janowski           0617 C549412-8   Lo Ni             104 Jr K2 II
+Azetbur            0620 A211534-C   Ni                803 Na M1 V M9 VI M3 D
+Dimashq            0627 E230521-5   Ni Po De          701 Im M6 V M2 D
+Nihon Station      0630 C899654-8 S Ni                203 Im M6 V M8 D
+Pacifica           0632 A367788-B   Ri Ag             813 Im G2 III M2 V
+Gigdubarga         0633 B5688BB-4                     134 Im K8 IV M5 D M4 D
+Blackglobe         0636 D7C0353-8   Lo De Ni          122 Im M3 D M3 D
+RASU               0637 C760997-6   De Hi             304 Im M0 V
+Cleon              0638 A98879B-A   Ag Ri           A 305 Im K0 V M1 D
+Shiikuus           0640 D539849-6                     813 Im M7 V
+Mirukuseki         0704 C437697-8   Ni                403 Jr K6 VI
+Okayama            0705 A634422-8   Lo Ni             903 Jr K3 V
+Hyuga              0706 DS00000-7   Lo Va             402 Jr K0 VI M4 D
+Engarmi            0709 A330444-E   De Ni Lo Cp     A 812 Jr G9 V
+Isumo              0711 A888878-7   Ri              A 204 Jr M8 V M9 D
+Afer Ventus        0715 E643786-1   Po              R 513 Jr M1 III
+Osumi Shoto        0728 C221353-7   Lo Na Po          130 Im K5 IV M9 D
+Resurrection       0729 D300244-7 S Lo Na Va          402 Im M0 V
+Ayachuco           0732 C890515-8 S De Ni             914 Im F5 V M4 D
+Simon's Ball       0738 C66468A-5 S Ni Ag Ri          913 Im F3 V
+Siidkirgumar       0805 E542453-6   Lo Ni Po          403 Jr M4 V M4 D
+Urshem             0809 DAC05DE-A   De Po             420 Jr K5 V M6 D
+Gashige            0811 A3384BJ-C   Lo Ni             912 Jr G2 VI M9 D
+Itsukushim         0812 D453320-6   Lo Ni Po          101 Jr M0 V
+Igura Shiim...     0813 C413111-5   Ic Lo Ni          304 Jr M6 V
+Li Changhun        0828 C88A112-9   Lo Ni Wa          403 Im M7 IV M7 D
+Li Yingkou         0829 E300300-6   Lo Ni Va          700 Im K0 V
+Li Chifeng         0830 B98A677-A   Lo Ni Wa          802 Im M7 V M7 D
+ARAKAAD            0833 E4659BC-7   Hi                502 Im M7 V
+Province           0834 B6157B7-9 N Ic              A 104 Im K5 V
+Isii Shiikuus      0836 D512367-A   Lo Ni Ic O:0638   613 Im M4 V
+Tungokl            0837 A253432-9   Lo Ni Po          404 Im G0 V
+Chubu              0839 C7A0646-8   De Ni             405 Im G3 V
+Kyogasaki          0840 C775467-3 S Lo Ni O:Ley 100   303 Im M5 V
+Mekhigk            0903 C8A0303-A   De Lo Ni        A 703 Jr M4 V M8 D M2 D
+Graithairekt       0905 C65479B-5   Ag C:2            202 Jr K5 V
+Donegal            0906 B528578-7   Ni                200 Jr M4 V M4 D
+Ori Sau'           0907 C6328DD-3   Na Po Sw          600 Jr M7 V M7 D
+Kaa Eshiisagii     0912 A333331-B   Lo Ni Po        A 711 Jr M0 V
+Li Yichang         0931 A889435-A N Lo Ni             103 Im M3 V M9 D
+Sarbaz's Tomb      0932 C773000-0   Ba                011 Im K1 V M2 D
+Delta Three        0936 D401598-8 S Ic Ni Va        R 311 Im M5 V M8 D
+Bakimidiim         0940 E4537A9-5   Po C:1          A 330 Im K1 V
+Ryt Fgugaiks       1003 C62A563-9   Ni Wa O:1004    A 305 Jr M8 VI
+Yelloworld         1004 B301430-A   Ni Va Lo          701 Jr A1 II G1 D
+Chalcis            1013 D353569-4   Ni Po O:0912      103 Jr G3 D M8 D
+Kurayoshi          1030 C8B07A9-F   De RsA          A 304 Im K7 V
+Kushiro            1031 C86A578-9 S Ni Wa             604 Im K3 V
+Sao Sapele         1035 AAC0458-B   Lo De Ni RsB    R 413 Im M7 V
+Ming Po Toi        1036 C462226-7   Lo Ni             224 Im M6 IV M6 D
+Urpirur            1037 B7B0349-7   De Lo Ni          400 Im M4 V M4 V
+Emblem             1038 CAA0441-8   Lo De Ni          114 Im M6 V M5 D
+Micomicon          1039 E645442-5   Lo Ni             704 Im M0 V
+Old Shire          1040 C140201-6   De Lo Ni Po       900 Im M0 V
+Ori Bjo'tim        1103 C5358CA-3   Sw                614 Jr M3 V
+Shori              1105 B655765-5   Ag Mr             512 Jr M2 V M2 D
+Gakishinnu         1106 A87A323-9   Lo Ni Wa          303 Na M4 IV
+Koromogawa         1107 D44738A-A   Ag                603 Jr M8 VI
+Banka Banka        1109 D735245-7   Lo Ni             203 Na K3 V M9 D
+Old Base           1110 E7A0752-8   De                702 Jr K9 D M9 D
+Diefenbaker        1129 A210522-C   Ni                404 Im G9 V M7 D
+Arabia             1130 D648443-5 S Lo Ni             310 Im M3 VI M3 D
+Davenport          1133 A868878-A   Ri              A 520 Im M3 V M6 D
+Fair Haven         1137 C459756-6   Ni                602 Im M9 III
+Oboda              1139 A6A5655-9   Fl Ni             401 Im A3 V
+Gaashi Diidu       1205 B78A101-D   Lo Ni Wa An     R 720 Jr M1 V
+Gaashi Mukipu      1206 A486799-A   Ag Ri D:4 Cp      703 Jr M8 V
+Sagumanka          1208 X787896-0   Ri Sw           R 213 Jr G6 V M2 D
+Urusi              1211 B697154-8   Lo Ni             911 Jr M4 V
+Nidakha            1213 C7B0575-9   De Ni           A 511 Na M3 V
+Nalaki             1214 B69988A-7                   A 801 Na K7 V M4 D
+Tarascon           1228 B774567-B   Ag Ni O:1328      523 Im M5 VI
+Sio'mawasi         1229 C7C0874-6 S De Sw             805 Im B5 V M4 D
+Narada             1230 A757744-7   Ag                702 Im M2 II
+LAZISAR            1233 B887974-9 N Hi Cp             512 Im M4 III
+Asia               1235 A337441-A   Lo Ni           A 204 Im K6 V
+Decius             1236 C774000-0   Ba                000 Im K5 V
+Gusshi E           1237 C1136BG-8   Na Ni Ic        A 604 Im M3 V M8 D K1 D
+Nahur              1238 C86778B-7   Ag Ri             913 Im M8 V M6 D
+Higashiosaka       1239 B140113-7   Lo Ni De Po       402 Im G8 V M7 D
+Takada             1301 B97A475-C   Lo Ni Wa        A 412 Jr M7 V
+Mattweed           1303 C210122-7   Lo Ni             325 Jr M7 V K7 D
+Kurikara           1306 D573776-5                     603 Na M0 V
+Numigimar          1307 A7C7200-C   Lo Ni Fl        A 405 Na K0 V
+Karam Imuk...      1308 D797436-5   Lo Ni           A 413 Jr G7 V M3 D
+Ksedhing           1309 C574574-7   Ag Ni             504 Na K7 V M2 D
+Mishiguggekhi      1311 CAB0899-8   De                611 Na M2 VI M3 D
+OUTPOST            1315 E869987-8   Hi                905 Jr K5 VI M9 D M8 D
+Yamaguchi          1326 B433214-A   Lo Ni Po          510 Im M3 V
+Aswan              1328 A420432-B   Lo Ni Po De Cp    803 Im M3 V M3 D
+Listualro          1329 C443320-6   Lo Ni Po          823 Im K1 V M8 D
+Tuscany            1331 A9C0364-A   De Lo Ni O:1228   403 Im K6 V M4 D
+Capercaillie       1332 D413754-7   Na Ic           A 624 Im G8 V
+Delmar             1337 C140310-8   Lo Ni De Po       100 Im K4 V M4 D
+Capasitator        1408 C51007A-6   De Na Ni          301 Jr K6 VI
+TOKITRE            1411 B780953-8 N De Hi             203 Cs F4 D M2 D
+St. Dimurra        1413 E242110-3   Lo Ni Po        A 800 Na K7 V
+Enaniirshad        1415 B8B0430-D   Lo Ni De          513 Cs M8 V
+Chisholm           1427 B84A212-8   Lo Ni Wa          603 Im G5 V
+Kitayushu          1429 C501203-7   Lo Ni Va Ic       603 Im F9 VI
+Goto Retto         1430 E8A6563-6   Ni Fl O:1328      804 Im M7 V
+GIMUSHI            1431 D54AAA9-8   Hi In Wa          124 Im K8 V
+O'Donnell          1436 B500385-6   Lo Na Ni Va       615 Im M6 V M6 D
+Pekryaay           1501 B100000-D   Lo Va Dw          403 Na G3 V
+Dyrys              1510 C77A457-8   Lo Ni Wa          904 Na M3 VI M7 D
+Dipkusulimir       1515 E626334-8   Lo Ni             901 Na M8 V
+Pons Aelius        1520 C748355-8   Lo Ni             322 Na G9 V
+Cobweb Station     1527 A774334-8   Lo Ni             914 Im M0 V M0 D
+Dotilla            1529 B140644-8   Ni Po De          905 Im M5 V
+Starsky            1530 E338686-8   Ni                214 Im M4 1a M4 D
+Fur Elise          1531 C221032-7   Lo Ni Po          604 Im M9 V
+Mu                 1533 B677666-6   Ag Ni C:5 O:153   804 Im M1 IV
+PAMUSHGAR          1537 C680986-6   De Hi             202 Im M8 V
+Khal I             1539 E57468C-5   Ag Ni C:2         603 Im M0 V
+Ryukyu             1540 B7A0478-9   Lo De Ni          522 Im M0 VI M0 D
+Nuususush          1601 EAC0536-2   De Ni             814 Na M6 V M6 D
+Gakalar            1602 A5637AB-6   D:2               215 Na G8 IV M4 VI
+Cimated            1608 B300325-9   Lo Ni Va        A 510 Na M5 III
+Lodi Cykidasas     1609 C7A0454-9   Lo De Ni          404 Cs M9 V M4 D
+Guarda             1611 D530122-7   De Lo Ni Po       403 Cs M7 V
+Smaointe           1616 D99A586-6   Ni Wa             502 Na M3 V M3 D M8 D
+Togo               1619 A000898-B   As Na             610 Na G8 IV
+Schulz             1631 B545422-7   Lo Ni Ex        A 312 Im G2 V
+Timark City        1633 C472564-6   Ni O:1733         703 Im G8 V
+Saint Ashley       1635 B230666-7   De Na Ni Po       302 Im K1 V M1 D
+SSILNTHIS          1704 C7689B9-7   Hi                413 Na M0 IV M3 D M9 V
+Muso               1726 A232023-9 N De Lo Ni Po       203 Im K6 V
+MUGAMA             1728 E8699AA-A   Hi              A 203 Im M0 V
+Makarou            1729 B596444-A   Lo Ni             802 Im K4 V M5 D
+Survivors          1730 D8A6103-7   Lo Ni Fl          813 Im M8 V
+Akrotiri           1731 B424521-9   Ni                404 Im K9 V
+Hateruma           1733 C24458C-8   Ag Ni           A 603 Im M6 V
+Baleartics         1734 E412365-7   Ic Lo Ni O:1733   415 Im M7 V
+The Hundred        1737 C644697-2   Ag Ni             303 Im M5 V
+Newsphere          1738 A454877-B   Ri Cp           A 405 Im M0 V M0 D
+Vision             1803 C8D8574-4   Ni              A 413 Na M9 V M4 D
+Motaselad          1804 B574572-6   Ag Ni D:5         502 Na K3 V M0 D
+Yaku Jima          1809 C9A0000-0   Ba De           A 025 Na K4 V
+Wabiskaw           1810 C535145-5   Lo Ni             905 Na M2 V
+Hanna              1811 C7A5459-7   Lo Ni             601 Cs M6 VI K6 D
+Florianopolis      1816 B100511-C   Ni Va             204 Na K7 V M9 D
+Omerta             1826 E9B066A-6   De Ni O:1930      404 Im A3 V K3 D
+Nieuwould          1830 E585598-2   Ag Ni             900 Im K4 V
+Pegasus            1831 E529555-6   Ni                905 Im K5 V
+Yonaguni's....     1833 D445421-4   Lo Ni             803 Im M8 V M8 D
+Senkaku            1836 B51368B-9   Na Ni Ic        A 901 Im M7 V
+BELUMAR            1838 E693942-8   Hi In             201 Im G2 V
+Delibes            1901 A3308A7-A   De Na Po        A 400 Na K6 IV
+Jamnagar Thal      1905 D411556-7   Ni                604 Hl M2 V
+Port Wsi           1911 C84859B-8   Ni                210 Hl G3 V
+Talcanuano         1913 C573330-4   Lo Ni             401 Na K0 IV
+Miyazaki           1923 C6A7242-5   Lo Ni Fl          320 Na K4 V
+HEBRIN             1930 B250975-E N Hi Cp             513 Im M8 V M1 D
+Golden Ring        1932 ER00320-B   Lo Ni Va          224 Im A7 IV M7 D
+Silvermoon         1934 D420100-4   De Lo Ni Po       232 Im M2 V M2 D
+Pargo              1937 D68A664-2   Ni Wa Ri O:2036   504 Im G7 II M8 D
+Gangetic           2001 A20049C-A   Ni Va             404 Hl M8 V G8 D
+Siiye              2005 C9A9550-8   Fl Ni             200 Hl M0 V M5 D
+FLANGE             2009 B443933-7   Lo Ni Po Cp       114 Hl M4 V
+Lullaby            2010 C584773-6   Ag Ri C:2         902 Na K2 V M4 D
+Reptile            2016 A648679-6   Ag Ni             204 Na M3 V M0 D
+Pynchan            2030 A257640-8   Ag Ni             312 Im M5 V
+Tsarina            2032 B000405-C N Lo Ni As          613 Im M3 V
+IRASH              2036 C579A98-7   Hi In           A 201 Im M8 VI
+Poisoned Earth     2037 E783335-5   Lo Ni             703 Im M2 V
+Dimitri            2038 B211101-8   Lo Ni             300 Im M3 IV M3 D
+Edenvale           2039 D4697B9-6 S                 A 702 Im M2 II M2 D
+Mikaichi           2103 A53836A-B   Lo Ni Pr Mr     R 304 Hl M5 V M0 D
+Hijoji             2109 C515388-6   Lo Ni Ic          611 Hl K5 V
+Dalnegovo          2111 E679633-6   Ni                804 Cs M8 V M8 D
+Dannoura           2113 A1014CE-7   Lo Va Ic          900 Cs G0 V
+Hokkaido           2128 C610556-8   Na                112 Im K8 V
+Tshane Eiseb       2129 BAA9533-B   Ni Fl             800 Im G0 V
+Venda              2130 C330510-6   Ni Po De          113 Im M6 V K6 D
+Borden's Star      2134 B434421-6   Lo                800 Im G9 V
+Amamioshima        2138 C642486-7   Lo Po             115 Im A7 V
+Whirligig          2201 C230455-7   Lo De Ni Po       204 Hl K4 V M8 D
+Aynoiye            2202 B301126-9   Lo Ni Po Va Ic    504 Hl M0 V
+V'nen              2203 A322625-8   Na Ni Po          423 Hl M3 V M3 D
+Imagine            2204 D624331-7   Lo Ni             102 Hl F5 V
+COTAN              2212 C4289AG-A   Hi In             313 Hl M2 V M4 D
+Cometela           2227 B78A48A-9   Lo Ni Wa          514 Im K8 V
+Painted Orb        2230 C434675-9   Ni                404 Im M7 IV M8 D
+Signet             2237 A7836BE-7   Ni                413 Im K4 V
+d'Anticosti        2313 C98A8A9-5   Wa              R 621 Hl M5 III M5 V
+Lothlorien         2314 D87369E-7   Ni                324 Hl M6 VI M2 D
+Gekko              2316 X413000-0   Ba Ic           R 024 Hl G4 V M1 D
+Rethmnon           2331 A234210-A   Lo Ni RsG         100 Im M6 V
+Disarid            2402 C798278-6   Lo Ni             102 Hl A8 V G8 D
+JUSTINCE           2405 D546AEG-9   Hi In           A 504 Hl M4 V
+Binnoth            2406 E717000-0   Ba Ic           A 023 Hl M3 V
+Endicott           2407 E536334-6   Lo Ni             122 Hl G7 IV M1 D
+Abey Tomsk         2410 C527411-7   Lo Ni C:0         914 Hl M3 V M2 D
+Suchan             2411 D5698DG-6                     905 Hl K7 IV
+Cabal              2412 C3118AE-8   Na              A 701 Hl G3 V M6 D
+Valentin           2413 B5265AF-7   Ni              A 505 Hl M1 IV M1 D
+Chugoku            2423 X000430-4   Lo Ni As        R 600 Cs G1 V M5 D
+Silence            2428 A225345-C   Lo Ni             701 Im M3 II
+Okinoerabu         2431 C000757-8   Na As             722 Im M5 VI
+Muskoka            2434 A200110-B   Lo Ni Va          201 Im M4 V
+Titanic            2503 E85A336-6   Lo Ni Wa          600 Hl M5 IV M6 D
+Isatetiri          2504 A7368BF-A                   A 803 Hl M6 V
+Nagaoka            2508 C567521-7   Ag Ni Sw        A 700 Hl K8 III
+Nagercoil          2511 C440562-8   De Ni Po O:2412   104 Hl M7 V M3 D
+Stokebury          2516 C2356A7-7   Ni Ex             514 Hl M2 V
+Qonos              2523 A246232-C   Lo Ni             120 Na K4 V M7 D
+Amakusa Shoto      2528 D45A667-1   Ni Po Wa O:2529   623 Na M4 IV M4 D
+Udaka              2529 BA9A530-A   Ni Wa             411 Na M2 VI K2 D
+Manado             2536 E537000-0   Ba              A 002 Im K3 V M1 D
+Capel Celyn        2605 D523352-7   Lo Ni Po          312 Hl K2 VI M0 D
+Ysidote            2606 D310677-5   De Na Ni        A 602 Hl G0 V
+Tsangpo            2612 B7B0547-6   De Ni             502 Hl M7 V
+Catagno            2615 D7A016A-7   De Lo Ni          805 Hl M3 VI
+Ruins              2618 X415000-0   Ba Ic Lo Ni       004 Na M2 IV
+Stopover           2635 A669669-9   Ni Ri O:2434      420 Na M9 IV
+Odalacec           2701 C444874-7                     101 Hl M4 V M4 D M6 D
+Nimmety            2703 B444013-8   Lo                404 Hl M7 V
+Perseus            2704 B418444-B   Lo Ni Ic          625 Hl M5 IV M2 D
+Deciyana           2707 C94A427-8   Lo Ni Wa          111 Hl K9 VI
+Monolith           2708 B565587-9   Ag Ni             410 Hl G1 V
+Coincident         2710 D5327BA-9   Na Po Sw        R 803 Hl G9 V M0 D
+Omerinese          2803 BA7A663-6   Ni Wa O:2804      700 Hl A4 V
+Parolles           2804 A8688D7-A   Cp                104 Hl F2 V
+Negev              2810 B7A05AB-A   De Ni             813 Hl M8 VI K8 D
+Redring            2816 E000248-8   As Lo Ni        A 510 Hl M1 V
+Nura Dhapuri       2817 D3135A7-8   Ni                214 Hl M3 V M3 D
+B Niobe Neb.       2825 *4 Gaseou N bula from Nova        Na G6 V
+O                  2839 C4656BC-A                   A 600 Na G1 V M0 D
+Cocktail           2903 C401101-9   Lo Ni Ic Va     A 303 Hl K4 V
+Ab Sinecal         2904 B547674-9   Ag Ni             203 Hl K8 V M2 D
+Kyushu             2906 A2306BD-A   De Na Ni Po An    702 Hl M4 III M4 V
+Takeshima          2909 B131337-8   Lo Ni Po        A 924 Hl M4 V
+Andria             2911 E000000-0   Ba As           A 012 Hl M5 V
+Lily               2913 C3418AB-5   Po Sw           A 903 Hl M0 IV
+Cannae             2914 D89A79C-6   Wa                403 Hl K5 V
+Al Ubayyid         2919 B7796BG-8   Ni                203 Hl A2 IV M2 D
+Occusi             2933 A32459B-B   Ni                120 Na M2 V M2 D
+Mirabilia          3001 E3318CC-6   Na Po             614 Hl M0 V M0 D
+Akkeshi            3005 B9996BD-6   Ni An             823 Hl M6 V M3 V
+Koyasan            3007 B8788B9-7                   A 200 Hl M3 V M0 V
+Aegypt             3008 B877897-5                   R 805 Hl K4 V M6 D
+Shimonoseki        3012 B663400-B   Lo Ni D:3         304 Na G3 V
+Usa                3020 CAB0110-8   De Lo Ni          200 Hl K5 V M5 VI
+Flutewind          3101 C150432-A   De Ni Po Lo       103 Hl M6 V
+Acesymak Caya      3104 B201423-C   Ic Ni Va Lo     A 605 Hl G8 V
+Manaung Kyun       3112 B33389A-B   Na Po             703 Hl K6 V
+NISAGA             3116 A6699CH-B   Ri Hi Cp        A 410 Hl G8 IV
+Hakata             3117 BAC0568-A   De Ni O:3116      502 Hl A8 V
+Salayar            3136 B434876-B   Ri Sw             604 Na M0 V
+Shepherd Moons     3201 C679154-7   Lo Ni             630 Hl M8 VI
+Toyeloci           3202 B78A8BA-A   Wa Sw             202 Hl G6 V
+Waterstone         3206 B79A8AB-6   Wa                203 Hl G0 V M0 D
+Marugame           3208 C100210-9   Na Ni Va          314 Hl M6 V
+Crag               3211 C6686BB-6   Ag Ni             820 Hl K5 V M8 D
+Mae Hung Son       3212 C9A0203-9   De Lo Ni          701 Hl K3 V
+Dazaifu            3216 C9A0612-6   De Ni             614 Hl K9 V
+Coreward           3219 C33157B-9   Lo Ni Po        R 700 Hl M4 II
+Keirsey            3224 B564011-8   Lo Ni           A 100 Na M1 V M5 D

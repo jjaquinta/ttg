@@ -1,0 +1,155 @@
+Sector: Reft Sector
+Alt:    Sector fD
+DOS:    reft
+Coord:  fD
+
+A: Vestus
+B: Macon
+C: Two Little
+D: Barker
+E: Usher
+F: Sagitarian
+G: Lost Way
+H: Gome
+I: Void 8
+J: New Islands
+K: Old Islands
+L: Limon
+M: Alone
+N: Evestin
+O: Arcrant
+P: Moibin
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Cauldron           0102 D9B8222-4   Fl Lo Ni          403 Dd M0 V
+Iselen             0105 A243678-9   Ni Po             403 Dd G0 V
+Reudden            0106 B3536BG-7   Ni Po             400 Dd G4 V
+Kukaa              0108 C544100-B   Lo Ni             503 Dd G1 D
+Amoirve            0109 B565476-C N Ni                704 Dd G8 D
+Grudovo            0111 B260453-E   Ni De             914 Dd K0 IV M9 D
+Banskonno          0112 A482444-C   D6 Ni             204 As G0 V
+Bastion            0118 B737332-B R Lo Ni             701 As A9 V K4 D
+Solbatn            0203 B87A443-A   Ni Wa             603 Dd K3 D
+Peshtorno          0208 B7B3841-8 N Fl                622 Dd G1 V
+Petre              0210 B696478-A   Ni                210 Dd F4 D
+Aldaya             0212 B885620-6 R Ag Ni             423 As K4 V
+Neon               0216 D9B227A-4   Lo Ni Fl          923 As M4 V M8 D
+Cerebin            0217 B323662-C   Na Ni Po          534 As G1 III
+Dimple             0305 D200201-8 S Lo Ni Va          500 Dd G1 V M1 D
+Helifil            0313 D110724-8   Na Rs             403 As K1 V
+Benidorm           0402 E446400-A   Ni                120 Dd G2 V
+Carian             0408 B300459-B N Ni Va             924 Dd M0 V M7 D
+Ambossa            0410 B684459-9   Ni                700 Dd G2 V
+Tonnurad           0416 B463695-7   Ni Ri             803 Na G3 VI M5 D M5 D
+Garden             0435 B755578-A   Ag Ni             404 Na K4 VI M4 D
+Corp Town          0502 B474211-B   Lo Ni             100 Dd F6 V M1 D
+Lintl              0503 B739AEE-F   Hi Cp             404 Dd K2 VI
+Fraaga             0511 B691420-D   Ni Fl             702 Dd K2 V M9 D M1 D
+Whisp              0602 C251110-6   Lo Ni Po          204 Dd F7 D M0 D
+Gaspar             0604 B336337-D   Lo Ni             801 Dd M5 V
+Igualada           0605 B140567-9 N Ni Po De          701 Dd G2 D
+Mukiud             0701 B333210-E   Lo Ni Po          823 Dd M6 V
+Checker            0702 C300225-9   Lo Ni Va          615 Dd M4 V M7 D
+Colony Five        0707 B4759A5-E   Hi In             420 Dd G9 IV M1 D
+Zaguki             0710 B260212-9   Lo Ni De          804 As F2 D M6 D
+Elixir             0801 B768321-9   Lo Ni             423 Dd F4 D
+Evet's World       0903 B201656-D N Na Ni Va Ic     A 503 Dd M6 V
+Zuflucht           0921 C445720-8 J Ag                800 Na F6 D
+Wellington         0925 C8B0263-A   De Lo Ni          800 Es M6 II
+Esperanza          0926 A674ABC-B J Hi In             303 Es F9 V M2 D
+St. Hilaire        0930 B579763-A J                   500 Es K2 V
+Ulnert             1002 B53769D-7   Ni                803 Dd K4 VI M8 D
+Nebelwelt          1030 C879425-5   Ni                612 Na F2 D
+Earl Center        1102 A998011-9   Lo Ni             604 Dd K9 D
+Yvette             1103 A79A633-D   Ni Wa             133 Dd G2 V
+Gloire             1123 C764567-9   Ag Ni             924 Sb M0 III M0 D
+Oleiros            1204 B000457-D   Ni As             300 Na M1 V
+Sestao             1301 A120675-C N Na Ni Po De       611 Dd M0 VI
+Gorod              1302 D6689CG-9   Hi                111 Dd K4 V M1 D
+R'bak              1314 B387777-3   Ag Ri           R 721 Na G3 V
+Serendip Belt      1323 A000959-C J As Hi In Na       502 Sb G1 VI M4 D
+New Colchis        1327 A8959AA-C J Hi In             103 Nc F8 VI
+Herzenslust        1426 E995765-6   Ag                920 Nc F0 V M6 D
+Orphee             1429 X885600-0   Ag Ni           R 100 Na M9 III
+Topas              1522 D120899-5   De Na Po          904 Na K8 D
+Elysee             1525 B502532-9 J Ic Ni Va          200 Na M1 V
+Besancon           1526 C201341-9 J Ic Lo Ni Va       502 Na M2 V
+Berlichingen       1621 D600437-7   Ni Va             700 Na F5 D
+Joyeuse            1628 A7899B9-C J Hi                404 Jo K2 D M3 D
+Sturgeon's Law     1724 DAC1451-6   Fl Ni             815 Na M1 V
+Quichotte          1729 E576667-6 J Ag Ni             413 Jo F6 D
+Undrelyn           1812 B551433-6   C2 Ni Po        A 514 Na F4 V M7 D
+Neubayern          1822 A7889C9-C J Hi                610 Nb M3 V
+Lemente            1907 B897563-B   Ag Ni             824 Na K4 VI
+Schlesien Belt     1923 C000367-B J As Lo Ni          110 Na K4 V
+New Home           1925 A565857-D J Ri                704 Nh G0 V
+Colchis            2026 B676898-9 J                   911 Na F7 V M5 D
+Zamoran            2108 B674675-A Q Ag Ni             904 Dr F5 V
+St. Genevieve      2123 C460100-A J De Lo Ni          404 Na M4 V
+Arraste            2139 B59368B-6   Ni                604 Fi M7 VI M5 D
+Acadie             2225 C868563-9   Ag Ni             400 Am K6 VI M9 D
+Jacob              2239 B100400-E   Ni Va             302 Fi M4 V
+Fresnelse          2240 B728512-A   Ni                622 Fi M4 V M6 D
+Sansterre          2322 A87A943-C J Hi Wa             222 Sa M0 V M9 D
+Achille            2324 E101335-9   Ic Lo Ni Va       100 Na M0 V M4 D
+Amondiage          2325 A5629A9-C J Hi                102 Am F1 V
+Pit Stop           2337 B593326-A S Lo Ni             311 Fi G1 V
+St. Denis          2423 D735764-7 J                   803 Sa K1 V M7 D
+Uxors              2435 BAA7377-9   Cw Lo Ni Fl An    804 Fi M7 V
+Mieniept           2436 B794454-B   Ni                800 Fi G0 V
+Arnorac            2509 B381468-A N Ni                302 Cs K8 VI
+Quiver             2534 B310405-D   Ni                404 Fi M1 V M3 D
+Argus              2536 C755A96-8 S Hi                403 Fi G4 D
+Boneyard           2537 B220310-A N Lo Ni Po De       914 Fi G2 V M8 D
+Delinski           2538 B45367A-8   Ni Po             914 Fi K4 D M6 D
+Valentorn          2539 D556512-4   Ag Ni             900 Fi F0 V
+Halibun            2540 B565777-7   Ag Ri             514 Fi K9 D
+Gordon             2609 B310776-A   Na                203 Na M4 V M3 D
+Stock Point 3      2636 A336010-F   Lo Ni             500 Fi M3 V
+Grecorn            2638 B7A858C-D   Ni Fl             700 Fi K3 V
+Filentred          2731 B548534-8 S Ag Ni             504 Na F5 VI M7 D
+G'haenbaz          2733 C557558-A   Ag Ni             100 Fi F4 V
+Bouvrier           2737 E230668-8   Na Ni Po De       210 Fi K1 V
+Cyril              2738 A7A69B9-F N Hi Fl Cx          522 Fi G4 VI
+Chateau            2739 E450200-5   Lo Ni Po De       714 Fi K4 D M1 D
+Dead End           2740 C576010-5   Lo Ni             902 Fi K4 D
+Debica             2832 D645688-7   Ag Ni Rs          600 Fi K7 VI M4 D
+Gundamoor          2833 B311637-D   Na Ni Ic          324 Fi K1 IV M5 VI
+Bokilbom           2834 B573552-D   Ni                804 Fi F0 V M8 D
+Angsturm           2837 A545788-B   Ag                314 Fi K4 V
+Vlad               2838 A554844-D N                   804 Fi F1 V
+Schuuni            2904 BAAA599-D   Ni Fl Wa          100 Na G0 V
+Cyclone            2930 B599347-9   Lo Ni             204 Li G9 V M1 D
+Vleeck             2931 C762475-6   Ni                404 Li G2 D
+Pamraeltan         2932 A537651-E N Ni                703 Fi A2 V M5 D
+P'hakar            2934 C220456-B S Ni Po De          923 Fi M4 V
+Harmony            2935 E6538AF-4   Po                633 Fi F0 V
+Numeron            2939 B432769-9   Li Po             313 Fi M3 V
+Eskandor           3028 C251499-9   Ni Po             804 Li G3 V
+Sakaliin           3029 B857222-B   Lo Ni             413 Li F0 D M9 D
+Rampart            3030 A334200-F N Lo Ni             812 Li M8 V K4 D
+Mynez              3035 E627989-A   Hi In             904 Fi K1 VI
+Seville            3036 B657445-7   Ni                404 Fi F1 V
+Dagu               3037 B100362-C   Lo Ni Va          504 Fi K8 V M1 D
+Transit            3038 B987030-8   Lo Ni             520 Fi G7 V
+Elphintrax         3040 C374476-7   C4 Ni           A 413 Fi F2 V M1 D
+Jokelyn            3128 B201469-B   Ni Va Ic          915 Li M3 V
+Alexander          3132 B32369A-B   Li Ni Po          404 Li G4 V
+Breezy             3133 B100544-C   Ni Va             704 Li M4 V M7 V
+Dlaekan            3134 A383657-D   Ni Ri             202 Fi G4 V M6 D
+Good Home          3135 B745789-9 N Ag                303 Fi F0 V M6 D
+Alverik            3136 A150698-A   Ni Po De        A 800 Fi K0 D
+Unseren            3140 B452549-9 S Ni Po             803 Fi G5 VI
+Hoilhapuli         3229 B76565A-8   Ag Ni Ri          335 St F1 V
+Bonn               3230 A8C578C-B   Fl                913 Fi M1 V M2 D
+Roger              3231 B424200-B   Lo Ni             300 Fi M8 V
+Jeandrent          3237 BA7A666-8 N Ni Wa             613 Fi G0 V M4 D

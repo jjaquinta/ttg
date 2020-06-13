@@ -1,0 +1,390 @@
+Sector: Gvurrdon Sector
+Alt:    Sector dC
+DOS:    gvurrdon
+Coord:  dC
+
+A: Ongvos
+B: Zoghz
+C: Adhsakh
+D: Fanganger
+E: Uerra Rueshken
+F: Dzen
+G: Lla Iz Therrg
+H: Thoengling
+I: Kfan Uzangou
+J: Ruhk
+K: Ksits Usathu
+L: Aelluekh
+M: Llanic
+N: Spurl
+O: Uthe
+P: Firgr
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Enjtodl            0104 C8A8100-8 Z Lo Ni Fl          501 Zh M4 V M4 D
+Fufoekkfal         0112 E638665-6   Ni                312 Vp M9 V
+Taraeng            0113 B00098C-A   Hi Na In As       212 Vp M1 V
+Tjenl              0130 A683865-C   Ri                420 Zh G3 II M1 D
+Satlpenzh          0131 B657586-B   Ag Ni             205 Zh M6 V
+Chench             0137 D559426-3   Ni                214 Zh K1 IV
+Zhenchve'chip      0202 B666558-8   Ag Ni             902 Zh M7 V M9 D
+Matlmadl           0205 B646730-8   Ag                822 Zh F0 V
+Dho Ega            0208 E480653-8   Ni Ri De          510 Vp M4 V M7 D
+Onagzorrruell      0212 D889737-2                     601 Vp M4 D M0 D
+Kerkukhaeka        0215 B888554-B   Ag Ni             325 Vp K6 V
+Saezghen           0216 B200A72-C G Hi Na In Va       402 Vp M6 V
+Telfazagnou        0220 E7A5542-8   Ni Fl             724 Vp M3 V
+Aersaedha          0221 B98A88A-8 G Ri Wa             622 Vp F6 V
+Aedhue             0223 A9C4000-B   Lo Ba Ni          824 Vp K0 II
+Qanstanze          0226 E73987A-3                     710 Zh M1 V
+Eblonzyerefl       0230 B334210-D   Lo Ni             403 Zh G7 V M0 D
+Tseezh             0231 B000762-B   Na As             811 Zh M7 V
+Jdiprqrafr         0232 B100A99-C Z Hi Na In Va       923 Zh M4 III
+Yied               0233 B43677B-C                     721 Zh M3 V
+Pliploranshich     0235 B626611-7   Ni                825 Zh F3 IV
+Tlrt               0239 B698542-B   Ag Ni An          803 Zh F5 V
+Astanch            0240 A341410-E   Ni Po             301 Zh M0 V
+Zaerrg             0306 C674683-8   Ag Ni             103 Va M3 V
+Unoldhasaellae     0309 B300687-9   Na Ni Va          501 Vp M7 V
+Gzoulakhgha        0317 B793ACD-D   Hi In             310 Vp K9 V M0 VI
+Llathoevaghoe      0323 B673878-A                     410 Vp M3 V M3 D
+Dzado              0325 B6A4896-8   Fl                703 Va M3 V
+Iatl Iatl          0327 B685233-B   Lo Ni             322 Zh G5 V M4 D
+Enjqore            0329 A247245-A Z Lo Ni             210 Zh M7 V
+Blienzkats         0334 B465110-9   Lo Ni             401 Zh M8 VI M2 D
+Vriaajets          0337 B583554-A Z Ni                801 Zh K7 V M4 V
+Diekech            0339 B334579-C   Ni                115 Zh M4 III
+Angudh             0401 E7A77BA-B C Fl                721 Va M7 V
+Knoelurzudal       0402 A352614-D   Ni Po             803 Va M7 VI
+Duduell            0403 C352215-6 C Lo Ni Po          203 Va F0 V
+Tarraekhs          0405 B000657-C C Na Ni As          311 Va M4 V M2 D
+Uedhoelukhue       0407 B300314-9   Lo Ni Va          920 Vp K6 V
+Roeknughroe        0410 B100A99-C G Hi Na In Va       924 Vp M4 III
+Zuts Asgning       0411 B43677B-B G                   222 Vp M3 V
+Uefokung           0419 D433640-6 C Na Ni Po          821 Vp F6 IV
+Rarksagzvungou     0422 A110100-D   Lo Ni             701 Vp M1 V
+Zulgziga           0425 C8B4854-8   Fl                202 Va K0 V
+Ethue              0426 B254363-B   Lo Ni An          233 Va F7 V M5 D
+Vlazh Epr          0428 C5A179C-5 Z Fl                524 Zh M0 III
+Zhdapl             0430 B63A58B-A   Ni Wa             201 Zh K3 V M1 VI
+Onsansh            0433 B677732-5 Z Ag                221 Zh G1 V
+Odliadr            0438 D7A7655-6   Ni Fl             610 Zh G2 V
+Aek Elakfough      0439 A000312-G   Lo Ni As          920 Va K8 V M7 D
+Oughaetha          0440 B767668-5   Ag Ni Ri          401 Va M2 V M2 D
+Gvuksdourrgh       0502 A685132-C G Lo Ni             803 Va M3 V
+Songi              0503 B736467-A   Ni                110 Va M9 V M1 D
+Llaegh             0504 B638359-9 C Lo Ni             110 Va F0 V M4 D
+Torrvagve          0505 A577226-C   Lo Ni An          520 Va F3 V
+Uthgvoe            0512 A481466-B   Ni Cx             710 Vp A3 II K5 V
+Gvoeloegnoethu     0517 B63A410-A G Ni Wa             702 Vp K6 V M3 D
+Gzughzuvulling     0525 A693530-A   Ni                433 Va M9 III
+Oenoukh            0528 C794459-9   Ni                820 Va M8 V
+Khoeghersaeng      0529 B896455-7   Ni                823 Va G9 V
+Sitlshaqr          0535 B000331-C   Lo Ni As          721 Zh A8 V
+Ognirrirrgzegu     0536 E86A346-4   Lo Ni Wa          701 Va F7 V M9 D
+Tuetingou          0537 C659337-5   Lo Ni             501 Va M5 V
+Tagakfaduen        0538 C89A225-9   Lo Ni Wa          211 Va M3 V
+Rougungol          0539 B330479-B C Ni Po De          501 Va M9 V
+Aroelloe           0613 B9C5533-9   Ni Fl             303 Vp M6 V M6 D
+Luerrghankaerz     0618 E276445-5   Ni                812 Vp K2 V
+Agsaez             0619 DAC8787-9   Fl                534 Vp G8 V
+Foggzukoetsael     0625 C502867-8 C Na Ic Va          610 Va M0 V
+Az                 0629 B657445-6   Ni                210 Va G2 D M0 D
+Taknarkag          0630 B370467-A H Ni De             112 Va M3 II G0 V
+Aldhagh            0633 A454420-9   Ni                210 Va M8 V
+Izivr              0634 D326974-9   Hi In             922 Zh F2 V
+Saedhuenragh       0635 B441455-8   Ni Po             223 Va M7 V
+Fourfurrghagh      0639 B436352-E   Lo In             221 Va K5 V
+Dzukoun            0703 B788899-7   Ri An             414 Vs F6 V
+Onengoen           0709 B450778-A   Po De             302 Vp M4 V
+Suedh              0719 B436113-D   Lo Ni             510 Vp M9 V
+Tsukifi            0720 B97788C-8                     220 Vp G3 V
+Gvoedhoeks         0725 B582574-9 C Ni                801 Va M7 V M1 D
+Roegoukhaghoe      0727 B554853-7                     302 Va K0 V M9 D
+Oraedzaeng         0728 B436445-C   Ni                302 Va M4 V M6 D
+Ghin Uerr          0729 B865253-7   Lo Ni             421 Va K3 V
+Kson               0730 B5A487A-A   Fl                224 Va F7 V
+Aeghez             0735 B898537-6   Ag Ni             802 Va M5 V
+Kor                0736 B66A425-9   Ni Wa             310 Va M8 V
+Duekh              0737 E7A6886-8 C Fl                434 Va G4 VI
+Kuenruekh          0739 C358766-7   Ag                420 Va F3 D
+Zangerr            0803 D100542-7   Ni Va             723 Vs M4 V
+Ksaghae            0804 D878310-5 C Lo Ni             310 Vs M2 V M6 D
+Tengerkukokhs      0807 C87A532-8 G Ni Wa             322 Vp A8 V
+Ellfoegoezou       0808 E58878B-5   Ag Ri             810 Vp G7 VI
+Gantsugh           0809 A000100-D   Lo Ni As          420 Vp M2 V
+Khaeknae           0815 B485898-9   Ri                102 Vp M4 V
+Ellallue           0817 B302632-9   Na Ni Ic Va       901 Vp M4 V M9 D
+Gvurrdon           0821 B756986-C   Hi                503 Vp M4 V
+Aerrigha           0824 B6888DE-7 C                   724 Va M4 V
+Uenag              0832 D343534-6 C Ni Po             210 Vr M0 VI
+Onllae Roungo      0901 A886633-9   Ag Ni             910 V9 M4 VI M8 D
+Korruelloko        0904 B100767-9   Na Va             903 Vs K0 V M5 D
+Taekfoengsegzo     0908 B866569-9   Ag Ni             901 Vp G5 VI M4 D
+Daerrg             0926 C636627-9   Ni                723 Vr M4 V
+Orra               0929 A00089C-F G Na As Cx          710 Vr F9 II
+Uegukell Vakfe     0930 BAD48AD-6   Fl                102 Vr G2 IV K8 V
+Vurrfourraeksa     0934 A65A255-A   Lo Ni Wa          422 Vr F0 V
+Saksoukuer         0935 B5727AC-6 G                   712 Vr A3 IV K8 V
+Aerritho           0937 B30086B-B G Na Va             701 Vc M9 VI M6 D
+Neridhueraeng      0938 B431334-B   Lo Ni Po          501 Vc M4 V
+Ghin               0939 C47778C-6   Ag                810 Vc M8 III
+Luerrgnudhlaer     1009 B657337-7 G Lo Ni             323 Vp K5 V
+Gzonough           1010 D524842-4   Na                930 Vp F7 V M7 D
+Okskful            1014 B661953-9   Hi                602 Vp G2 D M3 D
+Tongaesodhonga     1015 C435379-6                     201 Vp M0 V
+Gegvouk            1023 B9AA887-C   Wa Fl             104 Va K1 V M0 D
+Saell              1027 A357AAC-F G Hi                102 Vr M0 V
+Dheg               1034 E310335-7   Lo Ni             204 Vr K3 V
+Koekh Uez          1036 A453672-9   Ni Po             724 Vc F7 V
+Inghinfudzolor     1037 B6A5786-8   Fl                343 Vc K2 II M3 V
+Zaenluekegze       1039 B200686-8   Na Ni Vc          334 Vc F0 V
+Aksugzael          1102 BAC5786-9   Fl                802 VV M6 V M1 D
+Ngues              1104 D777430-5   Ni                501 VV M2 V M5 D
+Rueskhen           1106 C220331-B   Lo Ni De          722 Va M7 III
+Tsuengingeguek     1107 B5A5204-B   Lo Ni             814 Va K2 V
+Louks Aek          1109 E384026-3   Lo Ni             703 Vp K6 V
+Ksethu             1112 A00089B-E   Na As             622 Vp M5 V
+Allous             1115 B65A773-A   Wa                713 Vp M1 V
+Dzerrdhakse        1116 A766645-B G Ag Ni Ri          914 Vp F4 VI
+Darrugsug          1119 B344564-B   Ag Ni             602 Vp F2 V
+Vonghoe            1120 B4007CG-9   Na Va             622 Vp G7 VI M8 D
+Tagath             1125 B989559-A   Ni                701 Vr F6 IV M0 D
+Raezarourkolla     1126 C466400-B   Ni                521 Vr F0 V
+Langaetoukoe       1128 E433573-7   Ni Po             120 Vr M1 III G8 V
+Koekhae            1129 B67A101-A   Lo Ni Wa          724 Vr F3 II M0 D
+Ogotelloegzlli     1132 A576842-8                     324 Vr M2 III
+Aeggiks            1134 A505401-E   Ni Ic Va          920 Vr M3 V
+Akfukh             1140 D330689-7   Na Ni Po De       603 Vc F9 V M6 D
+Uekongull          1201 A779324-E   Lo Ni             301 VV G6 IV M0 D
+Ngoerrgh           1216 E22065A-7   Na Ni Po De       603 Vp K8 V
+Ngurstur           1219 C87A111-5   Lo Ni Wa          434 Vp F3 V
+Aedhar             1225 B4908C9-A   De                422 Vr M0 V
+Voullatueng        1226 A203326-E   Lo Ni Ic Va       421 Vr K6 V
+Udaethaen          1233 E221336-9   Lo Ni Po          720 Vr F6 IV
+Ksorraknue         1236 B200657-C   Na Ni Va          104 Vc G9 V
+Uerzthu            1238 B325986-B   Hi In             302 Vc G0 V M6 D
+Kukhvu             1305 A000422-F   Ni As             911 VV K7 V M3 D
+Rinvoengerrazo     1307 C11077B-A   Na                601 Va F4 V M6 D
+Vaeghovangugh      1310 A576842-8                     324 Vp M8 III G7 D
+Firullvorzkokh     1315 B436654-9   Ni                920 Vp M6 V M3 VI
+Aegadh             1317 B737AEC-B   Hi Cp             924 Vp G4 V M0 VI
+Soerkon Aeth       1318 A23477A-B                     520 Vp F1 D
+Dhaeghoerzeoe      1320 B73A478-D   Ni Wa             922 Vp F6 VI
+Akhaedag           1327 B463355-B G Lo Ni             801 Vr M1 VI
+Sethgnakh          1333 D86769C-4   Ag Ni Ri          535 Vr G9 V
+Okfozarrga         1336 A596322-9   Lo Ni Cx          313 Vc K5 V M1 D
+Thoghaezae         1337 E5A1100-8   Lo Ni Fl          601 Vc M0 V M5 D
+Dzuerongvoe        1413 B664997-C   Hi                422 Vp A4 V K9 D
+Urkhaksadh         1415 A120212-B   Lo Ni Po De       503 Vp F4 V
+Lling              1417 B261866-9   Ri                722 Vp G8 V
+Oesar Gin          1418 B86A322-C G Lo Ni Wa          701 Vp M2 V M2 D
+Ilung              1419 B561257-7   Lo Ni             323 Vp M4 II
+Dhallorag          1420 D554332-4   Lo Ni             622 Vp K6 III
+Kfolaell           1421 B86AAA6-B   Hi Wa             403 Vp M3 V
+Ogvasaekha         1428 B667877-9   Ri                122 Vr F7 V
+Orz                1429 D95A88C-6   Wa                524 Vr F8 V M4 D
+Fagvaenghuenou     1430 B440786-8   Po De             925 Vr K2 V
+Dharrgkhaksuza     1434 B843200-7   Lo Ni Po          901 Vr G9 V M0 D
+Oungeghuegue       1502 B324521-C   Ni                521 VV M6 V
+Dhueks             1503 B433101-D   Lo Ni Po          701 VV M9 V M8 D
+Naen Dzi Ona       1504 A55879D-B   Ag                802 VV K1 IV
+Roedz              1506 A585575-9 G Ag Ni             401 Va M2 D
+Gikhs              1508 B766759-7   Ag Ri             801 Va M9 V M5 D
+Thadzlaksak        1511 D86769C-4   Ag Ni Ri          535 Vp G9 V
+Ngaengza Duegh     1512 B75A779-6 G Wa                914 Vp F8 V
+Raersava           1524 B100262-A   Lo Ni Va          903 Vq G1 V M7 D
+Kaneldhuelloug     1527 A6535A9-A   Ni Po             523 Vr K9 V
+Ghenkerongolu      1528 B331778-B   Na Po             601 Vr M4 V M8 D
+Noe                1535 A110464-D   Ni                323 Vr M4 III
+Dhaengae           1539 B9789AA-A   Hi In             410 Va M4 V M3 D
+Iloungrraegzer     1602 D538567-7   Ni                401 VV M1 D
+Gaknau Val         1616 A98A614-2 G Ni Wa             620 Vq M6 III M7 D
+Illkarkunotoe      1622 B54587A-A                     420 Vq M6 V
+Taeksoudhagnou     1623 A5A488C-D G Fl Cx             323 Vq M2 VI
+Ougzsaeg           1631 E9A9741-8   Fl                602 Vr M8 V M1 D
+Usere              1634 B200664-7   Na Ni Va          224 Vr M8 V
+Okfitos            1709 B000641-9   Na Ni As An       923 Va F3 V
+Zuerrguell         1713 B432321-A G Lo Ni Po          120 Vq F2 V
+Rirrrronggzerz     1714 B3728AD-B                     110 Vq M3 V M3 D
+Ghugi              1716 B686567-B   Ag Ni             404 Vq M3 V
+Lloursouth         1717 A253A9E-C   Hi Po             602 Vq M4 V M4 D
+Ungan              1721 B402122-D G Lo Ni Ic Va       423 Vq F0 V
+Tsounduekfegun     1722 B246455-C   Ni                201 Vq M8 V M3 D
+Ouse Faeg          1724 A69476A-B G Ag                222 Vq G8 V M3 D
+Aengvoung          1726 A682766-B   Ri                620 Va M1 II
+Ankhir             1728 C6869BB-7   Hi                613 Va M2 V
+Erzthung           1734 E75A440-6   Ni Wa             623 Vr K4 V
+Uthith             1738 B210577-C G Ni Cx             623 V4 M0 V
+Gzazogze           1807 B424779-8                     313 Va F0 V M5 D
+Uzotssaza          1816 B225435-D   Ni                101 Vq K3 V M9 D
+Tirrokoelaegz      1821 B463645-A   Ni Ri             312 Vq F4 V M4 D
+Lurraengfangno     1823 E476232-8   Lo Ni             210 Vq M7 VI
+Vaersngurr         1830 A99A873-C   Wa Cp             503 Vr M5 V
+Forrodhkhokh       1839 B75827B-B   Lo Ni             201 V4 M5 V M7 D
+Tsenggvaksdzon     1912 E54379A-5   Po                910 Vq M3 V M8 D
+Osuekha            1914 E692166-5   Lo Ni             424 Vq G1 V
+Aedzaerz           1915 D7658BA-2                     303 Vq K8 V M6 D
+Vanas              1918 B79879C-6   Ag                135 Vq M3 II
+Dhallas            1919 B663564-9   Ni                603 Vq F0 V
+Gnoengungag        1923 B759623-7   Ni                734 Vq F3 V
+Dzenzaega          1924 B20189B-7   Na Ic Va          701 Vq M2 V M8 D
+Asurrorr           1930 C000526-B   Ni As             813 Vr M1 V
+Aethkaek           1933 B66A512-C C Ni Wa             502 Vr M4 V M3 D
+Thaeuevae          1936 D546300-8 G Lo Ni             724 V4 M2 III
+Kousuesi           1938 EA9A325-5   Lo Ni Wa          724 V4 F8 V
+Gkakhaellan        2002 B210ACG-E   Hi Na In          310 VV F0 V
+Tanga              2005 B9C56BB-9   Ni Fl             120 Dr M3 V
+Ragzael            2010 B100557-E   Ni Va             423 Va F5 V M8 D
+Aekfo              2015 B645444-8   Ni                523 Vq F1 II M2 D
+Gurzueng           2018 B788300-B   Lo Ni             122 Vq F5 V M7 D
+Ueksgug            2022 A576235-A   Lo Ni             235 Vq G8 V
+Rredzutsaezoug     2023 B100BAC-D   Na Va             122 Vq M2 II
+Angasaer           2025 B88A846-9   Ri Wa             201 Va K9 V M5 D
+Kfenkudhuegzo      2029 B656120-7   Lo Ni             320 Vr M3 III
+Gurzhvoursivaz     2030 B642410-A   Ni Po             702 Vr M7 V
+Urrllongonu        2037 B266545-9   Ag Ni             301 V4 M9 V
+Ougzdaelzoerrg     2040 A899335-B C Lo Ni             825 Va M1 III
+Vorroeng           2101 B58A867-8   Ri Wa             303 VV K7 VI
+Goedhung           2111 B66A512-C   Ni Wa             502 Va M4 V M3 D
+Ekakh              2117 B334579-C G Ni                724 Vq M4 III
+Tseghagvarz        2118 B675746-5   Ag                613 Vq G5 IV
+Knaegadae          2119 A525566-D   Ni                924 Vq F0 V
+Tagnaghoutsoza     2123 B86A755-9   Ri Wa             201 Vq G4 V M7 D
+Aellaesgvarzat     2128 A231355-G C Lo Ni Po          210 Va M9 V
+Gaekloungoerza     2129 A697A78-G   Hi In             834 Va F4 V
+Daeksuzaethuku     2137 B645677-A   Ag Ni             523 V4 M1 V
+Ikhotakhang        2209 B668766-4   Ag Ri             710 Va F6 IV
+Idza               2219 B5748AA-5 G                   812 Vq G0 V
+Gnael Oer          2226 B10078C-7 C Na Va             403 Va M1 V
+Kueng              2229 A762116-D   Lo Ni             701 Va M1 V M2 D
+Gzogzu             2232 B550889-9 C Po De             701 Va M2 V M0 D
+Tinkaeghzzakle     2234 B444233-A   Lo Ni             810 Va M1 V M5 D
+Pandrin            2240 B260675-B C Ni Ri De          201 Vk M1 V M6 D M8 D
+Karrksinarka       2302 B886300-8   Lo Ni             403 Va G2 V
+Uthisodzugoksa     2305 C403101-A   Lo In Ic Va       622 Va K9 V
+Khagogksi          2307 B452685-9   Ni Po             401 Va M1 V
+Rrouzasun          2316 E000110-7   Lo Ni As          414 Vt M9 V
+Orsesokhin         2323 A000874-F   Na As             110 Vt M5 V M5 VI
+Gaelaeth           2329 C360AC9-A   Hi De An          614 Va F6 V M9 D
+Knall              2331 A000000-C   Lo Ba As Ni       510 Va K7 V M3 D
+Zoe                2334 E757499-5   Ni                132 Va K0 VI
+Otsesu             2336 E673442-5   Ni                625 Vk M5 II M3 D
+Kaets              2338 B636631-7 C Ni                111 Vk G0 IV
+Ueghrrozue         2339 A6A47BA-A C Fl                913 Vk M0 V
+Ghisaersae         2340 C758646-7 C Ag Ni             702 Vk M4 V
+Gaengour           2404 B140301-E   Lo Ni Po De       903 Va M8 V
+Ilughavo           2407 B226226-D   Lo Ni             804 Va M0 V
+Sagukhunngo        2408 B995654-7 C Ag Ni             301 Va M1 V M6 D
+Kfugvugzozoaek     2412 A77A111-9   Lo Ni Wa          901 Vt M5 V M1 D
+Soungadano         2414 B671363-A G Lo Ni             520 Vt K7 V M6 D
+Aekhreng           2418 B559676-B   Ni                904 Vt K5 V
+Ngekoe             2419 B276479-B   Ni                710 Vt G9 V
+Thoegzekkfak       2422 A483520-B   Ni                801 Vt M7 V M4 D
+Llueng             2424 C511345-7   Lo Ni Ic          601 Vt M1 V M4 D
+Okhtous            2425 E355374-3   Lo Ni             301 Vt M7 VI
+Aerrkhukhkaeko     2433 B639663-9 C Ni                701 Va M0 V M2 D
+Triad              2436 B587777-8 G Ag Ri             320 Vk M8 V
+Uerkfadzigue       2507 B582110-8   Lo Ni             114 Va K6 V
+Agh Thars          2509 B522278-7   Lo Ni Po          322 Va M8 III M5 D
+Dzoekhsunoullo     2513 C569512-7   Ni                220 Vt K8 V
+Foel               2514 A687210-B   Lo Ni             901 Vt K2 IV M9 D
+Tsorgoelae         2515 B20069A-C   Na Ni Va          610 Vt M7 V M0 D
+Unggvokhaengar     2518 B8B5521-8 G Ni Fl             402 Vt A6 V F7 V
+Gvigzae            2522 B678431-9 G Ni                601 Vt G1 V M7 D
+Vongouzdhursue     2524 B8AA320-C   Lo Ni Wa Fl       623 Vt M7 II
+Thagh              2527 E6659A8-7   Hi                433 Vt G4 V
+Adegokh            2530 A4047BB-A G Ic Va             101 Vt F7 IV M2 D
+Ngoluts            2531 B304738-9   Ic Va             803 Va M4 V
+Fae Kodh           2536 D445103-6   Lo Ni             101 Vk M9 V M1 D
+Torrknungazarr     2537 A753002-C   Lo Ni Po          903 Vk G8 V M0 D
+Ksunekso           2540 B525575-A   Ni                424 Vk M9 VI
+Knoerrgh           2611 E23099C-8 C Hi Na Po De       901 Va M4 V M4 D
+Gzaer              2613 A10069B-E   Na Ni Va          313 Vt F5 V M5 D
+Luthours           2617 B551633-8   Ni Po             723 Vt G6 V
+Knuerz             2620 B749776-6                     501 Vt G3 IV M2 D
+Rorroksueknea      2628 B374500-8   Ag Ni             801 Vt M3 V M9 D
+Ightursksoetha     2633 B300223-C   Lo Ni Va          410 Va G9 V M4 D
+Vakunggvoruego     2634 B333887-7   Na Po             201 Va M3 V
+Gzaell             2638 E773541-5   Ni                910 Vk K9 V M7 D
+Lluezukgzang       2701 A432A99-F   Hi Na Po          102 Vo M9 V M5 D
+Fukoezo            2702 A626645-9   Ni                114 Vo K7 VI
+Kaeg               2703 D323412-7 G Ni Po             801 Vo M1 V M0 D
+Vakhoell           2704 A484479-D   Ni                103 Vo K2 V M2 D
+Dhanrranoez        2715 B9A8375-8   Lo Ni Fl          702 Vt M0 V M4 D
+Aerzdanthi         2717 D84A699-5   Ni Wa             524 Vt G3 V
+Radellogvate       2720 B7B8215-8   Lo Ni Fl          601 Vt M6 V M5 D
+Logvokseghaghz     2722 C786320-6   Lo Ni             322 Vt M3 V
+Arrag              2723 B575777-9   Ag                210 Vt G5 V
+Aetskaekhoun       2725 B988954-8   Hi Cp             301 Vt M6 V M6 D
+Zuekuzung          2727 B200322-8   Lo Ni Va          624 Vt G9 V
+Takhagvafoe        2729 B667585-7   Ag Ni             101 Vt K6 V M8 D
+Thurruegvudhot     2731 C88A200-6   Lo Ni Wa          303 Vt G9 V
+Asugunkhodz        2735 B97A365-A   Lo Ni Wa          502 Va K3 V
+Roukhagzvaengo     2740 E526899-7                     813 Vk F4 V
+Gegerrrarrunu      2802 A421120-D   Lo Ni Po          613 Vo M9 V
+Ukokhuvoen         2806 C637232-7   Lo Ni             804 Va G6 V M4 D
+Kaekfesa           2807 A997554-A G Ag Ni             301 Va M1 V M5 D
+Dorrorue           2808 C659631-4   Ni                202 Va M6 V
+Ghaertu            2821 B73A9DD-A G Hi Wa             421 Vt F3 V M1 D
+Etsgokhuenaell     2822 B756875-9                     113 Vt F6 V M1 D
+Vou                2826 E644247-5 C Lo Ni             801 Vt K0 V M1 D
+Oukgzueredh        2827 C35499B-A C Hi                701 Vt M8 V G4 V
+Gnurs              2828 B628454-D   Ni                402 Vt K1 VI M8 D
+Ourkan             2829 B9D8454-D   Ni Fl             823 Vt A1 III G3 V
+Taekfoengsegzo     2830 B445000-8 G Lo Ba Ni          303 Vt M8 V
+Oegaeldu           2832 B200443-A   Ni Va             602 Va G2 V M9 D
+Kedzudh            2833 B000525-D   Ni As             822 Va M8 V
+Gzoghz             2834 B74A421-C   Ni Wa             503 Va M0 V
+Rruthaekuksu       2840 D231210-6   Lo Ni Po          823 Vk K7 III M5 D
+Okhgvonan          2901 C310377-A   Lo Ni             523 Vo G0 V
+Ngersouluekorr     2905 A8AA432-C   Ni Fl Wa          822 Va M6 V
+Kutsgarrae         2908 B200304-9   Lo Ni Va          734 Va M8 V
+Kfuevavae          2913 B636657-8 G Ni                604 Va M2 V
+Olgan              2916 B88A302-9   Lo Ni Wa          401 Vt M4 V
+Afougae            2936 B000598-E   Ni As             123 Vk M1 III
+Scangen            2937 B88557A-C   Ni As             224 Vk K4 II
+Galla              2940 B686275-8 H Lo Ni             502 Vk M0 V
+Fuedhgusnaezre     3003 B361773-5   Ri                211 Va K0 V
+Utsurr             3004 A250300-E   Lo Ni Po De       221 Va M9 V
+Khoekhoerr         3010 B200443-A C Ni Va             602 Va G2 V M9 D
+Uefokung           3012 B403313-A   Lo Ni Ic Va       220 Va K0 V
+Ounoe Eglloegh     3017 B403313-C   Lo Ni Ic Va       723 Vt A6 V
+Koesolaedze        3020 C585210-8   Lo Ni             102 Vt M0 V M7 D
+Gaegzue            3022 B574540-B   Ag Ni             701 Vt M7 V M4 D
+Ngulivuedakhsn     3024 E748778-5 C Ag                523 Vt K1 V
+Ungrughz           3029 E554389-6   Lo Ni             414 Vt F8 V
+Ughz               3034 A424451-G G Ni Cx             302 Vk M4 V
+Ganokoulovaenu     3035 B352231-8 C Lo Ni Po          801 Vk M5 V
+Llaekag            3040 X520100-4 C Po                523 Vk M1 V
+Ozago              3107 B331731-8   Na Po             501 Va M0 V M4 D
+Zaersougvivu       3114 C423303-7   Lo Ni Po          120 Vt K3 V M9 VI
+Thoengling         3117 A9AA6BA-B G Ni Fl Wa Cx       902 Vt K5 V
+Surrghkoeg         3120 A97A6AF-B   Ni Wa             901 Vt M1 V M0 VI
+Daggueghaezgho     3121 B495222-8   Lo Ni             304 Vt M6 V M7 D
+Llukaegh Voerz     3124 A527331-A   Lo Ni             410 Vt M4 V M4 VI
+Goghrra            3126 E7B0579-8 C Ni De             120 Vt M7 V
+Otse               3128 A8A78CA-A   Fl                623 Vt M2 V
+Oziz               3133 B677433-B   Ni                924 Vt G0 V M8 D
+Torrrrerz          3137 A463951-C   Hi                521 Vk M5 III M6 D
+Dhurrgthaedz       3201 B26269B-A   Ni Ri             133 VW M3 V
+Outhzaekaefakh     3211 A896314-A   Lo Ni             703 Va M0 D
+Eksfarrarr         3213 A671777-7                     822 Vt F8 V M8 D
+Tuelehollar        3217 A252554-9   Ni Po             211 Vt M1 V
+Ikkhadzkfaghuk     3218 A6858CB-7                     801 Vt M3 V M6 D
+Rroungkhi          3220 B736543-C   Ni                203 Vt M4 V
+Dzaekh             3221 C547464-5   Ni                303 Vt K9 V
+Fanzuekh           3222 C000259-D   Lo Ni As          211 Vt M5 V M4 D
+Thekrakfor         3229 B250133-9   Lo Ni Po De       601 Vt M7 VI M8 D
+Aekokfeg           3230 B69A200-B G Lo Ni Wa          702 Vt M4 V
+Gvutson            3233 A85A7CE-8   Wa                520 Vt G6 V
+Oertsous           3238 E253A9E-A C Hi Po             602 Vk M4 V M4 D

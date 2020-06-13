@@ -1,0 +1,56 @@
+Sector: Tuglikki Sector
+Alt:    Sector dD
+DOS:    tuglikki
+Coord:  dD
+
+A: A
+B: Saerrgh
+C: Orrgueg
+D: Knoukhs
+E: Darrgouts
+F: Uerrul
+G: Tsaerlon
+H: Gaerith
+I: Kaeng
+J: Ludzghaeth
+K: Aenkazarr
+L: Onrakae
+M: Anfharsgzo
+N: Ogaeka
+O: Ourrvikh
+P: Aegaek
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Karrsuergae        0132 C220226-9 C Lo Ni Po          602 Vt M6 V
+Uengurrg           0133 D664100-3   Lo Ni             424 Vt F3 V
+Guendan            0134 C8A6354-C   Fl Lo Ni          223 Vt G5 V M9 D
+Ilal               0136 X2467AA-1   Ag                202 Wi G0 V
+Aergvael           0232 C8A5799-6 H Fl                703 Vt M6 V M7 D
+Dhuerzaegoe        0238 E203669-8 C Ic Na Ni Va       814 Wi M9 V
+Aerrokhs           0239 A525738-C                     723 Na M4 V M1 D
+Ruesurrg           0331 DA9989B-6                     903 Vt F0 V
+Ungerrill          0333 C257221-7 G Lo Ni             301 Vt F3 V M7 D
+Izoensaks          0337 C2108D9-8   Na                124 Na F3 V
+Gzuga              0340 D88A141-8   Lo Ni Wa          802 Na M8 V
+Kueksakhsarr       0431 D89A133-4   Lo Ni Wa          114 Vt F7 V
+Khaenorra          0433 A649468-9   Lo Ni             700 Vt F0 V
+Akhstuti Ae        0437 B000950-E   As Hi             114 Na F0 V M4 D
+Veg Gaghudh        0439 B876421-7   Lo Ni             403 Na F8 V
+Ourlloerrag        0533 C334243-9   Lo Ni             602 Vt M8 V
+Guelvueer          0538 D57178A-4                     422 Na F5 V
+Uerrueg            0540 B568556-C G Ag Ni             715 Na G7 V M3 D
+Okh Gvagh          0734 C896755-4                     514 V6 F5 V
+Fudz               0735 D76A788-6   Ri Wa             623 V6 G9 V M4 D
+Ongon              0737 B95976A-7   Mr              B 200 V6 F5 V M8 D
+Khaeghz            0832 B324637-9   Ni                713 V6 M3 V
+Khourrggok         0833 C487789-5   Ag Ri             423 V6 F9 V M7 D
+Aero Ouzvothon     0835 B682313-8   Lo Ni             320 V6 M9 V M2 D

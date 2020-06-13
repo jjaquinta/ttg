@@ -1,0 +1,43 @@
+Sector: Uistilao Sector
+Alt:    Sector jD
+DOS:    uistilao
+Coord:  jD
+
+A: Ali
+B: Yeeaeaeawe
+C: Aeaew
+D: Yesaw
+E: Tuaauhrelr
+F: Auauwiylis
+G: Hkeelatai
+H: Fisas
+I: Eesalarea
+J: Auau
+K: Eatri
+L: Iaikhya
+M: Oiesa
+N: Tuie'ouhuil
+O: Eaheikiyh
+P: Eaisalyatui
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Awaui              2829 E160144-4   De Lo Ni          114 Ta F2 V M7 D
+Oioireiheah        2927 E766698-5   Ag Ni Ri          804 Ta F4 V
+Htearleaai         2928 E57258A-6   Ni                425 Ta F1 V M6 D
+Wasaal             2929 E41058A-4   Ni                612 Ta M6 V M5 V
+O'ausoila          2932 D235530-6   Ni                604 Ta G2 II
+Oukhtoihwea        3026 D89979B-6 S                   300 Ta F1 V
+Hiyrihahih         3034 D622103-9 S Lo Ni Po          104 Ta F5 V
+Khtuhlao           3134 D555544-7   Ag Ni             502 Ta K1 V M8 D
+Ialeaoie           3232 C735988-6 S Hi In             820 Ta F2 V
+Isikhtayahre       3234 C89A210-A   Lo Ni Wa          425 Ta F1 V M0 D
+Htoihoftoi         3236 D411979-9   Hi Ic Na          804 Ta G8 V

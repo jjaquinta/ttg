@@ -1,0 +1,483 @@
+Sector: Ilelish Sector
+Alt:    Sector gE
+DOS:    ilelish
+Coord:  gE
+
+A: Arlumer
+B: Bakkula
+C: Miitan
+D: Ilelish
+E: Steppe
+F: Shillish
+G: Akkula
+H: Shudash
+I: Verran
+J: Dlan
+K: Desta
+L: Gadirur
+M: Edge
+N: Lyystra
+O: Zagrab
+P: Empty
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+Harding            0101 B100324-F                     120 Im K4 V
+Lorne              0102 B446849-8                     600 Im F5 D M5 D
+Eufemia            0108 B599699-C                     312 Im F2 D
+Randall            0110 B341533-A                     414 Im F4 V
+McCoy              0113 E32347B-6                     901 Im M2 VI M3 D
+Fearghal           0116 B130437-B                     902 Im M2 V
+Tyr                0127 A565200-E                     413 Im F2 V
+Welles             0128 B893249-D A                   603 Im F5 V
+Antwerp            0132 D994411-9 S                   410 Im G6 D
+Rozumund           0133 B765100-B                     103 Im F8 D M5 D
+De Camsall         0204 B546489-8                     720 Im M3 V M6 D
+Kiril              0205 B444310-E                     102 Im F1 D
+Darven Limner      0206 C476530-9                     900 Im M3 V
+Nasi               0207 B200986-F N                   102 Im F5 D M9 D M0 D
+Winthrop           0208 B786540-C                     810 Im F9 D
+Byrne              0209 A552758-C                     302 Im M4 D
+Saper              0211 B535304-F N                   924 Im M1 IV
+Seke               0212 A654120-A                     600 Im M6 V
+Heridd             0217 A210105-G                     204 Im M5 V M0 D
+Geldall            0218 E8D48B9-9                     222 Im F1 D
+Gons               0220 A110331-E                     300 Im M7 V M3 D
+Allentown          0226 CA8A230-C                     500 Im F6 D M3 D
+Willlelmo          0227 A798748-E                     503 Im F2 D
+Neala              0231 B756464-8                     115 Im F6 D
+Tharthar           0232 E528555-B                     103 Im M4 V G4 D
+Gwlsdys            0233 A224677-B                     324 Im F2 V
+Woodlawn           0303 B2228AB-E                     520 Im F1 V
+Astea              0305 D94A79A-4                     404 Im G2 VI M4 D
+Tylio              0307 B646A75-F                     805 Im M1 V
+Earnest            0309 B5587AB-A N                   601 Im F7 D M4 D
+Tunis              0312 B565598-8 N                   204 Im F9 VI M5 D
+Kerim              0313 B210677-A N                   204 Im M1 V M4 D
+Serbia             0314 E210532-A                     703 Im M0 III
+Leuet              0315 B442666-B                     604 Im M0 D
+Byrland            0316 D557566-9                     112 Im M6 D M6 D
+Bohemia            0318 B879887-8                     802 Im G7 VI
+Gwenhwyvar         0319 A795424-C N                   200 Im G4 V M2 D
+Allanon            0322 DAD6331-7                     504 Im M5 V M7 D
+Irvine             0328 B849401-C                     414 Im F2 V
+Rekagun            0330 D326A85-E S                   602 Im F3 V M2 D
+Ambolphudrius      0331 B510400-B                     803 Im F3 V
+Eggii              0401 B300979-F                     905 Im F2 VI M7 D
+Grannoth           0402 B671547-C                     210 Im M4 V M1 D
+Ansha              0403 E5529DD-7                     805 Im F8 D
+Kkikla             0406 D693AAB-C                     103 Im G2 V
+Salvatore          0407 A888533-F                     413 Im F0 V M6 D
+Wei                0409 BAC8033-B                     803 Im M9 III M8 V
+Mick               0410 A2008A8-F                     504 Im F3 V M8 D M1 D
+Saltmaw            0413 B79A441-A                     114 Im G9 VI M2 D M9 D
+Dominican          0417 B414235-A                     602 Im K7 V M3 D
+Lillyng            0419 B2327AB-E                     104 Im M9 VI
+Bentley            0420 B221445-C                     800 Im M0 V M3 D
+Maddend            0421 E568447-5                     812 Im F1 V M7 D
+Moonshadow         0426 B556687-C                     604 Im G9 VI
+Kyla               0427 B220683-A N                   704 Im F2 V M0 D
+Peronn             0433 E574546-7                     223 Im F2 V
+Kagaki             0502 B48298A-B                     500 Im F5 D
+Quill              0505 E476300-8                     820 Im G4 D
+Howor              0506 D469653-6                     321 Im F3 VI M0 D
+Arlumer            0510 A372A9A-G N                   625 Im M4 D
+Patrel             0511 D773668-4                     124 Im F1 V
+Spark              0512 B35168B-C N                   723 Im F1 V M8 D
+Goldberg           0515 B764734-7                     703 Im F3 V
+Edaece             0517 B234100-D N                   404 Im M6 V M8 D
+K'Ning             0520 B210677-9 W                   314 Im F9 III M3 VI
+Zodeeb             0521 B000368-F                     600 Im M8 IV
+Minaforra          0524 C533674-A                     712 Im K2 V
+Mengerea           0525 B65176A-8 W                   303 Im F4 V M6 D
+Klean              0526 A84A436-E N                   403 Im F4 V
+Istvan             0527 A686888-A                     612 Im G4 V
+Gypsy              0532 B200732-D                     603 Im M2 V
+Porto              0602 B686354-E N                   910 Im G2 VI
+Recoun             0605 A362556-E                     803 Im F3 VI M8 D
+Almaden            0607 C567100-8                     613 Im K4 VI
+Kobayashi          0613 B342545-9                     225 Im F7 D
+Corcoran           0615 B242411-E                     802 Im F3 V M5 D
+Berglund           0616 B57367B-9                     110 Im F4 D
+Conley             0618 C686523-A                     800 Im G4 V M1 D
+Cranston           0619 B574453-E                     821 Im F6 VI
+Shashinke          0620 E686A79-C                     400 Im K0 D
+Amerigo            0623 E32388B-9                     105 Im F1 V M9 D
+Chevrolet          0625 A669896-A                     614 Im F2 V
+Paige              0627 A511422-E                     705 Im F1 V M2 D
+Kaszio             0704 A553314-C                     203 Im F8 V
+Lanka              0705 B4447AA-A N                   904 Im F0 D M6 D
+Fairchild          0706 EAAA303-B                     903 Im F2 II M3 D
+Adia               0708 D347979-B                     714 Im F7 VI
+Aeschylus          0709 B667578-D N                   214 Im M3 D
+Rughl              0712 B000979-F N                   404 Im F7 D
+Rayth              0713 B594769-A N                   702 Im G4 D
+Dubhglas           0715 B79A203-F                     614 Im M6 D
+Gyliotte           0716 B534386-A                     304 Im M6 V
+Duel               0719 E536ADC-9                     101 Im K0 D M9 D
+Dionsio            0720 A546420-A S                   405 Im F3 VI M7 D
+Fergie             0724 B000100-F                     202 Im M1 V
+Syndarra           0729 A000454-F N                   922 Im M5 III
+Ris                0732 B472576-A N                   813 Im K4 V
+Laec               0806 D85A000-6 S                   601 Im F4 D M8 D
+Bardawulf          0808 B3227B8-E N                   201 Im G3 V
+Baskin             0810 B330886-B                     400 Im F2 V M5 D
+Ekih               0811 E6559CC-A                     201 Im F4 V
+Lana               0812 C253613-6                     703 Im F3 V
+Jacid              0813 B464874-A                     612 Im F1 D
+Hawkwind           0817 E6838A9-7                     822 Im F3 V
+Sheridan           0819 B437001-D                     500 Im M7 V
+Dorbyora           0821 D422AFF-E S                   100 Im F2 V M7 D
+Agnald             0823 D340662-9                     514 Im G5 D
+Naga               0826 B1209CC-G                     804 Im F1 V
+Bronso             0827 C120889-C                     704 Im F2 VI M8 D
+Bridhid            0829 A974864-B                     503 Im F2 D
+Hannegin           0830 A410565-F                     802 Im K2 V
+Soliel             0831 D95A433-A                     822 Im K7 D M5 D
+Igon               0832 E32669B-6                     313 Im M4 V M9 D
+Guim               0903 E4009CD-C                     620 Im F5 D
+Lingar             0906 B898234-C                     304 Im F1 VI M0 D
+Eurydice           0908 D673777-3                     404 Im G6 D M5 D
+Aubrey             0909 B532522-B                     723 Im M1 V
+Shinush            0911 B899A87-F N                   403 Im F3 V
+Vivaldi            0912 C438441-D                     923 Im G0 V M3 D
+Rave               0914 A400520-C                     803 Im M2 V
+Cade               0915 D30088A-8                     705 Im F4 V
+Kembald            0916 C83A651-C                     204 Im F1 V M5 D
+Kimki              0920 B7B2ABD-E N                   214 Im F3 V M4 D
+Newton             0921 A768345-D                     700 Im F3 V
+Memphis            0923 A210400-E N                   301 Im M1 V M2 D
+Zemu               0925 B423467-E                     405 Im G3 III
+Ygerna             0926 B410753-A                     314 Im M1 V
+Livermore          0927 B22576A-C                     600 Im M9 III M5 V
+Zetite             0928 C777242-8                     411 Im F8 VI M3 D
+Lang               0929 B211112-F                     913 Im M9 V M8 D
+Marin              0932 B7B3699-B                     703 Im M7 IV
+Masahiko           1001 E899475-5                     404 Im F4 V M2 D
+Taran              1003 BAD9465-B S                   914 Im M7 VI M1 D
+Ozorak             1004 A223758-G                     602 Im M0 V M7 D
+Mackinaw           1005 B554874-9                     702 Im F0 V
+Upsin              1006 B4009BB-F                     514 Im K7 D M7 D
+Noke               1009 C9C5000-7                     303 Im M8 V M9 D
+Reese              1012 B576598-D N                   914 Im M4 V
+Vndyrwynd          1013 B300423-E N                   535 Im F4 V M9 V
+Dorothea           1017 A465348-C                     611 Im F9 D
+Westchester        1018 B988545-B                     902 Im F5 VI
+Mariota            1019 B58859B-A N                   103 Im F1 VI
+Water              1020 A675876-D                     900 Im F2 V M4 D
+Dlan               1021 A8D1ADE-G N                   315 Im F8 VI M7 D
+Hess               1022 B362558-C D                   603 Im F9 D M6 D
+Tyd                1024 B432556-C N                   201 Im F2 V
+Bombay             1031 B9AA352-E                     305 Im M6 V
+Biffan             1032 B583248-C                     722 Im F3 D M7 D
+Urbano             1101 B245789-A                     903 Im F6 VI M2 D
+Aurelius           1102 B4007B9-E                     200 Im A3 V M0 D
+Ailean             1107 B352646-8                     604 Im K9 D M4 D
+Cymera             1111 B552665-7 A                   902 Im F0 D M9 D
+Kryggelistan       1114 A454300-E N                   502 Im F2 VI M7 D
+Dwalin             1117 A595327-B                     504 Im F7 D
+Bendix             1118 B64968A-D                     505 Im F1 V
+Bulgaria           1119 B889679-A                     704 Im G7 VI M9 D
+Tregetour          1122 D37069C-6                     102 Im F2 V
+Maureen            1124 D99A769-4                     810 Im F4 V
+Skrymir            1126 B37346B-E N                   602 Im F1 V M6 D
+Trianon            1129 C410895-8 S                   804 Im F3 V M8 D
+Yemen              1130 D333651-6                     333 Im M0 V
+Mnemon             1131 B565378-A                     523 Im K6 V
+Copyn              1132 B5748BB-A                     213 Im F0 V
+Maible             1201 B332625-A                     904 Im F3 V M3 D
+Adia               1203 D859985-B                     324 Im M1 V
+Valeria            1204 B61078A-B                     625 Im M0 IV
+Lukan              1206 B9C6976-B                     914 Im F6 D
+Salaam             1209 B64159B-9                     113 Im F0 V M0 D
+Maris              1211 B340641-C                     312 Im F0 V M3 D
+Ruse               1212 A432899-C                     100 Im G2 V
+Gifford            1215 B696121-8                     604 Im F6 D
+Nekhi              1217 D647979-A                     104 Im F3 V
+Labrador           1218 B310323-A                     523 Im M1 II M2 D
+Cell               1219 B465333-A N                   814 Im F1 V
+Marquita           1220 E100300-B                     900 Im G8 V M4 D
+Finnish            1221 B757541-D                     304 Im F3 V
+Aescby             1224 C000245-E S                   602 Im M4 V
+Kim                1229 A9B2445-F W                   703 Im M3 V M5 D
+Nassic             1230 C300425-A                     722 Im K0 V
+Flagstaff          1303 B000569-C A                   320 Im M0 V
+De Barton          1308 B100412-F                     124 Im M4 V
+Grimaldi           1309 A000341-D                     802 Im M7 D
+Murda              1311 D766ABD-9                     404 Im F9 D
+Casey              1312 B443868-9                     104 Im F2 V
+Grau               1316 B577476-A                     903 Im F3 D
+Aoea               1317 A765662-9                     100 Im G2 V M9 D
+Eldin              1318 B320342-C                     500 Im M8 V
+Archman            1320 B66A696-C N                   310 Im F8 D M3 D
+Shagipka           1321 B671989-E                     302 Im F5 D
+Shunim             1323 C768966-B                     914 Im F4 D M4 D
+Klesteus           1325 AAAA79D-C N                   113 Im M3 V
+Strype             1326 C879346-B                     313 Im G9 D
+De Sadyngton       1328 B887879-B S                   703 Im F2 V M1 D
+Flo                1329 A400457-F N                   100 Im F2 VI M0 D
+Idle               1330 E431479-9                     704 Im M4 V
+Hadley             1401 B431463-E                     100 Im K6 V
+Kaler              1404 B571420-B N                   811 Im G9 D M3 D
+Krieger            1406 C95A101-B                     935 Im F8 V
+Sherwood           1407 A573421-F N                   700 Im F8 D
+Wendigo            1409 D665343-9                     702 Im F5 D M9 D
+Slavic             1410 B55177A-B                     701 Im F2 V
+Catarina           1412 C663887-A                     602 Im F8 D M1 D
+Lissajous          1413 E332311-9                     214 Im M7 IV M4 D
+Daikini            1418 B729110-D N                   613 Im M1 V
+Rach               1419 B998101-A                     823 Im F8 V M1 D
+Neal               1424 B55479B-7 N                   104 Im F0 V
+Hoyt               1436 B647432-B                     505 Cs F2 VI M1 D
+Tia                1501 E586203-7                     304 Im F5 VI
+Tardin             1502 A365334-B                     500 Im F0 D
+Jacha              1503 A65656A-B                     210 Im M3 V
+Punit              1505 A150565-D                     303 Im K4 V M0 D
+Savankala          1510 B000694-B                     303 Im K0 V
+Beorhthildi        1511 D333697-6 S                   314 Im K0 V M3 D
+Meer               1517 B330342-F                     204 Im K6 V
+Philippo           1523 C86A56B-8                     823 Im F1 D
+Thurnir            1525 A120665-F N                   903 Im M4 D
+Orcus              1526 E484855-9                     301 Im G4 V M8 D
+Orion              1527 A220573-F                     914 Im M6 III M1 D
+Talarin            1530 A8448BC-B                     104 Im F5 D
+Kapa               1601 B533AEF-F                     805 Im F7 VI
+Wild               1603 B497633-9 N                   202 Im F4 V
+Kubkli             1604 D424200-A S                   104 Im K7 V
+Mayre              1605 E758695-8                     212 Im G0 D M2 D
+Junoi              1608 A000487-F                     703 Im K2 V
+Schenectady        1611 B535464-9                     400 Im M3 V M4 D
+Newit              1613 E694669-5                     802 Im K3 V
+Winiholdo          1615 B675655-C A                   323 Im F2 V
+Fomalhaut          1617 B473562-9 N                   113 Im F3 V
+Dakar              1618 B9887BB-A                     313 Im F9 VI M5 D
+Silius             1623 B202000-B N                   603 Im M3 V M0 D
+Ffenton            1624 A300000-C N                   900 Im M5 V M9 D
+Poe                1627 C595245-7                     604 Im F2 V M1 D
+Teyle              1628 B8679CG-9                     825 Im F9 D M9 D
+Lyceum             1630 E23197A-9                     623 Im F3 D
+De Wandesford      1631 B9A5303-D                     103 Im F3 IV
+Base 1701          1701 B325367-E N                   310 Im M2 V
+Drywater           1703 B461555-F N                   900 Im F3 D
+Beaumonde          1704 A454586-C                     403 Im M2 V M7 D
+Maxwell's Roc      1708 A201487-C N                   420 Im M1 V
+Granite            1709 B510233-E                     913 Im M0 V M9 D
+Vesper             1710 A481323-F                     621 Im F4 D
+Hinate             1711 B4208BD-B N                   210 Im F0 V M1 D M7 D
+Squee'twok         1715 D89A300-6 S                   203 Im F5 V
+Outpost            1719 A411440-E N                   420 Im M8 IV M8 VI
+Brobdignag         1720 B999201-C                     210 Im F5 D M6 D
+Azimir             1721 C6957AA-9                     623 Im M4 D
+McKee              1723 B432553-B N                   614 Im G0 VI M4 D
+Orkney             1725 A34448B-E                     302 Im F9 VI
+Nadia              1726 D537647-4                     704 Im M3 V M8 D
+Crepe              1727 C360754-A                     604 Im G4 V
+Williamwyff        1728 E97A546-5                     900 Im F3 V M5 D
+Desmond            1729 E526201-B                     404 Im G4 VI
+Ultima Thule       1801 E675743-3                     202 Im K3 V M0 D
+Ranchero           1807 B578764-C                     904 Im F5 D M3 D
+Penance            1808 B333475-A                     123 Im G3 IV
+Ganesha            1815 B565754-B                     923 Im F0 V M7 D
+Del Gayr           1817 B786866-C                     503 Im F2 VI M3 D
+Mawer              1820 A3538AA-A                     600 Im F4 D
+Maruicio           1824 D839400-8                     403 Im K2 V
+Base 1903          1903 B442041-B N                   303 Im F7 D M3 D
+Monda Bella        1906 B364653-D                     102 Im G3 D
+Hogan              1907 C1008CC-B                     705 Im F8 D
+Aramco             1908 B6A7242-9                     302 Im M6 V
+American           1911 B551779-B                     703 Im G5 D
+Leoma              1915 A638305-F                     412 Im M7 V M1 D
+Scirocco           1916 C250555-9                     402 Im M8 D M7 D
+Pomona             1919 E684757-9                     702 Im F1 V
+Hal                1922 B9C3640-8 S                   503 Im F3 V
+Mulyosh            1923 A99A411-E S                   202 Im F2 V M4 D
+Callipygia         1924 BAA8555-B N                   913 Im F2 V
+Daedalus           1925 B673333-C A                   103 Im F9 V M1 D
+Gould              1926 D672300-9 S                   722 Im F5 D M7 D
+Druil              1928 B79497A-E S                   500 Im F1 V M7 D M1 D
+Holand             1929 BAC7525-9                     623 Im M4 V M3 D M4 V
+Izzy               1930 B120212-B                     804 Im F6 V M9 D
+Cornucopia         2001 B667644-B                     405 Im F4 D
+Warhead            2002 B322854-A N                   310 Im K3 D
+K28                2004 C100420-C S                   205 Im M3 V M9 D
+Grubstake          2005 B439400-F                     300 Im F4 V M7 D
+Atte               2013 B529AAB-F                     620 Im F2 V
+Carlyle            2014 B443576-C N                   513 Im G1 D M5 D
+Matteo             2016 B788123-A                     815 Im F4 D
+Shalud             2019 B360666-9                     704 Im F6 V
+Dave               2021 CAA9233-B                     603 Im F9 V M9 D
+Agaru              2024 B330952-G N                   923 Im F6 D
+Sashlunsdham       2027 CA8A996-A                     722 Im M3 V M3 D
+Stapleton          2029 D9AA322-B                     604 Im F6 IV M1 D
+Kathar             2030 C2308BA-C                     425 Im G6 D
+Shume              2101 B110ACF-G                     904 Im F4 V
+Dyson's World      2102 D100211-7                     510 Im K2 V M5 D
+Gobi               2103 A560643-A                     814 Im K6 D M1 D
+Pax                2105 C68787B-8                     403 Im F8 D
+Aurora             2106 A665357-E                     403 Im G0 D
+Flora              2108 D564557-8                     304 Im K9 D M4 D
+Krasny Norad       2113 B55679D-7                     603 Im F7 D M1 D
+Base 271           2114 B302623-B A                   400 Im M2 V M3 D
+Guardian           2115 B611431-E N                   713 Im A3 V
+Talbot             2117 B688775-8 N                   103 Im G1 V M4 D
+Mountain Home      2118 D764444-8 S                   623 Im F3 V
+Hilaire            2123 D727830-6                     811 Im K1 V
+Aamuri             2127 B4839A9-A N                   204 Im F4 VI
+Azyuna             2129 B5447AB-C                     214 Im F7 VI
+Migid              2201 C657985-9                     303 Im F4 V
+Lashaar            2204 E997559-A                     423 Im F0 V
+Retreat            2207 E435410-9                     501 Im K2 V
+Khirar             2208 B644964-E N                   700 Im M4 V M6 D
+Kramer             2213 B435386-E                     404 Im K0 VI M7 D
+Prunt              2215 D235564-6                     701 Im M4 V K7 D
+Imsaggir           2216 B449986-G                     622 Im F2 V M8 D
+Reserve            2217 B776000-D                     303 Im K7 VI
+Yard 14            2218 A5438C9-E                     604 Im F3 V
+Lidas              2219 B401158-B                     202 Im F7 V
+Schloss            2221 B7C8497-B                     805 Im K1 V M9 D
+Ghant              2222 E448003-7                     402 Im F3 D
+Agari              2224 B462942-E N                   104 Im F5 D
+Jianwei            2226 B766211-8                     303 Im K3 D M9 D
+Islands            2301 E659773-7                     502 Im F1 V M5 D
+Enclave            2302 E542469-7                     910 Im G3 D M9 D
+'Tlak              2305 C88A768-9                     103 Im F7 D M9 D
+Wotan              2307 A672252-D                     503 Im F8 D
+Wendover           2310 B430411-B N                   103 Im M2 V
+Tellus Nova        2311 A784774-A                     213 Im G6 VI M8 D M6 D
+Yggsdrasil         2312 E9B5887-7                     422 Im F9 D
+Chevron            2313 E7C4404-8                     703 Im G0 V M1 D
+N'gorongoro        2314 A796330-E                     303 Im G2 V
+Durward            2315 C577898-8                     200 Im F4 V M5 D
+K'laktash          2316 B67A579-E                     404 Im F0 V
+K'lakt'squa        2320 B98A220-C                     620 Im F6 V M4 D
+Uruguay            2323 B7A4889-B N                   603 Im G4 D
+Calvin             2325 B000574-D                     602 Im M2 D
+Arni               2326 B73A78A-C                     400 Im M1 V M0 D
+Zaadurar           2330 B302A98-F                     300 Im F2 D M3 D M0 D
+Hadley             2401 B684477-D                     612 Im F6 D M1 D
+Cordelia           2402 A574247-A                     720 Im F7 D
+Sony               2403 B200204-C                     804 Im M6 II
+Orcim              2404 D3418B6-5                     313 Im F4 V
+'Twee              2408 C55A572-9                     113 Im F6 D M1 D
+Rayaloybex         2410 B546534-9                     815 Im F2 V
+Petroleos          2411 B5A9340-B N                   404 Im G2 V
+Ghost Town         2418 C342002-7                     913 Im F9 V M3 D
+Canoga             2422 B987786-B N                   614 Im F5 VI
+Corimini           2425 B64A7AE-9                     420 Im F6 D M6 D
+Lalita             2427 B401220-E                     902 Im M5 V
+Halifax            2428 C7A9003-B                     704 Im F2 V M2 D
+Kirsten's Roc      2501 B300526-D                     904 Im M4 V
+Wilkenson          2503 E644300-6                     913 Im F1 V
+Squee'kak          2506 BA9A48B-B                     515 Im F8 VI
+Freedom            2507 C639444-D                     305 Im M3 V M6 D
+Tanith             2508 B766326-A S                   612 Im F1 D
+Mordred            2509 AAB87BC-F                     604 Im M5 III M1 D
+Brandenburg        2512 B333352-E                     702 Im M1 V M3 D
+Yuma               2513 C350000-A                     203 Im F1 D
+Blessed            2516 B658661-9 N                   702 Im F4 V M5 D
+Fluorine           2517 B7C37A6-C                     913 Im A2 V M3 D
+Sandpile           2518 B240346-E N                   625 Im M4 V
+Riverine           2519 C774464-9                     402 Im F4 V
+Irlariir           2520 B757996-A                     600 Im K9 VI
+Luftwaffe          2521 D100500-D                     314 Im F2 V M3 D M2 D
+Cretaceous         2523 D748557-8                     800 Im F2 D
+Akio               2524 D662862-8                     623 Im F0 V M7 D M2 D
+Austin             2526 B464526-D N                   123 Im F2 D
+Benedetto          2527 B5A4225-C                     614 Im F5 V M6 D
+Aubert             2528 D5AA677-5                     320 Im K0 V
+Toye               2529 B677665-B                     702 Im F5 D
+Yard 10            2601 A300466-C                     822 Im K6 III M3 V
+Volcano            2604 C376632-A S                   105 Im F1 V
+Colony 8           2606 D759254-9 S                   914 Im F6 D
+Barrington         2607 C474756-C                     122 Im F0 V M6 D
+Rodina             2609 B7956BA-8                     903 Im G6 D
+Garden             2610 B664884-B                     202 Im K0 V M7 D
+Hell               2613 B9C2235-D                     104 Im K7 V M9 D
+Dilfer Statio      2615 B000100-F                     202 Im F5 V
+Plateau            2620 B786899-9                     320 Im M9 VI M0 D
+Yates              2624 B835412-B                     711 Im M4 IV
+Remington          2625 B76A510-A                     224 Im F4 V
+Tunge              2627 D888452-9                     214 Im F0 V
+Silvio             2629 A426868-C N                   613 Im M0 V
+Depot 12           2702 B222588-A D                   200 Im F1 V M1 D
+Gamma Lupus 2      2704 B6B4300-F                     201 Im M7 V
+Hardy              2707 B877831-8 N                   611 Im F2 V
+Squee'qua          2708 B58A320-9 N                   500 Im F9 V
+Zhiphar            2711 B668976-9 S                   824 Im G6 D
+Cantos             2712 B553455-A                     912 Im M8 VI M6 D M4 D
+Homestead          2715 B876623-7 N                   404 Im G2 V
+New Dakota         2716 B688863-8                     103 Im F1 VI
+Thor               2717 A895898-D N                   702 Im K2 V M9 D
+Sleght             2718 B451686-A                     612 Im F8 VI
+Xentak             2723 C79A557-C                     922 Im F8 D
+Malabar            2728 B789100-B N                   200 Im F9 V
+Windsong           2803 A240623-E                     103 Im F6 D
+Haven              2806 E669563-5                     101 Im F4 V M7 D
+Dilipuu            2807 B672968-E                     514 Im K5 V
+Canyon             2810 A386402-C N                   402 Im F0 VI
+Maffei             2812 B465795-8 N                   513 Im G1 V
+Goerke's Rock      2813 B110200-D                     802 Im M4 V M2 D
+Viques             2814 B13058A-D N                   202 Im F1 V M7 V
+Poseidon           2815 B77A896-C                     900 Im F8 VI M1 D
+Shudash            2817 A5269EK-F N                   822 Im F0 VI
+Target             2819 A40047A-E N                   512 Im F0 V M8 D
+Delta 2            2820 B377130-E                     800 Im F4 V M1 D M3 D
+Ghali              2821 C9C9A84-E                     602 Im G1 D M6 D
+Ralsaed            2822 B98A310-E                     404 Im K9 V
+Haag               2824 E898553-7                     102 Im F0 V M5 D
+Lorraine           2825 B5425AC-8                     903 Im G2 V M9 D
+Littleton          2826 C3337CB-A                     604 Im M2 V
+Dolsa              2828 B646553-A N                   603 Im F1 V
+Ilelish            2907 E674983-A                     204 Im M0 D
+Haleakala          2909 B558532-B N                   720 Im F2 D
+Imur               2911 B5259EC-F                     313 Im K4 VI
+H 2913             2913 E653002-8                     624 Im G6 V M5 D
+Nihon              2915 B67467A-9                     512 Im F1 V M5 D
+Icehouse           2919 BA9A576-D                     114 Im F2 V
+Lessham            2922 B562034-B                     825 Im F2 VI
+Chirtte            2923 C333857-9                     201 Im F2 D M9 D
+Drogan             2925 B25289D-8 N                   404 Im F2 D M0 D
+Hammond            2929 C576767-5                     803 Im F0 V
+Locus              3001 A445454-F                     915 Im K1 V
+Shudiikii          3003 B50099B-F                     300 Im F0 V
+Kigaru             3004 D594AEA-C                     203 Im F0 D M3 D
+Beta Cygnus 4      3006 B500326-A                     200 Im M0 V M0 D
+Freya              3008 B785735-7                     115 Im F5 VI M7 D
+Sean's Landin      3009 B436113-F                     902 Im M0 IV
+Betio Station      3012 B000300-D                     304 Im M7 IV
+Jem                3015 B767100-9 N                   205 Im F9 VI
+Granery            3016 B344564-D                     302 Im F9 D
+H 3018             3018 B535222-9                     514 Im M8 VI
+Snohomish          3020 B886133-D                     800 Im K1 V
+Swede              3022 B1507CF-9 N                   920 Im F9 D
+April              3024 B7668CC-8                     515 Im F4 VI
+Fredholm           3025 B496642-B                     513 Im F4 V M3 D
+Ellia              3027 B9A5112-9 W                   402 Im M9 IV M8 D
+Avery              3101 B88778B-A N                   804 Im F5 D
+Squee'tak          3103 E95A68B-8                     304 Im F0 V M8 D
+Spring             3106 B675867-9                     102 Im F0 VI
+Hiroshi            3108 B49547B-B                     200 Im G0 VI
+Cupertino          3110 B676238-D                     802 Im F7 D
+Sigma Station      3119 B561010-C                     713 Im G5 V
+Gadirur            3121 B4119AD-G                     803 Im G9 D
+Clerkson           3124 B555444-C                     224 Im F7 D
+Rhuna              3127 B000787-F                     703 Im K4 V M0 D
+Rotaco             3128 A756553-E                     923 Im F3 D M0 D
+Halcyon            3203 A656110-A                     804 Im F9 D M9 D
+Khali              3204 B454467-A N                   103 Im M5 D
+Crystal            3209 E7AA79B-9                     600 Im M3 V
+Alldus             3216 C300622-8                     923 Im F5 III
+Ansha              3218 A787943-G                     604 Im F1 D
+Zephyr             3219 C150410-A                     203 Im G1 V
+Relicta            3223 D59679C-4                     800 Im F5 D
+Carmencita         3225 C767564-9 S                   604 Im F8 D M3 D
+Gunde              3226 D333951-C                     422 Im F3 D
+Mae                3228 B676310-D                     803 Im F4 VI M3 D

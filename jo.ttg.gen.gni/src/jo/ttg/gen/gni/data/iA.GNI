@@ -1,0 +1,33 @@
+Sector: Waroatahe
+Alt:    Sector iA
+DOS:    waroatah
+Coord:  iA
+
+A: Iuweie
+B: Walyekh
+C: Hkewoikhuh
+D: Ikaesi
+E: Tlyua
+F: Tyeaue
+G: Taioikheahua
+H: Asyuorea
+I: Hrekh
+J: Ihuirl
+K: Hkairlyelr
+L: Ofti
+M: Ihoalourow
+N: Hekisearai
+O: Oatreikhtekh
+P: Hkiueaaote
+
+  1-18: Name
+ 20-23: HexNbr
+ 25-33: UWP
+    36: Bases
+ 38-52: Codes & Comments
+    54: Zone
+ 57-59: PBG
+ 61-62: Allegiance
+ 64-80: Stellar Data
+
+0105               0105 X77A046-0   Lo Ni Wa          023 Na F6 V M4 D
