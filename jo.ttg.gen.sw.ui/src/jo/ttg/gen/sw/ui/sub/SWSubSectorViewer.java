@@ -167,8 +167,28 @@ public class SWSubSectorViewer extends JPanel
         mShortLinks.clear();
         mLongLinks.clear();
         calcPoints(base);
-        calcLinks();
         doNewRotation();
+    }
+
+    private void calcPoints(OrdBean base)
+    {
+        for (int dx = 0; dx < mGridSize; dx++)
+            for (int dy = 0; dy < mGridSize; dy++)
+                for (int dz = 0; dz < mGridSize; dz++)
+                {
+                    SWMainWorldBean mw = (SWMainWorldBean)MainWorldLogic
+                            .getFromOrds(new OrdBean(base.getX() + dx,
+                                    base.getY() + dy, base.getZ() + dz));
+                    mWorlds[dx][dy][dz] = mw;
+                    if (mWorlds[dx][dy][dz] != null)
+                    {
+                        mWorldList.add(mw);
+                        if (isInner(dx, dy, dz))
+                            mInnerWorldList.add(mw);
+                    }
+                }
+        calcLinks();
+        RuntimeLogic.updateRegion(mWorldList, mInnerWorldList, mShortLinks, mLongLinks);
     }
 
     private void calcLinks()
@@ -189,29 +209,6 @@ public class SWSubSectorViewer extends JPanel
                     mLongLinks.add(new SWMainWorldBean[] { mw1, mw2 });
             }
         }
-    }
-
-    private void calcPoints(OrdBean base)
-    {
-        for (int dx = 0; dx < mGridSize; dx++)
-            for (int dy = 0; dy < mGridSize; dy++)
-                for (int dz = 0; dz < mGridSize; dz++)
-                {
-                    SWMainWorldBean mw = (SWMainWorldBean)MainWorldLogic
-                            .getFromOrds(new OrdBean(base.getX() + dx,
-                                    base.getY() + dy, base.getZ() + dz));
-                    mWorlds[dx][dy][dz] = mw;
-                    if (mWorlds[dx][dy][dz] != null)
-                    {
-                        mWorldList.add(mw);
-                        if (isInner(dx, dy, dz))
-                            mInnerWorldList.add(mw);
-                    }
-                }
-        RuntimeLogic.getInstance().setWorldList(mWorldList);
-        RuntimeLogic.getInstance().setInnerWorldList(mInnerWorldList);
-        RuntimeLogic.getInstance().setShortLinks(mShortLinks);
-        RuntimeLogic.getInstance().setLongLinks(mLongLinks);
     }
     
     private boolean isInner(int x)

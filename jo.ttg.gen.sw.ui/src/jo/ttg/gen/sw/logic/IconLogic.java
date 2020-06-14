@@ -27,6 +27,7 @@ public class IconLogic
 {
     public static final Icon BOOKMARK = getLocalIcon("bm");
     public static final Icon MAKE_BOOKMARK = getLocalIcon("makebm");
+    public static final Icon REPORTS = getLocalIcon("reports");
     
     private static Map<String, SurfaceBean> mIconQueue = new HashMap<>();
     private static Thread mIconRunner = null;

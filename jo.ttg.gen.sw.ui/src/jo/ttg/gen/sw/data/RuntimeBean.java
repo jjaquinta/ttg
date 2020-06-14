@@ -31,11 +31,8 @@ public class RuntimeBean extends PCSBean
     // subsector
     private boolean                 mDisplayGrid    = true;
     private boolean                 mDisplayLinks;
+    private SelectedRegionBean      mRegion = new SelectedRegionBean();
     // system
-    private List<SWMainWorldBean>   mWorldList;
-    private List<SWMainWorldBean>   mInnerWorldList;
-    private List<SWMainWorldBean[]> mShortLinks;
-    private List<SWMainWorldBean[]> mLongLinks;
     private SWSystemBean            mSystem;
     private BodyBean                mFocusWorld;
     private BodyBean                mCursorWorld;
@@ -248,43 +245,15 @@ public class RuntimeBean extends PCSBean
         firePropertyChange();
     }
 
-    public List<SWMainWorldBean> getWorldList()
+    public SelectedRegionBean getRegion()
     {
-        return mWorldList;
+        return mRegion;
     }
 
-    public void setWorldList(List<SWMainWorldBean> worldList)
+    public void setRegion(SelectedRegionBean region)
     {
-        mWorldList = worldList;
-    }
-
-    public List<SWMainWorldBean> getInnerWorldList()
-    {
-        return mInnerWorldList;
-    }
-
-    public void setInnerWorldList(List<SWMainWorldBean> innerWorldList)
-    {
-        mInnerWorldList = innerWorldList;
-    }
-
-    public List<SWMainWorldBean[]> getShortLinks()
-    {
-        return mShortLinks;
-    }
-
-    public void setShortLinks(List<SWMainWorldBean[]> shortLinks)
-    {
-        mShortLinks = shortLinks;
-    }
-
-    public List<SWMainWorldBean[]> getLongLinks()
-    {
-        return mLongLinks;
-    }
-
-    public void setLongLinks(List<SWMainWorldBean[]> longLinks)
-    {
-        mLongLinks = longLinks;
+        queuePropertyChange("region", mRegion, region);
+        mRegion = region;
+        firePropertyChange();
     }
 }

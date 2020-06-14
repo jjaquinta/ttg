@@ -21,6 +21,7 @@ import jo.ttg.gen.sw.logic.RuntimeLogic;
 import jo.ttg.gen.sw.ui.JSONEditDlg;
 import jo.ttg.gen.sw.ui.ctrl.BookmarkButton;
 import jo.ttg.gen.sw.ui.ctrl.BookmarksButton;
+import jo.ttg.gen.sw.ui.ctrl.ReportsButton;
 import jo.util.ui.swing.utils.ListenerUtils;
 
 public class SWSystemTools extends JPanel
@@ -34,6 +35,7 @@ public class SWSystemTools extends JPanel
     private JButton         mTomorrow;
     private BookmarksButton mBookmarks;
     private BookmarkButton  mBookmark;
+    private ReportsButton   mReports;
 
     public SWSystemTools()
     {
@@ -54,6 +56,7 @@ public class SWSystemTools extends JPanel
         mTomorrow = new JButton("\u23e9");
         mBookmarks = new BookmarksButton();
         mBookmark = new BookmarkButton();
+        mReports = new ReportsButton("cursorWorld");
     }
 
     private void initLayout()
@@ -62,6 +65,7 @@ public class SWSystemTools extends JPanel
         left.setLayout(new FlowLayout(FlowLayout.LEFT));
         left.add(mZoomOut);
         left.add(mBookmark);
+        left.add(mReports);
         left.add(mList);
         left.add(mEdit);
         left.add(mYesterday);

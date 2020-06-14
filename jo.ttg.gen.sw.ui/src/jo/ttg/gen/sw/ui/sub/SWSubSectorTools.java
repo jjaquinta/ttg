@@ -24,6 +24,7 @@ import jo.ttg.gen.sw.logic.ReportLogic;
 import jo.ttg.gen.sw.logic.RuntimeLogic;
 import jo.ttg.gen.sw.ui.JSONEditDlg;
 import jo.ttg.gen.sw.ui.ctrl.BookmarksButton;
+import jo.ttg.gen.sw.ui.ctrl.ReportsButton;
 import jo.util.ui.swing.utils.ListenerUtils;
 
 public class SWSubSectorTools extends JPanel
@@ -39,6 +40,7 @@ public class SWSubSectorTools extends JPanel
     private JButton         mZoomIn;
     private BookmarksButton mBookmarks;
     private JButton         mMWRep;
+    private ReportsButton   mReports;
 
     public SWSubSectorTools()
     {
@@ -66,12 +68,14 @@ public class SWSubSectorTools extends JPanel
         mZoomIn = new JButton("\u2b0a");
         mBookmarks = new BookmarksButton();
         mMWRep = new JButton("MW");
+        mReports = new ReportsButton("region", "cursorMainWorld");
     }
 
     private void initLayout()
     {
         JPanel left = new JPanel();
         left.setLayout(new FlowLayout(FlowLayout.LEFT));
+        left.add(mReports);
         left.add(mGrid);
         left.add(mLinks);
         left.add(mX);

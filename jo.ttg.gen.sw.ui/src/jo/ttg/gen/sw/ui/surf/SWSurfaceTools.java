@@ -11,6 +11,7 @@ import jo.ttg.gen.sw.data.RuntimeBean;
 import jo.ttg.gen.sw.logic.RuntimeLogic;
 import jo.ttg.gen.sw.ui.ctrl.BookmarkButton;
 import jo.ttg.gen.sw.ui.ctrl.BookmarksButton;
+import jo.ttg.gen.sw.ui.ctrl.ReportsButton;
 import jo.util.ui.swing.utils.ListenerUtils;
 
 public class SWSurfaceTools extends JPanel
@@ -19,6 +20,7 @@ public class SWSurfaceTools extends JPanel
     private JButton         mZoomOut;
     private BookmarksButton mBookmarks;
     private BookmarkButton  mBookmark;
+    private ReportsButton   mReports;
 
     public SWSurfaceTools()
     {
@@ -35,6 +37,7 @@ public class SWSurfaceTools extends JPanel
         mZoomOut = new JButton("\u2b09");
         mBookmarks = new BookmarksButton();
         mBookmark = new BookmarkButton();
+        mReports = new ReportsButton("surface");
     }
 
     private void initLayout()
@@ -43,6 +46,7 @@ public class SWSurfaceTools extends JPanel
         left.setLayout(new FlowLayout(FlowLayout.LEFT));
         left.add(mZoomOut);
         left.add(mBookmark);
+        left.add(mReports);
         left.add(mName);
         JPanel right = new JPanel();
         right.setLayout(new FlowLayout(FlowLayout.RIGHT));

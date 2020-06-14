@@ -3,6 +3,7 @@ package jo.ttg.gen.sw.logic;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.function.BiConsumer;
 
 import javax.swing.ImageIcon;
@@ -18,6 +19,7 @@ import jo.ttg.beans.mw.UPPLawBean;
 import jo.ttg.beans.mw.UPPTecBean;
 import jo.ttg.beans.surf.SurfaceBean;
 import jo.ttg.beans.sys.BodyBean;
+import jo.ttg.core.report.logic.TTGReportLogic;
 import jo.ttg.core.ui.swing.ctrl.BodyView;
 import jo.ttg.core.ui.swing.ctrl.BodyViewHandler;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
@@ -25,6 +27,9 @@ import jo.ttg.gen.sw.SWGenScheme;
 import jo.ttg.gen.sw.data.RuntimeBean;
 import jo.ttg.gen.sw.data.SWMainWorldBean;
 import jo.ttg.gen.sw.data.SWSystemBean;
+import jo.ttg.gen.sw.data.SelectedRegionBean;
+import jo.ttg.gen.sw.logic.rep.RegionListCSVReport;
+import jo.ttg.gen.sw.logic.rep.RegionListHTMLReport;
 import jo.ttg.logic.gen.SchemeLogic;
 import jo.ttg.logic.gen.SurfaceLogic;
 import jo.ttg.logic.mw.MainWorldLogic;
@@ -76,6 +81,8 @@ public class RuntimeLogic
                 return new ImageIcon(img);                        
             }
         });
+        TTGReportLogic.addReporter(new RegionListHTMLReport());
+        TTGReportLogic.addReporter(new RegionListCSVReport());
     }
 
     static File getDataDir()
@@ -347,5 +354,23 @@ public class RuntimeLogic
             }
         }
         mRuntime.setZoom(newZoom);
+    }
+
+    public static void updateRegion(List<SWMainWorldBean> worldList,
+            List<SWMainWorldBean> innerWorldList,
+            List<SWMainWorldBean[]> shortLinks,
+            List<SWMainWorldBean[]> longLinks)
+    {
+        SelectedRegionBean region = mRuntime.getRegion();
+        region.setURI(mRuntime.getFocusMainWorld().getURI());
+        region.getWorldList().clear();
+        region.getWorldList().addAll(worldList);
+        region.getInnerWorldList().clear();
+        region.getInnerWorldList().addAll(innerWorldList);
+        region.getShortLinks().clear();
+        region.getShortLinks().addAll(shortLinks);
+        region.getLongLinks().clear();
+        region.getLongLinks().addAll(longLinks);
+        mRuntime.fireMonotonicPropertyChange("region");
     }
 }

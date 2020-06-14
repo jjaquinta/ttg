@@ -8,15 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jo.ttg.gen.sw.data.SWMainWorldBean;
+import jo.ttg.gen.sw.data.SelectedRegionBean;
 import jo.util.logic.CSVLogic;
 
 public class ReportLogic
 {
     public static File mwReport()
     {
-        List<SWMainWorldBean> innerWorldList = RuntimeLogic.getInstance().getInnerWorldList();
-        List<SWMainWorldBean[]> shortLinks = RuntimeLogic.getInstance().getShortLinks();
-        List<SWMainWorldBean[]> longLinks = RuntimeLogic.getInstance().getLongLinks();
+        SelectedRegionBean region = RuntimeLogic.getInstance().getRegion();
+        List<SWMainWorldBean> innerWorldList = region.getInnerWorldList();
+        List<SWMainWorldBean[]> shortLinks = region.getShortLinks();
+        List<SWMainWorldBean[]> longLinks = region.getLongLinks();
         try
         {
             File tmp = File.createTempFile("mwrep", ".csv");
