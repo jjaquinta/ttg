@@ -80,7 +80,15 @@ public class RuntimeLogic
 
     static File getDataDir()
     {
-        return new File("d:\\temp\\data\\sw");
+        if (System.getProperty("jo.ttg.sw.data.dir") != null)
+            return new File(System.getProperty("jo.ttg.sw.data.dir"));
+        else
+        {
+            File pdir = new File(System.getProperty("user.home"), ".ttg");
+            File ddir = new File(pdir, "data");
+            ddir.mkdirs();
+            return ddir;
+        }
     }
     
     public static void term()

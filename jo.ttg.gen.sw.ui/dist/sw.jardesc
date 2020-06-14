@@ -12,22 +12,11 @@
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
         <javaElement handleIdentifier="=jo.util/src"/>
-        <file path="/jo.ttg.core/.gitignore"/>
-        <file path="/jo.ttg.core/.project"/>
-        <file path="/jo.ttg.gen.sw/.gitignore"/>
-        <file path="/jo.ttg.gen.sw/.project"/>
-        <javaElement handleIdentifier="=jo.ttg.core/src"/>
-        <file path="/jo.ttg.gen.sw.ui/.project"/>
-        <javaElement handleIdentifier="=jo.ttg.gen.sw/src"/>
-        <file path="/jo.ttg.core/.classpath"/>
-        <javaElement handleIdentifier="=jo.ttg.core.ui.swing/src"/>
-        <file path="/jo.ttg.gen.sw/.classpath"/>
-        <file path="/jo.ttg.gen.imp/.gitignore"/>
         <javaElement handleIdentifier="=jo.ttg.gen.sw.ui/src"/>
-        <file path="/jo.ttg.gen.imp/.project"/>
-        <file path="/jo.ttg.gen.sw.ui/.classpath"/>
+        <javaElement handleIdentifier="=jo.ttg.core/src"/>
         <javaElement handleIdentifier="=jo.ttg.gen.imp/src"/>
         <javaElement handleIdentifier="=jo.util.ui.swing/src"/>
-        <file path="/jo.ttg.gen.imp/.classpath"/>
+        <javaElement handleIdentifier="=jo.ttg.gen.sw/src"/>
+        <javaElement handleIdentifier="=jo.ttg.core.ui.swing/src"/>
     </selectedElements>
 </jardesc>
