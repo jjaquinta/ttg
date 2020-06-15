@@ -1484,23 +1484,24 @@ class ImpGenWorld extends ImpGenSystemBase
     }
     private void generateTemp(BodyWorldBean w, RandBean r)
     {
-        int roll;
+        int idx;
         double E, G;
 
         double Temp = w.getStatsAtm().getTemperature();
         if (Temp != 0.0)
             return;
         if (w.getPopulatedStats().getUPP().getAtmos().getValue() < 4)
-            roll = 0;
+            idx = 0;
         else if (w.getPopulatedStats().getUPP().getAtmos().getValue() <= 0xa)
-            roll = 2;
+            idx = 2;
         else if (w.getPopulatedStats().getUPP().getAtmos().getValue() == 0x0e)
-            roll = 6;
+            idx = 6;
         else
-            roll = 4;
+            idx = 4;
         if (w.isHabitableZone())
-            roll++;
-        E = (double) ads[roll][w.getPopulatedStats().getUPP().getHydro().getValue()] / 1000.0;
+            idx++;
+        E = (double) ads[idx][w.getPopulatedStats().getUPP().getHydro().getValue()] / 1000.0;
+        w.getStatsAtm().setEnergyAdsorption(E);
         switch (w.getPopulatedStats().getUPP().getAtmos().getValue())
         {
             case 4 :
@@ -1528,6 +1529,7 @@ class ImpGenWorld extends ImpGenSystemBase
                 G = 1.0;
                 break;
         }
+        w.getStatsAtm().setGreenhouseEffect(G);
         if (w.getPrimary() instanceof BodyStarBean)
         {
             Temp =
@@ -1541,6 +1543,9 @@ class ImpGenWorld extends ImpGenSystemBase
                     .getTemperatureAt(w.getPrimary().getOrbit(), 1.0 - E, G));
         }
         w.getStatsAtm().setTemperature(Temp);
+        // orbital eccentricity
+        w.getStatsAtm().setClosestApproachMod(+30*w.getEccentricity());
+        w.getStatsAtm().setFurthestSeparationMod(-30*w.getEccentricity());
     }
 
     // tables

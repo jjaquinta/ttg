@@ -157,6 +157,22 @@ public class StatsAtmBean extends Bean
       */
     private double mPressure;
     /**
+     * Energy Adsorption
+     */
+   private double mEnergyAdsorption;
+   /**
+    * Greenhouse Effect
+    */
+   private double mGreenhouseEffect;
+   /**
+    * Temperature modifier for closest approach for orbital eccentricity
+    */
+   private double mClosestApproachMod;
+   /**
+    * Temperature modifier for furthest separation for orbital eccentricity
+    */
+   private double mFurthestSeparationMod;
+    /**
       * Is native life present
       * Set to either 'Y' or 'N'.
       */
@@ -272,6 +288,46 @@ public class StatsAtmBean extends Bean
     public void setType(int type)
     {
         mType = type;
+    }
+
+    public double getEnergyAdsorption()
+    {
+        return mEnergyAdsorption;
+    }
+
+    public void setEnergyAdsorption(double energyAdsorption)
+    {
+        mEnergyAdsorption = energyAdsorption;
+    }
+
+    public double getGreenhouseEffect()
+    {
+        return mGreenhouseEffect;
+    }
+
+    public void setGreenhouseEffect(double greenhouseEffect)
+    {
+        mGreenhouseEffect = greenhouseEffect;
+    }
+
+    public double getClosestApproachMod()
+    {
+        return mClosestApproachMod;
+    }
+
+    public void setClosestApproachMod(double closestApproachMod)
+    {
+        mClosestApproachMod = closestApproachMod;
+    }
+
+    public double getFurthestSeparationMod()
+    {
+        return mFurthestSeparationMod;
+    }
+
+    public void setFurthestSeparationMod(double furthestSeparationMod)
+    {
+        mFurthestSeparationMod = furthestSeparationMod;
     }
 
 }
