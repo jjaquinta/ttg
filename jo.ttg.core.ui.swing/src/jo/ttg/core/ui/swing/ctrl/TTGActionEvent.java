@@ -23,6 +23,7 @@ public class TTGActionEvent extends AWTEvent
 	
 	private String	mURI;
 	private Object	mObject;
+    private Object  mDetail;
 	
 	public TTGActionEvent(Object source, int id)
 	{
@@ -41,6 +42,14 @@ public class TTGActionEvent extends AWTEvent
 		mURI = uri;
 		mObject = object;
 	}
+    
+    public TTGActionEvent(Object source, int id, String uri, Object object, Object detail)
+    {
+        super(source, id);
+        mURI = uri;
+        mObject = object;
+        mDetail = detail;
+    }
 	/**
 	 * @return
 	 */
@@ -102,4 +111,14 @@ public class TTGActionEvent extends AWTEvent
 		ret.append("]");
 		return ret.toString();
 	}
+
+    public Object getDetail()
+    {
+        return mDetail;
+    }
+
+    public void setDetail(Object detail)
+    {
+        mDetail = detail;
+    }
 }

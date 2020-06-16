@@ -22,6 +22,8 @@ import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.core.report.logic.TTGReportLogic;
 import jo.ttg.core.ui.swing.ctrl.BodyView;
 import jo.ttg.core.ui.swing.ctrl.BodyViewHandler;
+import jo.ttg.core.ui.swing.ctrl.body.BodyPanel;
+import jo.ttg.core.ui.swing.ctrl.body.HTMLBodyPanelHandler;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
 import jo.ttg.gen.sw.SWGenScheme;
 import jo.ttg.gen.sw.data.RuntimeBean;
@@ -81,6 +83,7 @@ public class RuntimeLogic
                 return new ImageIcon(img);                        
             }
         });
+        BodyPanel.setHandler(new HTMLBodyPanelHandler());
         TTGReportLogic.addReporter(new RegionListHTMLReport());
         TTGReportLogic.addReporter(new RegionListCSVReport());
     }

@@ -55,7 +55,7 @@ public class ImpGenScheme implements IGenScheme
     public ImpGenScheme()
     {
         mSectorSize = new OrdBean(32, 40, 0);
-        mSectorSize = new OrdBean(8, 10, 1);
+        mSubSectorSize = new OrdBean(8, 10, 1);
         mGeneratorUniverse = new ImpGenUniverse(this);
         mGeneratorSector = new ImpGenSector(this);
         mGeneratorSubSector = new ImpGenSubSector(this);

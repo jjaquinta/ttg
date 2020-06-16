@@ -102,4 +102,13 @@ public class SectorBean extends Bean implements PropertiesBean, URIBean
     {
         return "sec://"+getUpperBound();
     }
+    
+    // utilities
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof SectorBean)
+            return getURI().equals(((SectorBean)obj).getURI());
+        return super.equals(obj);
+    }
 }

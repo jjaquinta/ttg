@@ -12,6 +12,7 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import jo.ttg.beans.sys.BodyBean;
+import jo.ttg.core.ui.swing.ctrl.body.BodyPanel;
 import jo.ttg.gen.sw.logic.RuntimeLogic;
 import jo.util.ui.swing.ctrl.HTMLLabel;
 

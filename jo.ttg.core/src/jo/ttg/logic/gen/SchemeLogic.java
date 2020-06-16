@@ -130,6 +130,11 @@ public class SchemeLogic
         mQueueObj[0] = obj;
     }
     
+    public static URIBean getFromURI(String uri)
+    {
+        return getFromURI(SchemeLogic.getDefaultScheme(), uri);
+    }
+    
 	public static URIBean getFromURI(IGenScheme scheme, String uri)
 	{
 	    if ((scheme == null) || (uri == null) || (uri.length() == 0))

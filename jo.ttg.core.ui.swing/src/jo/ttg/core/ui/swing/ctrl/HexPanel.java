@@ -27,13 +27,8 @@ import jo.ttg.logic.gen.SchemeLogic;
  * To change the template for this generated type comment go to
  * Window>Preferences>Java>Code Generation>Code and Comments
  */
-public class HexPanel extends JComponent
+public class HexPanel extends JComponent implements IHexPanel
 {
-	public static final int M_NORM = 0;
-	public static final int M_BACK = 3;
-	public static final int M_FOCUSED = 1;
-	public static final int M_DISABLED = 2;
-	
 	private IGenScheme	mScheme;
 	private int			mHexesWide;
 	private int			mHexesHigh;
@@ -66,6 +61,7 @@ public class HexPanel extends JComponent
 		clearPolygons();
 		mPainter = new HexPanelPainter(this);
 		mCanSelectEmpty = false;
+		mScheme = SchemeLogic.getDefaultScheme();
 	}
 	
 	public HexPanel(IGenScheme scheme)

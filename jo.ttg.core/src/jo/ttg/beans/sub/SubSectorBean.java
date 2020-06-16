@@ -9,15 +9,27 @@ import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.PropertiesBean;
 import jo.ttg.beans.URIBean;
 import jo.ttg.beans.mw.MainWorldBean;
+import jo.ttg.beans.sec.SectorBean;
 import jo.util.beans.Bean;
 
 public class SubSectorBean extends Bean implements PropertiesBean, URIBean
 {
+    // utilities
+    
     public String toString()
     {
         return mName;
     }
     
+    // utilities
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (obj instanceof SectorBean)
+            return getURI().equals(((SectorBean)obj).getURI());
+        return super.equals(obj);
+    }
+
     // Name
     private java.lang.String mName;
     public java.lang.String getName()

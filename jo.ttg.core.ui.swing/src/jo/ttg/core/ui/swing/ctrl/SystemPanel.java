@@ -18,7 +18,9 @@ import javax.swing.tree.TreePath;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.sys.BodyBean;
+import jo.ttg.core.ui.swing.ctrl.body.BodyPanel;
 import jo.ttg.gen.IGenScheme;
+import jo.ttg.logic.gen.SchemeLogic;
 
 /**
  * @author jjaquinta
@@ -35,6 +37,11 @@ public class SystemPanel extends JPanel
 
     private SystemTree              mTree;
     private BodyPanel               mBody;
+
+    public SystemPanel()
+    {
+        this(SchemeLogic.getDefaultScheme());
+    }
 
     public SystemPanel(IGenScheme scheme)
     {

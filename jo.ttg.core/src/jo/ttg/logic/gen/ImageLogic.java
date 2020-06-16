@@ -15,9 +15,22 @@ import jo.ttg.logic.sec.SectorLogic;
 public class ImageLogic
 {
 	private static Map<OrdBean,BufferedImage> mSubImageCache = new HashMap<OrdBean,BufferedImage>();
+    private static BufferedImage mSubEmptyCache = null;
 	
 	public static BufferedImage makeImage(SubSectorBean sub)
 	{
+        if (sub == null)
+        {
+            if (mSubEmptyCache == null)
+            {
+                BufferedImage image = new BufferedImage(24, 30, BufferedImage.TYPE_BYTE_GRAY);
+                Graphics g = image.createGraphics();
+                g.setColor(Color.black);
+                g.fillRect(0, 0, 24, 30);
+                mSubEmptyCache = image;
+            }
+            return mSubEmptyCache;
+        }
 		OrdBean base = sub.getUpperBound();
 		BufferedImage image = mSubImageCache.get(base);
 		if (image == null)
@@ -42,9 +55,22 @@ public class ImageLogic
 	}
 
 	private static Map<OrdBean,BufferedImage> mSecImageCache = new HashMap<OrdBean,BufferedImage>();
+    private static BufferedImage mSecEmptyCache = null;
 	
 	public static BufferedImage makeImage(SectorBean sec)
 	{
+	    if (sec == null)
+	    {
+	        if (mSecEmptyCache == null)
+	        {
+	            BufferedImage image = new BufferedImage(96, 120, BufferedImage.TYPE_BYTE_GRAY);
+	            Graphics g = image.createGraphics();
+	            g.setColor(Color.black);
+	            g.fillRect(0, 0, 96, 120);
+	            mSecEmptyCache = image;
+	        }
+	        return mSecEmptyCache;
+	    }
 		OrdBean base = sec.getUpperBound();
 		BufferedImage image = mSecImageCache.get(base);
 		if (image == null)

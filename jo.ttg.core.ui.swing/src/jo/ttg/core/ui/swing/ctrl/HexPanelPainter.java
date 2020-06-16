@@ -25,14 +25,14 @@ import jo.ttg.logic.mw.MainWorldLogic;
  */
 public class HexPanelPainter
 {
-	protected HexPanel	mPanel;
+	protected IHexPanel	mPanel;
 	
 	protected int		mHexSide;
 	protected int		mHexShortSide;
 	protected int		mHexLongSide;
 	protected Font		mNameFont;
 	
-	public HexPanelPainter(HexPanel panel)
+	public HexPanelPainter(IHexPanel panel)
 	{
 		mPanel = panel;
 	}
@@ -187,16 +187,16 @@ public class HexPanelPainter
 	{
 		switch (mode)
 		{
-			case HexPanel.M_NORM:
+			case IHexPanel.M_NORM:
 				g.setColor(mPanel.getForeColor());
 				break;
-			case HexPanel.M_FOCUSED:
+			case IHexPanel.M_FOCUSED:
 				g.setColor(mPanel.getFocusedColor());
 				break;
-			case HexPanel.M_DISABLED:
+			case IHexPanel.M_DISABLED:
 				g.setColor(mPanel.getDisabledColor());
 				break;
-			case HexPanel.M_BACK:
+			case IHexPanel.M_BACK:
 				g.setColor(mPanel.getBackground());
 				break;
 		}
@@ -206,16 +206,16 @@ public class HexPanelPainter
 	{
 		switch (mode)
 		{
-			case HexPanel.M_NORM:
+			case IHexPanel.M_NORM:
 				g.setColor(mPanel.getUnfocusedBackColor());
 				break;
-			case HexPanel.M_FOCUSED:
+			case IHexPanel.M_FOCUSED:
 				g.setColor(mPanel.getFocusedBackColor());
 				break;
-			case HexPanel.M_DISABLED:
+			case IHexPanel.M_DISABLED:
 				g.setColor(mPanel.getDisabledBackColor());
 				break;
-			case HexPanel.M_BACK:
+			case IHexPanel.M_BACK:
 				g.setColor(mPanel.getBackground());
 				break;
 		}
@@ -223,7 +223,7 @@ public class HexPanelPainter
 	/**
 	 * @return
 	 */
-	public HexPanel getPanel()
+	public IHexPanel getPanel()
 	{
 		return mPanel;
 	}
@@ -231,7 +231,7 @@ public class HexPanelPainter
 	/**
 	 * @param panel
 	 */
-	public void setPanel(HexPanel panel)
+	public void setPanel(IHexPanel panel)
 	{
 		mPanel = panel;
 	}

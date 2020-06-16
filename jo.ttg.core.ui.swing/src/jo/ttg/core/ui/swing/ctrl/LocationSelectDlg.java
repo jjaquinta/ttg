@@ -24,7 +24,10 @@ import jo.ttg.beans.mw.MainWorldBean;
 import jo.ttg.beans.sec.SectorBean;
 import jo.ttg.beans.sub.SubSectorBean;
 import jo.ttg.beans.sys.BodyBean;
-import jo.ttg.gen.IGenScheme;
+import jo.ttg.logic.gen.SchemeLogic;
+import jo.ttg.logic.mw.MainWorldLogic;
+import jo.ttg.logic.sec.SectorLogic;
+import jo.ttg.logic.sub.SubSectorLogic;
 
 /**
  * @author jjaquinta
@@ -40,7 +43,6 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 	public static final int	HEX = 3;
 	public static final int	SYS = 4;
 	
-	private IGenScheme	mScheme;
 	private int 		mLocationType;
 	private String		mLocationURI;
 	private URIBean		mLocationObj;
@@ -55,7 +57,7 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 	
 	private CardLayout		mLayout;
 	private JPanel			mClient;
-	private SubsectorField	mSecSelect;
+	private SubSectorField	mSecSelect;
 	private HexField		mSubSelect;
 	private HexField		mHexSelect;
 	private SystemPanel		mSysSelect;
@@ -63,10 +65,9 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 	private static final String[] mZoomNames =
 		{ "sec", "sub", "hex", "sys" };
 	
-	public LocationSelectDlg(JFrame frame, IGenScheme scheme)
+	public LocationSelectDlg(JFrame frame)
 	{
 		super(frame, "Select Location", true);
-		mScheme = scheme;
 		mAccepted = false;
 		initInstantiate();
 		initLink();
@@ -85,11 +86,11 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 		mZoomIn = new JButton("Zoom In");
 		mZoomOut = new JButton("Zoom Out");
 		
-		mSysSelect = new SystemPanel(mScheme);
+		mSysSelect = new SystemPanel();
 		mSysSelect.setForeground(Color.YELLOW);
 		mSysSelect.setBackground(Color.BLACK);
 
-		mHexSelect = new HexField(mScheme);
+		mHexSelect = new HexField();
 		mHexSelect.setHexesHigh(10);
 		mHexSelect.setHexesWide(8);
 		mHexSelect.setForeColor(Color.YELLOW);
@@ -97,7 +98,7 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 		mHexSelect.setFocusedColor(Color.WHITE);
 		mHexSelect.setDisabledColor(Color.LIGHT_GRAY);
 
-		mSubSelect = new HexField(mScheme);
+		mSubSelect = new HexField();
 		mSubSelect.setHexesHigh(40);
 		mSubSelect.setHexesWide(32);
 		mSubSelect.setHexSide(8);
@@ -106,7 +107,7 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 		mSubSelect.setFocusedColor(Color.WHITE);
 		mSubSelect.setDisabledColor(Color.LIGHT_GRAY);
 		
-		mSecSelect = new SubsectorField(mScheme);
+		mSecSelect = new SubSectorField();
 		
 		mLayout = new CardLayout();
 		mClient = new JPanel();
@@ -285,38 +286,38 @@ public class LocationSelectDlg extends JDialog implements TTGActionListener
 			mHexSelect.setFocus(o);
 			mSubSelect.setFocus(o);
 			OrdBean seco = new OrdBean(o);
-			mScheme.nearestSec(seco);
-			sec = mScheme.getGeneratorSector().generateSector(seco);
+			SchemeLogic.getDefaultScheme().nearestSec(seco);
+			sec = SectorLogic.getFromOrds(seco);
 		}
 		else if (mLocationObj instanceof MainWorldBean)
 		{
 			mw = (MainWorldBean)mLocationObj;
 			OrdBean o = mw.getOrds();
 			OrdBean subo = new OrdBean(o);
-			mScheme.nearestSub(subo);
+			SchemeLogic.getDefaultScheme().nearestSub(subo);
 			mSecSelect.setSelected(subo);
-			sub = mScheme.getGeneratorSubSector().generateSubSector(subo);
+			sub = SubSectorLogic.getFromOrds(subo);
 			mSubSelect.setFocus(o);
 			mHexSelect.setFocus(o);
 			OrdBean seco = new OrdBean(o);
-			mScheme.nearestSec(seco);
-			sec = mScheme.getGeneratorSector().generateSector(seco);
+			SchemeLogic.getDefaultScheme().nearestSec(seco);
+			sec = SectorLogic.getFromOrds(seco);
 			mSysSelect.setOrigin(o);
 		}
 		else if (mLocationObj instanceof BodyBean)
 		{
 			body = (BodyBean)mLocationObj;
 			OrdBean o = body.getSystem().getOrds();
-			mw = mScheme.getGeneratorMainWorld().generateMainWorld(o);
+			mw = MainWorldLogic.getFromOrds(o);
 			OrdBean subo = new OrdBean(o);
-			mScheme.nearestSub(subo);
+			SchemeLogic.getDefaultScheme().nearestSub(subo);
 			mSecSelect.setSelected(subo);
-			sub = mScheme.getGeneratorSubSector().generateSubSector(subo);
+			sub = SubSectorLogic.getFromOrds(subo);
 			mSubSelect.setFocus(o);
 			mHexSelect.setFocus(o);
 			OrdBean seco = new OrdBean(o);
-			mScheme.nearestSec(seco);
-			sec = mScheme.getGeneratorSector().generateSector(seco);
+			SchemeLogic.getDefaultScheme().nearestSec(seco);
+			sec = SectorLogic.getFromOrds(seco);
 			mSysSelect.setOrigin(o);
 		}
 		StringBuffer sb = new StringBuffer();
