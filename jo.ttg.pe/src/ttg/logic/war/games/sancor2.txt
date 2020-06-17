@@ -1,0 +1,137 @@
+# This is the default game
+# The two sides play out the second Santry and Cordova war
+# prior to Imperial intervention.
+Name = Second Santry and Cordova War
+Author = "Jo Grant" <jo@111george.com>
+Description = There was an uneasy truce after the first (Civil)
+Description = Santry and Cordova war. As the early empire expanded
+Description = word reached these pocket empires of the new power.
+Description = Tensions rose, partly on the understanding that when
+Description = the new power came they would enforce the status quo.
+Description = This lead to a pre-emptive war where each tried to
+Description = maximize their holdings before formal contact.
+
+# The bounds of the game can be determined by ordinates,
+# worlds, subsectors or sectors. In the case of sectors
+# or subsectors the appropriate upper or lower bound is
+# taken
+UpperBoundURI = ords://[140,73,0]
+LowerBoundURI = ords://[151,81,0]
+AllowConvertNeutral = false
+AllowIntrinsicDefense = true
+GameLength = 12
+
+Override = mw://Core Sector/1334,Anshar BACA000-B
+Override = mw://Core Sector/1335,Umkashuu C354999-9
+Override = mw://Core Sector/1336,Kuka EA97000-2
+Override = mw://Core Sector/1338,Rid C695133-8
+Override = mw://Core Sector/1434,Diirmuu D755000-8
+Override = mw://Core Sector/1436,Arvlesaaish E6B0000-5
+Override = mw://Core Sector/1437,Mishaa B9A8100-7
+Override = mw://Core Sector/1440,Minduun Sammad A58A411-C
+Override = mw://Core Sector/1534,Gid B76A33-B
+Override = mw://Core Sector/1536,Shueshlar D435266-7
+Override = mw://Core Sector/1538,Uurme A343211-9
+Override = mw://Core Sector/1539,Dimanaam A583355-C
+Override = mw://Core Sector/1635,Khasherliguu D627599-7
+Override = mw://Core Sector/1638,Malaaash E759122-3
+Override = mw://Massilia Sector/1601,Suttas Belts E000200-A
+Override = mw://Core Sector/1736,Santry B4208AA-C
+Override = mw://Core Sector/1737,Irkhar Kirk C374466-8
+Override = mw://Core Sector/1738,Ginna C8A6000-8
+Override = mw://Core Sector/1739,Enshuuar B6A6300-8
+Override = mw://Core Sector/1836,Cordova C3409BB-B
+Override = mw://Core Sector/1837,Anlumir BA9A355-B
+Override = mw://Core Sector/1838,Iraddii E989366-A
+Override = mw://Core Sector/1839,Rili Aash B782411-7
+Override = mw://Core Sector/1840,Saruumdiiush E743655-3
+Override = mw://Core Sector/1934,Zishma Kha C886233-5
+Override = mw://Core Sector/1938,Keshi B566200-7
+Override = mw://Core Sector/1940,Nii B548A88-8
+Override = mw://Core Sector/2034,Daindkhara C324355-B
+Override = mw://Core Sector/2036,Uundi Zi A410977-C
+Override = mw://Core Sector/2037,Daaud Urle C333344-9
+Override = mw://Core Sector/2038,Gimmi Uussha C476333-A
+Override = mw://Core Sector/2040,Gikhii Iis A240511-8
+Override = mw://Massilia Sector/2001/Marfa E20079D-8
+
+# Victory Points for this game are determined solely by 
+# worlds posessed.
+# Variables that can be used in Victory Point formulas
+# for worlds are NumGiants, NumBelts, RedZone, AmberZone
+# GreenZone, NavalBase, ScoutBase, Port, Size, Atmos
+# Hydro, Pop, Gov, Law, Tech
+# Variables that can be used in Victory Point formulas
+# for ships are Damaged, Attack, Defense, Capacity
+# Carrying, AdditionalCapacity, Size, Jump
+VPHaveWorld = Port*Pop
+VPGainWorld =
+VPLoseWorld =
+VPHaveShip =
+VPLoseShip =
+
+# Member worlds can be URIs pointing to worlds, sectors
+# or subsectors. In the case of sectors or subsectors
+# all the contained worlds will be included.
+
+Side1Name = Santry
+Side1VP = 64
+Side1WorldURI = mw://Core Sector/Ch'naar/Khasherliguu
+Side1WorldURI = mw://Core Sector/Dunea/Santry
+Side1WorldURI = mw://Core Sector/Ch'naar/Arvlesaaish
+Side1WorldURI = mw://Core Sector/Ch'naar/Mishaa
+Side1WorldURI = mw://Core Sector/Ch'naar/Uurme
+Side1WorldURI = mw://Core Sector/Ch'naar/Shueshlar
+Side1WorldURI = mw://Core Sector/Ch'naar/Malaaash
+Side1WorldURI = mw://Core Sector/Dunea/Enshuuar
+Side1WorldURI = mw://Core Sector/Dunea/Ginna
+Side1WorldURI = mw://Core Sector/Dunea/Irkhar Kirk
+
+Side2Name = Cordova
+Side2VP = 30
+Side2WorldURI = mw://Core Sector/Dunea/Nig
+Side2WorldURI = mw://Core Sector/Dunea/Anlumir
+Side2WorldURI = mw://Core Sector/Dunea/Rili Aash
+Side2WorldURI = mw://Core Sector/Dunea/Nii
+Side2WorldURI = mw://Core Sector/Dunea/Keshi
+Side2WorldURI = mw://Core Sector/Dunea/Gimmi Uussha
+Side2WorldURI = mw://Core Sector/Dunea/Gikhii Iis
+Side2WorldURI = mw://Core Sector/Dunea/Cordova
+Side2WorldURI = mw://Core Sector/Dunea/Sidzer
+Side2WorldURI = mw://Core Sector/Dunea/Iraddii
+
+# Ships are specified by name,attack,defense,capacity,jump
+
+Side1Ship = Crimson Boar,6,6,0,1
+Side1Ship = Red Lance,6,6,0,1
+Side1Ship = Blood Tiger,6,6,0,1
+Side1Ship = Blood Tears,6,6,0,1
+Side1Ship = Aoife,4,4,0,1
+Side1Ship = Aonghus,4,4,0,1
+Side1Ship = Aodh,4,4,0,1
+Side1Ship = Aodhamair,4,4,0,1
+Side1Ship = Clíodhna,2,2,0,1
+Side1Ship = Cian,2,2,0,1
+Side1Ship = Ceara,2,2,0,1
+Side1Ship = Cathal,2,2,0,1
+
+Side2Ship = David,0,0,12,1
+Side2Ship = Diego,0,0,12,1
+Side2Ship = José,0,0,12,1
+Side2Ship = Filip,0,0,12,1
+Side2Ship = Guillermo,0,0,12,1
+Side2Ship = Tomás,0,0,12,1
+Side2Ship = Sebastián,0,0,12,1
+Side2Ship = Mateo,0,0,12,1
+Side2Ship = Inés,6,6,0,0
+Side2Ship = Helena,6,6,0,0
+Side2Ship = Alejandra,6,6,0,0
+Side2Ship = Bárbara,6,6,0,0
+Side2Ship = Carla,4,4,0,0
+Side2Ship = Juliana,4,4,0,0
+Side2Ship = Cristina,4,4,0,0
+Side2Ship = Sofia,4,4,0,0
+Side2Ship = María,2,2,0,0
+Side2Ship = Natalia,2,2,0,0
+Side2Ship = Magdalena,2,2,0,0
+Side2Ship = Dorotea,2,2,0,0

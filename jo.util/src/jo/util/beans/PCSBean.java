@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 import jo.util.utils.BeanUtils;
 
@@ -171,5 +172,16 @@ public class PCSBean extends Bean
     public void setSuspendNotifications(boolean suspendNotifications)
     {
         mSuspendNotifications = suspendNotifications;
+    }
+    
+    public void listen(String prop, final BiConsumer<Object, Object> op)
+    {
+        addPropertyChangeListener(new PropertyChangeListener() {
+            @Override
+            public void propertyChange(PropertyChangeEvent evt)
+            {
+                op.accept(evt.getOldValue(), evt.getNewValue());
+            }
+        });
     }
 }

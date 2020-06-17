@@ -23,7 +23,7 @@ import jo.ttg.logic.mw.MainWorldLogic;
  *         To change the template for this generated type comment go to
  *         Window>Preferences>Java>Code Generation>Code and Comments
  */
-public class HexField extends HexPanel
+public class HexField extends HexPanel implements ITTGActioner
 {
     private int                     mRadius;
 

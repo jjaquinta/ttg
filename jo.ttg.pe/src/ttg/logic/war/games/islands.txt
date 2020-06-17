@@ -1,0 +1,164 @@
+null# This is the default game
+# The two sides play out the second Santry and Cordova war
+# prior to Imperial intervention.
+Name = Islands War
+Author = "Jo Grant" <jo@111george.com>
+Description = The canonical Trillion Credit Squadron scenario.
+Description = Rather simplifed for this version.
+
+# The bounds of the game can be determined by ordinates,
+# worlds, subsectors or sectors. In the case of sectors
+# or subsectors the appropriate upper or lower bound is
+# taken
+UpperBoundURI = sub://Reft Sector/New Islands
+LowerBoundURI = sub://Reft Sector/Old Islands
+AllowConvertNeutral = true
+AllowOmniscentSensors = false
+AllowFleetReconfiguration = true
+AllowConstruction = true
+GameLength = 18
+
+# Victory Points for this game are determined solely by
+# worlds posessed.
+# Variables that can be used in Victory Point formulas
+# for worlds are NumGiants, NumBelts, RedZone, AmberZone
+# GreenZone, NavalBase, ScoutBase, Port, Size, Atmos
+# Hydro, Pop, Gov, Law, Tech
+# Variables that can be used in Victory Point formulas
+# for ships are Damaged, Attack, Defense, Capacity
+# Carrying, AdditionalCapacity, Size, Jump
+VPHaveWorld = Port*Pop
+VPGainWorld =
+VPLoseWorld =
+VPHaveShip = 
+VPLoseShip =
+
+# Member worlds can be URIs pointing to worlds, sectors
+# or subsectors. In the case of sectors or subsectors
+# all the contained worlds will be included.
+
+Side1Name = New Colchis
+Side1VP = 0
+Side1WorldURI = mw://Reft Sector/New Islands/New Colchis
+
+Side2Name = Neubayern
+Side2VP = 0
+Side2WorldURI = mw://Reft Sector/Old Islands/Neubayern
+
+Side3Name = Amondiage
+Side3VP = 0
+Side3WorldURI = mw://Reft Sector/Old Islands/Amondiage
+
+Side4Name = New Home
+Side4VP = 0
+Side4WorldURI = mw://Reft Sector/Old Islands/New Home
+
+Side5Name = Serendip Belt
+Side5VP = 0
+Side5WorldURI = mw://Reft Sector/New Islands/Serendip Belt
+
+# Ships are specified by name,attack,defense,capacity,jump
+
+Side1Ship = Battleship 101,6,6,0,2
+Side1Ship = Battleship 102,6,6,0,2
+Side1Ship = Battleship 103,6,6,0,2
+Side1Ship = Battleship 104,6,6,0,2
+Side1Ship = Cruiser 201,4,4,0,2
+Side1Ship = Cruiser 202,4,4,0,2
+Side1Ship = Cruiser 203,4,4,0,2
+Side1Ship = Cruiser 204,4,4,0,2
+Side1Ship = Destroyer 301,2,2,0,2
+Side1Ship = Destroyer 302,2,2,0,2
+Side1Ship = Destroyer 303,2,2,0,2
+Side1Ship = Destroyer 304,2,2,0,2
+
+Side2Ship = Battleship 101,3,6,3.0,2
+Side2Ship = Battleship 102,3,6,3.0,2
+Side2Ship = Battleship 103,3,6,3.0,2
+Side2Ship = Battleship 104,3,6,3.0,2
+Side2Ship = Cruiser 201,2,4,2.0,2
+Side2Ship = Cruiser 202,2,4,2.0,2
+Side2Ship = Cruiser 203,2,4,2.0,2
+Side2Ship = Cruiser 204,2,4,2.0,2
+Side2Ship = Destroyer 301,1,2,1.0,2
+Side2Ship = Destroyer 302,1,2,1.0,2
+Side2Ship = Destroyer 303,1,2,1.0,2
+Side2Ship = Destroyer 304,1,2,1.0,2
+Side2Ship = Fighter 401,1,0,0,0
+Side2Ship = Fighter 402,1,0,0,0
+Side2Ship = Fighter 403,1,0,0,0
+Side2Ship = Fighter 404,1,0,0,0
+Side2Ship = Fighter 405,1,0,0,0
+Side2Ship = Fighter 406,1,0,0,0
+Side2Ship = Fighter 407,1,0,0,0
+Side2Ship = Fighter 408,1,0,0,0
+Side2Ship = Fighter 409,1,0,0,0
+Side2Ship = Fighter 410,1,0,0,0
+Side2Ship = Fighter 411,1,0,0,0
+Side2Ship = Fighter 412,1,0,0,0
+Side2Ship = Fighter 413,1,0,0,0
+Side2Ship = Fighter 414,1,0,0,0
+Side2Ship = Fighter 415,1,0,0,0
+Side2Ship = Fighter 416,1,0,0,0
+Side2Ship = Fighter 417,1,0,0,0
+Side2Ship = Fighter 418,1,0,0,0
+Side2Ship = Fighter 419,1,0,0,0
+Side2Ship = Fighter 420,1,0,0,0
+Side2Ship = Fighter 421,1,0,0,0
+Side2Ship = Fighter 422,1,0,0,0
+Side2Ship = Fighter 423,1,0,0,0
+Side2Ship = Fighter 424,1,0,0,0
+
+Side3Ship = Battleship 101,6,6,0,2
+Side3Ship = Battleship 102,6,6,0,2
+Side3Ship = Battleship 103,6,6,0,2
+Side3Ship = Battleship 104,6,6,0,2
+Side3Ship = Cruiser 201,4,4,0,2
+Side3Ship = Cruiser 202,4,4,0,2
+Side3Ship = Cruiser 203,4,4,0,2
+Side3Ship = Cruiser 204,4,4,0,2
+Side3Ship = Destroyer 301,2,2,0,2
+Side3Ship = Destroyer 302,2,2,0,2
+Side3Ship = Destroyer 303,2,2,0,2
+Side3Ship = Destroyer 304,2,2,0,2
+
+Side4Ship = Destroyer 301,2,2,0,2
+Side4Ship = Destroyer 302,2,2,0,2
+Side4Ship = Destroyer 303,2,2,0,2
+Side4Ship = Destroyer 304,2,2,0,2
+Side4Ship = Destroyer 305,2,2,0,2
+Side4Ship = Destroyer 306,2,2,0,2
+Side4Ship = Destroyer 307,2,2,0,2
+Side4Ship = Destroyer 308,2,2,0,2
+Side4Ship = Destroyer 309,2,2,0,2
+Side4Ship = Destroyer 310,2,2,0,2
+Side4Ship = Destroyer 311,2,2,0,2
+Side4Ship = Destroyer 312,2,2,0,2
+Side4Ship = Destroyer 313,2,2,0,2
+Side4Ship = Destroyer 314,2,2,0,2
+Side4Ship = Destroyer 315,2,2,0,2
+Side4Ship = Destroyer 316,2,2,0,2
+Side4Ship = Destroyer 317,2,2,0,2
+Side4Ship = Destroyer 318,2,2,0,2
+Side4Ship = Destroyer 319,2,2,0,2
+Side4Ship = Destroyer 320,2,2,0,2
+Side4Ship = Destroyer 321,2,2,0,2
+Side4Ship = Destroyer 322,2,2,0,2
+Side4Ship = Destroyer 323,2,2,0,2
+Side4Ship = Destroyer 324,2,2,0,2
+
+Side5Ship = Battleship 101,5,6,0.2,2
+Side5Ship = Battleship 102,5,6,0.2,2
+Side5Ship = Battleship 103,5,6,0.2,2
+Side5Ship = Battleship 104,5,6,0.2,2
+Side5Ship = Battleship 104,5,6,0.2,2
+Side5Ship = Cruiser 201,4,3,0.2,2
+Side5Ship = Cruiser 202,4,3,0.2,2
+Side5Ship = Cruiser 203,4,3,0.2,2
+Side5Ship = Cruiser 204,4,3,0.2,2
+Side5Ship = Cruiser 205,4,3,0.2,2
+Side5Ship = Destroyer 301,2,2,0.2,2
+Side5Ship = Destroyer 302,2,2,0.2,2
+Side5Ship = Destroyer 303,2,2,0.2,2
+Side5Ship = Destroyer 304,2,2,0.2,2
+Side5Ship = Destroyer 304,2,2,0.2,2

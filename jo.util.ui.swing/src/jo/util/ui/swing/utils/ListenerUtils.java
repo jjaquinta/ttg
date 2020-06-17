@@ -10,11 +10,14 @@ import java.util.function.Consumer;
 
 import javax.swing.AbstractButton;
 import javax.swing.JComboBox;
+import javax.swing.JList;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.text.JTextComponent;
@@ -116,6 +119,17 @@ public class ListenerUtils
         obj.addTreeSelectionListener(new TreeSelectionListener() {
             @Override
             public void valueChanged(TreeSelectionEvent e)
+            {
+                action.accept(e);
+            }
+        });
+    }
+    
+    public static void change(JList<?> obj, final Consumer<ListSelectionEvent> action)
+    {
+        obj.addListSelectionListener(new ListSelectionListener() {           
+            @Override
+            public void valueChanged(ListSelectionEvent e)
             {
                 action.accept(e);
             }
