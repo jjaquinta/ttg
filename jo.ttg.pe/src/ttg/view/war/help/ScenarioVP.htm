@@ -1,0 +1,102 @@
+<html>
+  <body>
+    <h1>Scenario Victory Points</h1>
+    <p>
+      This group of keys define how the game is scored.
+      Each of these settings is an equasion that is used to calculate
+      victory points at certain times.
+      Most mathematical expressions are accepted.
+      Variables can be used in these expressions pertaining either to 
+      worlds or ships.
+      Different variables are available for each time and are contained
+      in tables at the end of this page.
+      There are two general reccomended modes of distributing victory points.
+      Both can be used to achieve the same ends, but in different ways.
+      Or combined in some interesting method of calucation.
+    </p>
+    <p>
+      Mode one: <i>posession</i>.
+      Set the values of either or both VPHave keys.
+      Victory Points are then measured based on what someone currently has
+      or posesses.
+    </p>
+    <p>
+      Mode two: <i>aquisition</i>.
+      Set the values of either or both VPGain and VPLose keys.
+      Victory Points are then measured based on what someone gains or loses.
+    </p>
+    <p>
+      <b>VPHaveWorld</b>
+      This specifies the victory points for having a world.
+      When a world changes ownership this value is removed from the
+      lower and awarded to the winner.
+      It should only appear once.
+    </p>
+    <p>
+      <b>VPGainWorld</b>
+      This specifies the victory points for gaining a world.
+      When a world changes ownership this value is awarded to the winner.
+      It should only appear once.
+    </p>
+    <p>
+      <b>VPLoseWorld</b>
+      This specifies the victory points for losing a world.
+      When a world changes ownership this value is removed from the loser.
+      It should only appear once.
+    </p>
+    <p>
+      <b>VPHaveShip</b>
+      This specifies the victory points for having a ship.
+      They are assessed at the begining of the game. Each time
+      a ship is lost this value is removed from the loser.
+      It should only appear once.
+    </p>
+    <p>
+      <b>VPGainShip</b>
+      This specifies the victory points for gaining a ship.
+      If the game supports ship construction, this value is awarded
+      anyone who makes a ship.
+      It should only appear once.
+    </p>
+    <p>
+      <b>VPLoseShip</b>
+      This specifies the victory points for losing a ship.
+      When a ship is destroyed in combat, this value is removed from the loser.
+      It should only appear once.
+    </p>
+    <p>
+      <table BORDER CELLSPACING='0' CELLPADDING='3'>
+      <tr><td colspan='2'>Variables for World Equasions</td></tr>
+      <tr><td>Variable</td><td>Value</td></tr>
+      <tr><td>Port</td><td>A=5,B=4,...</td></tr>
+      <tr><td>Size</td><td>UPP Value</td></tr>
+      <tr><td>Atmos</td><td>UPP Value</td></tr>
+      <tr><td>Hydro</td><td>UPP Value</td></tr>
+      <tr><td>Pop</td><td>UPP Value</td></tr>
+      <tr><td>Gov</td><td>UPP Value</td></tr>
+      <tr><td>Law</td><td>UPP Value</td></tr>
+      <tr><td>Tech</td><td>UPP Value</td></tr>
+      <tr><td>NumGiants</td><td>Number of Gas Giants</td></tr>
+      <tr><td>NumBelts</td><td>Number of Planetoid Belts</td></tr>
+      <tr><td>RedZone</td><td>1 = red zone, 0 = other</td></tr>
+      <tr><td>AmberZone</td><td>1 = amber zone, 0 = other</td></tr>
+      <tr><td>GreenZone</td><td>1 = green zone, 0 = other</td></tr>
+      <tr><td>NavalBase</td><td>1 = naval base present, 0 = none</td></tr>
+      <tr><td>ScoutBase</td><td>1 = scout base present, 0 = none</td></tr>
+      </table>
+    </p>
+    <p>
+      <table BORDER CELLSPACING='0' CELLPADDING='3'>
+      <tr><td colspan='2'>Variables for Ship Equasions</td></tr>
+      <tr><td>Variable</td><td>Value</td></tr>
+      <tr><td>Attack</td><td>Attack Value</td></tr>
+      <tr><td>Defense</td><td>Defense Value</td></tr>
+      <tr><td>Jump</td><td>Jump Value</td></tr>
+      <tr><td>Capacity</td><td>Ship Capacity</td></tr>
+      <tr><td>Carrying</td><td>Currently Carrying</td></tr>
+      <tr><td>Size</td><td>Ship Size</td></tr>
+      <tr><td>Cost</td><td>Ship Cost</td></tr>
+      </table>
+    </p>
+  </body>
+</html>

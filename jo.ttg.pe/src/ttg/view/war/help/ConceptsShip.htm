@@ -1,0 +1,84 @@
+<html>
+  <body>
+    <h1>Ship Concepts</h1>
+    <p>
+      Starship are the weapon with which the wars in Pocket Empires are fought.
+      There are rather a large variety of ships.
+      They are typically classed into battleships, battle riders, carriers,
+      system defense boats, scouts and fights.
+      But these are just semantic differences; ways of interpreting different
+      design strategies.
+    </p>
+    <ul>
+      <li><a href="#AttackFactors">Attack Factors</a></li>
+      <li><a href="#DefenseFactors">Defense Factors</a></li>
+      <li><a href="#Jump">Jump</a></li>
+      <li><a href="#Capacity">Capacity</a></li>
+      <li><a href="#Size">Size</a></li>
+      <li><a href="#Cost">Cost</a></li>
+    </ul>
+    <a name="AttackFactors"></a>
+    <h2>Attack Factors</h2>
+    <p>
+      This is how strong your ship is at attacking.
+      It is an abstract representation of the offensive armament of the ship.
+      When combat occurs, the attack factors of all the attacking ships are added
+      up to determine the odds of the attack.
+    </p>
+    <a name="DefenseFactors"></a>
+    <h2>Defense Factors</h2>
+    <p>
+      This is how strong your ship is at defense.
+      It is an abstract representation of the maneuverability and armour of the ship.
+      When combat occurs, the defense factor of the defendings ship is compared with
+      the attack factors of the attacking ships
+      to determine the odds of the attack.
+    </p>
+    <a name="Jump"></a>
+    <h2>Jump</h2>
+    <p>
+      The jump rating says how many parsecs (hexes) a ship may jump in a single turn.
+      Multiple jumps may be made if the ship has sufficient fuel, but no jump larger than
+      the jump rating may be made at any one time.
+    </p>
+    <a name="Capacity"></a>
+    <h2>Capacity</h2>
+    <p>
+      Capacity is the amount of storage space a ship has.
+      This space can be used for either fuel storage, or for carrying other craft.
+      Typically extra fuel space is alloted to give ships with a lower jump rating further (although slower)
+      range.
+      Extra hanger space is used to carry ships with no jump from system to system or to
+      store fighters to add to a ships capabilities.
+      Capacity is measured in the same arbitrary units as size.
+      For comparison purposes one unit can be considered one ton of starship.
+    </p>
+    <a name="Size"></a>
+    <h2>Size</h2>
+    <p>
+      The size of your ship depends on its Attack, Defense, Jump and Capacity ratings.
+      Each Attack or Defense factor is 100 units in size.
+      Capacity is the rated units in size.
+      Although in the designer capacity is often described as the amout of hanger
+      space or number of jump-1 fuel amounts.
+      The jump drive is different. 
+      It takes up a varying amount, partially dependent on
+      the size of the rest of the ship.
+      The formula is 1% + 11% per jump rating.
+      This includes the 10% per jump range required for fuel.
+      I.e. your jump drive automatically contains enough fuel for one
+      jump at its maximum range.
+      Additional fuel space make be allocated under capacity.
+    </p>
+    <a name="Cost"></a>
+    <h2>Cost</h2>
+    <p>
+      The cost of the ship is in arbitrary units.
+      For simplicty this is equal to the size of the ship minus the capacity.
+      I.e. you don't pay for hanger space.
+      You do, however, pay for the basic range worth of fuel space! 
+      This is the reflect the high cost of the jump drives themselves, even though
+      they take a small amount of space.
+    </p>
+  </body>
+</html>

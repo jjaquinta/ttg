@@ -1,0 +1,293 @@
+<html>
+  <body>
+    <h1>World Concepts</h1>
+    <p>
+      Worlds are the geography of Pocket Empires.
+      They are fought over and owned by the fighting fleets.
+      Ultimately, in most scenarios, ownership determines the winning side.
+    </p>
+    <ul>
+      <li>
+        <a href="#UPP">Universal Planetary Profile</a>
+        <ul>
+          <li><a href="#Starport">Starport</a></li>
+          <li><a href="#Size">Size</a></li>
+          <li><a href="#Atmosphere">Atmosphere</a></li>
+          <li><a href="#Hydrosphere">Hydrosphere</a></li>
+          <li><a href="#Population">Population</a></li>
+          <li><a href="#Government">Government Type</a></li>
+          <li><a href="#Law">Law Level</a></li>
+          <li><a href="#Technology">Technology Level</a></li>
+        </ul>
+      </li>
+      <li><a href="#Side">Side</a></li>
+      <li><a href="#Population">Population</a></li>
+      <li><a href="#IntrinsicDefense">IntrinsicDefense</a></li>
+      <li><a href="#FuelPoints">Fuel Points</a></li>
+      <li><a href="#Repairs">Repairs</a></li>
+      <li><a href="#ResourceGeneration">Resource Generation</a></li>
+      <li><a href="#VP">Victory Points</a></li>
+    </ul>
+    <a name="UPP"></a>
+    <h2>Universal Planetary Profile</h2>
+    <p>
+      The Imperial Scouts use a standard one line planet/system description 
+      called the Universal Planetary Profile (UPP for short) to code the 
+      qualities and characteristics of worlds. 
+      The UPP consists of single letters or digits to indicate starport 
+      or <a href="#Starport">spaceport</a>, six basic characteristics 
+      (<a href="#Size">size</a>, 
+      <a href="#Atmosphere">atmosphere</a>, 
+      <a href="#Hydrosphere">hydrographics</a>, 
+      <a href="#Population">population</a>, 
+      <a href="#Government">government</a>, 
+      and <a href="#Law">law level</a>), 
+      and a <a href="#Technology">technological index</a>.      
+    </p>
+    <a name="Side"></a>
+    <h2>Side</h2>
+    <p>
+      Each world is either neutral, or belongs to a side.
+      In some scenarios neutral worlds remain neutral.
+      In others, they can be conquered.
+      In all games worlds owned by one side can be conquered by another side.
+      The owning side gains the benefits of being able to refuel there,
+      build ships there, and gain the resources produced there.
+    </p>
+    <a name="IntrinsicDefense"></a>
+    <h2>Intrinsic Defense</h2>
+    <p>
+      In some scenarios worlds are considered to have in intrinsic defense
+      over and above any defensive factors of guarding ships.
+      This value is equals to the <a href="#Population">population</a>.
+      An occupying force needs to have at least that many defensive factors
+      present in the system at the conclusion of battle to overcome the
+      intrinsic defense and gain ownership of the world.
+    </p>
+    <a name="Fuel Points"></a>
+    <h2>Fuel Points</h2>
+    <p>
+      Starships burn hydrogen in their jump drive to travel between starsystems.
+      They can refuel either by scooping fuel from gas giants in the system or
+      by refining the water in oceans of the main world.
+      If a system is adequately defended, ships that don't belong to the owner
+      of the system cannot refuel at that point.
+      The defense required is four defensive factors per fuel point in the system.
+      This is over and above any <a href="#IntrinsicDefense">intrinsic defense</a>
+      in the system.
+    </p>
+    <a name="Repairs"></a>
+    <h2>Repairs</h2>
+    <p>
+	  Starports can repair ships as follows:
+      <table border='1'>
+        <tr><th>Port</th><th>Can Repair</th></tr>
+        <tr><td>A</td><td>Two per turn</td></tr>
+        <tr><td>B</td><td>One per turn</td></tr>
+        <tr><td>C</td><td>Two per game</td></tr>
+        <tr><td>D</td><td>One per game</td></tr>
+      </table>
+    </p>
+    <a name="ResourceGeneration"></a>
+    <h2>Resource Generation</h2>
+    <p>
+      Each world can generate resources that accumulate for the owning side.
+      The amount of resources generated depends on the scenario.
+      The default formula for resource generation is Pop*Port*2.
+    </p>
+    <a name="VP"></a>
+    <h2>Victory Points</h2>
+    <p>
+      According to formulas set in the scenario worlds can be worth a
+      number of Victory Points.
+      These are used in the end of the game to determine the winner.
+      A common formula used to determine victory points for a
+      world is &quot;Port*Pop&quot;.
+      This means the value of a world is the value of its starport (where
+      A = 5, B = 4, etc) times the Population digit of the world.
+    </p>
+    <a name="Starport"></a>
+    <h2>Starport</h2>
+    <p>
+      The starport value represents how good the facilities at this
+      world are.
+      <table border="1">
+        <tr><th>A</th><td>Excellent Starport</td></tr>
+        <tr><th>B</th><td>Good Starport</td></tr>
+        <tr><th>C</th><td>Routine Starport</td></tr>
+        <tr><th>D</th><td>Poor Starport</td></tr>
+        <tr><th>E</th><td>Frontier Starport</td></tr>
+        <tr><th>F</th><td>Good Spaceport</td></tr>
+        <tr><th>G</th><td>Poor Spaceport</td></tr>
+        <tr><th>H</th><td>Primitive Spaceport</td></tr>
+        <tr><th>X</th><td>No Starport</td></tr>
+        <tr><th>Y</th><td>No Spaceport</td></tr>
+      </table>
+    </p>
+    <a name="Size"></a>
+    <h2>Size</h2>
+    <p>
+      The size value represents how bit a planet is.
+      <table border="1">
+        <tr><th>0</th><td>Belt</td></tr>
+        <tr><th>1</th><td>Small (1600 km)</td></tr>
+        <tr><th>2</th><td>Small (Luna; 3200 km)</td></tr>
+        <tr><th>3</th><td>Small (Mercury; 4800 km)</td></tr>
+        <tr><th>4</th><td>Small (Mars; 6400 km)</td></tr>
+        <tr><th>5</th><td>Medium (8000 km)</td></tr>
+        <tr><th>6</th><td>Medium (9600 km)</td></tr>
+        <tr><th>7</th><td>Medium (11,200 km)</td></tr>
+        <tr><th>8</th><td>Large (Terra; 12,800 km)</td></tr>
+        <tr><th>9</th><td>Large (14,400 km)</td></tr>
+        <tr><th>A</th><td>Large (16,000 km)</td></tr>
+      </table>
+    </p>
+    <a name="Atmosphere"></a>
+    <h2>Atmosphere</h2>
+    <p>
+      The atmosphere value represents the type of atmosphere the planet has.
+      <table border="1">
+        <tr><th>0</th><td>Vacuum</td></tr>
+        <tr><th>1</th><td>Vacuum (trace)</td></tr>
+        <tr><th>2</th><td>Vacuum (very thin tainted)</td></tr>
+        <tr><th>3</th><td>Vacuum (very thin)</td></tr>
+        <tr><th>4</th><td>Thin (tainted)</td></tr>
+        <tr><th>5</th><td>Thin</td></tr>
+        <tr><th>6</th><td>Standard</td></tr>
+        <tr><th>7</th><td>Standard (tainted)</td></tr>
+        <tr><th>8</th><td>Dense</td></tr>
+        <tr><th>9</th><td>Dense (tainted)</td></tr>
+        <tr><th>A</th><td>Exotic</td></tr>
+        <tr><th>B</th><td>Exotic (corrosive)</td></tr>
+        <tr><th>C</th><td>Exotic (insidious)</td></tr>
+        <tr><th>D</th><td>Exotic (dense, high)</td></tr>
+        <tr><th>E</th><td>Exotic (ellipsoid)</td></tr>
+        <tr><th>F</th><td>Exotic (thin, low)</td></tr>
+      </table>
+    </p>
+    <a name="Hydrographics"></a>
+    <h2>Hydrographics</h2>
+    <p>
+      The hydrographics value represents what percentage of the planet
+      is covered with water.
+      Ships can refuel at any planet with a hydrographics of 1 or higher.
+      <table border="1">
+        <tr><th>0</th><td>Vacuum</td></tr>
+        <tr><th>1</th><td>Vacuum (trace)</td></tr>
+        <tr><th>2</th><td>Vacuum (very thin tainted)</td></tr>
+        <tr><th>3</th><td>Vacuum (very thin)</td></tr>
+        <tr><th>4</th><td>Thin (tainted)</td></tr>
+        <tr><th>5</th><td>Thin</td></tr>
+        <tr><th>6</th><td>Standard</td></tr>
+        <tr><th>7</th><td>Standard (tainted)</td></tr>
+        <tr><th>8</th><td>Dense</td></tr>
+        <tr><th>9</th><td>Dense (tainted)</td></tr>
+        <tr><th>A</th><td>Exotic</td></tr>
+        <tr><th>B</th><td>Exotic (corrosive)</td></tr>
+        <tr><th>C</th><td>Exotic (insidious)</td></tr>
+        <tr><th>D</th><td>Exotic (dense, high)</td></tr>
+        <tr><th>E</th><td>Exotic (ellipsoid)</td></tr>
+        <tr><th>F</th><td>Exotic (thin, low)</td></tr>
+      </table>
+    </p>
+    <a name="Population"></a>
+    <h2>Population</h2>
+    <p>
+      The population value represents what what order of magnitude of
+      population is present on the planet.
+      <table border="1">
+        <tr><th>0</th><td>Low (less than 10)</td></tr>
+        <tr><th>1</th><td>Low (tens)</td></tr>
+        <tr><th>2</th><td>Low (hundreds)</td></tr>
+        <tr><th>3</th><td>Low (thousands)</td></tr>
+        <tr><th>4</th><td>Mod (ten thousands)</td></tr>
+        <tr><th>5</th><td>Mod (hundred thousands)</td></tr>
+        <tr><th>6</th><td>Mod (millions)</td></tr>
+        <tr><th>7</th><td>Mod (tem millions)</td></tr>
+        <tr><th>8</th><td>Mod (hundred millions)</td></tr>
+        <tr><th>9</th><td>High (billions)</td></tr>
+        <tr><th>A</th><td>High (ten billions)</td></tr>
+      </table>
+    </p>
+    <a name="Government"></a>
+    <h2>Government Type</h2>
+    <p>
+      The government type represents the general structure of the
+      planetary government.
+      <table border="1">
+        <tr><th>0</th><td>No Government Structure. In many cases, family bonds predominate.</td></tr>
+        <tr><th>1</th><td>Company/Corporation. Government by a company managerial elite; citizens are company employees.</td></tr>
+        <tr><th>2</th><td>Participating Democracy. Government by advice and consent of the citizen.</td></tr>
+        <tr><th>3</th><td>Self-Perpetuating Oligarchy. Government by a restricted minority, with little or no input from the masses.</td></tr>
+        <tr><th>4</th><td>Representative Democracy. Government by elected representatives.</td></tr>
+        <tr><th>5</th><td>Feudal Technocracy. Government by specific individuals for those who agree to be ruled. Relationships are based on the performance of technical activities which are mutually beneficial.</td></tr>
+        <tr><th>6</th><td>Captive Government/Colony. Government by a leadership answerable to an outside group; a colony or conquered area.</td></tr>
+        <tr><th>7</th><td>Balkanization. No central ruling authority exists; rival governments compete for control.</td></tr>
+        <tr><th>8</th><td>Civil Service Bureaucracy. Government by agencies employing individuals selected for their expertise.</td></tr>
+        <tr><th>9</th><td>Impersonal Bureaucracy. Government by agencies which are insulated from the governed.</td></tr>
+        <tr><th>A</th><td>Charismatic Dictator. Government by a single leader enjoying the confidence of the citizens.</td></tr>
+        <tr><th>B</th><td>Non-Charismatic Dictator. A previous charismatic dictator has been replaced by a leader through normal channels.</td></tr>
+        <tr><th>C</th><td>Charismatic Oligarchy. Government by a select group, organisation, or class enhoying overwhelming confidence of the citizenry.</td></tr>
+        <tr><th>D</th><td>Religious Dictatorship. Government by a religious minority which has little regard for the needs of the citizenry.</td></tr>
+        <tr><th>E</th><td>Religious Autocracy. Government by a single religious leader having absolute power over the citizenry.</td></tr>
+        <tr><th>F</th><td>Toltalitarian Oligarchy. Government by an all-powerful minority which maintains absolute control through widespread coercion and oppression.</td></tr>
+      </table>
+    </p>
+    <a name="Law"></a>
+    <h2>Law Level</h2>
+    <p>
+      The law level represents how strict the local regulations are.
+      <table border="1">
+        <tr><th>0</th><td>No law (no prohibitions)</td></tr>
+        <tr><th>1</th><td>Low law (body pistols, explosives, poison gas prohibited)</td></tr>
+        <tr><th>2</th><td>Low law (portable energy weapons prohibited)</td></tr>
+        <tr><th>3</th><td>Low law (machineguns, automatic rifles prohibited)</td></tr>
+        <tr><th>4</th><td>Moderate law (light assult weapons prohibited)</td></tr>
+        <tr><th>5</th><td>Moderate law (personal concealable weapons prohibited)</td></tr>
+        <tr><th>6</th><td>Moderate law (all firearms except shotguns prohibited)</td></tr>
+        <tr><th>7</th><td>Moderate law (shotguns prohibited)</td></tr>
+        <tr><th>8</th><td>High law (blade weapons controlled; no open display)</td></tr>
+        <tr><th>9</th><td>High law (weapon possession prohibited)</td></tr>
+        <tr><th>A</th><td>Extreme law (weapon possession prohibited)</td></tr>
+        <tr><th>B</th><td>Extreme law (rigid control of civilian movement)</td></tr>
+        <tr><th>C</th><td>Extreme law (unrestricted invasion of privacy)</td></tr>
+        <tr><th>D</th><td>Extreme law (paramilitary law enforcement)</td></tr>
+        <tr><th>E</th><td>Extreme law (full-fledged police state)</td></tr>
+        <tr><th>F</th><td>Extreme law (all facets of daily life regidly controlled)</td></tr>
+        <tr><th>G</th><td>Extreme law (severe punishment for petty infractions)</td></tr>
+        <tr><th>H</th><td>Extreme law (legalised oppressive practices)</td></tr>
+        <tr><th>I</th><td>Extreme law (routinely oppressive and restrictive)</td></tr>
+        <tr><th>J</th><td>Extreme law (excessively oppressive and restrictive)</td></tr>
+        <tr><th>K</th><td>Extreme law (totally oppressive and restrictive)</td></tr>
+      </table>
+    </p>
+    <a name="Technology"></a>
+    <h2>Technology Level</h2>
+      The tech level represents how advanced the planet's technology base is.
+      <table border="1">
+        <tr><th>0</th><td>No law (no prohibitions)</td></tr>
+        <tr><th>0</th><td>Pre-Industrial (primitive)</td></tr>
+        <tr><th>1</th><td>Pre-Industrial (bronze, iron)</td></tr>
+        <tr><th>2</th><td>Pre-Industrial (printing press)</td></tr>
+        <tr><th>3</th><td>Pre-Industrial (basic science)</td></tr>
+        <tr><th>4</th><td>Industrial (internal combustion)</td></tr>
+        <tr><th>5</th><td>Industrial (mass production)</td></tr>
+        <tr><th>6</th><td>Pre-Stellar (nuclear power)</td></tr>
+        <tr><th>7</th><td>Pre-Stellar (mini. electronics)</td></tr>
+        <tr><th>8</th><td>Pre-Stellar (superconductors)</td></tr>
+        <tr><th>9</th><td>Early Stellar (fusion power)</td></tr>
+        <tr><th>A</th><td>Early Stellar (jump drive, jump-1)</td></tr>
+        <tr><th>B</th><td>Average Stellar (large starships, jump-2)</td></tr>
+        <tr><th>C</th><td>Average Stellar (sophisticated robots, jump-3)</td></tr>
+        <tr><th>D</th><td>Average Stellar (holo data storage, jump-4)</td></tr>
+        <tr><th>E</th><td>High Stellar (antigrav cities, jump-5)</td></tr>
+        <tr><th>F</th><td>High Stellar (anagathics, jump-6)</td></tr>
+        <tr><th>G</th><td>Extreme Stellar (global terraforming)</td></tr>
+        <tr><th>H</th><td>Extreme Stellar</td></tr>
+        <tr><th>I</th><td>Extreme Stellar</td></tr>
+        <tr><th>J</th><td>Extreme Stellar</td></tr>
+        <tr><th>K</th><td>Extreme Stellar</td></tr>
+      </table>
+    </p>
+  </body>
+</html>

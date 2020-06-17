@@ -1,0 +1,177 @@
+<html>
+  <body>
+    <h1>Game Concepts</h1>
+    <p>
+      Pocket Empires is a engine that allows you to run many different types of scenarios.
+      Each of these scenarios is a game.
+      One of the first things you do when you play is pick the game you wish to play.
+      Different games have different parameters and are suited to different styles of play.
+      You can even make your own games or modify existing games.
+    </p>
+    <ul>
+      <li><a href="#Origin">Name and Author</a></li>
+      <li><a href="#Turns">Turns and Phases</a></li>
+      <li><a href="#SetupPhase">Setup Phase</a></li>
+      <li><a href="#MovementPhase">Movement Phase</a></li>
+      <li><a href="#CombatPhase">Combat Phase</a>
+        <ul>
+          <li><a href="#FleeingPhase">Ship Fleeing Phase</a></li>
+          <li><a href="#TargetPhase">Target Determination Phase</a></li>
+        </ul>
+      </li>
+      <li><a href="#RepairPhase">Repair Phase</a></li>
+      <li><a href="#ConstructionPhase">Construction Phase</a></li>
+      <li><a href="#VP">Victory Points</a></li>
+    </ul>
+    <a name="Origin"></a>
+    <h2>Name and Author</h2>
+    <p>
+      People are welcome to create their own Pocket Empire scenarios.
+      As interesting scenarios are developed they will be incorporated into the core release
+      of the game.
+      In order to give credit where credit is due, we include the name and contact for
+      the author of a game.
+    </p>
+    <a name="Turns"></a>
+    <h2>Turns and Phases</h2>
+    <p>
+      A game consists of a series of turns.
+      How long, exactly, a game is depends on the scenario.      
+      Each turn in the game progresses through a number of phases (and sub-phases).
+      After the last phase of the last turn the game is over.
+      Final scores are displayed and you can peruse how well the other sides did.
+      The general format for each turn is as follows:
+      <li><a href="#SetupPhase">Setup Phase</a></li>
+      <li><a href="#MovementPhase">Movement Phase</a></li>
+      <li><a href="#CombatPhase">Combat Phase</a>
+        <ul>
+          <li><a href="#FleeingPhase">Ship Fleeing Phase</a></li>
+          <li><a href="#TargetPhase">Target Determination Phase</a></li>
+        </ul>
+      </li>
+      <li><a href="#RepairPhase">Repair Phase</a></li>
+      <li><a href="#ConstructionPhase">Construction Phase</a></li>
+    </p>
+    <a name="SetupPhase"></a>
+    <h2>Setup Phase</h2>
+    <p>
+      During the setup phase you decide where to place your ships.
+      Depending on the scenario you may start with a alrge number or a small number of worlds.
+      If you start with just one, then all ships may start being set up on that world.
+    </p>
+    <p>
+      Some scenarios allow for you to change your mind about the makeup of the fleet.
+      In these cases you can pick ships from the preset fleet and scrap them.
+      This increases the resources you have.
+      You can then design replacement ships up to the value of the created resources.
+      These can then be deployed normally.
+    </p>
+    <a name="MovementPhase"></a>
+    <h2>Movement Phase</h2>
+    <p>
+      The movement phase is where you can determine where to deploy your ships too.
+      It takes a full week to jump from one star system to the next.
+      For simplicity of play it is assumed that all ships move at once.
+    </p>
+    <p>
+      Some ships have no jump drive.
+      You cannot move these from system to system on their own.
+      They may, however, be carried in other ships.
+      When you move the carrier, all contained ships are automatically moved as well.
+    </p>
+    <p>
+      Moving takes a certain amount of fuel.
+      If your ships does not have enough fuel, then it cannot move.
+      You can transfer fuel between ships if you need it.
+      Or the ship can be carried as if it had no jump drive.
+    </p>
+    <p>
+      You can move into an empty hex.
+      There is no world or fuel available there.
+      But for ships with limited jump drives (but extra fuel space) it can be
+      a convienent way to reach systems you could not otherwise reach.
+    </p>
+    <a name="CombatPhase"></a>
+    <h2>Combat Phase</h2>
+    <p>
+      Combat occurs whenever ships belonging to two (or more) sides occupy the same system.
+      (Combat cannot occur in empty hexes.)
+      Combat is announced when it happens.
+      There is a <a href="FleeingPhase">Fleeing Phase</a>, 
+      followed by as many <a href="TargetPhase">Targetting Phases</a> as necessary to 
+      resolve the combat.
+      At the conclusion the ownership of the system is re-evaluated.
+    </p>
+    <a name="FleeingPhase"></a>
+    <h2>Ship Fleeing Phase</h2>
+    <p>
+      The first things that happens is that each side is given a chance to flee
+      non-combatant ships (for example, carriers).
+      Often, if the combatants do not like the odds once they get to a system,
+      all ships end up fleeing and no combat occurs.
+      Ships who flee combat may be unable to refuel.
+      If they flee, the play no part in determining ownership of the system at
+      the end of the combat phase.
+    </p>
+    <a name="TargetPhase"></a>
+    <h2>Target Determination Phase</h2>
+    <p>
+      For each round of combat ships pick their targets.
+      A ship may decide that discretion is the better part of valor and attempt to flee.
+      But if a ships chooses to flee during a targeting phase they will be subject to
+      one round of attacks before they make it to the outer system.
+    </p>
+    <p>
+      Once all sides have picked their targets, that round of combat occurs and the results
+      are reported.
+      Attacks may hit or miss.
+      Ships may be damaged or destroyed.
+      Combat finishes once there are active ships belonging to one side only.
+    </p>
+    <p>
+      Once combat has finished, the ownership of the world is re-determined.
+      By default the own of the world is whatever side had active ships remaining at the end of combat.
+      However in some scenarios worlds have intrinsic defense.
+      In this case there must be that many attack factors of ships present in order for the world
+      to switch sides.
+      Note, if all ships flee combat there will be no change in ownership.
+      In some scenarios neutral worlds cannot be converted.
+    </p>
+    <a name="RepairPhase"></a>
+    <h2>Repair Phase</h2>
+    <p>
+      During the repair phase ships are surveyed and qualifying ones may be repaired.
+      Only ships that have no moved or targeted another ship in combat may be repaired.
+      The number of ships that can be repaired by a world depends on the starport type.
+      Damaged ships that are repaired become fully operational again.
+    </p>
+    <a name="ConstructionPhase"></a>
+    <h2>Construction Phase</h2>
+    <p>
+      During this phase all of the worlds in the game are visited and assessed for production
+      if they have ships in their build queue.
+      Construction work is done on the ship subject to resources being available, and the
+      world's production value.
+      If production is completed, the ship is made available in the system and production
+      moves on to the next ship (if any) in the build queue.
+    </p>
+    <a name="VP"></a>
+    <h2>Victory Points</h2>
+    <p>
+      Over the course of the game victory points are decided. 
+      At the very end of the game these are used to determine the winner.
+      Victory points are based on different things depending on the scenario.
+      Some scenarios are about grabbing worlds, others are about building
+      (and surviving) with fleets.
+      Formulas describe how points are calculated.
+      For example, a common formula used to determine victory points in a
+      world grabbing game would be &quot;Port*Pop&quot;.
+      This means the value of a world is the value of its starport (where
+      A = 5, B = 4, etc) times the Population digit of the world.
+      A common formula used to determine victory points in a
+      ship building game would be &quot;Attack+Defense&quot;.
+      This means the value of a ships is the combined total of its
+      attack and defense factors.
+    </p>
+  </body>
+</html>

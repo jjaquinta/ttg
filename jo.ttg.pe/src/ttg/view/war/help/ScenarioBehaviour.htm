@@ -1,0 +1,73 @@
+<html>
+  <body>
+    <h1>Game Behaviour Keys</h1>
+    <p>
+      This group of keys define how the game plays.
+    </p>
+    <p>
+      <b>GameLength</b>
+      This specifies the number of turns the game can run to. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>AllowConvertNeutral</b> 
+      Some games are games of conquest. 
+      The players start in neutral space and fight to expand their territory 
+      around them. 
+      Other games pit players against each other. 
+      Neutral planets remain out of the fray. 
+      If this value is set to "true" then when a Neutral planet is entered 
+      it converts to the side that "conquered" it. 
+      If set to "false" then Neutral planets always remain neutral. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>AllowOmniscentSensors</b>
+      If this value is set to "true" then you can see what ships are 
+      where all over the map. 
+      If set to "false" then you can only see ships that are in systems 
+      that you own or have ships in. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>AllowFleetReconfiguration</b>
+      If this value is set to "true" 
+      then during startup you can "cash in" pre-set ships 
+      and build your own, custom fleet. 
+      If set to "false" then you are stuck with the ships 
+      the scenario designer gives you. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>AllowIntrinsicDefense </b>
+      If this value is set to "true" 
+      then a world cannont be conquered 
+      unless there are the same or greater attack factors in-system 
+      from one enemy than the population digit of that world. 
+      If set to "false" then any number of attack factors is 
+      sufficient to conquer that world. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>AllowConstruction </b>
+      If this value is set to "true" 
+      then you can build ships during the course of the game. 
+      If set to "false" then you cannot. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>ResourceGenerationFormula </b>
+      This is the formula that is used to calculate 
+      how many resources are produced by a world every turn. 
+      The default formula is "Pop*Port*2". 
+      It should only appear once.
+    </p>
+    <p>
+      <b>ConstructionPerTurnFormula </b>
+      This is the formula that is used to calculate how much 
+      ship per turn is built at each starport. 
+      The default formula is "200". 
+      It should only appear once.
+    </p>
+  </body>
+</html>

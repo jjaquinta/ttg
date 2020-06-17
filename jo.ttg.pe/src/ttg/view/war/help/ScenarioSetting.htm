@@ -1,0 +1,46 @@
+<html>
+  <body>
+    <h1>Scenario Setting Keys</h1>
+    <p>
+      This group of keys set what part of the Imperium the scenario takes place in.
+    </p>
+    <p>
+      <b>UpperBoundURI</b>
+      This specifies the upper-left boundary of the game arena. 
+      This is in TTG URI Format. 
+      If it specifies a sector or subsector, 
+      it takes the upper-left point of the area. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>LowerBoundURI</b> 
+      This specifies the lower right boundary of the game arena. 
+      This is in TTG URI Format. 
+      If it specifies a sector or subsector, 
+      it takes the lower-right point of the area. 
+      It should only appear once.
+    </p>
+    <p>
+      <b>Override</b>
+      By default PocketEmpires uses the 3rd Imperium setting for 
+      determining the UPP and names of worlds. 
+      Since some scenarios may be set in other eras, 
+      this key allows you to reset the values of some 
+      (or all) of the worlds. The forms are: 
+      <pre>
+        Override=uri,name UPPXXXX-X
+        Override=uri,UPPXXXX-X
+      </pre>
+      The URI specified must be a mw: URI 
+      or a ord: URI. 
+      If the name is ommitted, the existing name is used. 
+      Some examples: 
+      <pre>
+        Override = mw://Core Sector/2040,Gikhii Iis A240511-8
+        Override = mw://Massilia Sector/Marfa,E20079D-8
+      </pre>
+      This key can appear multiple times. 
+      Each time can be used to override a new planet.
+    </p>
+  </body>
+</html>

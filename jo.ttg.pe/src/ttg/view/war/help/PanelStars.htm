@@ -1,0 +1,68 @@
+<html>
+  <body>
+    <h1>Star Panel</h1>
+    <img src='PanelStars.gif'>
+    <p>
+     The Stars Panel is the main display of the game area.
+     The basic view is a starfield with one hex per system
+     location.
+     Hexes are one parsec from center to center.
+    </p>
+    <p>
+      Hexes with a dark grey background are neutral.
+      Hexes that belong to an empire are colored with
+      that empire's colors.
+    </p>
+    <p>
+      At the top of each hex is the hex number within the sector.
+      A dot in the center indicates some information about the world.
+      Additional information is arranged around the center.
+      We'll describe each element going counter-clockwise.
+    </p>
+    <p>
+      The world at the center is drawn as a single dot if it is your
+      standard terrestrial world.
+      If the mainworld is an asteriod belt, it will be drawn as a series
+      of smaller dots.
+      The dot is colored blue if there is water present on the world
+      (hydrographics >= 1).
+      If there is no water a orange color will be used.
+      Terrestrial worlds are drawn in three sizes that indicate
+      low population, median population or high population worlds.
+    </p>
+    <p>
+      Directly above the world is a letter indicating the starport type.
+      Counter-clockwise of this maybe drawn a "N" in yellow.
+      If present this indicates that a naval base is present.
+      Similarly, going counter-clockwise again a red "S" may appear.
+      This indicates a scout base is present.
+    </p>
+    <p>
+      Directly under the world is drawn the name of the world.
+      If the world is of low population the name will be entirely in
+      lowercase.
+      If the world is of median population, the name will start with
+      an uppercase letter.
+      If the world is of high popuilation, the name will be all in
+      uppercase.
+    </p>
+    <p>
+      To the right of the world are drawn horizontal bars indicating known
+      fleet strengths.
+      The longer the bar, the higher the fleet concentration.
+      Bars are drawn in the colors of the empire that owns the fleet.
+      If omniscent sensors are not enabled, worlds will only show
+      fleet presence if you either own it or have a ship present there.
+    </p>
+    <p>
+      Alternatively, you can hover the cursor over a hex and the tool tip
+      text will indicate the known fleet presence.
+      The value displayed shows the cumulative attack and defense factors,
+      each drawn in the color of the empire owning the ships.
+    </p>
+    <p>
+      The stars panel has a right click menu which allows you to zoom in
+      or out of the view. 
+    </p>
+  </body>
+</html>
