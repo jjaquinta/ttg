@@ -18,4 +18,10 @@ class GNIGenSector implements IGenSector
     {
     	return UniverseLogic.findSector(mScheme.mUniverse, ords);
    	}
+
+    @Override
+    public SectorBean newSectorBean()
+    {
+        return new SectorBean();
+    }
 }

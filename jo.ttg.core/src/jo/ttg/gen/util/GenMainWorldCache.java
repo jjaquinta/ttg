@@ -48,4 +48,10 @@ public class GenMainWorldCache implements IGenMainWorld
         mFixedCache.put(bean.getOrds(), bean);
     }
 
+    @Override
+    public MainWorldBean newMainWorldBean()
+    {
+        return mRootGenerator.newMainWorldBean();
+    }
+
 }

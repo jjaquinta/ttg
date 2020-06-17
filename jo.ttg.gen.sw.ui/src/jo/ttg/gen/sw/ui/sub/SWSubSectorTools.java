@@ -15,6 +15,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
 
 import org.json.simple.JSONObject;
+import org.json.simple.ToJSONLogic;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.gen.sw.data.RuntimeBean;
@@ -154,7 +155,7 @@ public class SWSubSectorTools extends JPanel
         SWMainWorldBean mw = RuntimeLogic.getInstance().getCursorMainWorld();
         if (mw == null)
             return;
-        JSONObject json = mw.toJSON();
+        JSONObject json = (JSONObject)ToJSONLogic.toJSON(mw);
         JSONEditDlg dlg = new JSONEditDlg(
                 (JFrame)SwingUtilities.getWindowAncestor(this), json);
         dlg.setVisible(true);

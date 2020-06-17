@@ -6,4 +6,5 @@ import jo.ttg.beans.sub.SubSectorBean;
 public interface IGenSubSector
 {
     public SubSectorBean generateSubSector(OrdBean ords);
+    public SubSectorBean newSubSectorBean();
 }

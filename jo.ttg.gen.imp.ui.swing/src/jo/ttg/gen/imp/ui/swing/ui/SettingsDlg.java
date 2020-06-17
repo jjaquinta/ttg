@@ -45,10 +45,10 @@ public class SettingsDlg extends JDialog
     {        
         mGeneratorGroup = new ButtonGroup();
         mOldGenerator = (String)RuntimeLogic.getInstance().getSettings().get("generator");
-        initInstantiateRadio("GEnie Known World", "jo.ttg.gen.gni.GNIGenSchemeKnownWorld");
+        initInstantiateRadio("GEnie Known Space", "jo.ttg.gen.gni.GNIGenSchemeKnownWorld");
         initInstantiateRadio("GEnie Spinward Marches", "jo.ttg.gen.gni.GNIGenSchemeSpinward");
         initInstantiateRadio("GEnie Everything", "jo.ttg.gen.gni.GNIGenSchemeEverything");
-        initInstantiateRadio("Traveller Map Known World", "jo.ttg.gen.tm.TMGenSchemeKnownWorld");
+        initInstantiateRadio("Traveller Map Known Space", "jo.ttg.gen.tm.TMGenSchemeKnownWorld");
         initInstantiateRadio("Traveller Map Spinward Marches", "jo.ttg.gen.tm.TMGenSchemeSpinward");
         initInstantiateRadio("Traveller Map Everything", "jo.ttg.gen.tm.TMGenSchemeEverything");
         initInstantiateRadio("Generated", "jo.ttg.gen.imp.ImpGenScheme");

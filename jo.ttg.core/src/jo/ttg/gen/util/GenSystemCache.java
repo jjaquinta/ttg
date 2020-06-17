@@ -36,4 +36,10 @@ public class GenSystemCache implements IGenSystem
     {
         mFixedCache.put(bean.getOrds(), bean);
     }
+
+    @Override
+    public SystemBean newSystemBean()
+    {
+        return mRootGenerator.newSystemBean();
+    }
 }

@@ -1,11 +1,5 @@
 package jo.ttg.gen.sw;
 
-import java.io.File;
-import java.io.IOException;
-
-import org.json.simple.JSONObject;
-import org.json.simple.JSONUtils;
-
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.RandBean;
 import jo.ttg.beans.mw.MainWorldBean;
@@ -33,32 +27,14 @@ public class SWGenMainWorld extends ImpGenMainWorld
     {
         if (!mScheme.exists(ords) && !force)
             return null;
-        File mwFile = ((SWGenScheme)mScheme).getMainWorldFile(ords);
-        if (!mwFile.exists())
-        {
-            SWMainWorldBean mw = (SWMainWorldBean)super.generateMainWorld(ords, force);
-            long localSeed = mScheme.getXYZSeed(ords, ImpGenScheme.R_LOCAL);
-            //long subSeed   = scheme.getXYZSeed(ords, GenScheme.R_SUBSECTOR);
-            //long secSeed   = scheme.getXYZSeed(ords, GenScheme.R_SECTOR);
-            RandBean r = new RandBean();
-            RandLogic.setMagic(r, localSeed, SW_MAGIC);
-            generateExtras(mw, r);
-            return mw;
-        }
-        if (mwFile.length() <= 2)
-            return null;
-        try
-        {
-            JSONObject json = JSONUtils.readJSON(mwFile);
-            SWMainWorldBean mw = (SWMainWorldBean)newMainWorldBean();
-            mw.fromJSON(json);
-            return mw;
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-            return super.generateMainWorld(ords);
-        }
+        SWMainWorldBean mw = (SWMainWorldBean)super.generateMainWorld(ords, force);
+        long localSeed = mScheme.getXYZSeed(ords, ImpGenScheme.R_LOCAL);
+        //long subSeed   = scheme.getXYZSeed(ords, GenScheme.R_SUBSECTOR);
+        //long secSeed   = scheme.getXYZSeed(ords, GenScheme.R_SECTOR);
+        RandBean r = new RandBean();
+        RandLogic.setMagic(r, localSeed, SW_MAGIC);
+        generateExtras(mw, r);
+        return mw;
     }
     
     private void generateExtras(SWMainWorldBean mw, RandBean r)
@@ -66,48 +42,6 @@ public class SWGenMainWorld extends ImpGenMainWorld
         OrdBean o = mw.getOrds();
         Point3D fine = new Point3D(o.getX() + RandLogic.rnd(r), o.getY() + RandLogic.rnd(r), o.getZ() + RandLogic.rnd(r));
         mw.setOrdsFine(fine);
-    }
-    
-    public void save(MainWorldBean mw)
-    {
-        try
-        {
-            File mwFile = ((SWGenScheme)mScheme).getMainWorldFile(mw.getOrds());
-            JSONObject json = ((SWMainWorldBean)mw).toJSON();
-            JSONUtils.writeJSON(mwFile, json);
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-    
-    public void erase(OrdBean ords)
-    {
-        try
-        {
-            File mwFile = ((SWGenScheme)mScheme).getMainWorldFile(ords);
-            JSONObject json = new JSONObject();
-            JSONUtils.writeJSON(mwFile, json);
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-    
-    public MainWorldBean insert(OrdBean ords)
-    {
-        MainWorldBean mw = generateMainWorld(ords, true);
-        save(mw);
-        return mw;
-    }
-    
-    public void delete(OrdBean ords)
-    {
-        File mwFile = ((SWGenScheme)mScheme).getMainWorldFile(ords);
-        if (mwFile.exists())
-            mwFile.delete();
     }
 
     public MainWorldBean newMainWorldBean()

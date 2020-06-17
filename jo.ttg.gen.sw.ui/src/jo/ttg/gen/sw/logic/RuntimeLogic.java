@@ -32,6 +32,7 @@ import jo.ttg.gen.sw.data.SWSystemBean;
 import jo.ttg.gen.sw.data.SelectedRegionBean;
 import jo.ttg.gen.sw.logic.rep.RegionListCSVReport;
 import jo.ttg.gen.sw.logic.rep.RegionListHTMLReport;
+import jo.ttg.gen.util.GenSchemePersistant;
 import jo.ttg.logic.gen.SchemeLogic;
 import jo.ttg.logic.gen.SurfaceLogic;
 import jo.ttg.logic.mw.MainWorldLogic;
@@ -56,7 +57,7 @@ public class RuntimeLogic
     public static void init()
     {
         mRuntime = new RuntimeBean();
-        SchemeLogic.setDefaultScheme(new SWGenScheme(getDataDir()));
+        SchemeLogic.setDefaultScheme(new GenSchemePersistant(getDataDir(), new SWGenScheme()));
         loadSettings();
         HTMLCtrlDetails.addModifierFunction("distance", (val,arg) -> FormatUtils.sDistance(DoubleUtils.parseDouble(val)));
         HTMLCtrlDetails.addModifierFunction("mass", (val,arg) -> FormatUtils.sMass(DoubleUtils.parseDouble(val)));

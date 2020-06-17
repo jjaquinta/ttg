@@ -9,11 +9,9 @@ import org.json.simple.JSONObject;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.sys.BodyBean;
-import jo.ttg.gen.sw.SWGenMainWorld;
-import jo.ttg.gen.sw.SWGenScheme;
-import jo.ttg.gen.sw.SWGenSystem;
 import jo.ttg.gen.sw.data.RuntimeBean;
 import jo.ttg.gen.sw.data.SWMainWorldBean;
+import jo.ttg.gen.util.GenSchemePersistant;
 import jo.ttg.logic.OrdLogic;
 import jo.ttg.logic.gen.BodyLogic;
 import jo.ttg.logic.gen.SchemeLogic;
@@ -29,9 +27,8 @@ public class EditLogic
         if (rt.getCursorMainWorld() != null)
             return;
         OrdBean ords = rt.getCursorPoint();
-        SWGenScheme scheme = ((SWGenScheme)SchemeLogic.getDefaultScheme());
-        SWGenMainWorld mwgen = (SWGenMainWorld)scheme.getGeneratorMainWorld();
-        mwgen.insert(ords);
+        GenSchemePersistant scheme = ((GenSchemePersistant)SchemeLogic.getDefaultScheme());
+        scheme.insertMainWorld(ords);
         SWMainWorldBean mw = (SWMainWorldBean)MainWorldLogic.getFromOrds(ords);
         rt.setCursorMainWorld(mw);
         rt.setCursorPoint(ords);
@@ -44,9 +41,8 @@ public class EditLogic
         if (rt.getCursorMainWorld() == null)
             return;
         OrdBean ords = rt.getCursorPoint();
-        SWGenScheme scheme = ((SWGenScheme)SchemeLogic.getDefaultScheme());
-        SWGenMainWorld mwgen = (SWGenMainWorld)scheme.getGeneratorMainWorld();
-        mwgen.erase(ords);
+        GenSchemePersistant scheme = ((GenSchemePersistant)SchemeLogic.getDefaultScheme());
+        scheme.deleteMainWorld(ords);
         rt.setCursorMainWorld(null);
         rt.setCursorPoint(ords);
         rt.setDirty(true);
@@ -58,10 +54,9 @@ public class EditLogic
         if (rt.getCursorMainWorld() == null)
             return;
         SWMainWorldBean mw = rt.getCursorMainWorld();
-        mw.fromJSON(json);
-        SWGenScheme scheme = ((SWGenScheme)SchemeLogic.getDefaultScheme());
-        SWGenMainWorld mwgen = (SWGenMainWorld)scheme.getGeneratorMainWorld();
-        mwgen.save(mw);
+        FromJSONLogic.fromJSONInto(json, mw);
+        GenSchemePersistant scheme = ((GenSchemePersistant)SchemeLogic.getDefaultScheme());
+        scheme.save(mw);
         rt.setCursorMainWorld(mw);
         rt.setCursorPoint(mw.getOrds());
         rt.setDirty(true);
@@ -74,9 +69,8 @@ public class EditLogic
             return;
         BodyBean body = rt.getCursorWorld();
         FromJSONLogic.fromJSONInto(json, body);
-        SWGenScheme scheme = ((SWGenScheme)SchemeLogic.getDefaultScheme());
-        SWGenSystem sysgen = (SWGenSystem)scheme.getGeneratorSystem();
-        sysgen.save(body.getSystem());
+        GenSchemePersistant scheme = (GenSchemePersistant)SchemeLogic.getDefaultScheme();
+        scheme.save(body.getSystem());
         rt.setCursorWorld(body);
         rt.setDirty(true);
     }

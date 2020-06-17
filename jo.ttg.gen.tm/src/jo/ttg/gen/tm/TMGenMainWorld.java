@@ -19,4 +19,10 @@ public class TMGenMainWorld implements IGenMainWorld
         return UniverseLogic.findMainWorld(mScheme.mUniverse, ords);
     }
 
+    @Override
+    public MainWorldBean newMainWorldBean()
+    {
+        return new MainWorldBean();
+    }
+
 }

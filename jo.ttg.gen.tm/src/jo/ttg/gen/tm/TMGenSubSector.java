@@ -18,4 +18,10 @@ class TMGenSubSector implements IGenSubSector
     {
     	return UniverseLogic.findSubSector(mScheme.mUniverse, ords);
     }
+
+    @Override
+    public SubSectorBean newSubSectorBean()
+    {
+        return new SubSectorBean();
+    }
 }

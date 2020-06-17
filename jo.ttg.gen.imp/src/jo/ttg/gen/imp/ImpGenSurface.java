@@ -59,7 +59,7 @@ public class ImpGenSurface implements IGenSurface
 		params.setLanguage(LanguageLogic.getLoadedLanguage(world.getPopulatedStats().getAllegiance()));
 		if (params.getLanguage() == null)
 		    params.setLanguage(LanguageLogic.getLoadedLanguage("Im"));
-        SurfaceBean surface = new SurfaceBean();
+        SurfaceBean surface = newSurfaceBean();
         surface.setURI("surface://"+world.getURI().substring(7));
         surface.setBody(world);
         mSurfaceCache.put(Thread.currentThread(), surface);
@@ -69,6 +69,12 @@ public class ImpGenSurface implements IGenSurface
         mSurfaceCache.remove(Thread.currentThread());
         mParamsCache.remove(Thread.currentThread());
         return surface;
+    }
+    
+    @Override
+    public SurfaceBean newSurfaceBean()
+    {
+        return new SurfaceBean();
     }
     
     private SurfaceBean getSurface()

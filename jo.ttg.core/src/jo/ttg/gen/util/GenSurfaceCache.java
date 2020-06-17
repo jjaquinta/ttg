@@ -36,4 +36,10 @@ public class GenSurfaceCache implements IGenSurface
     {
         mFixedCache.put(bwb, bean);
     }
+
+    @Override
+    public SurfaceBean newSurfaceBean()
+    {
+        return mRootGenerator.newSurfaceBean();
+    }
 }

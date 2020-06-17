@@ -6,4 +6,5 @@ import jo.ttg.beans.sec.SectorBean;
 public interface IGenSector
 {
     public SectorBean generateSector(OrdBean ords);
+    public SectorBean newSectorBean();
 }

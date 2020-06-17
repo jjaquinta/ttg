@@ -1,16 +1,10 @@
 package jo.ttg.gen.sw;
 
 
-import java.io.File;
-
 import org.json.simple.FromJSONLogic;
 import org.json.simple.ToJSONLogic;
 
 import jo.ttg.beans.OrdBean;
-import jo.ttg.beans.RandBean;
-import jo.ttg.beans.mw.MainWorldBean;
-import jo.ttg.beans.sec.SectorBean;
-import jo.ttg.beans.sub.SubSectorBean;
 import jo.ttg.gen.imp.ImpGenCargo;
 import jo.ttg.gen.imp.ImpGenLanguage;
 import jo.ttg.gen.imp.ImpGenPassengers;
@@ -19,20 +13,15 @@ import jo.ttg.gen.imp.ImpGenSurface;
 import jo.ttg.gen.sw.h.BlahArrayHandler;
 import jo.ttg.gen.sw.h.BodyHandler;
 import jo.ttg.gen.sw.h.SystemHandler;
-import jo.ttg.logic.RandLogic;
-import jo.util.utils.obj.StringUtils;
 
 public class SWGenScheme extends ImpGenScheme
 {
-    private File    mDataDir;
-    
-    public SWGenScheme(File dataDir)
+    public SWGenScheme()
     {
         FromJSONLogic.addHandler(new BlahArrayHandler());
         FromJSONLogic.addHandler(new SystemHandler());
         FromJSONLogic.addHandler(new BodyHandler());
         ToJSONLogic.addHandler(new BodyHandler());
-        mDataDir = dataDir;
         mSectorSize = new OrdBean(16, 16, 16);
         mSubSectorSize = new OrdBean(8, 8, 8);
         mGeneratorUniverse = new SWGenUniverse(this);
@@ -46,59 +35,6 @@ public class SWGenScheme extends ImpGenScheme
         mGeneratorLanguage = new ImpGenLanguage(this);
     }
 
-    protected String toFileOrd(long x)
-    {
-        String s = Integer.toHexString((int)x);
-        if (s.length() > 4)
-            s = s.substring(s.length() - 4);
-        else
-            s = StringUtils.zeroPrefix(s, 4);
-        return s;
-    }
-    
-    protected String toFileName(OrdBean o)
-    {
-        return toFileOrd(o.getX())+toFileOrd(o.getY())+toFileOrd(o.getZ());
-    }
-    
-    protected File getSectorFile(OrdBean o)
-    {
-        File f = new File(mDataDir, "SEC"+toFileName(o)+".json");
-        return f;
-    }
-    
-    protected File getSubSectorFile(OrdBean o)
-    {
-        File f = new File(mDataDir, "SUB"+toFileName(o)+".json");
-        return f;
-    }
-    
-    protected File getMainWorldFile(OrdBean o)
-    {
-        File f = new File(mDataDir, "MW"+toFileName(o)+".json");
-        return f;
-    }
-    
-    protected File getSystemFile(OrdBean o)
-    {
-        File f = new File(mDataDir, "SYS"+toFileName(o)+".json");
-        return f;
-    }
-
-    public boolean exists(OrdBean o)
-    {
-        File f = getMainWorldFile(o);
-        if (f.exists())
-            return f.length() > 0;
-        else
-        {
-            RandBean r = new RandBean();
-            int d;
-            d = getDensity(o);
-            RandLogic.setMagic(r, getXYZSeed(o, R_LOCAL), RandBean.EXIST_MAGIC);
-            return (RandLogic.rand(r) % 100) < d;
-        }
-    }
     protected int getDensity(OrdBean ords)
     {
         double x2 = (double) ords.getX() / (8.0 * 4.0) * Math.PI;
@@ -174,20 +110,5 @@ public class SWGenScheme extends ImpGenScheme
         if ((x & 0x00000400L) != 0) ret |= 0x40000000;
         if ((y & 0x00000400L) != 0) ret |= 0x80000000;
         return ret;
-    }
-
-    public void save(SectorBean sec)
-    {
-        ((SWGenSector)mGeneratorSector).save(sec);
-    }
-    
-    public void save(SubSectorBean sub)
-    {
-        ((SWGenSubSector)mGeneratorSubSector).save(sub);
-    }
-    
-    public void save(MainWorldBean mw)
-    {
-        ((SWGenMainWorld)mGeneratorMainWorld).save(mw);
     }
 }
