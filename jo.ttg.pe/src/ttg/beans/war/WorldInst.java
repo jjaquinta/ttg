@@ -1,36 +1,37 @@
 package ttg.beans.war;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.mw.MainWorldBean;
 import jo.ttg.logic.OrdLogic;
 
-
 public class WorldInst
 {
-	private OrdBean			mOrds;
-	private MainWorldBean	mWorld;
-	private SideInst		mSide;
-	private int				mRepairsThisTurn;
-	private int				mRepairsThisGame;
-	private ArrayList		mShips;
-	private ArrayList		mShipsEnRoute;
-	private ArrayList		mUnderConstruction;
-	private int				mConstructionDone;
-	
-	public WorldInst()
-	{
-		mShips = new ArrayList();
-		mShipsEnRoute = new ArrayList();
-		mUnderConstruction = new ArrayList();
-	}
+    private OrdBean        mOrds;
+    private MainWorldBean  mWorld;
+    private SideInst       mSide;
+    private int            mRepairsThisTurn;
+    private int            mRepairsThisGame;
+    private List<ShipInst> mShips;
+    private List<ShipInst> mShipsEnRoute;
+    private List<Ship>     mUnderConstruction;
+    private int            mConstructionDone;
+
+    public WorldInst()
+    {
+        mShips = new ArrayList<>();
+        mShipsEnRoute = new ArrayList<>();
+        mUnderConstruction = new ArrayList<>();
+    }
+
     public int getRepairsThisTurn()
     {
         return mRepairsThisTurn;
     }
 
-    public ArrayList getShips()
+    public List<ShipInst> getShips()
     {
         return mShips;
     }
@@ -50,7 +51,7 @@ public class WorldInst
         mRepairsThisTurn = i;
     }
 
-    public void setShips(ArrayList list)
+    public void setShips(List<ShipInst> list)
     {
         mShips = list;
     }
@@ -65,28 +66,28 @@ public class WorldInst
         mWorld = bean;
     }
 
-	/**
-	 * @return
-	 */
-	public int getRepairsThisGame()
-	{
-		return mRepairsThisGame;
-	}
+    /**
+     * @return
+     */
+    public int getRepairsThisGame()
+    {
+        return mRepairsThisGame;
+    }
 
-	/**
-	 * @param i
-	 */
-	public void setRepairsThisGame(int i)
-	{
-		mRepairsThisGame = i;
-	}
+    /**
+     * @param i
+     */
+    public void setRepairsThisGame(int i)
+    {
+        mRepairsThisGame = i;
+    }
 
-    public ArrayList getShipsEnRoute()
+    public List<ShipInst> getShipsEnRoute()
     {
         return mShipsEnRoute;
     }
 
-    public void setShipsEnRoute(ArrayList list)
+    public void setShipsEnRoute(List<ShipInst> list)
     {
         mShipsEnRoute = list;
     }
@@ -98,9 +99,9 @@ public class WorldInst
     public String toString()
     {
         if (mWorld != null)
-        	return mWorld.getName();
+            return mWorld.getName();
         else
-			return OrdLogic.getShortNum(mOrds);
+            return OrdLogic.getShortNum(mOrds);
     }
 
     public OrdBean getOrds()
@@ -118,7 +119,7 @@ public class WorldInst
         return mConstructionDone;
     }
 
-    public ArrayList getUnderConstruction()
+    public List<Ship> getUnderConstruction()
     {
         return mUnderConstruction;
     }
@@ -128,7 +129,7 @@ public class WorldInst
         mConstructionDone = i;
     }
 
-    public void setUnderConstruction(ArrayList ship)
+    public void setUnderConstruction(List<Ship> ship)
     {
         mUnderConstruction = ship;
     }

@@ -2,6 +2,7 @@ package ttg.beans.war;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SideInst
 {
@@ -10,15 +11,15 @@ public class SideInst
 	private Color			mColor1;
 	private Color			mColor2;
 	private int				mVictoryPoints;
-	private ArrayList		mWorlds;
-	private ArrayList		mShips;
+	private List<WorldInst>		mWorlds;
+	private List<ShipInst>		mShips;
 	private PlayerInterface	mPlayer;
 	private int				mResources;
 	
 	public SideInst()
 	{
-		mWorlds = new ArrayList();
-		mShips = new ArrayList();
+		mWorlds = new ArrayList<>();
+		mShips = new ArrayList<>();
 	}
 	
     public Color getColor1()
@@ -61,22 +62,22 @@ public class SideInst
         mVictoryPoints = i;
     }
 
-    public ArrayList getWorlds()
+    public List<WorldInst> getWorlds()
     {
         return mWorlds;
     }
 
-    public void setWorlds(ArrayList list)
+    public void setWorlds(List<WorldInst> list)
     {
         mWorlds = list;
     }
 
-    public ArrayList getShips()
+    public List<ShipInst> getShips()
     {
         return mShips;
     }
 
-    public void setShips(ArrayList list)
+    public void setShips(List<ShipInst> list)
     {
         mShips = list;
     }

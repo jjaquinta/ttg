@@ -6,8 +6,6 @@
  */
 package ttg.view.war.ai.handler;
 
-import java.util.Iterator;
-
 import jo.util.utils.DebugUtils;
 import ttg.beans.war.ShipInst;
 import ttg.beans.war.WorldInst;
@@ -35,11 +33,8 @@ public class SetupHandler extends BaseHandler
 		DebugUtils.beginGroup("setup side='"+getSide().getSide().getName()+"'");
 		// find unique ships
 		mPlayer.getUniqueShips().addAll(getGame().getGame().getShipLibrary());
-		for (Iterator i = getSide().getShips().iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+		for (ShipInst ship : getSide().getShips())
 			ShipLogic.addUnique(mPlayer.getUniqueShips(), ship.getShip());
-		}
 		// weight worlds
 		DebugUtils.beginGroup("worlds");
 		WorldInst[] worlds = new WorldInst[getSide().getWorlds().size()];

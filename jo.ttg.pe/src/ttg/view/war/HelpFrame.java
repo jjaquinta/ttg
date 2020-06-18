@@ -7,6 +7,7 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -29,23 +30,21 @@ public class HelpFrame extends JFrame implements HyperlinkListener
 	private static int 		HELP_PORT = 0;
 	private static String 	HELP_ROOT = "ttg/view/war/help/";
 
-	private WarPanel	mPanel;
 	private JEditorPane mBrowser;
 	private JButton		mHome;
 	private JButton		mBack;
 	private JButton		mForward;
 	
-	private ArrayList	mHistory;
+	private List<String>	mHistory;
 	private int			mHistoryAt;
 	
 	/**
 	 *
 	 */
 
-	public HelpFrame(WarPanel panel)
+	public HelpFrame()
 	{
 		super("POCKET EMPIRES - Help");
-		mPanel = panel;
 		initInstantiate();
 		initLink();
 		initLayout();
@@ -58,7 +57,7 @@ public class HelpFrame extends JFrame implements HyperlinkListener
 		HELP_PORT = Integer.parseInt(System.getProperty("ttg.war.help.port", String.valueOf(HELP_PORT)));
 		HELP_ROOT = System.getProperty("ttg.war.help.root", HELP_ROOT);
 		
-		mHistory = new ArrayList();
+		mHistory = new ArrayList<>();
 		mHistoryAt = 0;
 		mBrowser = new JEditorPane();
 		mBrowser.setEditable(false);
@@ -136,7 +135,7 @@ public class HelpFrame extends JFrame implements HyperlinkListener
 	{
 		if (mHistoryAt > 1)
 		{
-			showPage((String)mHistory.get(--mHistoryAt - 1));
+			showPage(mHistory.get(--mHistoryAt - 1));
 			updateEnabled();
 		}
 	}
@@ -145,7 +144,7 @@ public class HelpFrame extends JFrame implements HyperlinkListener
 	{
 		if (mHistoryAt < mHistory.size())
 		{
-			showPage((String)mHistory.get(mHistoryAt++));
+			showPage(mHistory.get(mHistoryAt++));
 			updateEnabled();
 		}
 	}
@@ -203,7 +202,7 @@ public class HelpFrame extends JFrame implements HyperlinkListener
     {
     	if (mHistory.size() > mHistoryAt)
     	{
-    		String next = (String)mHistory.get(mHistoryAt);
+    		String next = mHistory.get(mHistoryAt);
     		if (next.equals(history))
     			mHistoryAt++;
     		else
@@ -218,7 +217,7 @@ public class HelpFrame extends JFrame implements HyperlinkListener
     	{
     		if (mHistoryAt > 0)
     		{
-    			String prev = (String)mHistory.get(mHistoryAt - 1);
+    			String prev = mHistory.get(mHistoryAt - 1);
     			if (prev.equals(history))
 		   			mHistoryAt--;
 		   		else

@@ -6,8 +6,7 @@
  */
 package ttg.view.war.ai.handler;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import jo.ttg.beans.mw.MainWorldBean;
 import jo.util.utils.DebugUtils;
@@ -89,7 +88,7 @@ public class BaseHandler
 		return ret;
 	}
 	
-	public ShipInst[] sortDescendingDefense(ArrayList shipList)
+	public ShipInst[] sortDescendingDefense(List<ShipInst> shipList)
 	{
 		ShipInst[] ships = new ShipInst[shipList.size()];
 		shipList.toArray(ships);
@@ -104,10 +103,9 @@ public class BaseHandler
 		return ships;
 	}
 	
-	public ShipInst[] sortDescendingAttack(ArrayList shipList)
+	public ShipInst[] sortDescendingAttack(List<ShipInst> shipList)
 	{
-		ShipInst[] ships = new ShipInst[shipList.size()];
-		shipList.toArray(ships);
+		ShipInst[] ships = shipList.toArray(new ShipInst[0]);
 		for (int i = 0; i < ships.length - 1; i++)
 			for (int j = i + 1; j < ships.length; j++)
 				if (ShipLogic.getAttack(ships[i]) < ShipLogic.getAttack(ships[j]))
@@ -183,12 +181,9 @@ public class BaseHandler
 	public int getLeadingPE()
 	{
 		int max = 0;
-		for (Iterator i = getGame().getSides().iterator(); i.hasNext(); )
-		{
-			SideInst side = (SideInst)i.next();
+		for (SideInst side : getGame().getSides())
 			if (side.getVictoryPoints() > max)
 				max = side.getVictoryPoints();
-		}
 		return max;
 	}
 	
@@ -238,12 +233,11 @@ public class BaseHandler
 
 	public double getParanoia(WorldInst world)
 	{
-		ArrayList worlds = WorldLogic.hexesWithin(getGame(), world.getOrds(), 4);
+		List<WorldInst> worlds = WorldLogic.hexesWithin(getGame(), world.getOrds(), 4);
 		double tot = 0;
 		double fact = 0;
-		for (Iterator i = worlds.iterator(); i.hasNext(); )
+		for (WorldInst hex : worlds)
 		{
-			WorldInst hex = (WorldInst)i.next();
 			if (hex.getWorld() == null)
 				continue;
 			SideInst side = hex.getSide();
@@ -282,9 +276,8 @@ public class BaseHandler
 	{
 		int SDBs = 0;
 		int Fighters = 0;
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ShipLogic.isSDB(ship.getShip()))
 				SDBs += ShipLogic.getDefense(ship);
 			else if (ShipLogic.isFighter(ship.getShip()))

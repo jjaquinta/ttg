@@ -1,29 +1,30 @@
 package ttg.beans.war;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShipInst
 {
-	private Ship			mShip;
-	private SideInst		mSideInst;
-	private ShipInst		mContainedBy;
-	private ArrayList		mContains;
-	private boolean			mDamaged;
-	private boolean			mHasMoved;
-	private boolean			mHasFired;
-	private boolean			mFleeing;
-	private boolean			mToDo;
-	private WorldInst		mLocation;
-	private WorldInst		mDestination;
-	private ShipInst		mTarget;
-	private int				mFuel;
-	
-	public ShipInst()
-	{
-		mContains = new ArrayList();
-	}
-	
-    public ArrayList getContains()
+    private Ship           mShip;
+    private SideInst       mSideInst;
+    private ShipInst       mContainedBy;
+    private List<ShipInst> mContains;
+    private boolean        mDamaged;
+    private boolean        mHasMoved;
+    private boolean        mHasFired;
+    private boolean        mFleeing;
+    private boolean        mToDo;
+    private WorldInst      mLocation;
+    private WorldInst      mDestination;
+    private ShipInst       mTarget;
+    private int            mFuel;
+
+    public ShipInst()
+    {
+        mContains = new ArrayList<>();
+    }
+
+    public List<ShipInst> getContains()
     {
         return mContains;
     }
@@ -63,7 +64,7 @@ public class ShipInst
         return mTarget;
     }
 
-    public void setContains(ArrayList list)
+    public void setContains(List<ShipInst> list)
     {
         mContains = list;
     }
@@ -133,21 +134,21 @@ public class ShipInst
         mToDo = b;
     }
 
-	/**
-	 * @return
-	 */
-	public ShipInst getContainedBy()
-	{
-		return mContainedBy;
-	}
+    /**
+     * @return
+     */
+    public ShipInst getContainedBy()
+    {
+        return mContainedBy;
+    }
 
-	/**
-	 * @param inst
-	 */
-	public void setContainedBy(ShipInst inst)
-	{
-		mContainedBy = inst;
-	}
+    /**
+     * @param inst
+     */
+    public void setContainedBy(ShipInst inst)
+    {
+        mContainedBy = inst;
+    }
 
     public int getFuel()
     {

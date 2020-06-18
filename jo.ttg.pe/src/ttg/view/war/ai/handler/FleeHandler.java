@@ -62,31 +62,25 @@ public class FleeHandler extends BaseHandler
 	private void fleeEveryone(CombatStats stats)
 	{
 		//DebugLogic.debug("doesn't meet minimum ("+mMinimalAttackThreshold+", flee!");
-		for (Iterator i = stats.ours.iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+		for (ShipInst ship: stats.ours)
 			ship.setToDo(false);
-		}
 		//DebugLogic.endGroup("flee");
 	}
 
 	private void fleeDamaged(CombatStats stats)
 	{
 		//DebugLogic.debug("fleeDamagedOnly");
-		for (Iterator i = stats.ours.iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+        for (ShipInst ship: stats.ours)
 			if (ship.isDamaged())
 				ship.setToDo(false);
-		}
 		//DebugLogic.endGroup("flee");
 	}
 
 	private void fleeNonAttackers(CombatStats stats)
 	{
-		for (Iterator i = stats.ours.iterator(); i.hasNext(); )
+		for (Iterator<ShipInst> i = stats.ours.iterator(); i.hasNext(); )
 		{
-			ShipInst ship = (ShipInst)i.next();
+			ShipInst ship = i.next();
 			if (ShipLogic.getAttack(ship) == 0)
 			{
 				//DebugLogic.debug("noAttackFlee ship='"+ship.getShip().getName()+"'");

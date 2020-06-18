@@ -25,7 +25,7 @@ public class HelpPanel extends JPanel
 
 		ListenerUtils.listen(mHelp, (ev) -> doHelp());
 
-		JLabel lTitle = new JLabel(title);
+		JLabel lTitle = new JLabel(mTitle);
 		lTitle.setFont(WarPanel.TITLE_FONT);
 		JPanel p = new JPanel();
 		p.setLayout(new BorderLayout());

@@ -1,7 +1,6 @@
 package ttg.view.war.ai;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import ttg.beans.war.PlayerInterface;
 import ttg.beans.war.PlayerMessage;
@@ -39,11 +38,8 @@ public class GUIPlayer implements PlayerInterface
 			&& !mPanel.getGame().getGame().isAllowFleetReconfiguration())
 		{
 			WorldInst world = (WorldInst)mPanel.getSide().getWorlds().get(0);
-			for (Iterator i = mPanel.getSide().getShips().iterator(); i.hasNext(); )
-			{
-				ShipInst ship = (ShipInst)i.next();
+			for (ShipInst ship : mPanel.getSide().getShips())
 				ShipLogic.setDestination(mPanel.getGame(), ship, world);
-			}
 		}
 		else
 		{
@@ -77,9 +73,8 @@ public class GUIPlayer implements PlayerInterface
 	public void flee(WorldInst world)
 	{
 		boolean any = false;
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if ((ship.getSideInst() == mPanel.getSide()) && !ship.isFleeing())
 			{
 				any = true;
@@ -103,7 +98,7 @@ public class GUIPlayer implements PlayerInterface
 		waitForDone();
 	}
 
-    public void repair(WorldInst world, ArrayList ships)
+    public void repair(WorldInst world, List<ShipInst> ships)
     {
 		mPanel.setArg1(ships);
 		mPanel.setMode(WarPanel.REPAIR);

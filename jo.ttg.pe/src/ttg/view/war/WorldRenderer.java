@@ -24,7 +24,7 @@ public class WorldRenderer extends DefaultListCellRenderer implements ListCellRe
 	 * to display the text and image.
 	 */
 	public Component getListCellRendererComponent(
-		JList list,
+		JList<?> list,
 		Object value,
 		int index,
 		boolean isSelected,

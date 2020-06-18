@@ -1,10 +1,11 @@
 package ttg.view.war.ai;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import ttg.beans.war.GameInst;
 import ttg.beans.war.PlayerInterface;
 import ttg.beans.war.PlayerMessage;
+import ttg.beans.war.ShipInst;
 import ttg.beans.war.SideInst;
 import ttg.beans.war.WorldInst;
 import ttg.view.war.WarPanel;
@@ -47,7 +48,7 @@ public class ObserverPlayer implements PlayerInterface
 		mCompPlayer.target(world);
     }
 
-    public void repair(WorldInst world, ArrayList ships)
+    public void repair(WorldInst world, List<ShipInst> ships)
     {
 		mCompPlayer.repair(world, ships);
     }

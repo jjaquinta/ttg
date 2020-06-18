@@ -7,7 +7,7 @@
 package ttg.view.war.ai.handler;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import jo.ttg.beans.mw.MainWorldBean;
 import ttg.beans.war.PlayerMessage;
@@ -28,9 +28,9 @@ import ttg.view.war.ai.ComputerPlayer;
 public class MessageHandler extends BaseHandler
 {
 	private boolean		mFirstMessage;
-	private ArrayList	mUniqueSDBs;
-	private ArrayList	mUniqueFighters;
-	private ArrayList	mUniqueStarships;
+	private List<Ship>	mUniqueSDBs;
+	private List<Ship>	mUniqueFighters;
+	private List<Ship>	mUniqueStarships;
 
 	public MessageHandler(ComputerPlayer player)
 	{
@@ -111,11 +111,8 @@ public class MessageHandler extends BaseHandler
 		if (!getGame().getGame().isAllowConstruction())
 			return;
 		setupShips();
-		for (Iterator i = getSide().getWorlds().iterator(); i.hasNext(); )
-		{
-			WorldInst world = (WorldInst)i.next();
+		for (WorldInst world : getSide().getWorlds())
 			orderConstruction(world);
-		}
 	}
     
 	private void orderConstruction(WorldInst world)
@@ -128,7 +125,7 @@ public class MessageHandler extends BaseHandler
 		int port = mw.getPopulatedStats().getUPP().getPort().getValue();
 		if ((port != 'A') && (port != 'B'))
 			return;
-		ArrayList designs = world.getUnderConstruction();
+		List<Ship> designs = world.getUnderConstruction();
 		if (designs.size() > 0)
 			return;
 		if (port == 'A')
@@ -158,7 +155,7 @@ public class MessageHandler extends BaseHandler
 		//DebugLogic.endGroup("shipConstructionB");
 	}
 	
-	private void buildOneOf(WorldInst world, ArrayList ships)
+	private void buildOneOf(WorldInst world, List<Ship> ships)
 	{
 		// work out parameters
 		int peace = getPeace(world);
@@ -166,9 +163,8 @@ public class MessageHandler extends BaseHandler
 		Ship design = null;
 		int designCost = 0;
 		// try to template from existing ship
-		for (Iterator i = ships.iterator(); i.hasNext(); )
+		for (Ship unique : ships)
 		{
-			Ship unique = (Ship)i.next();
 			unique = ShipLogic.techDown(world, unique);
 			int cost = ShipLogic.cost(unique);
 			if (design == null)
@@ -209,12 +205,11 @@ public class MessageHandler extends BaseHandler
 	{
 		if (mUniqueSDBs != null)
 			return;
-		mUniqueSDBs = new ArrayList();
-		mUniqueFighters = new ArrayList();
-		mUniqueStarships = new ArrayList();
-		for (Iterator i = mPlayer.getUniqueShips().iterator(); i.hasNext(); )
+		mUniqueSDBs = new ArrayList<>();
+		mUniqueFighters = new ArrayList<>();
+		mUniqueStarships = new ArrayList<>();
+		for (Ship ship : mPlayer.getUniqueShips())
 		{
-			Ship ship = (Ship)i.next();
 			if (ShipLogic.isSDB(ship))
 				mUniqueSDBs.add(ship);
 			else if (ShipLogic.isFighter(ship))

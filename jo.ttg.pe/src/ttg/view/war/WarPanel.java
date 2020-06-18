@@ -4,11 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -121,7 +120,7 @@ public class WarPanel extends JPanel
 		mMessagePanel = new MessagePanel(this);
 
 		mStarPanel = new WarHexField(this);
-		mDlgHelp = new HelpFrame(this);
+		mDlgHelp = new HelpFrame();
 	}
 
 	private void initLink()
@@ -222,16 +221,15 @@ public class WarPanel extends JPanel
 			mStarPanel.setToolTipText(null);
 			return;
 		}
-		ArrayList ships = WorldLogic.getVisibleShips(mGame, mHoverWorld, mSide);
+		List<ShipInst> ships = WorldLogic.getVisibleShips(mGame, mHoverWorld, mSide);
 		if (ships.size() == 0)
 		{
 			mStarPanel.setToolTipText(null);
 			return;
 		}
-		HashMap factors = new HashMap();
-		for (Iterator i = ships.iterator(); i.hasNext();)
+		Map<SideInst,int[]> factors = new HashMap<>();
+		for (ShipInst ship : ships)
 		{
-			ShipInst ship = (ShipInst)i.next();
 			int[] f = (int[])factors.get(ship.getSideInst());
 			if (f == null)
 			{
@@ -248,9 +246,9 @@ public class WarPanel extends JPanel
 		mHoverFG = new Color[factors.size()]; 
 		mHoverBG = new Color[factors.size()];
 		int idx = 0; 
-		for (Iterator i = factors.keySet().iterator(); i.hasNext(); idx++)
+		for (Iterator<SideInst> i = factors.keySet().iterator(); i.hasNext(); idx++)
 		{
-			SideInst side = (SideInst)i.next();
+			SideInst side = i.next();
 			int[] f = (int[])factors.get(side);
 			mHoverText[idx] = f[0]+"."+f[1];
 			mHoverFG[idx] = side.getColor2();

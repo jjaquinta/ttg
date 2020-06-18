@@ -7,129 +7,130 @@
 package ttg.beans.war;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jo.util.beans.PCSBean;
 
 /**
  * @author jjaquinta
  *
- * To change the template for this generated type comment go to
- * Window>Preferences>Java>Code Generation>Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window>Preferences>Java>Code Generation>Code and Comments
  */
 public class Game extends PCSBean
 {
-	private String		mName;
-	private String		mDescription;
-	private String		mAuthor;
-	private String		mVersion;
-	private ArrayList	mSides;
-	private ArrayList	mShips;
-	private ArrayList	mOverrides;
-	private String	 	mUpperBound;
-	private String	 	mLowerBound;
-	private boolean		mAllowConvertNeutral;
-	private boolean		mAllowOmniscentSensors;
-	private boolean		mAllowFleetReconfiguration;
-	private boolean		mAllowIntrinsicDefense;
-	private boolean		mAllowConstruction;
-	private String		mVPGainWorld;
-	private String		mVPLoseWorld;
-	private String		mVPHaveWorld;
-	private String		mVPGainShip;
-	private String		mVPLoseShip;
-	private String		mVPHaveShip;
-	private int			mGameLength;
-	private String		mRawText;
-	private String		mResourceGenerationFormula;
-	private String		mConstructionPerTurnFormula;
-	private ArrayList	mShipLibrary;
+    private String       mName;
+    private String       mDescription;
+    private String       mAuthor;
+    private String       mVersion;
+    private List<Side>   mSides;
+    private List<Ship>   mShips;
+    private List<String> mOverrides;
+    private String       mUpperBound;
+    private String       mLowerBound;
+    private boolean      mAllowConvertNeutral;
+    private boolean      mAllowOmniscentSensors;
+    private boolean      mAllowFleetReconfiguration;
+    private boolean      mAllowIntrinsicDefense;
+    private boolean      mAllowConstruction;
+    private String       mVPGainWorld;
+    private String       mVPLoseWorld;
+    private String       mVPHaveWorld;
+    private String       mVPGainShip;
+    private String       mVPLoseShip;
+    private String       mVPHaveShip;
+    private int          mGameLength;
+    private String       mRawText;
+    private String       mResourceGenerationFormula;
+    private String       mConstructionPerTurnFormula;
+    private List<Ship>   mShipLibrary;
 
-	public Game()
-	{
-		mName = "";
-		mDescription = "";
-		mAuthor = "";
-		mVersion = "";
-		mSides = new ArrayList();
-		mShips = new ArrayList();
-		mOverrides = new ArrayList();
-		mVPGainWorld = "";
-		mVPLoseWorld = "";
-		mVPHaveWorld = "";
-		mVPLoseShip = "";
-		mVPHaveShip = "";
-		mAllowOmniscentSensors = true;
-		mResourceGenerationFormula = "Pop*Port*2";
-		mConstructionPerTurnFormula = "200";
-		mShipLibrary = new ArrayList();
-	}
-	
-	public String toString()
-	{
-		return mName;
-	}
+    public Game()
+    {
+        mName = "";
+        mDescription = "";
+        mAuthor = "";
+        mVersion = "";
+        mSides = new ArrayList<>();
+        mShips = new ArrayList<>();
+        mOverrides = new ArrayList<>();
+        mVPGainWorld = "";
+        mVPLoseWorld = "";
+        mVPHaveWorld = "";
+        mVPLoseShip = "";
+        mVPHaveShip = "";
+        mAllowOmniscentSensors = true;
+        mResourceGenerationFormula = "Pop*Port*2";
+        mConstructionPerTurnFormula = "200";
+        mShipLibrary = new ArrayList<>();
+    }
 
-	/**
-	 * @return
-	 */
-	public ArrayList getShips()
-	{
-		return mShips;
-	}
+    public String toString()
+    {
+        return mName;
+    }
 
-	/**
-	 * @param list
-	 */
-	public void setShips(ArrayList list)
-	{
-		mShips = list;
-	}
+    /**
+     * @return
+     */
+    public List<Ship> getShips()
+    {
+        return mShips;
+    }
 
+    /**
+     * @param list
+     */
+    public void setShips(List<Ship> list)
+    {
+        mShips = list;
+    }
 
-	public String getUpperBound()
-	{
-		return mUpperBound;
-	}
+    public String getUpperBound()
+    {
+        return mUpperBound;
+    }
 
-	public void setUpperBound(String v)
-	{
-		mUpperBound = v;
-	}
+    public void setUpperBound(String v)
+    {
+        mUpperBound = v;
+    }
 
-	public String getLowerBound()
-	{
-		return mLowerBound;
-	}
+    public String getLowerBound()
+    {
+        return mLowerBound;
+    }
 
-	public void setLowerBound(String v)
-	{
-		mLowerBound = v;
-	}
-    public ArrayList getSides()
+    public void setLowerBound(String v)
+    {
+        mLowerBound = v;
+    }
+
+    public List<Side> getSides()
     {
         return mSides;
     }
 
-    public void setSides(ArrayList list)
+    public void setSides(List<Side> list)
     {
         mSides = list;
     }
 
-	/**
-	 * @return
-	 */
-	public boolean isAllowConvertNeutral()
-	{
-		return mAllowConvertNeutral;
-	}
+    /**
+     * @return
+     */
+    public boolean isAllowConvertNeutral()
+    {
+        return mAllowConvertNeutral;
+    }
 
-	/**
-	 * @param b
-	 */
-	public void setAllowConvertNeutral(boolean b)
-	{
-		mAllowConvertNeutral = b;
-	}
+    /**
+     * @param b
+     */
+    public void setAllowConvertNeutral(boolean b)
+    {
+        mAllowConvertNeutral = b;
+    }
 
     public String getVPGainWorld()
     {
@@ -221,63 +222,63 @@ public class Game extends PCSBean
         mName = string;
     }
 
-    public ArrayList getOverrides()
+    public List<String> getOverrides()
     {
         return mOverrides;
     }
 
-    public void setOverrides(ArrayList list)
+    public void setOverrides(List<String> list)
     {
         mOverrides = list;
     }
 
-	/**
-	 * @return
-	 */
-	public String getRawText()
-	{
-		return mRawText;
-	}
+    /**
+     * @return
+     */
+    public String getRawText()
+    {
+        return mRawText;
+    }
 
-	/**
-	 * @param string
-	 */
-	public void setRawText(String string)
-	{
-		mRawText = string;
-	}
+    /**
+     * @param string
+     */
+    public void setRawText(String string)
+    {
+        mRawText = string;
+    }
 
-	/**
-	 * @return
-	 */
-	public String getVersion()
-	{
-		return mVersion;
-	}
+    /**
+     * @return
+     */
+    public String getVersion()
+    {
+        return mVersion;
+    }
 
-	/**
-	 * @param string
-	 */
-	public void setVersion(String string)
-	{
-		mVersion = string;
-	}
+    /**
+     * @param string
+     */
+    public void setVersion(String string)
+    {
+        mVersion = string;
+    }
 
-	/**
-	 * @return
-	 */
-	public String getVPGainShip()
-	{
-		return mVPGainShip;
-	}
+    /**
+     * @return
+     */
+    public String getVPGainShip()
+    {
+        return mVPGainShip;
+    }
 
-	/**
-	 * @param string
-	 */
-	public void setVPGainShip(String string)
-	{
-		mVPGainShip = string;
-	}
+    /**
+     * @param string
+     */
+    public void setVPGainShip(String string)
+    {
+        mVPGainShip = string;
+    }
 
     public boolean isAllowOmniscentSensors()
     {
@@ -329,37 +330,36 @@ public class Game extends PCSBean
         mResourceGenerationFormula = string;
     }
 
-	/**
-	 * @return
-	 */
-	public String getConstructionPerTurnFormula()
-	{
-		return mConstructionPerTurnFormula;
-	}
+    /**
+     * @return
+     */
+    public String getConstructionPerTurnFormula()
+    {
+        return mConstructionPerTurnFormula;
+    }
 
-	/**
-	 * @param string
-	 */
-	public void setConstructionPerTurnFormula(String string)
-	{
-		mConstructionPerTurnFormula = string;
-	}
+    /**
+     * @param string
+     */
+    public void setConstructionPerTurnFormula(String string)
+    {
+        mConstructionPerTurnFormula = string;
+    }
 
+    /**
+     * @return
+     */
+    public List<Ship> getShipLibrary()
+    {
+        return mShipLibrary;
+    }
 
-	/**
-	 * @return
-	 */
-	public ArrayList getShipLibrary()
-	{
-		return mShipLibrary;
-	}
-
-	/**
-	 * @param list
-	 */
-	public void setShipLibrary(ArrayList list)
-	{
-		mShipLibrary = list;
-	}
+    /**
+     * @param list
+     */
+    public void setShipLibrary(List<Ship> list)
+    {
+        mShipLibrary = list;
+    }
 
 }

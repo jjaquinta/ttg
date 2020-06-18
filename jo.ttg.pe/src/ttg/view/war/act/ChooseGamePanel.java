@@ -3,17 +3,15 @@ package ttg.view.war.act;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Frame;
-import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import javax.swing.event.ListSelectionEvent;
 
 import jo.util.ui.swing.TableLayout;
 import jo.util.ui.swing.utils.ListenerUtils;
@@ -29,9 +27,9 @@ import ttg.view.war.edit.DlgCustomGame;
 
 public class ChooseGamePanel extends HelpPanel
 {
-	private ArrayList	mGameList;
+	private List<Game>	mGameList;
 	
-	private JList		mGames;
+	private JList<Game> mGames;
 	private JButton		mAddCustom;
 	private JButton		mOK;
 	
@@ -61,8 +59,8 @@ public class ChooseGamePanel extends HelpPanel
         {
         	e.printStackTrace();
         }
-		mGames = new JList();
-		mGames.setListData(mGameList.toArray());
+		mGames = new JList<Game>();
+		mGames.setListData(mGameList.toArray(new Game[0]));
 		mGames.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		mAddCustom = new WarButton("Add Custom", IconLogic.mButtonAdd);
 		mAddCustom.setToolTipText("Launch custom game editor");
@@ -123,7 +121,7 @@ public class ChooseGamePanel extends HelpPanel
 		Game game = (Game)mGames.getSelectedValue();
 		if (game != null)
 			dlg.setText(game.getRawText()); 
-		dlg.show();
+		dlg.setVisible(true);
 		if (!dlg.isAccepted())
 			return;
 		String txt = dlg.getText();
@@ -131,7 +129,7 @@ public class ChooseGamePanel extends HelpPanel
 		{
 			game = DefaultGame.parseGame(new BufferedReader(new StringReader(txt)));
 			mGameList.add(game);
-			mGames.setListData(mGameList.toArray());
+			mGames.setListData(mGameList.toArray(new Game[0]));
 		}
 		catch (IOException e)
 		{

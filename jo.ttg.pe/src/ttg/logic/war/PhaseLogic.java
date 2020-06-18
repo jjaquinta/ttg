@@ -3,9 +3,12 @@ package ttg.logic.war;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import jo.ttg.beans.mw.MainWorldBean;
+import jo.util.utils.ArrayUtils;
 import jo.util.utils.DebugUtils;
 import ttg.beans.war.GameInst;
 import ttg.beans.war.PlayerInterface;
@@ -58,27 +61,14 @@ public class PhaseLogic extends Thread
 	{
 		mGame.setPhase(1);
 		// tank up ships
-		for (Iterator j = mGame.getShips().iterator(); j.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)j.next();
-			ShipLogic.setupFuel(ship);
-		}
+		ArrayUtils.opCollection(mGame.getShips(), (ship) -> ShipLogic.setupFuel(ship));
 		// collect moves
-		for (Iterator i = mGame.getSides().iterator(); i.hasNext(); )
-		{
-			SideInst side = (SideInst)i.next();
-			side.getPlayer().move();
-		} 
+        ArrayUtils.opCollection(mGame.getSides(), (side) -> side.getPlayer().move());
 		// reset moves
-		for (Iterator j = mGame.getShips().iterator(); j.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)j.next();
-			ship.setHasMoved(false);
-		}
+        ArrayUtils.opCollection(mGame.getShips(), (ship) -> ship.setHasMoved(false));
 		// execute moves
-		for (Iterator j = mGame.getShips().iterator(); j.hasNext(); )
+		for (ShipInst ship : mGame.getShips())
 		{
-			ShipInst ship = (ShipInst)j.next();
 			if ((ship.getShip().getJump() == 0) || (ship.getContainedBy() != null))
 				continue;
 			String moveError = ShipLogic.validateMove(mGame, ship);
@@ -99,15 +89,13 @@ public class PhaseLogic extends Thread
 	{
 		mGame.setPhase(2);
 		// find worlds
-		for (Iterator i = mGame.getWorlds().values().iterator(); i.hasNext(); )
+		for (WorldInst world: mGame.getWorlds().values())
 		{
-			WorldInst world = (WorldInst)i.next();
 			boolean anyCombat = false;
 			SideInst hasFactors = null;
-			HashSet sides = new HashSet();
-			for (Iterator j = world.getShips().iterator(); j.hasNext(); )
+			Set<SideInst> sides = new HashSet<>();
+			for (ShipInst ship: world.getShips())
 			{
-				ShipInst ship = (ShipInst)j.next();
 				ship.setHasFired(false);
 				ship.setFleeing(false);
 				ship.setTarget(null);
@@ -128,15 +116,12 @@ public class PhaseLogic extends Thread
 	{
 		mGame.setPhase(2);
 		// resource generation
-		for (Iterator i = mGame.getWorlds().values().iterator(); i.hasNext(); )
-			WorldLogic.addResourceProduction(mGame, (WorldInst)i.next());
+		for (WorldInst world : mGame.getWorlds().values())
+			WorldLogic.addResourceProduction(mGame, world);
 		if (!mGame.getGame().isAllowConstruction())
 			return;
-		for (Iterator i = mGame.getWorlds().values().iterator(); i.hasNext(); )
-		{
-			WorldInst world = (WorldInst)i.next();
+        for (WorldInst world : mGame.getWorlds().values())
 			constructUpon(world);
-		}
 	}
 	
 	private void constructUpon(WorldInst world)
@@ -154,14 +139,12 @@ public class PhaseLogic extends Thread
 			side.getResources());
 		if (canDo <= 0)
 			return;
-		ArrayList ships = world.getUnderConstruction();
-		Object[] designs = ships.toArray();
-		for (int j = 0; j < designs.length; j++)
+		for (Iterator<Ship> i = world.getUnderConstruction().iterator(); i.hasNext(); )
 		{
-			Ship design = (Ship)designs[j];
+			Ship design = i.next();
 			if (design.getJump() > WorldLogic.getMaxJumpConstruction(world))
 			{
-				ships.remove(design);
+				i.remove();
 				continue;
 			}
 			int cost = ShipLogic.cost(design);
@@ -181,7 +164,7 @@ public class PhaseLogic extends Thread
 			ship.setDestination(world);
 			ShipLogic.place(mGame, ship);
 			sendMessage(side, PlayerMessage.NEWSHIP, ship, null);
-			ships.remove(design);
+            i.remove();
 		}
 	}
 	
@@ -189,17 +172,15 @@ public class PhaseLogic extends Thread
 	{
 		mGame.setPhase(3);
 		// find worlds
-		for (Iterator i = mGame.getWorlds().values().iterator(); i.hasNext(); )
+		for (WorldInst world : mGame.getWorlds().values())
 		{
-			WorldInst world = (WorldInst)i.next();
 			world.setRepairsThisTurn(0);
 			int canRepair = WorldLogic.canRepair(world);
 			if (canRepair == 0)
 				continue;
-			ArrayList ships = new ArrayList();
-			for (Iterator j = world.getShips().iterator(); j.hasNext(); )
+			List<ShipInst> ships = new ArrayList<>();
+			for (ShipInst ship : world.getShips())
 			{
-				ShipInst ship = (ShipInst)j.next();
 				if (!ShipLogic.canBeRepaired(ship, world))
 					continue;
 				ship.setToDo(true);
@@ -208,9 +189,8 @@ public class PhaseLogic extends Thread
 			if (ships.size() == 0)
 				continue;
 			world.getSide().getPlayer().repair(world, ships);
-			for (Iterator j = ships.iterator(); j.hasNext(); )
+			for (ShipInst ship : ships)
 			{
-				ShipInst ship = (ShipInst)j.next();
 				if (!ship.isToDo())
 				{
 					if (canRepair > 0)
@@ -231,20 +211,16 @@ public class PhaseLogic extends Thread
 	private void setupPhase()
 	{
 		mGame.setPhase(0);
-		for (Iterator i = mGame.getSides().iterator(); i.hasNext(); )
+		for (SideInst side : mGame.getSides())
 		{
-			SideInst side = (SideInst)i.next();
 			PlayerInterface player = side.getPlayer();
 			player.setup();
 		}
-		for (Iterator i = mGame.getShips().iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+		for (ShipInst ship : mGame.getShips())
 			ShipLogic.place(mGame, ship);
-		}
 	}
 	
-	private void performCombat(WorldInst world, HashSet sides)
+	private void performCombat(WorldInst world, Set<SideInst> sides)
 	{
 		SideInst[] sidesList = new SideInst[sides.size()];
 		sides.toArray(sidesList);
@@ -255,20 +231,16 @@ public class PhaseLogic extends Thread
 		if (!isCombatOver(world))
 		{
 			// iterate through combat
-			for (int round = 1; ; round++)
+			for (;;)
 			{
 				// target ships
-				for (Iterator i = sides.iterator(); i.hasNext(); )
-				{
-					SideInst side = (SideInst)i.next();
+				for (SideInst side : sides)
 					side.getPlayer().target(world);
-				}
 				// work out attack factors
-				ArrayList toFlee = new ArrayList();
+				List<ShipInst> toFlee = new ArrayList<>();
 				int[] att = new int[world.getShips().size()];
-				for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+				for (ShipInst attacker : world.getShips())
 				{
-					ShipInst attacker = (ShipInst)i.next();
 					if (attacker.isFleeing())
 						continue;
 					ShipInst target = attacker.getTarget();
@@ -294,11 +266,8 @@ public class PhaseLogic extends Thread
 					ShipInst ship = (ShipInst)ships[i];
 					conductAttack(ship, att[i], sidesList);
 				}
-				for (Iterator i = toFlee.iterator(); i.hasNext(); )
-				{
-					ShipInst ship = (ShipInst)i.next();
+				for (ShipInst ship : toFlee)
 					ship.setFleeing(true);
-				}
 				if (isCombatOver(world))
 					break;
 			}
@@ -306,24 +275,17 @@ public class PhaseLogic extends Thread
 		sendMessage(sidesList, PlayerMessage.COMBATEND, world, null);
 	}
 
-	private void performFleeing(WorldInst world, HashSet sides)
+	private void performFleeing(WorldInst world, Set<SideInst> sides)
 	{
 		// clear todo
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+		for (ShipInst ship : world.getShips())
 			ship.setToDo(true);
-		}
 		// find fleeing ships
-		for (Iterator i = sides.iterator(); i.hasNext(); )
-		{
-			SideInst side = (SideInst)i.next();
+		for (SideInst side : sides)
 			side.getPlayer().flee(world);
-		}
 		// flee ships
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (!ship.isToDo())
 				ship.setFleeing(true);
 		}
@@ -370,9 +332,8 @@ public class PhaseLogic extends Thread
 	private boolean isCombatOver(WorldInst world)
 	{
 		SideInst owner = null;
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.isFleeing())
 				continue;
 			if ((owner != null) && (owner != ship.getSideInst()))
@@ -390,9 +351,8 @@ public class PhaseLogic extends Thread
 			return; // no one owns empty space!		
 		SideInst owner = null;
 		int attackFactors = 0;
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.isFleeing())
 			{
 				ship.setFleeing(false);
@@ -430,18 +390,16 @@ public class PhaseLogic extends Thread
 	
 	private void findLosers()
 	{
-		ArrayList sides = mGame.getSides();
+		List<SideInst> sides = mGame.getSides();
 		boolean[] active = new boolean[sides.size()];
-		for (Iterator i = mGame.getWorlds().values().iterator(); i.hasNext(); )
+		for (WorldInst world : mGame.getWorlds().values())
 		{
-			WorldInst world = (WorldInst)i.next();
 			SideInst side = world.getSide();
 			if (side != null)
 				active[sides.indexOf(side)] = true;
 		}
-		for (Iterator i = mGame.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : mGame.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ShipLogic.getAttack(ship) != 0)
 			{
 				SideInst side = ship.getSideInst();
@@ -451,7 +409,7 @@ public class PhaseLogic extends Thread
 		for (int i = 0; i < active.length; i++)
 			if (!active[i])
 			{
-				SideInst side = (SideInst)sides.get(i);
+				SideInst side = sides.get(i);
 				if (side.getShips().size() > 0)
 				{
 					sendMessage(side, PlayerMessage.YOULOSE, side, null);
@@ -482,11 +440,8 @@ public class PhaseLogic extends Thread
 	
 	private void sendMessage(int id, Object arg1, Object arg2)
 	{
-		for (Iterator i = mGame.getSides().iterator(); i.hasNext(); )
-		{
-			SideInst s = (SideInst)i.next();
+		for (SideInst s : mGame.getSides())
 			sendMessage(s, id, arg1, arg2);
-		}
 	}
 	
 	public static double getOdds(int att, int def)

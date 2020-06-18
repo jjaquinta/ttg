@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 import jo.ttg.core.ui.swing.logic.FormatUtils;
@@ -29,9 +30,9 @@ public class DefaultGame
 		return getInternalGame(mInternalGames[0]);
 	}
 	
-	public static ArrayList getInternalGames() throws IOException
+	public static List<Game> getInternalGames() throws IOException
 	{
-		ArrayList ret = new ArrayList();
+		List<Game> ret = new ArrayList<>();
 		for (int i = 0; i < mInternalGames.length; i++)
 			ret.add(getInternalGame(mInternalGames[i]));
 		return ret;

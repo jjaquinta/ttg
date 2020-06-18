@@ -12,7 +12,8 @@ import ttg.view.war.WarPanel;
 
 public class GameInfoPanel extends HelpPanel
 {
-	private InfoPanel	mInfo;
+	@SuppressWarnings("unused")
+    private InfoPanel	mInfo;
 	private Game		mGame;
 
 	private JLabel		mName;

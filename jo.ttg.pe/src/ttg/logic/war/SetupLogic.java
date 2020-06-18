@@ -83,9 +83,8 @@ public class SetupLogic
 			}
 		}
 		
-		for (Iterator i = game.getGame().getOverrides().iterator(); i.hasNext(); )
+		for (String inbuf : game.getGame().getOverrides())
 		{
-			String inbuf = (String)i.next();
 			StringTokenizer st = new StringTokenizer(inbuf, ",");
 			if (st.countTokens() < 2)
 				continue;
@@ -133,9 +132,8 @@ public class SetupLogic
     private static void setupSides(GameInst game)
     {
     	int idx = 0;
-    	for (Iterator i = game.getGame().getSides().iterator(); i.hasNext(); idx++)
+    	for (Side side : game.getGame().getSides())
     	{
-    		Side side = (Side)i.next();
     		SideInst sideInst = new SideInst();
     		sideInst.setSide(side);
     		sideInst.setVictoryPoints(side.getVictoryPoints());
@@ -143,9 +141,8 @@ public class SetupLogic
 			sideInst.setIndex(idx);
     		sideInst.setColor1(mColors1[idx%mColors1.length]);
 			sideInst.setColor2(mColors2[idx%mColors2.length]);
-			for (Iterator j = side.getSetupWorlds().iterator(); j.hasNext(); )
+			for (String uri : side.getSetupWorlds())
 			{
-				String uri = (String)j.next();
 				Object obj = SchemeLogic.getFromURI(game.getScheme(), uri);
 				if (obj instanceof SectorBean)
 					addToSide(game, sideInst, (SectorBean)obj);
@@ -160,18 +157,18 @@ public class SetupLogic
     
 	private static void addToSide(GameInst game, SideInst sideInst, SectorBean sec)
 	{
-		for (Iterator i = sec.getSubSectorsIterator(); i.hasNext(); )
+		for (Iterator<SubSectorBean> i = sec.getSubSectorsIterator(); i.hasNext(); )
 		{
-			SubSectorBean sub = (SubSectorBean)i.next();
+			SubSectorBean sub = i.next();
 			addToSide(game, sideInst, sub);
 		}
 	}
     
 	private static void addToSide(GameInst game, SideInst sideInst, SubSectorBean sub)
 	{
-		for (Iterator i = sub.getMainWorldsIterator(); i.hasNext(); )
+		for (Iterator<MainWorldBean> i = sub.getMainWorldsIterator(); i.hasNext(); )
 		{
-			MainWorldBean mw = (MainWorldBean)i.next();
+			MainWorldBean mw = i.next();
 			addToSide(game, sideInst, mw);
 		}
 	}
@@ -186,9 +183,8 @@ public class SetupLogic
     
 	private static void setupShips(GameInst game)
 	{
-		for (Iterator i = game.getGame().getShips().iterator(); i.hasNext(); )
+		for (Ship ship : game.getGame().getShips())
 		{
-			Ship ship = (Ship)i.next();
 			ShipInst shipInst = new ShipInst();
 			shipInst.setShip(ship);
 			SideInst side = (SideInst)game.getSides().get(ship.getSide());
@@ -198,10 +194,7 @@ public class SetupLogic
 			SideLogic.victoryPoints(side, ShipLogic.eval(shipInst, game.getGame().getVPHaveShip()));
 			ShipLogic.setupFuel(shipInst);
 		}
-		for (Iterator i = game.getSides().iterator(); i.hasNext();)
-		{
-			SideInst sideInst = (SideInst)i.next();
+		for (SideInst sideInst : game.getSides())
 			ShipLogic.autoDock(sideInst.getShips(), null);
-		}
 	}
 }

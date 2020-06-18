@@ -8,7 +8,7 @@ package ttg.view.war.msg;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -36,7 +36,7 @@ public class OrderPanel extends JPanel
 	private WarPanel		mPanel;
 	private PlayerMessage	mMessage;
 	
-	private JList		mSides;
+	private JList<SideInst>		mSides;
 	private JButton		mOK;
 	
 	/**
@@ -53,7 +53,7 @@ public class OrderPanel extends JPanel
 
 	private void initInstantiate()
 	{
-		mSides = new JList();
+		mSides = new JList<>();
 		mSides.setCellRenderer(new SideRenderer());
 		mOK = new WarButton("OK", IconLogic.mButtonDone);
 	}
@@ -76,17 +76,19 @@ public class OrderPanel extends JPanel
 		add("1,+ fill=h", mOK);
 	}
 	
-	public void setMessage(PlayerMessage msg)
+	@SuppressWarnings("unchecked")
+    public void setMessage(PlayerMessage msg)
 	{
 		mMessage = msg;
 		if (mMessage == null)
 		{
-			mSides.setListData(new Object[0]);
+			mSides.setListData(new SideInst[0]);
 			mOK.setEnabled(false);
 		}
 		else
 		{
-			mSides.setListData(((ArrayList)msg.getArg1()).toArray());
+            mSides.setListData(
+                    ((List<SideInst>)msg.getArg1()).toArray(new SideInst[0]));
 			mOK.setEnabled(true);
 		}
 	}
@@ -104,7 +106,7 @@ public class OrderPanel extends JPanel
 	 */
 	protected void doSideAction()
 	{
-		SideInst side = (SideInst)mSides.getSelectedValue();
+		SideInst side = mSides.getSelectedValue();
 		if (side != null)
 			mPanel.getInfoPanel().setObject(side);
 	}

@@ -1,12 +1,12 @@
 package ttg.logic.war.eval;
 
 import java.util.Hashtable;
-import java.util.Iterator;
+import java.util.Map;
 
 public class EvalLogic
 {
-    private static Hashtable mFunctions = new Hashtable(100);
-    private static Hashtable mConstants = new Hashtable(20);
+    private static Map<String,FSymbols> mFunctions = new Hashtable<>(100);
+    private static Map<String,Double> mConstants = new Hashtable<>(20);
 
     static {
         mConstants.put("PI", new Double(Math.PI));
@@ -31,14 +31,13 @@ public class EvalLogic
         mFunctions.put(fs.name, fs);
     }
 
-    public static Object evaluate(String expr, Hashtable variables)
+    public static Object evaluate(String expr, Map<String,Double> variables)
         throws IllegalArgumentException
     {
     	// add variables
-    	for (Iterator i = variables.keySet().iterator(); i.hasNext(); )
+    	for (String key : variables.keySet())
     	{
-    		Object key = i.next();
-			Object val = variables.get(key);
+			Double val = variables.get(key);
     		mConstants.put(key, val);
     	}
         expr = cleanSpaces(expr);
@@ -62,13 +61,13 @@ public class EvalLogic
         return res;
     }
 
-    public static boolean evaluateBoolean(String sExpression, Hashtable variables)
+    public static boolean evaluateBoolean(String sExpression, Map<String,Double> variables)
         throws IllegalArgumentException
     {
         return CalcLogic.makeBoolean(evaluate(sExpression, variables));
     }
 
-	public static int evaluateInteger(String sExpression, Hashtable variables)
+	public static int evaluateInteger(String sExpression, Map<String,Double> variables)
 		throws IllegalArgumentException
 	{
 		return CalcLogic.makeInteger(evaluate(sExpression, variables));
@@ -236,6 +235,7 @@ public class EvalLogic
         // take care of negative numbers
         fixNegativeNumberTokens(tokens);
 
+        /*
         // create output string from the Token List
         String sOutput = new String();
         TokenNode tn = tokens.mHead;
@@ -250,6 +250,7 @@ public class EvalLogic
 
             tn = tn.mNext;
         }
+        */
 
         return tokens;
     }
@@ -476,6 +477,7 @@ public class EvalLogic
 
                 Object d = calcFunction(tn.mToken.nameStr(), tl_params);
 
+                /*
                 // show argument list
                 String sOutput = tn.mToken.nameStr() + " (";
                 TokenNode tn_output = tl_params.mHead;
@@ -487,6 +489,7 @@ public class EvalLogic
                 }
                 sOutput += ") = " + d.toString();
                 //System.out.println(sOutput);
+                 */
 
                 // add the number to the new arithmetic list
                 if (d instanceof Number)
@@ -612,6 +615,7 @@ public class EvalLogic
         TokenList tl_out = new TokenList();
         TokenStack stack = new TokenStack();
 
+        /*
         // show INFIX list
         String sOutput = "Infix: ";
         TokenNode tn_output = tl.mHead;
@@ -622,6 +626,7 @@ public class EvalLogic
             tn_output = tn_output.mNext;
         }
         //System.out.println(sOutput);
+         */
 
         TokenNode tn = tl.mHead;
         while (tn != null)
@@ -665,9 +670,10 @@ public class EvalLogic
         while (!stack.isEmpty())
             tl_out.addTail(stack.pop());
 
+        /*
         // show POSTFIX list
-        sOutput = "Postfix:";
-        tn_output = tl_out.mHead;
+        String sOutput = "Postfix:";
+        TokenNode tn_output = tl_out.mHead;
         while (tn_output != null)
         {
             Token t_output = tn_output.mToken;
@@ -675,6 +681,7 @@ public class EvalLogic
             tn_output = tn_output.mNext;
         }
         //System.out.println(sOutput + " |");
+         */
 
         return tl_out;
     }

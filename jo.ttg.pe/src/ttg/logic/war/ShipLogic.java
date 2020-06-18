@@ -1,8 +1,10 @@
 package ttg.logic.war;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import jo.ttg.beans.OrdBean;
 import jo.util.utils.DebugUtils;
@@ -36,8 +38,8 @@ public class ShipLogic
 		ship.setLocation(to);
 		ship.setDestination(null);
 		ship.setHasMoved(true);
-		for (Iterator i = ship.getContains().iterator(); i.hasNext(); )
-			place(game, (ShipInst)i.next());
+		for (ShipInst s : ship.getContains())
+			place(game, s);
     }
 
 	public static void setDestination(GameInst game, ShipInst ship, WorldInst world)
@@ -50,8 +52,8 @@ public class ShipLogic
 		ship.setDestination(world);
 		if (world != null)
 			world.getShipsEnRoute().add(ship);
-		for (Iterator i = ship.getContains().iterator(); i.hasNext(); )
-			setDestination(game, (ShipInst)i.next(), world);
+		for (ShipInst s : ship.getContains())
+			setDestination(game, s, world);
 	}
 	
 	public static String validateMove(GameInst game, ShipInst ship, WorldInst destination)
@@ -90,22 +92,22 @@ public class ShipLogic
 		return validateMove(game, ship, ship.getDestination()); 
 	}
 	
-	public static ArrayList validDestinations(GameInst game, ShipInst ship)
+	public static List<WorldInst> validDestinations(GameInst game, ShipInst ship)
 	{
 		return validDestinations(game, ship, getJump(ship));
 	}
 	
-	public static ArrayList validExtendedDestinations(GameInst game, ShipInst ship)
+	public static List<WorldInst> validExtendedDestinations(GameInst game, ShipInst ship)
 	{
 		//DebugLogic.debug("ship="+ship.getShip().getName()+", range="+getRange(ship));
 		return validDestinations(game, ship, getRange(ship));
 	}
 	
-	private static ArrayList validDestinations(GameInst game, ShipInst ship, long radius)
+	private static List<WorldInst> validDestinations(GameInst game, ShipInst ship, long radius)
 	{
 		WorldInst loc = ship.getLocation();
 		OrdBean location = loc.getOrds();
-		ArrayList ret = new ArrayList();
+		List<WorldInst> ret = new ArrayList<>();
 		if ((radius == 0) || (ship.getContainedBy() != null))
 			return ret;
 		for (long x = -radius; x <= radius; x++)
@@ -245,11 +247,8 @@ public class ShipLogic
 	public static int carrying(ShipInst ship)
 	{
 		int ret = 0;
-		for (Iterator i = ship.getContains().iterator(); i.hasNext(); )
-		{
-			ShipInst s = (ShipInst)i.next();
+		for (ShipInst s : ship.getContains())
 			ret += size(s);
-		}
 		return ret;
 	}
 
@@ -289,16 +288,16 @@ public class ShipLogic
 	/**
 	 * @param mShips
 	 */
-	public static void autoDock(ArrayList ships, SideInst pov)
+	public static void autoDock(List<ShipInst> ships, SideInst pov)
 	{
 		for (;;)
 		{
 			// find ship with biggest capacity
 			ShipInst biggestCapacity = null;
 			int biggestCapacityValue = 0;
-			for (Iterator i = ships.iterator(); i.hasNext(); )
+			for (Iterator<ShipInst> i = ships.iterator(); i.hasNext(); )
 			{
-				ShipInst ship = (ShipInst)i.next();
+				ShipInst ship = i.next();
 				if ((pov != null) && (ship.getSideInst() != pov))
 				{
 					i.remove();
@@ -319,9 +318,8 @@ public class ShipLogic
 			// find biggest ship that will fit
 			ShipInst biggestSize = null;
 			int biggestSizeValue = 0;
-			for (Iterator i = ships.iterator(); i.hasNext(); )
+			for (ShipInst ship : ships)
 			{
-				ShipInst ship = (ShipInst)i.next();
 				if (ship.getContainedBy() != null)
 					continue;
 				if (ship.getShip().getJump() > 0)
@@ -349,18 +347,15 @@ public class ShipLogic
 	public static void setToDoAll(ShipInst ship, boolean v)
 	{
 		ship.setToDo(v);
-		for (Iterator i = ship.getContains().iterator(); i.hasNext(); )
-		{
-			ShipInst s = (ShipInst)i.next();
+		for (ShipInst s : ship.getContains())
 			setToDoAll(s, v);
-		}
 	}
 	
 	public static int eval(ShipInst ship, String expr)
 	{
 		if ((expr == null) || (expr.length() == 0))
 			return 0;
-		Hashtable vars = new Hashtable();
+		Map<String,Double> vars = new HashMap<>();
 		vars.put("Damaged", new Double(ship.isDamaged() ? 1 : 0));
 		vars.put("Attack", new Double(ship.getShip().getAttack()));
 		vars.put("Defense", new Double(ship.getShip().getDefense()));
@@ -380,9 +375,8 @@ public class ShipLogic
 	 */
 	public static ShipInst getShip(GameInst mGame, String id)
 	{
-		for (Iterator i = mGame.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : mGame.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.toString().equals(id))
 				return ship;
 		}
@@ -392,16 +386,16 @@ public class ShipLogic
 	public static int getAttackRecursive(ShipInst ship)
 	{
 		int ret = getAttack(ship);
-		for (Iterator i = ship.getContains().iterator(); i.hasNext(); )
-			ret += getAttackRecursive((ShipInst)i.next());
+		for (ShipInst s : ship.getContains())
+			ret += getAttackRecursive(s);
 		return ret;
 	}
 	
 	public static int getDefenseRecursive(ShipInst ship)
 	{
 		int ret = getDefense(ship);
-		for (Iterator i = ship.getContains().iterator(); i.hasNext(); )
-			ret += getDefenseRecursive((ShipInst)i.next());
+		for (ShipInst s : ship.getContains())
+			ret += getDefenseRecursive(s);
 		return ret;
 	}
 	
@@ -553,11 +547,10 @@ public class ShipLogic
 		return true;
 	}
 	
-	public static void addUnique(ArrayList uniqueShips, Ship design)
+	public static void addUnique(List<Ship> uniqueShips, Ship design)
 	{
-		for (Iterator j = uniqueShips.iterator(); j.hasNext(); )
+		for (Ship unique : uniqueShips)
 		{
-			Ship unique = (Ship)j.next();
 			if (ShipLogic.compare(design, unique))
 			{
 				design = null;

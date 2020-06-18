@@ -13,7 +13,7 @@ import java.awt.Frame;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -26,6 +26,7 @@ import javax.swing.tree.TreePath;
 
 import jo.util.ui.swing.utils.ListenerUtils;
 import jo.util.ui.swing.utils.MouseUtils;
+import jo.util.utils.ArrayUtils;
 import ttg.beans.war.ShipInst;
 import ttg.logic.war.IconLogic;
 import ttg.logic.war.ShipLogic;
@@ -40,7 +41,7 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 {
 	private WarPanel	mPanel;
 	private String		mRootLabel;
-	private ArrayList	mTreeListeners;
+	private List<TreeSelectionListener>	mTreeListeners;
 	private boolean		mInfoOnSelect;
 	private boolean		mInfoOnClick;
 	private boolean		mShipsOnSelect;
@@ -52,8 +53,8 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 	private JButton		mFuel;
 
 	private ShipInst	mShip;	
-	private ArrayList	mShips;
-	private ArrayList	mRootShips;
+	private List<ShipInst>	mShips;
+	private List<ShipInst>	mRootShips;
 	private ShipNode	mTreeRoot;
 	private boolean		mEclipse;
 	
@@ -71,14 +72,14 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 
 	private void initInstantiate()
 	{		
-		mShips = new ArrayList();
-		mRootShips = new ArrayList();
+		mShips = new ArrayList<>();
+		mRootShips = new ArrayList<>();
 		mRootLabel = "Ships:";
-		mTreeListeners = new ArrayList();
+		mTreeListeners = new ArrayList<>();
 		mInfoOnSelect = true;
 		mInfoOnClick = false;
 		
-		mShipTree = new JTree() {
+		mShipTree = new JTree()/* {
 			public String getSelectedShipList()
 			{
 				System.out.println("gettingSelectedShipList");
@@ -97,7 +98,7 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 			public void setSelectedShipList(String str)
 			{
 			}
-		};
+		}*/;
 		mShipTree.setCellRenderer(new ShipNodeRenderer());
 		mShipTree.setDragEnabled(true);
 		//mShipTree.setTransferHandler(new TransferHandler("selectedShipList"));
@@ -147,7 +148,7 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 		updateTree();
 	}
 	
-	public void init(ArrayList ships)
+	public void init(List<ShipInst> ships)
 	{
 		mShip = null;
 		mShips.clear();
@@ -169,12 +170,9 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 	public void updateTree()
 	{
 		mRootShips.clear();
-		for (Iterator i = mShips.iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+		for (ShipInst ship : mShips)
 			if (ship.getContainedBy() == null)
 				mRootShips.add(ship);
-		}
 		if (mShip == null)
 			mTreeRoot = new ShipNode(null, mRootShips);
 		else
@@ -228,18 +226,17 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 	public void propertyChange(PropertyChangeEvent ev)
 	{
 		//DebugLogic.beginGroup(getName()+" event=\"ships changed\" eclipse=\""+mEclipse+"\"");
-		ArrayList shipList = new ArrayList();
-		Object[] ships = (Object[])ev.getNewValue();
+		List<ShipInst> shipList = new ArrayList<>();
+		ShipInst[] ships = (ShipInst[])ev.getNewValue();
 		if (ships.length == 0)
 			return;
 		for (int i = 0; i < ships.length; i++)
 			shipList.add(ships[i]);
-		ArrayList paths = new ArrayList(); 
+		List<TreePath> paths = new ArrayList<>(); 
 		mTreeRoot.getAllPaths(null, paths);
-		ArrayList selectedPaths = new ArrayList();
-		for (Iterator i = paths.iterator(); i.hasNext(); )
+		List<TreePath> selectedPaths = new ArrayList<>();
+		for (TreePath path : paths)
 		{
-			TreePath path = (TreePath)i.next();
 			ShipNode node = (ShipNode)path.getLastPathComponent();
 			if (shipList.contains(node.getShip()))
 				selectedPaths.add(path);
@@ -354,7 +351,7 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 				break;
 		if (dlg == null)
 			return;
-		dlg.show();
+		dlg.setVisible(true);
 	}
 	
 	public void addTreeSelectionListener(TreeSelectionListener l)
@@ -375,13 +372,7 @@ public class ShipTree extends JPanel implements TreeSelectionListener, PropertyC
 	
 	private void fireTreeSelectionEvent(TreeSelectionEvent ev)
 	{
-		Object[] listeners;
-		synchronized (mTreeListeners)
-		{
-			listeners = mTreeListeners.toArray();
-		}
-		for (int i = 0; i < listeners.length; i++)
-			((TreeSelectionListener)listeners[i]).valueChanged(ev);
+	    ArrayUtils.opCollection(mTreeListeners, (i) -> i.valueChanged(ev));
 	}
 	/**
 	 * @return

@@ -7,7 +7,7 @@
 package ttg.logic.war;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.logic.OrdLogic;
@@ -22,12 +22,12 @@ import ttg.beans.war.WorldInst;
  */
 public class PathLogic
 {
-	public static ArrayList findPath(GameInst game, WorldInst from, WorldInst to, int jump, int fuel, int fueltank)
+	public static List<WorldInst> findPath(GameInst game, WorldInst from, WorldInst to, int jump, int fuel, int fueltank)
 	{
 //		DebugLogic.beginGroup("path from="+WorldLogic.getName(from)+" to="+WorldLogic.getName(to)
 //			+" jump="+jump+" fuel="+fuel);
-		ArrayList open = new ArrayList();
-		ArrayList closed = new ArrayList();
+		List<HexPoint> open = new ArrayList<>();
+		List<HexPoint> closed = new ArrayList<>();
 		HexPoint start = new HexPoint();
 		start.ords = from.getOrds();
 		start.world = from.getWorld() != null;
@@ -39,7 +39,7 @@ public class PathLogic
 		open.add(start); 
 		HexPoint best = plotPath(game, open, closed, to.getOrds(), jump, fueltank);
 		// reverse
-		ArrayList ret = new ArrayList();
+		List<WorldInst> ret = new ArrayList<>();
 		for (HexPoint p = best; p != null; p = p.p)
 		{
 			ret.add(0, WorldLogic.getWorld(game, p.ords));
@@ -59,9 +59,9 @@ public class PathLogic
 		return ret;
 	}
     
-	private static HexPoint plotPath(GameInst game, ArrayList open, ArrayList closed, OrdBean dest, int jump, int fuel)
+	private static HexPoint plotPath(GameInst game, List<HexPoint> open, List<HexPoint> closed, OrdBean dest, int jump, int fuel)
 	{                
-		for (int tick = 0;; tick++)
+		for (;;)
 		{                
 			HexPoint n = findLowestF(open);
 			if (n == null)
@@ -71,11 +71,10 @@ public class PathLogic
 			open.remove(n);
 			closed.add(n);
 			// neighbors
-			ArrayList within = WorldLogic.hexesWithin(game, n.ords, jump);
+			List<WorldInst> within = WorldLogic.hexesWithin(game, n.ords, jump);
 			boolean present;
-			for (Iterator i = within.iterator(); i.hasNext(); )
+			for (WorldInst w : within)
 			{
-				WorldInst w = (WorldInst)i.next();
 				HexPoint nn = new HexPoint();
 				nn.ords = w.getOrds();
 				nn.world = (w.getWorld() != null);
@@ -93,9 +92,8 @@ public class PathLogic
 				calc(game, nn, dest);
 				// closed
 				present = false;
-				for (Iterator j = closed.iterator(); j.hasNext(); )
+				for (HexPoint p : closed)
 				{
-					HexPoint p = (HexPoint)j.next();
 					if (p.equals(nn))
 					{      
 						present = true;
@@ -111,9 +109,8 @@ public class PathLogic
 					continue;
 				// open
 				present = false;
-				for (Iterator j = open.iterator(); j.hasNext(); )
+				for (HexPoint p : open)
 				{
-					HexPoint p = (HexPoint)j.next();
 					if (p.equals(nn))
 					{      
 						present = true;
@@ -166,13 +163,12 @@ public class PathLogic
 	}
 
     
-	private static HexPoint findLowestF(ArrayList l)
+	private static HexPoint findLowestF(List<HexPoint> l)
 	{                                         
 		HexPoint best = null;
         
-		for (Iterator i = l.iterator(); i.hasNext(); )
+		for (HexPoint p : l)
 		{
-			HexPoint p = (HexPoint)i.next();
 			if (best == null)
 				 best = p;
 			else if (p.f < best.f)

@@ -1,7 +1,7 @@
 package ttg.view.war.ai.handler;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import ttg.beans.war.ShipInst;
 import ttg.beans.war.SideInst;
@@ -16,18 +16,18 @@ public class CombatStats
 	int ourDamagedDefense;
 	int ourAttack;
 	int ourDefense;
-	ArrayList ours;
-	ArrayList ourFull;
-	ArrayList ourDamaged;
+	List<ShipInst> ours;
+	List<ShipInst> ourFull;
+	List<ShipInst> ourDamaged;
 	int theirAttack;
 	int theirDefense;
-	ArrayList theirs;
+	List<ShipInst> theirs;
 	
 	public CombatStats(WorldInst world, SideInst side)
 	{	
         init();
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
-			setup((ShipInst)i.next(), side);
+		for (ShipInst ship : world.getShips())
+			setup(ship, side);
 		ourAttack = ourFullAttack + ourDamagedAttack;
 		ourDefense = ourFullDefense + ourDamagedDefense;
 	}
@@ -38,12 +38,12 @@ public class CombatStats
         ourFullDefense = 0;
         ourDamagedAttack = 0;
         ourDamagedDefense = 0;
-        ours = new ArrayList();
-		ourFull = new ArrayList();
-		ourDamaged = new ArrayList();
+        ours = new ArrayList<>();
+		ourFull = new ArrayList<>();
+		ourDamaged = new ArrayList<>();
         theirAttack = 0;
         theirDefense = 0;
-        theirs = new ArrayList();
+        theirs = new ArrayList<>();
     }
 
 	private void setup(ShipInst ship, SideInst side)

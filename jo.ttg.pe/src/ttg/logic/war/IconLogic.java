@@ -12,8 +12,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -312,12 +311,11 @@ public class IconLogic
 	}
 	private static void paintShips(Graphics g, GameInst game, WorldInst world, SideInst pov)
 	{
-		ArrayList sides = game.getSides();
-		ArrayList ships = WorldLogic.getVisibleShips(game, world, pov);
+		List<SideInst> sides = game.getSides();
+		List<ShipInst> ships = WorldLogic.getVisibleShips(game, world, pov);
 		int[] number = new int[sides.size()];
-		for (Iterator i = ships.iterator(); i.hasNext(); )
+		for (ShipInst ship : ships)
 		{
-			ShipInst ship = (ShipInst)i.next();
 			while (ship.getContainedBy() != null)
 				ship = ship.getContainedBy();
 			number[sides.indexOf(ship.getSideInst())]++;

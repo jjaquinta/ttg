@@ -2,6 +2,8 @@ package ttg.beans.war;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.gen.IGenScheme;
@@ -9,38 +11,38 @@ import jo.util.beans.PCSBean;
 
 public class GameInst extends PCSBean
 {
-	private Game		mGame;
-	private ArrayList	mShips;
-	private ArrayList	mSides;
-	private HashMap		mWorlds;
-	private int			mTurn;
-	private int			mPhase;
-	private int			mRound;
-	private ArrayList	mStatusHistory;
-	private String		mStatus;
-	private IGenScheme	mScheme;
-	private OrdBean 	mUpperBound;
-	private OrdBean 	mLowerBound;
-	
-	public GameInst()
-	{
-		mShips = new ArrayList();
-		mSides = new ArrayList();
-		mWorlds = new HashMap();
-		mStatusHistory = new ArrayList();
-	}
-	
+    private Game                   mGame;
+    private List<ShipInst>         mShips;
+    private List<SideInst>         mSides;
+    private Map<String, WorldInst> mWorlds;
+    private int                    mTurn;
+    private int                    mPhase;
+    private int                    mRound;
+    private List<String>           mStatusHistory;
+    private String                 mStatus;
+    private IGenScheme             mScheme;
+    private OrdBean                mUpperBound;
+    private OrdBean                mLowerBound;
+
+    public GameInst()
+    {
+        mShips = new ArrayList<>();
+        mSides = new ArrayList<>();
+        mWorlds = new HashMap<>();
+        mStatusHistory = new ArrayList<>();
+    }
+
     public Game getGame()
     {
         return mGame;
     }
 
-    public ArrayList getShips()
+    public List<ShipInst> getShips()
     {
         return mShips;
     }
 
-    public ArrayList getSides()
+    public List<SideInst> getSides()
     {
         return mSides;
     }
@@ -50,12 +52,12 @@ public class GameInst extends PCSBean
         mGame = game;
     }
 
-    public void setShips(ArrayList list)
+    public void setShips(List<ShipInst> list)
     {
         mShips = list;
     }
 
-    public void setSides(ArrayList list)
+    public void setSides(List<SideInst> list)
     {
         mSides = list;
     }
@@ -69,7 +71,7 @@ public class GameInst extends PCSBean
     {
         queuePropertyChange("turn", mTurn, i);
         mTurn = i;
-		firePropertyChange();
+        firePropertyChange();
     }
 
     public int getPhase()
@@ -89,7 +91,7 @@ public class GameInst extends PCSBean
         return mStatus;
     }
 
-    public ArrayList getStatusHistory()
+    public List<String> getStatusHistory()
     {
         return mStatusHistory;
     }
@@ -101,82 +103,82 @@ public class GameInst extends PCSBean
         firePropertyChange();
     }
 
-    public void setStatusHistory(ArrayList list)
+    public void setStatusHistory(List<String> list)
     {
         mStatusHistory = list;
     }
 
-    public HashMap getWorlds()
+    public Map<String, WorldInst> getWorlds()
     {
         return mWorlds;
     }
 
-    public void setWorlds(HashMap map)
+    public void setWorlds(Map<String, WorldInst> map)
     {
         mWorlds = map;
     }
 
-	/**
-	 * @return
-	 */
-	public int getRound()
-	{
-		return mRound;
-	}
+    /**
+     * @return
+     */
+    public int getRound()
+    {
+        return mRound;
+    }
 
-	/**
-	 * @param i
-	 */
-	public void setRound(int i)
-	{
-		mRound = i;
-	}
+    /**
+     * @param i
+     */
+    public void setRound(int i)
+    {
+        mRound = i;
+    }
 
-	/**
-	 * @return
-	 */
-	public IGenScheme getScheme()
-	{
-		return mScheme;
-	}
+    /**
+     * @return
+     */
+    public IGenScheme getScheme()
+    {
+        return mScheme;
+    }
 
-	/**
-	 * @param scheme
-	 */
-	public void setScheme(IGenScheme scheme)
-	{
-		mScheme = scheme;
-	}
+    /**
+     * @param scheme
+     */
+    public void setScheme(IGenScheme scheme)
+    {
+        mScheme = scheme;
+    }
 
-	/**
-	 * @return
-	 */
-	public OrdBean getLowerBound()
-	{
-		return mLowerBound;
-	}
+    /**
+     * @return
+     */
+    public OrdBean getLowerBound()
+    {
+        return mLowerBound;
+    }
 
-	/**
-	 * @return
-	 */
-	public OrdBean getUpperBound()
-	{
-		return mUpperBound;
-	}
+    /**
+     * @return
+     */
+    public OrdBean getUpperBound()
+    {
+        return mUpperBound;
+    }
 
-	/**
-	 * @param bean
-	 */
-	public void setLowerBound(OrdBean bean)
-	{
-		mLowerBound = bean;
-	}
+    /**
+     * @param bean
+     */
+    public void setLowerBound(OrdBean bean)
+    {
+        mLowerBound = bean;
+    }
 
-	/**
-	 * @param bean
-	 */
-	public void setUpperBound(OrdBean bean)
-	{
-		mUpperBound = bean;
-	}
+    /**
+     * @param bean
+     */
+    public void setUpperBound(OrdBean bean)
+    {
+        mUpperBound = bean;
+    }
 }

@@ -6,7 +6,7 @@
  */
 package ttg.logic.war;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import ttg.beans.war.GameInst;
 
@@ -20,7 +20,7 @@ public class GameLogic
 {
 	public static void status(GameInst game, String newStatus)
 	{
-		ArrayList history = game.getStatusHistory();
+		List<String> history = game.getStatusHistory();
 		while (history.size() > 5)
 			history.remove(0);
 		history.add(newStatus);

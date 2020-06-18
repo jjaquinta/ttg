@@ -1,8 +1,7 @@
 package ttg.view.war;
 
-import java.util.ArrayList;
 import java.util.Enumeration;
-import java.util.Iterator;
+import java.util.List;
 import java.util.Vector;
 
 import javax.swing.tree.TreeNode;
@@ -13,49 +12,47 @@ import ttg.logic.war.ShipLogic;
 
 public class ShipNode implements TreeNode
 {
-	private String		mRootLabel;
-	private ShipNode	mParent;
-	private ShipInst	mShip;
-	private ArrayList	mShips;
-	private Vector		mNodes;
-	
-	public ShipNode(ShipNode parent, ArrayList ships)
-	{
-		mParent = parent;
-		mShips = ships;
-		mRootLabel = "Ships"; 
-		mNodes = new Vector();
-		for (Iterator i = mShips.iterator(); i.hasNext(); )
-			mNodes.add(new ShipNode(this, (ShipInst)i.next()));
-		mShip = null;
-	}
-	
-	public ShipNode(ShipNode parent, ShipInst ship)
-	{
-		this(parent, ship.getContains());
-		mShip = ship;
-	}
+    private String           mRootLabel;
+    private ShipNode         mParent;
+    private ShipInst         mShip;
+    private List<ShipInst>   mShips;
+    private Vector<ShipNode> mNodes;
 
-	public void getAllPaths(TreePath parent, ArrayList list)
-	{
-		TreePath thisPath;
-		if (parent != null)
-		{
-			Object[] newPaths = new Object[parent.getPathCount() + 1];
-			System.arraycopy(parent.getPath(), 0, newPaths, 0, newPaths.length - 1);
-			newPaths[newPaths.length - 1] = this;
-			thisPath = new TreePath(newPaths); 
-		}
-		else
-			thisPath = new TreePath(this);
-		if (mShip != null)
-			list.add(thisPath);
-		for (Iterator i = mNodes.iterator(); i.hasNext(); )
-		{	
-			ShipNode node = (ShipNode)i.next();
-			node.getAllPaths(thisPath, list);
-		}
-	}
+    public ShipNode(ShipNode parent, List<ShipInst> ships)
+    {
+        mParent = parent;
+        mShips = ships;
+        mRootLabel = "Ships";
+        mNodes = new Vector<>();
+        for (ShipInst ship : mShips)
+            mNodes.add(new ShipNode(this, ship));
+        mShip = null;
+    }
+
+    public ShipNode(ShipNode parent, ShipInst ship)
+    {
+        this(parent, ship.getContains());
+        mShip = ship;
+    }
+
+    public void getAllPaths(TreePath parent, List<TreePath> list)
+    {
+        TreePath thisPath;
+        if (parent != null)
+        {
+            Object[] newPaths = new Object[parent.getPathCount() + 1];
+            System.arraycopy(parent.getPath(), 0, newPaths, 0,
+                    newPaths.length - 1);
+            newPaths[newPaths.length - 1] = this;
+            thisPath = new TreePath(newPaths);
+        }
+        else
+            thisPath = new TreePath(this);
+        if (mShip != null)
+            list.add(thisPath);
+        for (ShipNode node : mNodes)
+            node.getAllPaths(thisPath, list);
+    }
 
     /**
      *
@@ -63,7 +60,7 @@ public class ShipNode implements TreeNode
 
     public TreeNode getChildAt(int idx)
     {
-       	return (TreeNode)mNodes.get(idx);
+        return (TreeNode)mNodes.get(idx);
     }
 
     /**
@@ -99,10 +96,10 @@ public class ShipNode implements TreeNode
 
     public boolean getAllowsChildren()
     {
-    	if (mShip == null)
-    		return true;
+        if (mShip == null)
+            return true;
         else
-        	return ShipLogic.additionalCapacity(mShip) > 0;
+            return ShipLogic.additionalCapacity(mShip) > 0;
     }
 
     /**
@@ -118,7 +115,7 @@ public class ShipNode implements TreeNode
      *
      */
 
-    public Enumeration children()
+    public Enumeration<ShipNode> children()
     {
         return mNodes.elements();
     }
@@ -128,26 +125,27 @@ public class ShipNode implements TreeNode
         return mShip;
     }
 
-	public String toString()
-	{
-		if (mShip == null)
-			return mRootLabel;
-		return mShip.toString();
-	}
-	/**
-	 * @return
-	 */
-	public String getRootLabel()
-	{
-		return mRootLabel;
-	}
+    public String toString()
+    {
+        if (mShip == null)
+            return mRootLabel;
+        return mShip.toString();
+    }
 
-	/**
-	 * @param string
-	 */
-	public void setRootLabel(String string)
-	{
-		mRootLabel = string;
-	}
+    /**
+     * @return
+     */
+    public String getRootLabel()
+    {
+        return mRootLabel;
+    }
+
+    /**
+     * @param string
+     */
+    public void setRootLabel(String string)
+    {
+        mRootLabel = string;
+    }
 
 }

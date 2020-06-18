@@ -6,8 +6,7 @@
  */
 package ttg.view.war.ai.handler;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import ttg.beans.war.ShipInst;
 import ttg.beans.war.WorldInst;
@@ -64,7 +63,6 @@ public class TargetHandler extends BaseHandler
 		ShipInst[] ourShips = sortDescendingAttack(stats.ourFull);
 		for (int i = 0; i < ourShips.length; i++)
 		{
-			int att = ShipLogic.getAttack(ourShips[i]);
 			// spread attacks to achieve desired threshold
 			if (achieveMinimum(theirShips, attackedWith, ourShips[i]))
 				continue;
@@ -76,13 +74,10 @@ public class TargetHandler extends BaseHandler
 		}
 	}
 
-	private void targetFlee(ArrayList ships)
+	private void targetFlee(List<ShipInst> ships)
 	{
-		for (Iterator i = ships.iterator(); i.hasNext(); )
-		{
-			ShipInst ship = (ShipInst)i.next();
+		for (ShipInst ship : ships)
 			ship.setTarget(ship);
-		}
 	}
 
 	private boolean achieveMax(

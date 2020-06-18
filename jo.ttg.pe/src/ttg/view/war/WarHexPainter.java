@@ -5,8 +5,7 @@ import java.awt.Dimension;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Polygon;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.mw.MainWorldBean;
@@ -89,12 +88,11 @@ public class WarHexPainter extends HexPanelPainter
 	{
 		if (mActiveWorld == null)
 			return;
-		ArrayList sides = mPanel.getGame().getSides();
-		ArrayList ships = WorldLogic.getVisibleShips(mPanel.getGame(), world, pov);
+		List<SideInst> sides = mPanel.getGame().getSides();
+		List<ShipInst> ships = WorldLogic.getVisibleShips(mPanel.getGame(), world, pov);
 		int[] number = new int[sides.size()];
-		for (Iterator i = ships.iterator(); i.hasNext(); )
+		for (ShipInst ship : ships)
 		{
-			ShipInst ship = (ShipInst)i.next();
 			while (ship.getContainedBy() != null)
 				ship = ship.getContainedBy();
 			number[sides.indexOf(ship.getSideInst())]++;

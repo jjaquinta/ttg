@@ -1,8 +1,9 @@
 package ttg.logic.war;
 
 import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.Iterator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.mw.MainWorldBean;
@@ -72,9 +73,8 @@ public class WorldLogic
 	{
 		if (world.getSide() == side)
 			return true;
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.getSideInst() == side)
 				return true;
 		}
@@ -85,7 +85,7 @@ public class WorldLogic
 	{
 		if ((expr == null) || (expr.length() == 0))
 			return 0;
-		Hashtable vars = new Hashtable();
+		Map<String,Double> vars = new HashMap<>();
 		MainWorldBean mw = world.getWorld();
 		if (mw == null)
 			return 0;
@@ -110,24 +110,22 @@ public class WorldLogic
 		return ret;
 	}
 	
-	public static ArrayList getVisibleShips(GameInst game, WorldInst world, SideInst pov)
+	public static List<ShipInst> getVisibleShips(GameInst game, WorldInst world, SideInst pov)
 	{ 
-		ArrayList ships = new ArrayList();
+		List<ShipInst> ships = new ArrayList<>();
 		if (game.getGame().isAllowOmniscentSensors()
 			|| isWitness(world, pov))
 		{
-			for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+			for (ShipInst ship : world.getShips())
 			{
-				ShipInst ship = (ShipInst)i.next();
 				if (ship.getSideInst() != pov)
 					ships.add(ship); 
 				else if (ship.getDestination() == null)
 					ships.add(ship);
 			}
 		}
-		for (Iterator i = world.getShipsEnRoute().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShipsEnRoute())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.getSideInst() == pov)
 				ships.add(ship);
 		}
@@ -284,9 +282,8 @@ public class WorldLogic
 	public static int getDefenseFactors(WorldInst world)
 	{
 		int ret = 0;
-		for (Iterator i = world.getShips().iterator(); i.hasNext(); )
+		for (ShipInst ship : world.getShips())
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.getSideInst() == world.getSide())
 				ret += ShipLogic.getDefense(ship);
 		}
@@ -300,9 +297,8 @@ public class WorldLogic
 	public static int getDefenseFactors(GameInst game, WorldInst world, SideInst pov)
 	{
 		int ret = 0;
-		for (Iterator i = getVisibleShips(game, world, pov).iterator(); i.hasNext(); )
+		for (ShipInst ship : getVisibleShips(game, world, pov))
 		{
-			ShipInst ship = (ShipInst)i.next();
 			if (ship.getSideInst() == world.getSide())
 				ret += ShipLogic.getDefense(ship);
 		}
@@ -319,9 +315,9 @@ public class WorldLogic
 		return WorldLogic.getDefenseFactors(game, world, pov) >= WorldLogic.getFuelPoints(world)*4;
 	}
 	
-	public static ArrayList hexesWithin(GameInst game, OrdBean location, int radius)
+	public static List<WorldInst> hexesWithin(GameInst game, OrdBean location, int radius)
 	{
-		ArrayList ret = new ArrayList();
+		List<WorldInst> ret = new ArrayList<>();
 		if (radius == 0)
 			return ret;
 		for (long x = -radius; x <= radius; x++)

@@ -6,7 +6,7 @@
  */
 package ttg.view.war.ai.handler;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import ttg.beans.war.ShipInst;
 import ttg.beans.war.WorldInst;
@@ -25,7 +25,7 @@ public class RepairHandler extends BaseHandler
 		super(player);
 	}
 
-	public void repair(WorldInst world, ArrayList ships)
+	public void repair(WorldInst world, List<ShipInst> ships)
 	{
 		int port = world.getWorld().getPopulatedStats().getUPP().getPort().getValue();
 		((ShipInst)ships.get(0)).setToDo(false);

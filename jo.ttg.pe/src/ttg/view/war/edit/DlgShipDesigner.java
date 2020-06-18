@@ -9,7 +9,6 @@ package ttg.view.war.edit;
 import java.awt.Color;
 import java.awt.Dialog;
 import java.awt.Frame;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
@@ -212,7 +211,7 @@ public class DlgShipDesigner extends JDialog
 	private void doLoad()
 	{
 		DlgShipDesignSelect dlg = new DlgShipDesignSelect(null, mGame, null);
-		dlg.show();
+		dlg.setVisible(true);
 		if (dlg.getShip() != null)
 			setShip(dlg.getShip());
 	}

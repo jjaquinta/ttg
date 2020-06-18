@@ -10,6 +10,7 @@ import java.net.URLStreamHandler;
 import java.net.UnknownServiceException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import jo.util.utils.io.ResourceUtils;
@@ -31,13 +32,13 @@ public class Handler extends URLStreamHandler
     	
 		private String	mPath;
 		private byte[]	mData;
-		private HashMap	mHeaderFields;
+		private Map<String,List<String>>	mHeaderFields;
 		
 		public TTGConnection(URL url)
 		{
 			super(url);
 			mPath = url.getPath();
-			mHeaderFields = new HashMap();
+			mHeaderFields = new HashMap<>();
 		}
 
         public void connect() throws IOException
@@ -57,12 +58,18 @@ public class Handler extends URLStreamHandler
 				mStringCache[mCachePosition] = mPath;
 				mCachePosition = (mCachePosition + 1)%CACHE_SIZE;
         	}
-			mHeaderFields.put("content-length", String.valueOf(mData.length));
+        	List<String> contentLengths = new ArrayList<>();
+        	contentLengths.add(String.valueOf(mData.length));
+			mHeaderFields.put("content-length", contentLengths);
 			String contentType = guessContentTypeFromName(mPath);
-			mHeaderFields.put("content-type", contentType);
+            List<String> contentTypes = new ArrayList<>();
+            contentTypes.add(contentType);
+			mHeaderFields.put("content-type", contentTypes);
 			if ((contentType != null) && contentType.startsWith("text/"))
 			{
-				mHeaderFields.put("content-encoding", "iso-8859-1");
+	            List<String> contentEncodings = new ArrayList<>();
+	            contentEncodings.add("iso-8859-1");
+				mHeaderFields.put("content-encoding", contentEncodings);
 			}
         }
         /**
@@ -89,10 +96,8 @@ public class Handler extends URLStreamHandler
 
         public String getHeaderField(int n)
         {
-        	ArrayList keys = new ArrayList();
-        	keys.addAll(mHeaderFields.keySet());
-        	Object key = keys.get(n);
-            return getHeaderField((String)key);
+        	String[] keys = mHeaderFields.keySet().toArray(new String[0]);
+            return getHeaderField(keys[n]);
         }
 
         /**
@@ -101,14 +106,16 @@ public class Handler extends URLStreamHandler
 
         public String getHeaderField(String name)
         {
-            return (String)mHeaderFields.get(name);
+            if (mHeaderFields.containsKey(name))
+                return mHeaderFields.get(name).get(0);
+            return null;
         }
 
         /**
          *
          */
 
-        public Map getHeaderFields()
+        public Map<String,List<String>> getHeaderFields()
         {
             return mHeaderFields;
         }

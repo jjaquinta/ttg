@@ -101,7 +101,7 @@ public class DlgCustomGame extends JDialog
 			line = line.substring(off+1).trim();
 		}
 		dlg.setLine(line);
-		dlg.show();
+		dlg.setVisible(true);
 		if (dlg.isAccepted())
 		{
 			txt = txt.substring(0, start) + prefix+dlg.getLine() + txt.substring(end);

@@ -7,7 +7,6 @@
 package ttg.view.war;
 
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
 
 import jo.ttg.logic.OrdLogic;
 import jo.util.ui.swing.utils.ListenerUtils;

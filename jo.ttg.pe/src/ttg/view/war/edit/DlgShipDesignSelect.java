@@ -27,96 +27,100 @@ import ttg.view.war.info.ShipInfoPanel;
 /**
  * @author jgrant
  *
- * To change the template for this generated type comment go to
- * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 public class DlgShipDesignSelect extends JDialog
 {
-	private Game		mGame;
-	private Ship			mShip;
-	
-	private JComboBox		mShips;
-	private ShipInfoPanel	mInfo;
-	private WarButton		mOK;
-	private WarButton		mCancel;
-	
-	/**
-	 *
-	 */
+    private Game            mGame;
+    private Ship            mShip;
 
-	public DlgShipDesignSelect(Frame frame, Game game, ShipInst ship)
-	{
-		super(frame, "Ship Design Library", true);
-		mGame = game;
-		initInstantiate();
-		initLink();
-		initLayout();
-	}
-	
-	private void initInstantiate()
-	{
-		mShip = null;
-		mShips = new JComboBox(mGame.getShipLibrary().toArray());
-		mShips.setRenderer(new ShipRenderer(IconLogic.SEL_DONT));
-		mInfo = new ShipInfoPanel(null, null);
-		mInfo.setObject(mShip);
-		mOK = new WarButton("Done", IconLogic.mButtonDone);
-		mCancel = new WarButton("Cancel", IconLogic.mButtonCancel);
-	}
+    private JComboBox<Ship> mShips;
+    private ShipInfoPanel   mInfo;
+    private WarButton       mOK;
+    private WarButton       mCancel;
 
-	private void initLink()
-	{
-		ListenerUtils.listen(mOK, (ev) -> doOK());
-		ListenerUtils.listen(mCancel, (ev) -> doCancel());
-		mShips.addItemListener( new ItemListener() {
+    /**
+     *
+     */
+
+    public DlgShipDesignSelect(Frame frame, Game game, ShipInst ship)
+    {
+        super(frame, "Ship Design Library", true);
+        mGame = game;
+        initInstantiate();
+        initLink();
+        initLayout();
+    }
+
+    private void initInstantiate()
+    {
+        mShip = null;
+        mShips = new JComboBox<>(mGame.getShipLibrary().toArray(new Ship[0]));
+        mShips.setRenderer(new ShipRenderer(IconLogic.SEL_DONT));
+        mInfo = new ShipInfoPanel(null, null);
+        mInfo.setObject(mShip);
+        mOK = new WarButton("Done", IconLogic.mButtonDone);
+        mCancel = new WarButton("Cancel", IconLogic.mButtonCancel);
+    }
+
+    private void initLink()
+    {
+        ListenerUtils.listen(mOK, (ev) -> doOK());
+        ListenerUtils.listen(mCancel, (ev) -> doCancel());
+        mShips.addItemListener(new ItemListener() {
             @Override
-			public void itemStateChanged(ItemEvent ev) { doShipChoose(); }
-			});
-	}
+            public void itemStateChanged(ItemEvent ev)
+            {
+                doShipChoose();
+            }
+        });
+    }
 
-	private void initLayout()
-	{
-		JPanel p1 = new JPanel();
-		p1.add(mOK);
-		p1.add(mCancel);
-		
-		getContentPane().add("North", new JScrollPane(mShips));
-		getContentPane().add("Center", mInfo);
-		getContentPane().add("South", p1);
-		
-		setSize(256, 400);
-	}
+    private void initLayout()
+    {
+        JPanel p1 = new JPanel();
+        p1.add(mOK);
+        p1.add(mCancel);
 
-	private void doOK()
-	{
-		dispose();
-	}
+        getContentPane().add("North", new JScrollPane(mShips));
+        getContentPane().add("Center", mInfo);
+        getContentPane().add("South", p1);
 
-	private void doCancel()
-	{
-		mShip = null;
-		dispose();
-	}
+        setSize(256, 400);
+    }
 
-	private void doShipChoose()
-	{
-		setShip((Ship)mShips.getSelectedItem());
-	}
-	/**
-	 * @return
-	 */
-	public Ship getShip()
-	{
-		return mShip;
-	}
+    private void doOK()
+    {
+        dispose();
+    }
 
-	/**
-	 * @param ship
-	 */
-	public void setShip(Ship ship)
-	{
-		mShip = ship;
-		mInfo.setObject(mShip);
-	}
+    private void doCancel()
+    {
+        mShip = null;
+        dispose();
+    }
+
+    private void doShipChoose()
+    {
+        setShip((Ship)mShips.getSelectedItem());
+    }
+
+    /**
+     * @return
+     */
+    public Ship getShip()
+    {
+        return mShip;
+    }
+
+    /**
+     * @param ship
+     */
+    public void setShip(Ship ship)
+    {
+        mShip = ship;
+        mInfo.setObject(mShip);
+    }
 
 }
