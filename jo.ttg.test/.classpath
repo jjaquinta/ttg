@@ -9,5 +9,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.util"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.util.ui.swing"/>
 	<classpathentry kind="lib" path="lib/batik-all-1.9.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jo.ttg.pe"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

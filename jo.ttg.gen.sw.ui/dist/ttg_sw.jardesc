@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="jo.ttg.gen.sw.ui/dist/ttg_sw.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/jo.ttg.gen.sw.ui/dist/ttg_sw.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=jo.ttg.gen.sw.ui/src&lt;jo.ttg.gen.sw.ui{SW.java[SW" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=jo.util/src"/>
+        <javaElement handleIdentifier="=jo.ttg.gen.sw.ui/src"/>
+        <javaElement handleIdentifier="=jo.ttg.core/src"/>
+        <javaElement handleIdentifier="=jo.ttg.gen.imp/src"/>
+        <javaElement handleIdentifier="=jo.util.ui.swing/src"/>
+        <javaElement handleIdentifier="=jo.ttg.gen.sw/src"/>
+        <javaElement handleIdentifier="=jo.ttg.core.ui.swing/src"/>
+    </selectedElements>
+</jardesc>

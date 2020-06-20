@@ -1,0 +1,74 @@
+<html>
+  <body>
+    <h1>Side Definition Keys</h1>
+    <p>
+      These keys are used to define the values for each side.
+      They all start with 'Side' and a number for that side, followed by
+      the rest of that key.
+      Below we will use Side1, but it is equally applicable for Side2, etc.
+    </p>
+    <p>
+      <b>Side1Name</b>
+      This is the name of the side.
+      It should only appear once.
+    </p>
+    <p>
+      <b>Side1VP</b>
+      This is a starting value to a side's Victory Points.
+      It can be used to round off values so each side starts with the same.
+      It should only appear once.
+    </p>
+    <p>
+      <b>Side1Resources</b>
+      This is the amount of initial resources this side starts with.
+      Resources are used in ship building.
+      It should only appear once.
+    </p>
+    <p>
+      <b>Side1WorldURI</b>
+      This key declares territory that belongs to this side at
+      the start of the game.
+      This key is in <b>TtgUriFormat</b>.
+      You can use a world or ord URI to specify a single world
+      You can use a sector or subsector URI to specify a whole area.
+      This key can be repeated. Each addition adds more territory.
+    </p>
+    <p>
+      <b>Side1Ship</b>
+      This key adds a ship to that side.
+      The value for this key is in the format:
+      <pre>
+        Side1Ship = 'name','att','def','cap','jump'
+        Side1Ship = 'name','att','def','cap','jump',x'num'
+      </pre>
+    </p>
+    <p>
+      Where 'name" is the name of the ship, 'att' is the attack factors,
+      'def' is the defense factors, and 'jump' is the jump range in
+      parsecs (hexes).
+    </p>
+    <p>
+      'cap' can be of the form '#.#' or '#' or '.#'. 
+      The first number says how many factors of capacity the ship can contain.
+      For example, specifying a capacity of '2' would create a hanger
+      large enough for a '1.1.0' fighter.
+      The second number says how many extra jump-1 amounts of fuel should
+      be stored.
+      For example, specifying a capacity of '.1' would create an extra
+      fuel tank with enough space to jump this ship an extra 1 parsec.
+    </p>
+    <p>
+      'num' is an optional prameter to indicate the number of these ships
+      to add to this side.
+    </p>
+    <p>
+      Note: in actual play there is no distinction made between hanger capacity
+      and fuel capacity. Nothing prevents you putting fuel into your hanger space
+      or ships into your fuel space (although not both at once!).
+      This is given as a convienence here in ship design.
+    </p>
+    <p>
+      This key can be repeated. Each addition adds another ship.    
+    </p>
+  </body>
+</html>

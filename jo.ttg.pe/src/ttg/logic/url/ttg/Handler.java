@@ -54,6 +54,8 @@ public class Handler extends URLStreamHandler
         	if (mData == null)
         	{
 				mData = ResourceUtils.loadSystemResourceBinary(mPath);
+				if (mData == null)
+				    System.err.println("Cannot find resource at path "+mPath);
 				mByteCache[mCachePosition] = mData;
 				mStringCache[mCachePosition] = mPath;
 				mCachePosition = (mCachePosition + 1)%CACHE_SIZE;
