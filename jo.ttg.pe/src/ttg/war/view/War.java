@@ -14,7 +14,7 @@ package ttg.war.view;
  */
 public class War
 {
-	public static String VERSION = "1.0.5.0";
+	public static String VERSION = "1.0.5.1";
 
 	public War()
 	{

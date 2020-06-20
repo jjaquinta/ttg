@@ -152,6 +152,7 @@ public class SetupLogic
 					addToSide(game, sideInst, (MainWorldBean)obj);
 			}
 			game.getSides().add(sideInst);
+			idx++;
     	}
     }
     
