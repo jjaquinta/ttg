@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<table width="100%">
+			<tr>
+				<td align="left">
+					<h1>
+					  Welcome to <ttg:write name='location.name'/>
+					</h1>
+				</td>
+				<td align="right">
+		  			<ttg:include href='loc_icon.html'/>
+				</td>
+			</tr>
+		</table>
+		<h2>Services</h2>
+		<ul>
+			<li><a href='dlg:cargo'>Cargo Market</a></li>
+			<li><a href='dlg:freight'>Freight Yard</a></li>
+			<li><a href='dlg:crew'>Employment Exchange</a></li>
+			<li><a href='dlg:passengers'>Available Passengers</a></li>
+			<ttg:equals name='location.specialInfo.value' value='65'>
+				<li><a href='dlg:shipyard'>Shipyard</a></li>
+				<li><a href='dlg:hullyard'>Hullyard</a></li>
+			</ttg:equals>
+			<ttg:equals name='location.specialInfo.value' value='66'>
+				<li><a href='dlg:shipyard'>Shipyard</a></li>
+			</ttg:equals>
+			<ttg:equals name='location.specialInfo.value' value='70'>
+				<li><a href='dlg:shipyard'>Shipyard</a></li>
+			</ttg:equals>
+		</ul>
+	</body>
+</html>

@@ -12,6 +12,7 @@ import javax.swing.AbstractButton;
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JSpinner;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JTree;
 import javax.swing.event.ChangeEvent;
@@ -128,6 +129,17 @@ public class ListenerUtils
     public static void change(JList<?> obj, final Consumer<ListSelectionEvent> action)
     {
         obj.addListSelectionListener(new ListSelectionListener() {           
+            @Override
+            public void valueChanged(ListSelectionEvent e)
+            {
+                action.accept(e);
+            }
+        });
+    }
+    
+    public static void change(JTable obj, final Consumer<ListSelectionEvent> action)
+    {
+        obj.getSelectionModel().addListSelectionListener(new ListSelectionListener() {           
             @Override
             public void valueChanged(ListSelectionEvent e)
             {

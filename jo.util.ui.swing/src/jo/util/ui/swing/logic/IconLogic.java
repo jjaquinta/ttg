@@ -24,4 +24,20 @@ public class IconLogic
         ImageIcon ret = new ImageIcon(data, resPath);
         return ret;
     }
+    public static ImageIcon loadFromResource(String resPath, Class<?> wrt)
+    {
+        byte[] data;
+        try
+        {
+            data = ResourceUtils.loadSystemResourceBinary(resPath, wrt);
+        }
+        catch (IOException e)
+        {
+            throw new IllegalArgumentException("Cannot load resource at path '"+resPath+"'");
+        }
+        if (data == null)
+            throw new IllegalArgumentException("Cannot load resource at path '"+resPath+"'");
+        ImageIcon ret = new ImageIcon(data, resPath);
+        return ret;
+    }
 }

@@ -41,10 +41,10 @@ import jo.ttg.utils.DisplayUtils;
  */
 public class LocationPanel extends JPanel implements MouseListener, MouseMotionListener
 {
-	private static ImageIcon ORBIT0_IMG = TTGIconUtils.getPlanet("orbit_0.gif");
-	private static ImageIcon ORBIT10_IMG = TTGIconUtils.getPlanet("orbit_10.gif");
-	private static ImageIcon ORBIT50_IMG = TTGIconUtils.getPlanet("orbit_50.gif");
-	private static ImageIcon ORBIT100_IMG = TTGIconUtils.getPlanet("orbit_100.gif");
+	private static ImageIcon ORBIT0_IMG = TTGIconUtils.getUPP("orbit_0.gif");
+	private static ImageIcon ORBIT10_IMG = TTGIconUtils.getUPP("orbit_10.gif");
+	private static ImageIcon ORBIT50_IMG = TTGIconUtils.getUPP("orbit_50.gif");
+	private static ImageIcon ORBIT100_IMG = TTGIconUtils.getUPP("orbit_100.gif");
 
 	private IGenScheme	mScheme;
 	private Font		mLabelFont;

@@ -1,6 +1,10 @@
 package org.json.simple.h;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.json.simple.FromJSONLogic;
 import org.json.simple.IFromJSONHandler;
@@ -88,7 +92,7 @@ public class ArrayHandler implements IToJSONHandler, IFromJSONHandler
             return true;
         else if (propType == Object[].class)
             return true;
-        else if (propType == Collection.class)
+        else if (Collection.class.isAssignableFrom(propType))
             return true;
         return false;
     }
@@ -128,7 +132,7 @@ public class ArrayHandler implements IToJSONHandler, IFromJSONHandler
             Object[] oldVal = (Object[])bean;
             System.arraycopy(newVal, 0, oldVal, 0, Math.min(newVal.length, oldVal.length));
         }
-        else if (propType == Collection.class)
+        else if ((propType == ArrayList.class) || (propType == HashSet.class) || (propType == Collection.class))
         {
             Collection newVal = toCollection((JSONArray)jsonPropValue, propType);
             Collection oldVal = (Collection)bean;
@@ -152,7 +156,7 @@ public class ArrayHandler implements IToJSONHandler, IFromJSONHandler
             return toStringArray((JSONArray)jsonPropValue);
         else if (propType == Object[].class)
             return toObjectArray((JSONArray)jsonPropValue);
-        else if (propType == Collection.class)
+        else if (Collection.class.isAssignableFrom(propType))
         {
             return toCollection((JSONArray)jsonPropValue, propType);
         }
@@ -164,7 +168,12 @@ public class ArrayHandler implements IToJSONHandler, IFromJSONHandler
         Collection ret;
         try
         {
-            ret = (Collection)propType.newInstance();
+            if ((propType == List.class) || (propType == Collection.class))
+                ret = new ArrayList<>();
+            else if ((propType == Set.class))
+                ret = new HashSet<>();
+            else
+                ret = (Collection)propType.newInstance();
         }
         catch (Exception e)
         {

@@ -40,7 +40,7 @@ public class SimpleHandler implements IToJSONHandler, IFromJSONHandler
     {
         if (json == null)
             return false;
-        if (IJSONAble.class.isAssignableFrom(propType) && (json instanceof JSONObject))
+        if ((propType != null) && IJSONAble.class.isAssignableFrom(propType) && (json instanceof JSONObject))
             return true;
         if ((propType == String.class) || (json instanceof String))
             return true;
@@ -60,7 +60,7 @@ public class SimpleHandler implements IToJSONHandler, IFromJSONHandler
     @Override
     public Object fromJSON(Object json, Class<?> propType)
     {
-        if (IJSONAble.class.isAssignableFrom(propType))
+        if ((propType != null) && IJSONAble.class.isAssignableFrom(propType))
         {
             IJSONAble obj;
             try

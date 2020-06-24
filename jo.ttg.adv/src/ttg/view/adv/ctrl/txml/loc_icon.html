@@ -1,0 +1,107 @@
+<ttg:equals name="location.class.name" value="ttg.beans.adv.BodySpecialAdvBean">
+  <ttg:equals name="location.subType" value="0">
+    <ttg:equals name="location.specialInfo.value" value="65">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_a.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_a.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="66">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_a.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_a.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="67">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_c.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_c.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="68">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_c.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_c.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="69">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_e.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_e.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="70">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_a.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_a.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="71">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_c.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_c.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+    <ttg:equals name="location.specialInfo.value" value="72">
+      <ttg:greaterThan name="location.orbitalRadius" value="0">
+        <img src="../../icons/upport_e.gif"/>
+      <ttg:else/>
+        <img src="../../icons/dnport_e.gif"/>
+      </ttg:greaterThan>
+    </ttg:equals>
+  </ttg:equals>
+  <ttg:equals name="location.subType" value="1">
+    <img src="../../icons/base_ref.gif"/>
+  </ttg:equals>
+  <ttg:equals name="location.subType" value="2">
+    <img src="../../icons/base_scout.gif"/>
+  </ttg:equals>
+  <ttg:equals name="location.subType" value="3">
+    <img src="../../icons/base_navy.gif"/>
+  </ttg:equals>
+  <ttg:equals name="location.subType" value="4">
+    <img src="../../icons/base_mil.gif"/>
+  </ttg:equals>
+  <ttg:equals name="location.subType" value="5">
+    <img src="../../icons/base_lab.gif"/>
+  </ttg:equals>
+  <ttg:equals name="location.subType" value="6">
+    <img src="../../icons/upport_a.gif"/>
+  </ttg:equals>
+<ttg:else/>
+	<ttg:equals name="location.class.name" value="ttg.beans.sys.BodyWorldBean">
+	  <ttg:equals name="location.outerZone" value="true">
+	    <img src="../../icons/Callisto.gif"/>
+	  <ttg:else/>
+	    <ttg:equals name="location.outerZone" value="true">
+	      <img src="../../icons/Callisto.gif"/>
+	    <ttg:else/>
+	      <ttg:greaterThan name="location.populatedStats.UPP.pop.value" value="0">
+	        <img src="../../icons/Earth2.gif"/>
+	      <ttg:else/>
+	        <img src="../../icons/Venus.gif"/>
+	      </ttg:greaterThan>
+	    </ttg:equals>
+	  </ttg:equals>
+    </ttg:equals>
+	<ttg:equals name="location.class.name" value="ttg.beans.sys.BodyToidsBean">
+	  <img src="../../icons/Asteroids.gif"/>
+	</ttg:equals>
+	<ttg:equals name="location.class.name" value="ttg.beans.sys.BodyGiantBean">
+	  <ttg:equals name="location.size" value="0">
+	    <img src="../../icons/Neptune.gif"/>
+	  <ttg:else/>
+	    <img src="../../icons/Jupiter.gif"/>
+	  </ttg:equals>
+	</ttg:equals>
+	<ttg:equals name="location.class.name" value="ttg.beans.sys.BodyStarBean">
+	  <img src="../../icons/TheSun.gif"/>
+	</ttg:equals>
+</ttg:equals>

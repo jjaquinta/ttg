@@ -6,7 +6,11 @@
  */
 package jo.ttg.beans;
 
+import java.util.Iterator;
 import java.util.Properties;
+import java.util.StringTokenizer;
+
+import jo.ttg.logic.OrdLogic;
 
 /**
  * @author jjaquinta
@@ -35,6 +39,12 @@ public class LocationURI
 		mParams = new Properties();
 	}
 	
+	public LocationURI(String uri)
+	{
+	    this();
+	    setURI(uri);
+	}
+	
 	/**
 	 * @return
 	 */
@@ -42,6 +52,146 @@ public class LocationURI
 	{
 		return mOrds;
 	}
+	
+	@Override
+    
+    public String toString()
+    {
+        return getURI();
+    }
+    
+    private String getOrdString()
+    {
+//      StringBuffer ret = new StringBuffer();
+//      ret.append(mOrds.getX());
+//      ret.append(",");
+//      ret.append(mOrds.getY());
+//      ret.append(",");
+//      ret.append(mOrds.getZ());
+//      return ret.toString();
+        return mOrds.toString();
+    }
+
+    public String getURI()
+    {
+        StringBuffer ret = new StringBuffer();
+        switch (mType)
+        {
+            case UNIVERSE:
+                ret.append("uni://");
+                break;
+            case SECTOR:
+                ret.append("sec://");
+                ret.append(getOrdString());
+                break;
+            case SUBSECTOR:
+                ret.append("sub://");
+                ret.append(getOrdString());
+                break;
+            case MAINWORLD:
+                ret.append("mw://");
+                ret.append(getOrdString());
+                break;
+            case SYSTEM:
+                ret.append("sys://");
+                ret.append(getOrdString());
+                ret.append("/");
+                break;
+            case BODY:
+                ret.append("body://");
+                ret.append(getOrdString());
+                ret.append("/");
+                ret.append(mPath);
+                break;
+        }
+        boolean first = true;
+        for (Iterator<Object> i = mParams.keySet().iterator(); i.hasNext(); )
+        {
+            if (first)
+            {
+                ret.append("?");
+                first = false;
+            }
+            else
+                ret.append("&");
+            String key = (String)i.next();
+            String val = mParams.getProperty(key);
+            ret.append(key);
+            ret.append("=");
+            ret.append(val);
+        }
+        return ret.toString();
+    }
+    
+    public void setURI(String uri)
+    {
+        mType = -1;
+        mParams.clear();
+        if (uri == null)
+            return;
+        int o = uri.indexOf("://");
+        if (o < 0)
+            return;
+        String type = uri.substring(0, o);
+        uri = uri.substring(o+3);
+        String ords = "";
+        String path = "";
+        o = uri.indexOf("/");
+        if (o < 0)
+        {
+            if (uri.length() > 0)
+                ords = uri;
+        }
+        else
+        {
+            ords = uri.substring(0, o);
+            path = uri.substring(o+1);
+        }
+        o = path.indexOf("?");
+        if (o >= 0)
+        {
+            StringTokenizer p = new StringTokenizer(path.substring(o+1), "&");
+            path = path.substring(0, o);
+            while (p.hasMoreTokens())
+            {
+                String kv = p.nextToken();
+                o = kv.indexOf("=");
+                if (o < 0)
+                    mParams.put(kv, "true");
+                else
+                    mParams.put(kv.substring(0, o), kv.substring(o+1));
+            }
+        }
+        if (type.equals("uni"))
+            mType = UNIVERSE;
+        else if (type.equals("sec"))
+        {
+            mType = SECTOR;
+            mOrds = OrdLogic.parseString(ords);
+        }
+        else if (type.equals("sub"))
+        {
+            mType = SUBSECTOR;
+            mOrds = OrdLogic.parseString(ords);
+        }
+        else if (type.equals("mw"))
+        {
+            mType = MAINWORLD;
+            mOrds = OrdLogic.parseString(ords);
+        }
+        else if (type.equals("sys"))
+        {
+            mType = SYSTEM;
+            mOrds = OrdLogic.parseString(ords);
+            mPath = path;
+        }
+        else if (type.equals("body"))
+        {
+            mType = BODY;
+            mOrds = OrdLogic.parseString(ords);
+            mPath = path;
+        }
+    }
 
 	/**
 	 * @return

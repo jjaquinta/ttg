@@ -124,6 +124,21 @@ public abstract class ShipComponent extends Bean implements Cloneable
             return false;
         if (getClass() != obj.getClass())
             return super.equals(obj);
-        return hashCode() == obj.hashCode();
+        ShipComponent c2 = (ShipComponent)obj;
+        if (getName().compareTo(c2.getName()) != 0)
+            return false;
+        if (getTechLevel() != c2.getTechLevel())
+            return false;
+        if (getVolume() != c2.getVolume())
+            return false;
+        if (getWeight() != c2.getWeight())
+            return false;
+        if (getPower() != c2.getPower())
+            return false;
+        if (getPrice() != c2.getPrice())
+            return false;
+        if (getSection() != c2.getSection())
+            return false;
+        return true;
     }
 }

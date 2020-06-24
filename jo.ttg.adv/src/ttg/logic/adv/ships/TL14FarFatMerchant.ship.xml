@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.4.2" class="java.beans.XMLDecoder"> 
+ <object class="ttg.beans.ship.ShipBean"> 
+  <void property="components"> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Hull"> 
+     <void property="streamlining"> 
+      <int>1</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+     <void property="volume"> 
+      <double>5400.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.JumpDrive"> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+     <void property="volume"> 
+      <double>162.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.ManeuverDrive"> 
+     <void property="techLevel"> 
+      <int>11</int> 
+     </void> 
+     <void property="volume"> 
+      <double>108.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.LowBerth"> 
+     <void property="number"> 
+      <int>16</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.CommoRadio"> 
+     <void property="range"> 
+      <int>5</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorActiveEMS"> 
+     <void property="range"> 
+      <int>4</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorPassiveEMS"> 
+     <void property="range"> 
+      <int>8</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.TurretMissile"> 
+     <void property="number"> 
+      <int>4</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.TurretSandcaster"> 
+     <void property="number"> 
+      <int>8</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Missile"> 
+     <void property="number"> 
+      <int>40</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Computer"> 
+     <void property="number"> 
+      <int>3</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>9</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.FuelTank"> 
+     <void property="volume"> 
+      <double>1190.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.PowerPlant"> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+     <void property="volume"> 
+      <double>107.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.ControlHeadsUp"/> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.ControlComponent"> 
+     <void property="number"> 
+      <int>4</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>13</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Airlock"/> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Stateroom"> 
+     <void property="number"> 
+      <int>12</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.FuelPurifier"> 
+     <void property="techLevel"> 
+      <int>14</int> 
+     </void> 
+     <void property="volume"> 
+      <double>71.875</double> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="name"> 
+   <string>TL14 Far Fat Merchant</string> 
+  </void> 
+  <void property="type"> 
+   <string>M</string> 
+  </void> 
+ </object> 
+</java> 

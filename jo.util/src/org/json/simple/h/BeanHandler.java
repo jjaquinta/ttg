@@ -121,7 +121,8 @@ public class BeanHandler implements IToJSONHandler, IFromJSONHandler
                 if ((read != null) && (write != null))
                     try
                     {
-                        write.invoke(bean, FromJSONLogic.fromJSON(jsonPropValue, propType));
+                        Object propValue = FromJSONLogic.fromJSON(jsonPropValue, propType);
+                        write.invoke(bean, propValue);
                     }
                     catch (Exception e)
                     {

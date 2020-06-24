@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.4.2" class="java.beans.XMLDecoder"> 
+ <object class="ttg.beans.ship.ShipBean"> 
+  <void property="components"> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Hull"> 
+     <void property="config"> 
+      <int>1</int> 
+     </void> 
+     <void property="streamlining"> 
+      <int>2</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+     <void property="volume"> 
+      <double>10800.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.JumpDrive"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+     <void property="volume"> 
+      <double>324.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.ManeuverDrive"> 
+     <void property="techLevel"> 
+      <int>11</int> 
+     </void> 
+     <void property="volume"> 
+      <double>540.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.CommoRadio"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorActiveEMS"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorPassiveEMS"> 
+     <void property="range"> 
+      <int>9</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorHighDensitometer"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorLowDensitometer"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorNeutrino"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.CommoRadio"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorActiveEMS"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorPassiveEMS"> 
+     <void property="range"> 
+      <int>9</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorHighDensitometer"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorLowDensitometer"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.SensorNeutrino"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.TurretPulseLaser"> 
+     <void property="number"> 
+      <int>16</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.TurretSandcaster"> 
+     <void property="number"> 
+      <int>8</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Computer"> 
+     <void property="number"> 
+      <int>3</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.FuelTank"> 
+     <void property="volume"> 
+      <double>2340.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.PowerPlant"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+     <void property="volume"> 
+      <double>480.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.ControlComponent"> 
+     <void property="number"> 
+      <int>31</int> 
+     </void> 
+     <void property="techLevel"> 
+      <int>13</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Airlock"/> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.Stateroom"> 
+     <void property="number"> 
+      <int>3</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.FuelPurifier"> 
+     <void property="techLevel"> 
+      <int>15</int> 
+     </void> 
+     <void property="volume"> 
+      <double>406.0</double> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="ttg.beans.ship.comp.ControlComponent"> 
+     <void property="techLevel"> 
+      <int>13</int> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void property="name"> 
+   <string>TL15 Short Support Destroyer</string> 
+  </void> 
+  <void property="type"> 
+   <string>C</string> 
+  </void> 
+ </object> 
+</java> 

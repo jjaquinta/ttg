@@ -22,7 +22,12 @@ public class TTGIconUtils
 {
     public static ImageIcon getIcon(String icon)
     {
-        return IconLogic.loadFromResource("jo/ttg/core/ui/swing/"+icon);
+        if (icon.startsWith("tape_"))
+            return IconLogic.loadFromResource("images/icons/tape/"+icon, TTGIconUtils.class);
+        if (icon.startsWith("tb_"))
+            return IconLogic.loadFromResource("images/icons/toolbar/"+icon, TTGIconUtils.class);
+        ImageIcon i = IconLogic.loadFromResource("images/"+icon, TTGIconUtils.class);
+        return i;
     }
     public static Image getImage(String icon)
     {
@@ -30,11 +35,11 @@ public class TTGIconUtils
     }
 	public static ImageIcon getPlanet(String icon)
 	{
-		return IconLogic.loadFromResource("jo/ttg/core/ui/swing/images/icons/planets/"+icon);
+		return IconLogic.loadFromResource("images/icons/planets/"+icon, TTGIconUtils.class);
 	}
     public static ImageIcon getUPP(String icon)
     {
-        return IconLogic.loadFromResource("jo/ttg/core/ui/swing/images/icons/upp/"+icon);
+        return IconLogic.loadFromResource("images/icons/upp/"+icon, TTGIconUtils.class);
     }
     public static Image getPlanetImage(String icon)
     {
@@ -42,6 +47,6 @@ public class TTGIconUtils
     }
     public static ImageIcon getButton(String icon)
     {
-        return IconLogic.loadFromResource("jo/ttg/core/ui/swing/images/buttons/"+icon+".png");
+        return IconLogic.loadFromResource("images/buttons/"+icon+".png", TTGIconUtils.class);
     }
 }

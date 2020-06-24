@@ -123,6 +123,7 @@ public class SystemList extends JList<BodyBean>
                 mList.add(b);
         }
         setListData(mList.toArray(new BodyBean[0]));
-        getParent().doLayout();
+        if (getParent() != null)
+            getParent().doLayout();
     }
 }

@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<table width="100%">
+			<tr>
+				<td align="left">
+					<ttg:greaterThan name='locationOrbit' value='0'>
+						<h1>In orbit around <ttg:write name='location.name'/> at <ttg:write name='locationOrbit'/> diameters</h1>
+					<ttg:else/>
+						<h1>On surface of <ttg:write name='location.name'/></h1>
+					</ttg:greaterThan>
+				</td>
+				<td align="right">
+		  			<ttg:include href='loc_icon.html'/>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

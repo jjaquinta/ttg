@@ -6,6 +6,7 @@
  */
 package jo.ttg.logic.gen;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -24,7 +25,7 @@ import jo.util.utils.obj.StringUtils;
  */
 public class CargoLogic
 {
-    private static List<ICargoLogicHandler>	mHandlers;
+    private static List<ICargoLogicHandler>	mHandlers = new ArrayList<ICargoLogicHandler>();
     /*
     static
     {

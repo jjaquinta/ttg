@@ -2,6 +2,7 @@ package org.json.simple.h;
 
 import java.util.Map;
 
+import org.json.simple.FromJSONLogic;
 import org.json.simple.IFromJSONHandler;
 import org.json.simple.IToJSONHandler;
 import org.json.simple.JSONObject;
@@ -59,7 +60,7 @@ public class MapHandler implements IToJSONHandler, IFromJSONHandler
                 if (MAP_CLASS.equals(key))
                     continue;
                 Object value = o.get(key);
-                map.put(key, fromJSON(value, null));
+                map.put(key, FromJSONLogic.fromJSON(value, null));
             }
         }
         catch (Exception e)
@@ -71,6 +72,8 @@ public class MapHandler implements IToJSONHandler, IFromJSONHandler
     @Override
     public Object fromJSON(Object json, Class<?> hint)
     {
+        if (!(json instanceof JSONObject))
+            throw new IllegalArgumentException("Expected a JSONObject to deserialize into a "+hint+", not a "+json.getClass().getName());
         try
         {
             JSONObject o = (JSONObject)json;

@@ -29,6 +29,15 @@ public class ImpGenPassengers implements IGenPassengers
         }
         UPPBean originUPP = origin.getPopulatedStats().getUPP();
         UPPBean destinationUPP = destination.getPopulatedStats().getUPP();
+        List<PassengersBean> ret = generatePassengersWeek(scheme.getXYZSeed(origin) + scheme.getXYZSeed(destination), 
+                originUPP.getPop().getValue(), originUPP.getTech().getValue(), origin.getURI(),
+                destinationUPP.getPop().getValue(), destinationUPP.getTech().getValue(), destination.getURI(),
+                date);
+        return ret;
+    }
+    
+    protected List<PassengersBean> generatePassengersWeek(long seed, int oPop, int oTech, String oURI, int dPop, int dTech, String dURI, DateBean date)
+    {
         List<PassengersBean> ret = new ArrayList<PassengersBean>();
         for (int d = -6; d <= 0; d++)
         {
@@ -36,12 +45,11 @@ public class ImpGenPassengers implements IGenPassengers
             now.setMinutes((int)date.getMinutes() + d*24*60);
             RandBean r = new RandBean();
             RandLogic.setMagic(r, 
-                scheme.getXYZSeed(origin) + scheme.getXYZSeed(destination),
+                seed,
                 (RandBean.PAS_MAGIC ^ now.getYear()*365+now.getDay()));
-            PassengersBean pass = generatePassengers(r, originUPP.getPop().getValue(), originUPP.getTech().getValue(),
-                    destinationUPP.getPop().getValue(), destinationUPP.getTech().getValue(), now);
-            pass.setOrigin(origin.getURI());
-            pass.setDestination(destination.getURI());
+            PassengersBean pass = generatePassengers(r, oPop, oTech, dPop, dTech, now);
+            pass.setOrigin(oURI);
+            pass.setDestination(dURI);
             ret.add(pass);
         }
         return ret;
