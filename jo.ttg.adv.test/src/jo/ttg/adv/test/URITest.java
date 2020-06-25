@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test;
 import jo.ttg.beans.URIBean;
 import jo.ttg.logic.gen.SchemeLogic;
 import jo.util.utils.io.FileUtils;
-import ttg.beans.adv.Game;
-import ttg.logic.adv.GameLogic;
-import ttg.logic.adv.LocationLogic;
-import ttg.logic.adv.ShipLogic;
-import ttg.logic.adv.TimeLogic;
+import ttg.adv.beans.Game;
+import ttg.adv.logic.GameLogic;
+import ttg.adv.logic.LocationLogic;
+import ttg.adv.logic.ShipLogic;
+import ttg.adv.logic.TimeLogic;
 
 class URITest extends BaseAdvTest
 {

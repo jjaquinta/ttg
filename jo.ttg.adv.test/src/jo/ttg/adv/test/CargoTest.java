@@ -5,12 +5,12 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
-import ttg.beans.adv.Game;
-import ttg.beans.adv.PassengerBean;
-import ttg.logic.adv.GameLogic;
-import ttg.logic.adv.LocationLogic;
-import ttg.logic.adv.ShipLogic;
-import ttg.logic.adv.TimeLogic;
+import ttg.adv.beans.Game;
+import ttg.adv.beans.PassengerBean;
+import ttg.adv.logic.GameLogic;
+import ttg.adv.logic.LocationLogic;
+import ttg.adv.logic.ShipLogic;
+import ttg.adv.logic.TimeLogic;
 
 class CargoTest extends BaseAdvTest
 {

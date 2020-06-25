@@ -7,14 +7,14 @@ import org.junit.Before;
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.trade.CargoBean;
 import jo.ttg.logic.gen.SchemeLogic;
-import ttg.beans.adv.AdvCargoBean;
-import ttg.beans.adv.Game;
-import ttg.beans.adv.PassengerBean;
-import ttg.logic.adv.BuyLogic;
-import ttg.logic.adv.ForSaleLogic;
-import ttg.logic.adv.GameLogic;
-import ttg.logic.adv.PassengerLogic;
-import ttg.logic.adv.SellLogic;
+import ttg.adv.beans.AdvCargoBean;
+import ttg.adv.beans.Game;
+import ttg.adv.beans.PassengerBean;
+import ttg.adv.logic.BuyLogic;
+import ttg.adv.logic.ForSaleLogic;
+import ttg.adv.logic.GameLogic;
+import ttg.adv.logic.PassengerLogic;
+import ttg.adv.logic.SellLogic;
 
 class BaseAdvTest
 {

@@ -8,8 +8,8 @@ import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 import jo.ttg.ship.beans.comp.ShipComponent;
-import ttg.beans.adv.Game;
-import ttg.logic.adv.GameLogic;
+import ttg.adv.beans.Game;
+import ttg.adv.logic.GameLogic;
 
 class IOTest extends BaseAdvTest
 {
