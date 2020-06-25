@@ -7,9 +7,6 @@
 package ttg.view.adv.dlg;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,8 +142,10 @@ public class ViewPassengersDlg extends JDialog
 	    int row = mPassengers.getSelectedRow();
 	    if (row < 0)
 	        return;
+	    /*
 	    PassengerBean cargo = (PassengerBean)mPassengerModel.getChars().get(mPassengerSorter.mapRow(row));
-	    //PassengerInfoDlg dlg = new PassengerInfoDlg(this, mGame, cargo);
-	    //dlg.show();
+	    PassengerInfoDlg dlg = new PassengerInfoDlg(this, mGame, cargo);
+	    dlg.setVisible(true);
+	     */
 	}
 }

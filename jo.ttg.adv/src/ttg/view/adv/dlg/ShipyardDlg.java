@@ -8,6 +8,7 @@ package ttg.view.adv.dlg;
 
 import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -18,6 +19,7 @@ import javax.swing.JPanel;
 import jo.ttg.beans.mw.PopulatedStatsBean;
 import jo.ttg.core.ui.swing.logic.TTGIconUtils;
 import jo.ttg.logic.gen.SchemeLogic;
+import jo.ttg.ship.beans.comp.ShipComponent;
 import jo.util.ui.swing.utils.ListenerUtils;
 import ttg.beans.adv.BodySpecialAdvBean;
 import ttg.beans.adv.Game;
@@ -108,10 +110,10 @@ public class ShipyardDlg extends JDialog
 
 	protected void doOK()
 	{
-	    ArrayList selling = getForSale();
+	    List<ShipComponent> selling = getForSale();
 	    if (selling.size() > 0)
 	        ShipLogic.sellComponents(mGame, selling);
-	    ArrayList buying = getToBuy();
+	    List<ShipComponent> buying = getToBuy();
 	    if (buying.size() > 0)
 	        ShipLogic.buyComponents(mGame, buying);
 		dispose();
@@ -120,9 +122,9 @@ public class ShipyardDlg extends JDialog
     /**
      * @return
      */
-    private ArrayList getToBuy()
+    private List<ShipComponent> getToBuy()
     {
-        ArrayList buying = new ArrayList();
+        List<ShipComponent> buying = new ArrayList<>();
 	    // TODO:
         return buying;
     }
@@ -130,9 +132,9 @@ public class ShipyardDlg extends JDialog
     /**
      * @return
      */
-    private ArrayList getForSale()
+    private List<ShipComponent> getForSale()
     {
-        ArrayList selling = new ArrayList();
+        List<ShipComponent> selling = new ArrayList<>();
 	    // TODO:
         return selling;
     }
@@ -155,6 +157,6 @@ public class ShipyardDlg extends JDialog
 	    //ShipInfoDlg dlg = new ShipInfoDlg((JFrame)SwingUtilities.getRoot(this), null, mShipStats);
 	    //dlg.setDisplayErrors(mShipStats.getErrors().size() > 0);
 	    //dlg.setModal(true);
-	    //dlg.show();
+	    //dlg.setVisible(true);
 	}
 }

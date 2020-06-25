@@ -7,7 +7,7 @@
 package ttg.logic.adv;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import ttg.beans.adv.CrewBean;
 import ttg.beans.adv.ShipInst;
@@ -57,9 +57,7 @@ public class CrewLogic
     public static int[] totalCrew(ShipInst ship)
     {
         int[] crewHave = new int[16];
-        for (Iterator i = ship.getCrew().iterator(); i.hasNext(); )
-        {
-            CrewBean crew = (CrewBean)i.next();
+        for (CrewBean crew : ship.getCrew())
             try
             {
                 crewHave[crew.getJob()]++;
@@ -67,7 +65,6 @@ public class CrewLogic
             catch (ArrayIndexOutOfBoundsException e)
             {
             }
-        }
         return crewHave;
     }
     
@@ -102,9 +99,9 @@ public class CrewLogic
         return false;
     }
     
-    public static ArrayList qualifiedJobs(CrewBean crew)
+    public static List<String> qualifiedJobs(CrewBean crew)
     {
-        ArrayList ret = new ArrayList();
+        List<String> ret = new ArrayList<>();
         for (int i = 0; i < mJobNames.length; i++)
         {
             if (mJobNames[i] == null)

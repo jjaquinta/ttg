@@ -5,11 +5,8 @@
 package ttg.view.adv.ctrl;
 
 import java.awt.Font;
-import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -172,35 +169,35 @@ public class GameStatusPanel extends JPanel implements PropertyChangeListener, T
 	{
 	    ViewHoldDlg dlg = new ViewHoldDlg((JFrame)SwingUtilities.getRoot(this), mGame);
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 
 	protected void doViewPassengers()
 	{
 	    ViewPassengersDlg dlg = new ViewPassengersDlg((JFrame)SwingUtilities.getRoot(this), mGame);
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void doViewCrew()
 	{
 	    ViewCrewDlg dlg = new ViewCrewDlg((JFrame)SwingUtilities.getRoot(this), mGame);
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void doShipStats()
 	{
 	    ShipInfoDlg dlg = new ShipInfoDlg((JFrame)SwingUtilities.getRoot(this), mGame, mGame.getShip().getStats());
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void doSetCourse()
 	{
 	    SetCourseDlg dlg = new SetCourseDlg((JFrame)SwingUtilities.getRoot(this), mGame);
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void doDockShip()
@@ -266,11 +263,8 @@ public class GameStatusPanel extends JPanel implements PropertyChangeListener, T
         mCrew.setValue(have);
 
 		int cargoUsed = 0;
-		for (Iterator i = mGame.getShip().getCargo().iterator(); i.hasNext(); )
-		{
-		    CargoBean cargo = (CargoBean)i.next();
+		for (CargoBean cargo : mGame.getShip().getCargo())
 		    cargoUsed += cargo.getQuantity();
-		}
 
 		ShipStats stats = ShipReport.report(ship.getDesign());
 		mHold.setMaximum((int)(stats.getCargo()/13.5));
@@ -377,16 +371,13 @@ public class GameStatusPanel extends JPanel implements PropertyChangeListener, T
         int cabinsHigh = 0;
         int cabinsMiddle = 0;
         int berthsUsed = 0;
-        for (Iterator i = ship.getPassengers().iterator(); i.hasNext(); )
-        {
-            PassengerBean p = (PassengerBean)i.next();
+        for (PassengerBean p : ship.getPassengers())
             if (p.getPassage() == PassengerBean.PASSAGE_LOW)
                 berthsUsed++;
             else if (p.getPassage() == PassengerBean.PASSAGE_MIDDLE)
                 cabinsMiddle++;
             else
                 cabinsHigh++;
-        }
         int cabinsUsed = cabinsCrew + cabinsHigh + cabinsMiddle;
         StringBuffer sb = new StringBuffer();
         sb.append("Cabins: ");
@@ -474,7 +465,7 @@ public class GameStatusPanel extends JPanel implements PropertyChangeListener, T
         {
             BodyInfoDlg dlg = new BodyInfoDlg((JFrame)SwingUtilities.getRoot(this), (BodyBean)e.getObject());
             dlg.setModal(true);
-            dlg.show();
+            dlg.setVisible(true);
         }
     }
 }

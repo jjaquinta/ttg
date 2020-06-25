@@ -96,7 +96,7 @@ public class LoanPanel extends JButton implements PropertyChangeListener
     {
         AcctInfoDlg dlg = new AcctInfoDlg((JFrame)SwingUtilities.getRoot(this), mGame);
         dlg.setModal(true);
-        dlg.show();
+        dlg.setVisible(true);
     }
 
     protected void doTest()

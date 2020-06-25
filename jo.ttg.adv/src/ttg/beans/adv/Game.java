@@ -8,6 +8,8 @@ package ttg.beans.adv;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import jo.ttg.beans.DateBean;
 import jo.ttg.beans.RandBean;
@@ -17,204 +19,222 @@ import jo.util.beans.PCSBean;
 /**
  * @author jjaquinta
  *
- * To change the template for this generated type comment go to
- * Window>Preferences>Java>Code Generation>Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window>Preferences>Java>Code Generation>Code and Comments
  */
 public class Game extends PCSBean
 {
-	private String		mSaveFile;
-	private DateBean	mDate;
-	private boolean		mAnyChange;
-	private String		mStatus;
-	private ArrayList	mStatusHistory;
-	private long		mStatusChange;
-	private ShipInst	mShip;
-	private IGenScheme	mScheme;
-	private ArrayList	mUsedUNIDs;
-	private RandBean	mRnd;
-	private AccountsBean	mAccounts;
-	private HashMap		mReputation;
+    private String              mSaveFile;
+    private DateBean            mDate;
+    private boolean             mAnyChange;
+    private String              mStatus;
+    private List<String>        mStatusHistory;
+    private long                mStatusChange;
+    private ShipInst            mShip;
+    private IGenScheme          mScheme;
+    private List<UNIDInst>      mUsedUNIDs;
+    private RandBean            mRnd;
+    private AccountsBean        mAccounts;
+    private Map<String, Double> mReputation;
 
-	public Game()
-	{
-		mStatus = "";
-		mStatusHistory = new ArrayList();
-		mShip = new ShipInst();
-		mDate = new DateBean();
-		mDate.setYear(1110);
-		mUsedUNIDs = new ArrayList();
-		mRnd = new RandBean();
-		mRnd.setSeed(System.currentTimeMillis());
-		mAccounts = new AccountsBean();
-		mReputation = new HashMap();
-		//test();
-	}
-	
-//	private void test()
-//	{
-//		UniverseBean uni = mScheme.getGeneratorUniverse().generateUniverse();
-//		List mws = uni.findMainWorlds(new OrdBean(0,0,0), new OrdBean(32, 40, 1));
-//		System.out.println(mws.size()+" worlds.");
-//		MainWorldBean home;
-//		for (Iterator i = mws.iterator(); i.hasNext(); )
-//		{
-//			MainWorldBean mw = (MainWorldBean)i.next();
-//			System.out.println("World:"+mw.getExportLine());
-//			//System.out.println("Generating system.");
-//			//ttg.gen.GenSystem genSys = mScheme.getGeneratorSystem();
-//			//SystemBean sys = genSys.generateSystem(mw.getOrds());
-//			//System.out.println("Generated system.");
-//		}
-//	}
-	
-	/**
-	 * @return
-	 */
-	public DateBean getDate()
-	{
-		return mDate;
-	}
+    public Game()
+    {
+        mStatus = "";
+        mStatusHistory = new ArrayList<>();
+        mShip = new ShipInst();
+        mDate = new DateBean();
+        mDate.setYear(1110);
+        mUsedUNIDs = new ArrayList<>();
+        mRnd = new RandBean();
+        mRnd.setSeed(System.currentTimeMillis());
+        mAccounts = new AccountsBean();
+        mReputation = new HashMap<>();
+        // test();
+    }
 
-	/**
-	 * @return
-	 */
-	public String getSaveFile()
-	{
-		return mSaveFile;
-	}
+    // private void test()
+    // {
+    // UniverseBean uni = mScheme.getGeneratorUniverse().generateUniverse();
+    // List mws = uni.findMainWorlds(new OrdBean(0,0,0), new OrdBean(32, 40,
+    // 1));
+    // System.out.println(mws.size()+" worlds.");
+    // MainWorldBean home;
+    // for (Iterator i = mws.iterator(); i.hasNext(); )
+    // {
+    // MainWorldBean mw = (MainWorldBean)i.next();
+    // System.out.println("World:"+mw.getExportLine());
+    // //System.out.println("Generating system.");
+    // //ttg.gen.GenSystem genSys = mScheme.getGeneratorSystem();
+    // //SystemBean sys = genSys.generateSystem(mw.getOrds());
+    // //System.out.println("Generated system.");
+    // }
+    // }
 
-	/**
-	 * @param l
-	 */
-	public void setDate(DateBean l)
-	{
-		queuePropertyChange("date", mDate, l);
-		mDate = l;
-		firePropertyChange();
-	}
+    /**
+     * @return
+     */
+    public DateBean getDate()
+    {
+        return mDate;
+    }
 
-	/**
-	 * @param file
-	 */
-	public void setSaveFile(String file)
-	{
-		mSaveFile = file;
-	}
+    /**
+     * @return
+     */
+    public String getSaveFile()
+    {
+        return mSaveFile;
+    }
 
-	/**
-	 * @return
-	 */
-	public String getStatus()
-	{
-		return mStatus;
-	}
+    /**
+     * @param l
+     */
+    public void setDate(DateBean l)
+    {
+        queuePropertyChange("date", mDate, l);
+        mDate = l;
+        firePropertyChange();
+    }
 
-	/**
-	 * @return
-	 */
-	public ArrayList getStatusHistory()
-	{
-		return mStatusHistory;
-	}
+    /**
+     * @param file
+     */
+    public void setSaveFile(String file)
+    {
+        mSaveFile = file;
+    }
 
-	/**
-	 * @param string
-	 */
-	public void setStatus(String string)
-	{
-		queuePropertyChange("status", mStatus, string);
-		mStatus = string;
-		firePropertyChange();
-	}
+    /**
+     * @return
+     */
+    public String getStatus()
+    {
+        return mStatus;
+    }
 
-	/**
-	 * @return
-	 */
-	public boolean isAnyChange()
-	{
-		return mAnyChange;
-	}
+    /**
+     * @return
+     */
+    public List<String> getStatusHistory()
+    {
+        return mStatusHistory;
+    }
 
-	/**
-	 * @param b
-	 */
-	public void setAnyChange(boolean b)
-	{
-		mAnyChange = b;
-	}
+    /**
+     * @param string
+     */
+    public void setStatus(String string)
+    {
+        queuePropertyChange("status", mStatus, string);
+        mStatus = string;
+        firePropertyChange();
+    }
 
-	/**
-	 * @return
-	 */
-	public ShipInst getShip()
-	{
-		return mShip;
-	}
+    /**
+     * @return
+     */
+    public boolean isAnyChange()
+    {
+        return mAnyChange;
+    }
 
-	/**
-	 * @param bean
-	 */
-	public void setShip(ShipInst bean)
-	{
-		queuePropertyChange("ship", mShip, bean);
-		mShip = bean;
-		firePropertyChange();
-	}
+    /**
+     * @param b
+     */
+    public void setAnyChange(boolean b)
+    {
+        mAnyChange = b;
+    }
 
-	/**
-	 * @return
-	 */
-	public IGenScheme getScheme()
-	{
-		return mScheme;
-	}
+    /**
+     * @return
+     */
+    public ShipInst getShip()
+    {
+        return mShip;
+    }
 
-	/**
-	 * @param scheme
-	 */
-	public void setScheme(IGenScheme scheme)
-	{
-		mScheme = scheme;
-	}
+    /**
+     * @param bean
+     */
+    public void setShip(ShipInst bean)
+    {
+        queuePropertyChange("ship", mShip, bean);
+        mShip = bean;
+        firePropertyChange();
+    }
 
-	/**
-	 * @return
-	 */
-	public ArrayList getUsedUNIDs()
-	{
-		return mUsedUNIDs;
-	}
+    /**
+     * @return
+     */
+    public IGenScheme getScheme()
+    {
+        return mScheme;
+    }
+
+    /**
+     * @param scheme
+     */
+    public void setScheme(IGenScheme scheme)
+    {
+        mScheme = scheme;
+    }
+
+    /**
+     * @return
+     */
+    public List<UNIDInst> getUsedUNIDs()
+    {
+        return mUsedUNIDs;
+    }
 
     public RandBean getRnd()
     {
         return mRnd;
     }
+
     public void setRnd(RandBean rnd)
     {
         mRnd = rnd;
     }
+
     public AccountsBean getAccounts()
     {
         return mAccounts;
     }
+
     public void setAccounts(AccountsBean accounts)
     {
         mAccounts = accounts;
     }
-    public HashMap getReputation()
+
+    public Map<String, Double> getReputation()
     {
         return mReputation;
     }
-    public void setReputation(HashMap reputation)
+
+    public void setReputation(Map<String, Double> reputation)
     {
         mReputation = reputation;
     }
+
     public long getStatusChange()
     {
         return mStatusChange;
     }
+
     public void setStatusChange(long statusChange)
     {
         mStatusChange = statusChange;
+    }
+
+    public void setStatusHistory(List<String> statusHistory)
+    {
+        mStatusHistory = statusHistory;
+    }
+
+    public void setUsedUNIDs(List<UNIDInst> usedUNIDs)
+    {
+        mUsedUNIDs = usedUNIDs;
     }
 }

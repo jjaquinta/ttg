@@ -6,8 +6,6 @@
  */
 package ttg.logic.adv;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import jo.util.beans.Bean;
@@ -35,29 +33,23 @@ public class UNIDLogic
 	public static void unuse(Game game, Bean unidObj, int type)
 	{
 		//System.out.println("Unusing UNID "+type+":"+unidObj.getUNID());
-	    for (Iterator i = game.getUsedUNIDs().iterator(); i.hasNext(); )
-	    {
-	        UNIDInst ui = (UNIDInst)i.next();
+	    for (UNIDInst ui : game.getUsedUNIDs())
 	        if ((ui.getOID() == unidObj.getOID()) && (ui.getType() == type))
 	        {
 	            game.getUsedUNIDs().remove(ui);
 	            break;
 	        }
-	    }
 	}
 	
 	public static boolean isUsed(Game game, Bean unidObj, int type)
 	{
 		//System.out.print("Used? "+type+":"+unidObj.getUNID());
-		for (Iterator i = game.getUsedUNIDs().iterator(); i.hasNext(); )
-		{
-			UNIDInst ui = (UNIDInst)i.next();
+        for (UNIDInst ui : game.getUsedUNIDs())
 			if ((ui.getOID() == unidObj.getOID()) && (ui.getType() == type))
 			{
 				//System.out.println("  YES");
 				return true;
 			}
-		}
 		//System.out.println("  NO");
 		return false;
 	}

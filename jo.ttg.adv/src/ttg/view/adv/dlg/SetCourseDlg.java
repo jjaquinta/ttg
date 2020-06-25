@@ -9,10 +9,6 @@ package ttg.view.adv.dlg;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -22,10 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JSpinner;
 import javax.swing.JTabbedPane;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
 
 import jo.ttg.beans.LocationURI;
@@ -53,8 +46,6 @@ import jo.ttg.logic.dist.TraverseException;
 import jo.ttg.logic.dist.TraverseLogic;
 import jo.ttg.logic.gen.SchemeLogic;
 import jo.ttg.logic.sys.SystemLogic;
-import jo.ttg.ship.beans.ShipStats;
-import jo.ttg.ship.logic.ShipReport;
 import jo.util.ui.swing.utils.ListenerUtils;
 import jo.util.ui.swing.utils.MouseUtils;
 import ttg.beans.adv.Game;
@@ -69,7 +60,6 @@ import ttg.logic.adv.ShipLogic;
 public class SetCourseDlg extends JDialog
 {
 	private Game	 		mGame;
-	private ShipStats		mStats;
 	private LocationURI		mOrigin;
 	private BodyBean		mSelectedBody;
 	private BodyInfoDlg		mBodyInfoDlg;
@@ -77,7 +67,6 @@ public class SetCourseDlg extends JDialog
 	private HexField		mHexes;
 	private SystemTree		mSystemTree;
 	private SystemList		mSystemList;
-	private JSpinner		mOrbit;
 	private BodyView		mDescription;
 	private JLabel			mConsumption;
 	private JButton 		mOK;
@@ -106,11 +95,9 @@ public class SetCourseDlg extends JDialog
 		mDescription = new BodyView();
 		mConsumption = new JLabel();
 		mHexes = new HexField(mGame.getScheme());
-		mStats = ShipReport.report(mGame.getShip().getDesign());
 		mOrigin = new LocationURI(mGame.getShip().getDestination());
 		OrdBean ul = new OrdBean(mOrigin.getOrds());
 		//System.out.println("SetCourseDlg.initInstantiate, at="+ul.toString());
-		int r = mStats.getJump();
 		ul.setX(ul.getX() - 4);
 		ul.setY(ul.getY() - 5);
 		//System.out.println("SetCourseDlg.initInstantiate, origin="+ul.toString());
@@ -191,9 +178,9 @@ public class SetCourseDlg extends JDialog
 	        mSystemList.setOrigin(ords);
 			SystemBean sys = mGame.getScheme().getGeneratorSystem().generateSystem(ords);
 			BodyBean mw = SystemLogic.findMainworld(sys);
-			for (Iterator i = mw.getSatelitesIterator(); i.hasNext(); )
+			for (Iterator<BodyBean> i = mw.getSatelitesIterator(); i.hasNext(); )
 			{
-			    BodyBean b = (BodyBean)i.next();
+			    BodyBean b = i.next();
 			    if ((b instanceof BodySpecialBean) && (((BodySpecialBean)b).getSubType() == BodySpecialBean.ST_STARPORT))
 			    {
 			        mw = b;
@@ -230,7 +217,7 @@ public class SetCourseDlg extends JDialog
 	            mBodyInfoDlg = new BodyInfoDlg(this, body);
 	        else
 	            mBodyInfoDlg.setBody(body);
-	        mBodyInfoDlg.show();
+	        mBodyInfoDlg.setVisible(true);
 	    }
 	}
 	
@@ -258,7 +245,7 @@ public class SetCourseDlg extends JDialog
 		    BodyBean body = ((SystemTreeNode)sel.getLastPathComponent()).getBody();
 	        BodyInfoDlg dlg = new BodyInfoDlg(this, body);
 	        dlg.setModal(true);
-	        dlg.show();
+	        dlg.setVisible(true);
 	    }
 	}
 	

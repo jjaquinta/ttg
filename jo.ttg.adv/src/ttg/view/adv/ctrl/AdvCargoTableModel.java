@@ -48,7 +48,7 @@ public class AdvCargoTableModel extends CargoTableModel
 		return super.getValueAt(row, col);
 	}
 
-    public Class getColumnClass(int col)
+    public Class<?> getColumnClass(int col)
     {
 		switch (getColumns()[col])
 		{

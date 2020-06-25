@@ -8,6 +8,8 @@ package ttg.logic.adv;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import ttg.beans.adv.AdvEvent;
 import ttg.beans.adv.Game;
@@ -20,14 +22,14 @@ import ttg.beans.adv.Game;
  */
 public class AdvEventLogic
 {
-    private static HashMap	mHandlers = new HashMap();
+    private static Map<Game,List<AdvEventHandler>>	mHandlers = new HashMap<>();
     
-    private static ArrayList getHandlers(Game game)
+    private static List<AdvEventHandler> getHandlers(Game game)
     {
-        ArrayList handlers = (ArrayList)mHandlers.get(game);
+        List<AdvEventHandler> handlers = mHandlers.get(game);
         if (handlers == null)
         {
-            handlers = new ArrayList();
+            handlers = new ArrayList<>();
             mHandlers.put(game, handlers);
         }
         return handlers;
@@ -51,13 +53,13 @@ public class AdvEventLogic
     
     public static void fireEvent(Game game, AdvEvent evt)
     {
-        Object[] handlers;
+        AdvEventHandler[] handlers;
         synchronized (mHandlers)
         {
-            handlers = getHandlers(game).toArray();
+            handlers = getHandlers(game).toArray(new AdvEventHandler[0]);
         }
         for (int i = 0; i < handlers.length; i++)
-            ((AdvEventHandler)handlers[i]).advEvent(evt);
+            handlers[i].advEvent(evt);
     }
     
     public static void fireEvent(Game game, int evt)

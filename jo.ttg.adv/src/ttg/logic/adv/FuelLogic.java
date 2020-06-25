@@ -6,8 +6,10 @@
  */
 package ttg.logic.adv;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
+import jo.ttg.beans.chr.CharBean;
 import jo.ttg.beans.mw.UPPPorBean;
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.sys.BodyGiantBean;
@@ -21,7 +23,6 @@ import jo.ttg.ship.beans.ShipBean;
 import jo.ttg.ship.beans.comp.FuelPurifier;
 import jo.ttg.ship.beans.comp.ShipComponent;
 import jo.ttg.ship.logic.ShipLogic;
-import jo.util.utils.obj.StringUtils;
 import ttg.beans.adv.AdvEvent;
 import ttg.beans.adv.BodySpecialAdvBean;
 import ttg.beans.adv.Game;
@@ -140,8 +141,10 @@ public class FuelLogic
             skill2 = "Sensor Ops";
             time = 4*60;
         }
+        List<CharBean> chars = new ArrayList<>();
+        chars.addAll(game.getShip().getCrew());
         if (TaskLogic.attemptFatefulTask(TaskLogic.DIFF_ROUTINE, game.getRnd(), 
-                CharLogic.findBestSkill(game.getShip().getCrew(), skill1), CharLogic.findBestSkill(game.getShip().getCrew(), skill2)))
+                CharLogic.findBestSkill(chars, skill1), CharLogic.findBestSkill(chars, skill2)))
         {
             addUnrefined(game.getShip(), needed);
             AdvEventLogic.fireEvent(game, AdvEvent.FUEL_SCOOPED, new Double(needed));
@@ -157,12 +160,9 @@ public class FuelLogic
     public static double getPurificationRate(ShipBean ship)
     {
         double fuelPurificationRate = 0;
-		for (Iterator i = ShipLogic.getComponentList(ship).iterator(); i.hasNext(); )
-		{
-			ShipComponent comp = (ShipComponent)i.next();
+		for (ShipComponent comp : ShipLogic.getComponentList(ship))
 			if (comp instanceof FuelPurifier)
 				fuelPurificationRate += ((FuelPurifier)comp).getRate();
-		}
         return fuelPurificationRate;
     }
     

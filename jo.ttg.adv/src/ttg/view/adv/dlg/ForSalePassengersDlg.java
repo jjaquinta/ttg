@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
@@ -57,14 +58,14 @@ public class ForSalePassengersDlg extends JDialog
 {
 	private Game		mGame;
 	private ShipInst	mShip;
-	private HashMap		mPassengersMap;
+	private Map<String,List<PassengerBean>>		mPassengersMap;
 	private PassengerTableModel mPassengerModel;
 	private TableSorter mPassengerSorter;
 	
 	private SelectedCapacityPanel	mCabins;
 	private SelectedCapacityPanel	mBerths;
 	private JTable		mPassengers;
-	private JComboBox	mDestinations;
+	private JComboBox<String>	mDestinations;
 	private JButton		mBuyPassengers;
 	private JButton		mCancel;
 	private JButton		mReport;
@@ -85,7 +86,7 @@ public class ForSalePassengersDlg extends JDialog
 	private void initInstantiate()
 	{
 	    setTitle(URIUtils.extractName(mGame.getShip().getLocation())+" Departing Passengers");
-	    mPassengersMap = new HashMap();
+	    mPassengersMap = new HashMap<>();
 		mPassengerModel = new PassengerTableModel();
 		mPassengerModel.removeColumn(PassengerTableModel.COL_TITLE);
 		mPassengerModel.removeColumn(PassengerTableModel.COL_UPP);
@@ -101,7 +102,7 @@ public class ForSalePassengersDlg extends JDialog
 		mPassengerSorter.addMouseListenerToHeaderInTable(mPassengers);
 		mBuyPassengers = new JButton("Contract");
 		mReport = new JButton("Report");
-		mDestinations = new JComboBox();
+		mDestinations = new JComboBox<>();
 		mCabins = new SelectedCapacityPanel("int");
 		mCabins.setBorder(BorderFactory.createTitledBorder("Cabins"));
 		mBerths = new SelectedCapacityPanel("int");
@@ -163,18 +164,17 @@ public class ForSalePassengersDlg extends JDialog
 		DateBean date = mGame.getDate();
 	    BodySpecialAdvBean here = (BodySpecialAdvBean)hereObj;
 	    List<MainWorldBean> worlds = SchemeLogic.getWorldsWithin(mGame.getScheme(), here.getSystem().getOrds(), mShip.getStats().getJump());
-	    ArrayList destinations = new ArrayList();
+	    List<String> destinations = new ArrayList<>();
 	    destinations.add("Show All");
 	    LocationURI destinationURI = new LocationURI(mShip.getDestination());
 	    String shipDestination = null;
-	    for (Iterator i = worlds.iterator(); i.hasNext(); )
+	    for (MainWorldBean mw : worlds)
 	    {
-	        MainWorldBean mw = (MainWorldBean)i.next();
 	        //System.out.println("ForSalePassengersDlg.updateLists, world="+mw.getName());
 	        SystemBean thereSys = mGame.getScheme().getGeneratorSystem().generateSystem(mw.getOrds());
-	        for (Iterator j = thereSys.getSystemRoot().getAllSatelitesIterator(); j.hasNext(); )
+	        for (Iterator<BodyBean> j = thereSys.getSystemRoot().getAllSatelitesIterator(); j.hasNext(); )
 	        {
-	            Object thereObj = j.next();
+	            BodyBean thereObj = j.next();
 	            if (thereObj instanceof BodySpecialAdvBean)
 	            {
 	                BodySpecialAdvBean there = (BodySpecialAdvBean)thereObj;
@@ -202,7 +202,7 @@ public class ForSalePassengersDlg extends JDialog
 	            oldDest = shipDestination;
 	        else
 	            oldDest = "Show All";
-	    mDestinations.setModel(new DefaultComboBoxModel(destinations.toArray()));
+	    mDestinations.setModel(new DefaultComboBoxModel<String>(destinations.toArray(new String[0])));
 	    mDestinations.setSelectedItem(oldDest);
 	    doNewDestination();
 	}
@@ -213,21 +213,18 @@ public class ForSalePassengersDlg extends JDialog
     protected void doNewDestination()
     {
         String name = (String)mDestinations.getSelectedItem();
-        ArrayList passengers;
+        List<PassengerBean> passengers;
         if (name.equals("Show All"))
         {
-            passengers = new ArrayList();
-            for (Iterator i = mPassengersMap.values().iterator(); i.hasNext(); )
-            {
-                ArrayList a = (ArrayList)i.next();
+            passengers = new ArrayList<>();
+            for (List<PassengerBean> a : mPassengersMap.values())
                 passengers.addAll(a);
-            }
         }
         else
         {
-            passengers = (ArrayList)mPassengersMap.get(name);
+            passengers = mPassengersMap.get(name);
         }
-		mPassengerModel.setChars(passengers);
+		mPassengerModel.setPassengers(passengers);
     }
 
 	protected void doCancel()
@@ -255,7 +252,7 @@ public class ForSalePassengersDlg extends JDialog
 	    html.append("</html>");
 	    ReportDlg dlg = new ReportDlg(this, html.toString());
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 
 	protected void doBuyPassengers()
@@ -275,9 +272,11 @@ public class ForSalePassengersDlg extends JDialog
 	    int row = mPassengers.getSelectedRow();
 	    if (row < 0)
 	        return;
+	    /*
 	    PassengerBean cargo = (PassengerBean)mPassengerModel.getChars().get(mPassengerSorter.mapRow(row));
-	    //PassengerInfoDlg dlg = new PassengerInfoDlg(this, mGame, cargo);
-	    //dlg.show();
+	    PassengerInfoDlg dlg = new PassengerInfoDlg(this, mGame, cargo);
+	    dlg.setVisible(true);
+	    */
 	}
 	
 	protected void updateCapacity()

@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import jo.ttg.beans.DateBean;
+import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.sys.SystemBean;
 import jo.ttg.beans.trade.PassengersBean;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
@@ -121,9 +122,8 @@ public class ForSaleReportLogic
         {
             day.setMinutes(date.getMinutes() - i*24*60);
     		List<PassengersBean> passengerList = ((IGenPassengersEx)scheme.getGeneratorPassengers()).generatePassengers(from, to, date);
-    		for (Iterator j = passengerList.iterator(); j.hasNext(); )
+    		for (PassengersBean passengers : passengerList)
     		{
-    		    PassengersBean passengers = (PassengersBean)j.next();
     		    total[0] += passengers.getHigh();
     		    total[1] += passengers.getMiddle();
     		    total[2] += passengers.getLow();
@@ -138,12 +138,12 @@ public class ForSaleReportLogic
     
     private static BodySpecialAdvBean[] findLocations(SystemBean sys)
     {
-        ArrayList locs = new ArrayList();
-        for (Iterator i = sys.getSystemRoot().getAllSatelitesIterator(); i.hasNext(); )
+        List<BodySpecialAdvBean> locs = new ArrayList<>();
+        for (Iterator<BodyBean> i = sys.getSystemRoot().getAllSatelitesIterator(); i.hasNext(); )
         {
-            Object o = i.next();
+            BodyBean o = i.next();
             if (o instanceof BodySpecialAdvBean)
-                locs.add(o);
+                locs.add((BodySpecialAdvBean)o);
         }
         BodySpecialAdvBean[] ret = new BodySpecialAdvBean[locs.size()];
         locs.toArray(ret);

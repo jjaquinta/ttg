@@ -1,5 +1,6 @@
 package org.json.simple.h;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.json.simple.FromJSONLogic;
@@ -69,6 +70,7 @@ public class MapHandler implements IToJSONHandler, IFromJSONHandler
         }
     }
         
+    @SuppressWarnings("rawtypes")
     @Override
     public Object fromJSON(Object json, Class<?> hint)
     {
@@ -79,8 +81,11 @@ public class MapHandler implements IToJSONHandler, IFromJSONHandler
             JSONObject o = (JSONObject)json;
             if (hint == null)
                 hint = (Class<?>)Class.forName(o.getString(MAP_CLASS));
-            @SuppressWarnings("rawtypes")
-            Map map = (Map)hint.newInstance();
+            Map map;
+            if (hint.isInterface())
+                map = new HashMap();
+            else
+                map = (Map)hint.newInstance();
             fromJSONInto(json, map);
             return map;
         }

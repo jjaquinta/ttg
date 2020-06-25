@@ -8,7 +8,7 @@ package ttg.logic.adv;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.json.simple.FromJSONLogic;
 import org.json.simple.JSONObject;
@@ -160,7 +160,7 @@ public class GameLogic
 	
 	public static void status(Game game, String newStatus)
 	{
-		ArrayList history = game.getStatusHistory();
+	    List<String> history = game.getStatusHistory();
 	    long now = System.currentTimeMillis();
 	    if (game.getStatusChange() < now - 30*1000)
 	    {

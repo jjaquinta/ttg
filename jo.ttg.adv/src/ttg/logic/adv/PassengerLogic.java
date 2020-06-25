@@ -6,12 +6,10 @@
  */
 package ttg.logic.adv;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import jo.ttg.beans.DateBean;
-import jo.ttg.beans.chr.CharBean;
 import jo.ttg.logic.DateLogic;
 import jo.ttg.logic.gen.SchemeLogic;
 import ttg.beans.adv.AdvEvent;
@@ -34,12 +32,9 @@ public class PassengerLogic
     public static int totalBerths(List<PassengerBean> passengers)
     {
         int ret = 0;
-        for (Iterator i = passengers.iterator(); i.hasNext(); )
-        {
-            PassengerBean pass = (PassengerBean)i.next();
+        for (PassengerBean pass : passengers)
             if (pass.getPassage() == PassengerBean.PASSAGE_LOW)
                 ret++;
-        }
         return ret;
     }
 
@@ -50,12 +45,9 @@ public class PassengerLogic
     public static int totalCabins(List<PassengerBean> passengers)
     {
         int ret = 0;
-        for (Iterator i = passengers.iterator(); i.hasNext(); )
-        {
-            PassengerBean pass = (PassengerBean)i.next();
+        for (PassengerBean pass : passengers)
             if (pass.getPassage() != PassengerBean.PASSAGE_LOW)
                 ret++;
-        }
         return ret;
     }
 
@@ -66,9 +58,8 @@ public class PassengerLogic
     public static PassengerBean getYoungestMiddle(List<PassengerBean> passengers)
     {
         PassengerBean youngest = null;
-        for (Iterator i = passengers.iterator(); i.hasNext(); )
+        for (PassengerBean pass : passengers)
         {
-            PassengerBean pass = (PassengerBean)i.next();
             if (pass.getPassage() != PassengerBean.PASSAGE_MIDDLE)
                 continue;
             if ((youngest == null) || DateLogic.earlierThan(youngest.getBoarded(), pass.getBoarded()))
@@ -90,9 +81,9 @@ public class PassengerLogic
         int numIntraMiddle = 0;
         int numInterHigh = 0;
         int numInterMiddle = 0;
-        for (Iterator i = game.getShip().getPassengers().iterator(); i.hasNext(); )
+        for (Iterator<PassengerBean> i = game.getShip().getPassengers().iterator(); i.hasNext(); )
         {
-            PassengerBean pass = (PassengerBean)i.next();
+            PassengerBean pass = i.next();
             if (pass.getPassage() == PassengerBean.PASSAGE_LOW)
                 continue;
             if (pass.getDestination().equals(here))

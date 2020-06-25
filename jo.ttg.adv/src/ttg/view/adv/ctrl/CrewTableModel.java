@@ -6,6 +6,10 @@
  */
 package ttg.view.adv.ctrl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jo.ttg.beans.chr.CharBean;
 import jo.ttg.core.ui.swing.ctrl.CharTableModel;
 import ttg.beans.adv.CrewBean;
 import ttg.logic.adv.CrewLogic;
@@ -45,7 +49,7 @@ public class CrewTableModel extends CharTableModel
 		return super.getValueAt(row, col);
 	}
 
-    public Class getColumnClass(int col)
+    public Class<?> getColumnClass(int col)
     {
 		switch (getColumns()[col])
 		{
@@ -65,5 +69,12 @@ public class CrewTableModel extends CharTableModel
 	        return mColumnNames[colOff - COL_JOB];
 	    else
 	        return super.getColumnName(col);
+	}
+	
+	public void setCrew(List<CrewBean> crew)
+	{
+	    List<CharBean> chars = new ArrayList<>();
+	    chars.addAll(crew);
+	    setCrew(crew);
 	}
 }

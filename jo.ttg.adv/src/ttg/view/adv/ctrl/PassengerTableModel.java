@@ -8,7 +8,6 @@ package ttg.view.adv.ctrl;
 
 import java.util.List;
 
-import jo.ttg.beans.chr.CharBean;
 import jo.ttg.core.ui.swing.ctrl.CharTableModel;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
 import jo.ttg.utils.URIUtils;
@@ -71,7 +70,7 @@ public class PassengerTableModel extends CharTableModel
 		return super.getValueAt(row, col);
 	}
 
-    public Class getColumnClass(int col)
+    public Class<?> getColumnClass(int col)
     {
 		switch (getColumns()[col])
 		{

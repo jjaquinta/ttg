@@ -10,7 +10,6 @@ import java.beans.XMLDecoder;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -178,7 +177,7 @@ public class ForSaleLogic
         return ret;
     }
 
-	private static void findForSale(ArrayList forSale, MainWorldBean where, long date, int expiryLimit)
+	private static void findForSale(List<ShipBean> forSale, MainWorldBean where, long date, int expiryLimit)
 	{
 		char port = (char)where.getPopulatedStats().getUPP().getPort().getValue();
 		if ((port != 'A') && (port != 'B'))
@@ -202,9 +201,9 @@ public class ForSaleLogic
 		}
 	}
 	
-	public static ArrayList genShipsForSale(MainWorldBean where, DateBean date)
+	public static List<ShipBean> genShipsForSale(MainWorldBean where, DateBean date)
 	{
-		ArrayList ret = new ArrayList();
+	    List<ShipBean> ret = new ArrayList<>();
 		for (int exp = 0; exp < 18; exp++)
 			findForSale(ret, where, date.getDays()-exp, exp);
 		return ret;
@@ -226,16 +225,15 @@ public class ForSaleLogic
 	
 	public static List<PassengerBean> genPassengersForSale(Game game, BodyBean ori, BodyBean dest, DateBean date)
 	{
-		ArrayList ret = new ArrayList();
+	    List<PassengerBean> ret = new ArrayList<>();
 		if (ori.getURI().equals(dest.getURI()))
 		    return ret;
 		List<PassengersBean> passengerList = ((IGenPassengersEx)game.getScheme().getGeneratorPassengers()).generatePassengers(ori, dest, date);
 		if (passengerList == null)
 		    return ret;
 		IGenLanguage lang = game.getScheme().getGeneratorLanguage();
-		for (Iterator i = passengerList.iterator(); i.hasNext(); )
+		for (PassengersBean passengers : passengerList)
 		{
-		    PassengersBean passengers = (PassengersBean)i.next();
 		    RandBean r = new RandBean();
 		    r.setSeed(passengers.getSeed());
 		    int hml = passengers.getHigh() + passengers.getMiddle() + passengers.getLow();
@@ -259,9 +257,9 @@ public class ForSaleLogic
 		return ret;
 	}
 	
-	public static ArrayList genStaffForHire(Game game, BodyBean ori, DateBean date)
+	public static List<CharBean> genStaffForHire(Game game, BodyBean ori, DateBean date)
 	{
-		ArrayList ret = new ArrayList();
+	    List<CharBean> ret = new ArrayList<>();
 		if (!(ori instanceof BodySpecialAdvBean))
 		    return ret;
 		String preferredService = null;

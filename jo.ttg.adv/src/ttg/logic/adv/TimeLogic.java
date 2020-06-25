@@ -44,7 +44,6 @@ public class TimeLogic
             DistCapabilities caps = ShipLogic.getCaps(game.getShip().getStats());
             try
             {
-                System.out.print(ship.getLocation()+" -> ");
                 List<DistTransition> trav = TraverseLogic.calcTraverse(ship.getLocation(), ship.getDestination(), caps, game.getScheme());
                 DistTransition lastTrans = null;
                 for (Iterator<DistTransition> i = trav.iterator(); i.hasNext(); )
@@ -99,8 +98,6 @@ public class TimeLogic
                     }
                     lastTrans = trans;
                 }
-                System.out.print(ship.getLocation()+" -> ");
-                System.out.println(ship.getDestination());
             }
             catch (TraverseException e)
             {

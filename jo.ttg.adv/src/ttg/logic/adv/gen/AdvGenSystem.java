@@ -8,6 +8,7 @@ package ttg.logic.adv.gen;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.RandBean;
@@ -60,11 +61,11 @@ public class AdvGenSystem extends ImpGenSystem
         int science = 0;
         int tech = 0;
         int law = 0;
-        ArrayList giants = new ArrayList();
-        ArrayList life = new ArrayList();
-        for (Iterator i = sys.getSystemRoot().getAllSatelitesIterator(); i.hasNext(); )
+        List<BodyBean> giants = new ArrayList<>();
+        List<BodyBean> life = new ArrayList<>();
+        for (Iterator<BodyBean> i = sys.getSystemRoot().getAllSatelitesIterator(); i.hasNext(); )
         {
-            BodyBean body = (BodyBean)i.next();
+            BodyBean body = i.next();
             if (body instanceof BodyGiantBean)
                 giants.add(body);
             if ((body instanceof BodyWorldBean) && ((BodyWorldBean)body).getStatsAtm().isLife())
@@ -226,7 +227,7 @@ public class AdvGenSystem extends ImpGenSystem
         scout.setDemandGood(getGood(CargoBean.CP_DONTCARE, CargoBean.GT_INFORMATION, tech, law, RandLogic.rand(rnd)));
     }
 
-    private void addRefinery(SystemBean sys, ArrayList giants, RandBean rnd, int tech, int law)
+    private void addRefinery(SystemBean sys, List<BodyBean> giants, RandBean rnd, int tech, int law)
     {
         BodyBean parent;
         if (giants.size() == 0)
@@ -240,7 +241,7 @@ public class AdvGenSystem extends ImpGenSystem
         refinery.setProductionGood(getGood(CargoBean.CP_INORGANIC, CargoBean.GT_PROCESSED, tech, law, RandLogic.rand(rnd)));
     }
 
-    private void addLab(SystemBean sys, ArrayList life, RandBean rnd, int tech, int law)
+    private void addLab(SystemBean sys, List<BodyBean> life, RandBean rnd, int tech, int law)
     {
         BodyBean parent;
         if (life.size() == 0)

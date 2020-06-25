@@ -7,6 +7,7 @@ package ttg.logic.adv;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -23,7 +24,7 @@ import ttg.view.adv.Adv;
  */
 public class SoundLogic
 {
-    private static ArrayList		mQueue = new ArrayList();
+    private static List<String>		mQueue = new ArrayList<>();
     private static SoundLogicThread	mThread = null;
     private static Clip				mCurrentClip;
 

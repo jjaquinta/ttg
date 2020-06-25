@@ -8,10 +8,6 @@ package ttg.view.adv.dlg;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -21,7 +17,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.event.ListSelectionEvent;
 
 import jo.ttg.beans.DateBean;
 import jo.ttg.beans.chr.CharBean;
@@ -138,7 +133,7 @@ public class ForSaleCrewDlg extends JDialog
 		{
 		    BodySpecialAdvBean here = (BodySpecialAdvBean)hereObj;
 			DateBean date = mGame.getDate();
-			ArrayList crew = ForSaleLogic.genStaffForHire(mGame, here, date);
+			List<CharBean> crew = ForSaleLogic.genStaffForHire(mGame, here, date);
 			mCrewModel.setChars(crew);
 		}
 	}
@@ -168,19 +163,13 @@ public class ForSaleCrewDlg extends JDialog
 	    CrewBean crew = (CrewBean)mCrewModel.getChars().get(mCrewSorter.mapRow(row));
 	    CharInfoDlg dlg = new CharInfoDlg(this, mGame, crew);
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void updateCapacity()
 	{
-	    int crew = 0;
 		int[] sel = mCrew.getSelectedRows();
-		mCrewSorter.mapRows(sel);
-		List<CharBean> crews = mCrewModel.getChars();
-		for (int i = 0; i < sel.length; i++)
-		{
-			crew++;
-		}
+        int crew = sel.length;
 		int cabinPassengers = PassengerLogic.totalCabins(mGame.getShip().getPassengers());
 		int berthPassengers = PassengerLogic.totalBerths(mGame.getShip().getPassengers());
 		mCabins.setQuanCapacity(mGame.getShip().getStats().getStaterooms()

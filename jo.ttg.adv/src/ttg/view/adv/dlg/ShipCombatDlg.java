@@ -6,9 +6,9 @@ package ttg.view.adv.dlg;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -27,49 +27,51 @@ import ttg.beans.adv.ShipInst;
  */
 public class ShipCombatDlg extends JDialog
 {
-    private Game		mGame;
-    private ArrayList	mGoodGuys;
-    private ArrayList	mBadGuys;
-    private HashMap		mBogeys;
-    
-    private BogeyPanel	mClient;
-	
-	/**
-	 *
-	 */
+    @SuppressWarnings("unused")
+    private Game                 mGame;
+    private List<ShipInst>       mGoodGuys;
+    private List<ShipInst>       mBadGuys;
+    private Map<ShipInst, Bogey> mBogeys;
 
-	public ShipCombatDlg(JFrame parent, Game game, ArrayList goodGuys, ArrayList badGuys)
-	{
-		super(parent);
-		mGame = game;
-		mGoodGuys = goodGuys;
-		mBadGuys = badGuys;
-		initInstantiate();
-		initLink();
-		initLayout();
-	}
+    private BogeyPanel           mClient;
 
-	public ShipCombatDlg(JDialog parent, Game game, ArrayList goodGuys, ArrayList badGuys)
-	{
-		super(parent);
-		mGame = game;
-		mGoodGuys = goodGuys;
-		mBadGuys = badGuys;
-		initInstantiate();
-		initLink();
-		initLayout();
-	}
+    /**
+     *
+     */
 
-	private void initInstantiate()
-	{
+    public ShipCombatDlg(JFrame parent, Game game, List<ShipInst> goodGuys,
+            List<ShipInst> badGuys)
+    {
+        super(parent);
+        mGame = game;
+        mGoodGuys = goodGuys;
+        mBadGuys = badGuys;
+        initInstantiate();
+        initLink();
+        initLayout();
+    }
+
+    public ShipCombatDlg(JDialog parent, Game game, List<ShipInst> goodGuys,
+            List<ShipInst> badGuys)
+    {
+        super(parent);
+        mGame = game;
+        mGoodGuys = goodGuys;
+        mBadGuys = badGuys;
+        initInstantiate();
+        initLink();
+        initLayout();
+    }
+
+    private void initInstantiate()
+    {
         setTitle("Ship Combat");
         mClient = new BogeyPanel();
 
-        mBogeys = new HashMap();
+        mBogeys = new HashMap<>();
         double dy = 0;
-        for (Iterator i = mGoodGuys.iterator(); i.hasNext(); )
+        for (ShipInst ship : mGoodGuys)
         {
-            ShipInst ship = (ShipInst)i.next();
             Bogey b = new Bogey();
             b.setColor(Color.GREEN);
             b.setSprite(3);
@@ -79,9 +81,8 @@ public class ShipCombatDlg extends JDialog
             mClient.addBogey(b);
         }
         dy = 0;
-        for (Iterator i = mBadGuys.iterator(); i.hasNext(); )
+        for (ShipInst ship : mBadGuys)
         {
-            ShipInst ship = (ShipInst)i.next();
             Bogey b = new Bogey();
             b.setColor(Color.RED);
             b.setSprite(1);
@@ -92,19 +93,19 @@ public class ShipCombatDlg extends JDialog
         }
     }
 
-	private void initLink()
-	{
-	}
+    private void initLink()
+    {
+    }
 
     private void initLayout()
-	{	    
-		JPanel buttonBar = new JPanel();
-		buttonBar.add(new JLabel("..."));
-		
-		getContentPane().setLayout(new BorderLayout());
-		getContentPane().add("South", buttonBar);
-		getContentPane().add("Center", mClient);
-		setSize(640, 480);
-	}
+    {
+        JPanel buttonBar = new JPanel();
+        buttonBar.add(new JLabel("..."));
+
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add("South", buttonBar);
+        getContentPane().add("Center", mClient);
+        setSize(640, 480);
+    }
 
 }

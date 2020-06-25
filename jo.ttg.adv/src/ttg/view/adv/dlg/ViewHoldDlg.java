@@ -165,7 +165,7 @@ public class ViewHoldDlg extends JDialog
 	        return;
 	    AdvCargoBean cargo = (AdvCargoBean)mHoldModel.getCargos().get(mCargoSorter.mapRow(row));
 	    CargoInfoDlg dlg = new CargoInfoDlg(this, mGame, cargo);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void updateCapacity()

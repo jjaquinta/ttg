@@ -27,7 +27,8 @@ import ttg.beans.adv.Game;
  */
 public class CharInfoDlg extends JDialog
 {
-	private Game		mGame;
+	@SuppressWarnings("unused")
+    private Game		mGame;
 	private CharBean	mChar;
 	
 	private CharStatsPanel	mCharStats;

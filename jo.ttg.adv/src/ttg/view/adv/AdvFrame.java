@@ -14,7 +14,7 @@ import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,200 +39,212 @@ import ttg.view.adv.dlg.ViewStatusDlg;
 /**
  * @author jjaquinta
  *
- * To change the template for this generated type comment go to
- * Window>Preferences>Java>Code Generation>Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window>Preferences>Java>Code Generation>Code and Comments
  */
 public class AdvFrame extends JFrame implements PropertyChangeListener
 {
-	/**
+    /**
      * Comment for <code>serialVersionUID</code>
      */
-    private static final long serialVersionUID = -7416311502254765299L;
-    private Game		mGame;
-	private ArrayList	mListeners;
-	private AdvSoundHandler		mSoundHandler;
-	private AdvStatusHandler	mStatusHandler;
-	
-	private AdvToolbar		mToolbar;
-	private DatePanel		mDate;
-	private MoneyPanel		mMoney;
-	private LoanPanel		mLoan;
-	private JButton			mStatusHistory;
-	private JLabel			mStatus;
-	private GameStatusPanel	mGameStatus;
-	private AtPanel			mClient;
-	
-	/**
-	 *
-	 */
+    private static final long            serialVersionUID = -7416311502254765299L;
+    private Game                         mGame;
+    private List<PropertyChangeListener> mListeners;
+    private AdvSoundHandler              mSoundHandler;
+    private AdvStatusHandler             mStatusHandler;
 
-	public AdvFrame()
-	{
-		initInstantiate();
-		initLink();
-		initLayout();
-	}
+    private AdvToolbar                   mToolbar;
+    private DatePanel                    mDate;
+    private MoneyPanel                   mMoney;
+    private LoanPanel                    mLoan;
+    private JButton                      mStatusHistory;
+    private JLabel                       mStatus;
+    private GameStatusPanel              mGameStatus;
+    private AtPanel                      mClient;
 
-	private void initInstantiate()
-	{
-		setTitle("The Traveller Adventure");
-		setIconImage(TTGIconUtils.getIcon("icons/frame_icon.gif").getImage());
+    /**
+     *
+     */
 
-		mListeners = new ArrayList();
-		mStatusHandler = new AdvStatusHandler();
-		mSoundHandler = new AdvSoundHandler();
-		mDate = new DatePanel();
-		mListeners.add(mDate);
-		mStatus = new JLabel("");
-		mStatusHistory = new JButton("^");
-		mStatusHistory.setMargin(new Insets(0,0,0,0));
-		mGameStatus = new GameStatusPanel();
-		mListeners.add(mGameStatus);
-		mClient = new AtPanel();
-		mListeners.add(mClient);
-		mLoan = new LoanPanel();
-		mListeners.add(mLoan);
-		mMoney = new MoneyPanel();
-		mListeners.add(mMoney);
-		mToolbar = new AdvToolbar(this);
-	}
+    public AdvFrame()
+    {
+        initInstantiate();
+        initLink();
+        initLayout();
+    }
 
-	private void initLink()
-	{
-		addWindowListener(new WindowAdapter()
-		  { public void windowClosing(WindowEvent e) { doFrameShut(); }          	
-			public void windowOpened(WindowEvent e) { doFrameStart(); }
-		  }
-		);
-		ListenerUtils.listen(mStatusHistory, (ev) -> {
-		    if (Adv.CHEATS_ENABLED && ((ev.getModifiers()&ActionEvent.CTRL_MASK) != 0))
-		        doTest();
+    private void initInstantiate()
+    {
+        setTitle("The Traveller Adventure");
+        setIconImage(TTGIconUtils.getIcon("icons/frame_icon.gif").getImage());
+
+        mListeners = new ArrayList<>();
+        mStatusHandler = new AdvStatusHandler();
+        mSoundHandler = new AdvSoundHandler();
+        mDate = new DatePanel();
+        mListeners.add(mDate);
+        mStatus = new JLabel("");
+        mStatusHistory = new JButton("^");
+        mStatusHistory.setMargin(new Insets(0, 0, 0, 0));
+        mGameStatus = new GameStatusPanel();
+        mListeners.add(mGameStatus);
+        mClient = new AtPanel();
+        mListeners.add(mClient);
+        mLoan = new LoanPanel();
+        mListeners.add(mLoan);
+        mMoney = new MoneyPanel();
+        mListeners.add(mMoney);
+        mToolbar = new AdvToolbar(this);
+    }
+
+    private void initLink()
+    {
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e)
+            {
+                doFrameShut();
+            }
+
+            public void windowOpened(WindowEvent e)
+            {
+                doFrameStart();
+            }
+        });
+        ListenerUtils.listen(mStatusHistory, (ev) -> {
+            if (Adv.CHEATS_ENABLED
+                    && ((ev.getModifiers() & ActionEvent.CTRL_MASK) != 0))
+                doTest();
             else
                 doStatusHistory();
         });
-	}
+    }
 
-	private void initLayout()
-	{
-	    JPanel buttonBar = new JPanel();
-	    buttonBar.add(mDate);
-	    buttonBar.add(mMoney);
-	    buttonBar.add(mLoan);
-		JPanel statusBar = new JPanel();
-		statusBar.setLayout(new BorderLayout());
-		statusBar.add("West", mStatusHistory);
-		statusBar.add("Center", mStatus);
-		statusBar.add("East", buttonBar);
-		
-		getContentPane().setLayout(new BorderLayout());
-		//getContentPane().add("East", new PopupPanel(mGameStatus, PopupPanel.WEST));
-		getContentPane().add("South", statusBar);
-		getContentPane().add("Center", new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, mClient, mGameStatus));
-		getContentPane().add("North", mToolbar);
-		setSize(800, 600);
-	}
-	
-	/* (non-Javadoc)
-	 * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
-	 */
-	public void propertyChange(PropertyChangeEvent ev)
-	{
-		Object src = ev.getSource();
-		String name = ev.getPropertyName();
-		//System.out.println("AdvFrame: propertyChange("+name+")");
-		if (src == mGame)
-		{
-			if (name.equals("status") || name.equals("*"))
-				updateStatus();
-			else if (name.equals("ship"))
-			{
-			    if (ev.getOldValue() != null)
-			        ((ShipInst)ev.getOldValue()).removePropertyChangeListener(this);
-				if (ev.getNewValue() != null)
-				    ((ShipInst)ev.getNewValue()).addPropertyChangeListener(this);
-			}
-		}
-		for (Iterator i = mListeners.iterator(); i.hasNext(); )
-		{
-		    PropertyChangeListener pcl = (PropertyChangeListener)i.next();
-		    pcl.propertyChange(ev);
-		}
-	}
-	
-	private void updateStatus()
-	{
-		mStatus.setText(mGame.getStatus());
-		mStatusHistory.setEnabled(mGame.getStatusHistory().size() > 1);
-	}
+    private void initLayout()
+    {
+        JPanel buttonBar = new JPanel();
+        buttonBar.add(mDate);
+        buttonBar.add(mMoney);
+        buttonBar.add(mLoan);
+        JPanel statusBar = new JPanel();
+        statusBar.setLayout(new BorderLayout());
+        statusBar.add("West", mStatusHistory);
+        statusBar.add("Center", mStatus);
+        statusBar.add("East", buttonBar);
 
-	/**
-	 * 
-	 */
-	protected void doFrameShut()
-	{
-		mToolbar.doExit();
-	}
+        getContentPane().setLayout(new BorderLayout());
+        // getContentPane().add("East", new PopupPanel(mGameStatus,
+        // PopupPanel.WEST));
+        getContentPane().add("South", statusBar);
+        getContentPane().add("Center", new JSplitPane(
+                JSplitPane.HORIZONTAL_SPLIT, mClient, mGameStatus));
+        getContentPane().add("North", mToolbar);
+        setSize(800, 600);
+    }
 
-	/**
-	 * 
-	 */
-	protected void doFrameStart()
-	{
-		//mMenuGame.doNew();
-	}
-	
-	protected void doStatusHistory()
-	{
-	    ViewStatusDlg dlg = new ViewStatusDlg((JFrame)SwingUtilities.getRoot(this), mGame);
-	    dlg.setModal(true);
-	    dlg.setVisible(true);
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.beans.PropertyChangeListener#propertyChange(java.beans.
+     * PropertyChangeEvent)
+     */
+    public void propertyChange(PropertyChangeEvent ev)
+    {
+        Object src = ev.getSource();
+        String name = ev.getPropertyName();
+        // System.out.println("AdvFrame: propertyChange("+name+")");
+        if (src == mGame)
+        {
+            if (name.equals("status") || name.equals("*"))
+                updateStatus();
+            else if (name.equals("ship"))
+            {
+                if (ev.getOldValue() != null)
+                    ((ShipInst)ev.getOldValue())
+                            .removePropertyChangeListener(this);
+                if (ev.getNewValue() != null)
+                    ((ShipInst)ev.getNewValue())
+                            .addPropertyChangeListener(this);
+            }
+        }
+        for (PropertyChangeListener pcl : mListeners)
+            pcl.propertyChange(ev);
+    }
 
-	/**
-	 * @return
-	 */
-	public Game getGame()
-	{
-		return mGame;
-	}
+    private void updateStatus()
+    {
+        mStatus.setText(mGame.getStatus());
+        mStatusHistory.setEnabled(mGame.getStatusHistory().size() > 1);
+    }
 
-	/**
-	 * @param game
-	 */
-	public void setGame(Game game)
-	{
-	    if (mGame != null)
-	    {
-	        mGame.removePropertyChangeListener(this);
-	        if (mGame.getShip() != null)
-	            mGame.getShip().removePropertyChangeListener(this);
-	        AdvEventLogic.removeEventHandler(mGame, mSoundHandler);
-	        AdvEventLogic.removeEventHandler(mGame, mStatusHandler);
-	    }
-		mGame = game;
-		mGameStatus.setGame(mGame);
-		mClient.setGame(mGame);
-		mDate.setGame(mGame);
-		mMoney.setGame(mGame);
-		mLoan.setGame(mGame);
-		if (mGame != null)
-		{
-		    mGame.addPropertyChangeListener(this);
-		    if (mGame.getShip() != null)
-		        mGame.getShip().addPropertyChangeListener(this);
-		}
+    /**
+     * 
+     */
+    protected void doFrameShut()
+    {
+        mToolbar.doExit();
+    }
+
+    /**
+     * 
+     */
+    protected void doFrameStart()
+    {
+        // mMenuGame.doNew();
+    }
+
+    protected void doStatusHistory()
+    {
+        ViewStatusDlg dlg = new ViewStatusDlg(
+                (JFrame)SwingUtilities.getRoot(this), mGame);
+        dlg.setModal(true);
+        dlg.setVisible(true);
+    }
+
+    /**
+     * @return
+     */
+    public Game getGame()
+    {
+        return mGame;
+    }
+
+    /**
+     * @param game
+     */
+    public void setGame(Game game)
+    {
+        if (mGame != null)
+        {
+            mGame.removePropertyChangeListener(this);
+            if (mGame.getShip() != null)
+                mGame.getShip().removePropertyChangeListener(this);
+            AdvEventLogic.removeEventHandler(mGame, mSoundHandler);
+            AdvEventLogic.removeEventHandler(mGame, mStatusHandler);
+        }
+        mGame = game;
+        mGameStatus.setGame(mGame);
+        mClient.setGame(mGame);
+        mDate.setGame(mGame);
+        mMoney.setGame(mGame);
+        mLoan.setGame(mGame);
+        if (mGame != null)
+        {
+            mGame.addPropertyChangeListener(this);
+            if (mGame.getShip() != null)
+                mGame.getShip().addPropertyChangeListener(this);
+        }
         AdvEventLogic.addEventHandler(mGame, mSoundHandler);
         AdvEventLogic.addEventHandler(mGame, mStatusHandler);
-		propertyChange(new PropertyChangeEvent(this, "*", null, null));
-		updateStatus();
-	}
+        propertyChange(new PropertyChangeEvent(this, "*", null, null));
+        updateStatus();
+    }
 
-	private void doTest()
-	{
-	    ArrayList goodGuys = new ArrayList();
-	    goodGuys.add(mGame.getShip());
-	    ArrayList badGuys = new ArrayList();
-	    ShipCombatDlg dlg = new ShipCombatDlg(this, mGame, goodGuys, badGuys);
-	    dlg.setVisible(true);
-	}
+    private void doTest()
+    {
+        List<ShipInst> goodGuys = new ArrayList<>();
+        goodGuys.add(mGame.getShip());
+        List<ShipInst> badGuys = new ArrayList<>();
+        ShipCombatDlg dlg = new ShipCombatDlg(this, mGame, goodGuys, badGuys);
+        dlg.setVisible(true);
+    }
 }

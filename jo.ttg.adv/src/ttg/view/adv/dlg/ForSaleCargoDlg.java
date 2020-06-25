@@ -8,10 +8,6 @@ package ttg.view.adv.dlg;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -21,7 +17,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.event.ListSelectionEvent;
 
 import jo.ttg.beans.DateBean;
 import jo.ttg.beans.sys.BodyBean;
@@ -193,7 +188,7 @@ public class ForSaleCargoDlg extends JDialog
 	    html.append("</html>");
 	    ReportDlg dlg = new ReportDlg(this, html.toString());
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void doTableClick()
@@ -203,7 +198,7 @@ public class ForSaleCargoDlg extends JDialog
 	        return;
 	    AdvCargoBean cargo = (AdvCargoBean)mCargoModel.getCargos().get(mCargoSorter.mapRow(row));
 	    CargoInfoDlg dlg = new CargoInfoDlg(this, mGame, cargo);
-	    dlg.show();
+	    dlg.setVisible(true);
 	}
 	
 	protected void updateCapacity()

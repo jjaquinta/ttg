@@ -18,7 +18,7 @@ import ttg.logic.adv.CrewLogic;
  */
 public class CrewStatsPanel extends CharStatsPanel
 {
-    private JList	mJobQualifications;
+    private JList<String>	mJobQualifications;
 
     /**
 	 * 
@@ -26,7 +26,7 @@ public class CrewStatsPanel extends CharStatsPanel
 	protected void initInstantiate()
 	{
 	    super.initInstantiate();
-		mJobQualifications = new JList();
+		mJobQualifications = new JList<>();
 	}
 
 
@@ -56,11 +56,11 @@ public class CrewStatsPanel extends CharStatsPanel
 	    super.setChar(crew);
 		if (crew == null)
 		{
-		    mJobQualifications.setListData(new Object[0]);
+		    mJobQualifications.setListData(new String[0]);
 		}
 		else
 		{
-		    mJobQualifications.setListData(CrewLogic.qualifiedJobs(crew).toArray());		    
+		    mJobQualifications.setListData(CrewLogic.qualifiedJobs(crew).toArray(new String[0]));		    
 		    mJobQualifications.setSelectedValue(CrewLogic.jobNames()[crew.getJob()], false);
 		}
 	}

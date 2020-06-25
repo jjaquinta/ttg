@@ -101,7 +101,7 @@ public class ViewCrewDlg extends JDialog
 			mCrewModel.setChars(null);
 			return;
 		}
-		mCrewModel.setChars(mShip.getCrew());
+		mCrewModel.setCrew(mShip.getCrew());
 	}
 
 	protected void doCancel()
@@ -127,7 +127,7 @@ public class ViewCrewDlg extends JDialog
 	    CrewBean crew = (CrewBean)mCrewModel.getChars().get(mCrewSorter.mapRow(row));
 	    CrewInfoDlg dlg = new CrewInfoDlg(this, mGame, crew);
 	    dlg.setModal(true);
-	    dlg.show();
+	    dlg.setVisible(true);
 	    mCrew.repaint();
 	}
 }

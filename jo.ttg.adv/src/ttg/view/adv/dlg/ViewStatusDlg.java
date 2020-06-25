@@ -22,60 +22,60 @@ import ttg.beans.adv.Game;
 /**
  * @author jgrant
  *
- * To change the template for this generated type comment go to
- * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
+ *         To change the template for this generated type comment go to
+ *         Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
 public class ViewStatusDlg extends JDialog
 {
-	private Game		mGame;
-	
-	private JList	mStatus;
-	private JButton	mOK;
-	
-	/**
-	 *
-	 */
+    private Game          mGame;
 
-	public ViewStatusDlg(JFrame parent, Game game)
-	{
-		super(parent);
-		mGame = game;
-		initInstantiate();
-		initLink();
-		initLayout();
-	}
+    private JList<String> mStatus;
+    private JButton       mOK;
 
-	private void initInstantiate()
-	{
-	    setTitle("Status History");
-	    mStatus = new JList();
-		mOK = new JButton("OK", TTGIconUtils.getIcon("tb_save.gif"));        
-		updateLists();
-	}
+    /**
+     *
+     */
 
-	private void initLink()
-	{
-		ListenerUtils.listen(mOK, (ev) -> doOK());
-	}
+    public ViewStatusDlg(JFrame parent, Game game)
+    {
+        super(parent);
+        mGame = game;
+        initInstantiate();
+        initLink();
+        initLayout();
+    }
 
-	private void initLayout()
-	{
-		JPanel buttonBar = new JPanel();
-		buttonBar.add(mOK);
-		
-		getContentPane().setLayout(new BorderLayout());
-		getContentPane().add("South", buttonBar);
-		getContentPane().add("Center", new JScrollPane(mStatus));
-		pack();
-	}
-	
-	private void updateLists()
-	{
-	    mStatus.setListData(mGame.getStatusHistory().toArray());
-	}
+    private void initInstantiate()
+    {
+        setTitle("Status History");
+        mStatus = new JList<>();
+        mOK = new JButton("OK", TTGIconUtils.getIcon("tb_save.gif"));
+        updateLists();
+    }
 
-	protected void doOK()
-	{
-		dispose();
-	}
+    private void initLink()
+    {
+        ListenerUtils.listen(mOK, (ev) -> doOK());
+    }
+
+    private void initLayout()
+    {
+        JPanel buttonBar = new JPanel();
+        buttonBar.add(mOK);
+
+        getContentPane().setLayout(new BorderLayout());
+        getContentPane().add("South", buttonBar);
+        getContentPane().add("Center", new JScrollPane(mStatus));
+        pack();
+    }
+
+    private void updateLists()
+    {
+        mStatus.setListData(mGame.getStatusHistory().toArray(new String[0]));
+    }
+
+    protected void doOK()
+    {
+        dispose();
+    }
 }

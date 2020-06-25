@@ -5,7 +5,6 @@
 package ttg.logic.adv;
 
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -111,9 +110,9 @@ public class LocationLogic
             return ((BodyPopulated)body).getPopulatedStats();
         if ((body.getPrimary() != null) && (body.getPrimary() instanceof BodyPopulated))
             return ((BodyPopulated)body.getPrimary()).getPopulatedStats();
-        for (Iterator i = body.getSystem().getSystemRoot().getAllSatelitesIterator(); i.hasNext(); )
+        for (Iterator<BodyBean> i = body.getSystem().getSystemRoot().getAllSatelitesIterator(); i.hasNext(); )
         {
-            BodyBean b = (BodyBean)i.next();
+            BodyBean b = i.next();
             if (b.isMainworld())
                 return ((BodyPopulated)b).getPopulatedStats();
         }

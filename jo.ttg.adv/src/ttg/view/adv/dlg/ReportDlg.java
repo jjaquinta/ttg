@@ -7,7 +7,6 @@
 package ttg.view.adv.dlg;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;

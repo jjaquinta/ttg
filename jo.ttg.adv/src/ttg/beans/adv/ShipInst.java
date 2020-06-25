@@ -28,8 +28,8 @@ public class ShipInst extends PCSBean
     private String              mLocation;
     private String              mDestination;
     private List<CargoBean>     mCargo      = new ArrayList<>();
-    private ArrayList           mCrew       = new ArrayList();
-    private List<PassengerBean> mPassengers = new ArrayList();
+    private List<CrewBean>      mCrew       = new ArrayList<>();
+    private List<PassengerBean> mPassengers = new ArrayList<>();
     private double              mFuel;
     private double              mUnrefinedFuel;
     private boolean             mDocked;
@@ -54,7 +54,7 @@ public class ShipInst extends PCSBean
     /**
      * @return
      */
-    public ArrayList getCrew()
+    public List<CrewBean> getCrew()
     {
         return mCrew;
     }
@@ -230,7 +230,7 @@ public class ShipInst extends PCSBean
         mCargo = cargo;
     }
 
-    public void setCrew(ArrayList crew)
+    public void setCrew(List<CrewBean> crew)
     {
         mCrew = crew;
     }
