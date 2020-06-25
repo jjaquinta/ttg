@@ -95,12 +95,12 @@ public class DistLocation
     public String toString()
     {
         if (mOrbit > 0)
-            return "In the "+mOrds.toString()+" system orbit around "+StringUtils.fromStringArray(mPath, "->")+" at "+FormatUtils.formatDouble(mOrbit, 1)+" diameters";
+            return "In the "+mOrds.toURIString()+" system orbit around "+StringUtils.fromStringArray(mPath, "->")+" at "+FormatUtils.formatDouble(mOrbit, 1)+" diameters";
         if (mSpace.getX() != 0)
-            return "In interplanetary space in the "+mOrds.toString()+" system at "+mSpace.toString();
+            return "In interplanetary space in the "+mOrds.toURIString()+" system at "+mSpace.toString();
         if (mDestPath.length > 0)
-            return "In interspace between "+mOrds.toString()+" and "+mDestOrds.toString();
-        return "In the "+mOrds.toString()+" system on the surface of "+StringUtils.fromStringArray(mPath, "->");
+            return "In interspace between "+mOrds.toURIString()+" and "+mDestOrds.toURIString();
+        return "In the "+mOrds.toURIString()+" system on the surface of "+StringUtils.fromStringArray(mPath, "->");
     }
     
     /**

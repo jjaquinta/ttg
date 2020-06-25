@@ -149,7 +149,7 @@ public class TraverseLogic
         {
             double dist = scheme.distance(originOrds, origin.getDestOrds());
             double time = origin.getDestTimeLeft().getMinutes();
-            route.add(new DistTransitionJump("sys://"+origin.getOrds(), "sys://"+origin.getDestOrds(), dist, time));
+            route.add(new DistTransitionJump("sys://"+origin.getOrds().toURIString(), "sys://"+origin.getDestOrds().toURIString(), dist, time));
             if (origin.getDestOrds().equals(destinationOrds))
                 return;
             originOrds = origin.getDestOrds();
@@ -159,8 +159,8 @@ public class TraverseLogic
             double dist = scheme.distance(originOrds, destinationOrds);
             if (dist <= caps.getJumpRange())
             { // we are one jump away
-                route.add(new DistTransitionJump("sys://" + originOrds,
-                        "sys://" + destinationOrds, dist, 7*24*60));
+                route.add(new DistTransitionJump("sys://" + originOrds.toURIString(),
+                        "sys://" + destinationOrds.toURIString(), dist, 7*24*60));
                 break;
             }
             else
@@ -187,7 +187,7 @@ public class TraverseLogic
         //System.out.println("TraverseLogic.findClosestTo "+range.size()+" worlds within "+jumpRange+" of "+origin);
         if (range.size() == 0)
             throw new TraverseException("No worlds within " + jumpRange
-                    + " of " + origin.toString());
+                    + " of " + origin.toURIString());
         OrdBean best = null;
         double bestDist = 0;
         for (MainWorldBean mw : range)
@@ -227,7 +227,7 @@ public class TraverseLogic
             DistTransitionJump transJump = (DistTransitionJump)trans;
             LocationURI loc = LocationURILogic.fromURI(transJump.getOriginURI());
             LocationURI d = LocationURILogic.fromURI(transJump.getDestinationURI());
-            loc.setParam("destSys", d.getOrds().toString());
+            loc.setParam("destSys", d.getOrds().toURIString());
             double timeLeft = transJump.getTimeLeft()*(1.0 - pc);
             loc.setParam("timeLeft", String.valueOf(timeLeft));
             ret = LocationURILogic.getURI(loc);

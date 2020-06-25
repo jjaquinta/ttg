@@ -33,7 +33,7 @@ public class CharTableModel extends AbstractTableModel
     private static final String[] mColumnNames = { "Name", "Title", "UPP",
             "Age", "Skill", "Skill", "Salary", };
 
-    private List<CharBean>        mChars;
+    protected List<CharBean>      mChars;
     private int[]                 mColumns;
 
     public CharTableModel()

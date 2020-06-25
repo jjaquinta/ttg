@@ -7,6 +7,7 @@
 package jo.ttg.core.ui.swing.ctrl;
 
 import java.awt.Dimension;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -59,6 +60,26 @@ public class BodyView extends LinearMixedCtrl
 	public static ImageIcon POPM_IMG = TTGIconUtils.getUPP("pop_med.gif");
 	public static ImageIcon POPH_IMG = TTGIconUtils.getUPP("pop_hi.gif");
 
+    public static URL TOIDS_URL = TTGIconUtils.getPlanetURI("Asteroids.gif");
+    public static URL STAR_A_URL = TTGIconUtils.getPlanetURI("body_star_a.gif");
+    public static URL STAR_F_URL = TTGIconUtils.getPlanetURI("body_star_f.gif");
+    public static URL STAR_G_URL = TTGIconUtils.getPlanetURI("body_star_g.gif");
+    public static URL STAR_K_URL = TTGIconUtils.getPlanetURI("body_star_k.gif");
+    public static URL STAR_M_URL = TTGIconUtils.getPlanetURI("body_star_m.gif");
+    public static URL STAR_URL = TTGIconUtils.getPlanetURI("TheSun.gif");
+    public static URL LGG_URL = TTGIconUtils.getPlanetURI("Jupiter.gif");
+    public static URL SGG_URL = TTGIconUtils.getPlanetURI("Neptune.gif");
+    public static URL INNER_URL = TTGIconUtils.getPlanetURI("Mars.gif");
+    public static URL OUTER_URL = TTGIconUtils.getPlanetURI("Callisto.gif");
+    public static URL HABITABLE_URL = TTGIconUtils.getPlanetURI("Venus.gif");
+    public static URL POPULATED_URL = TTGIconUtils.getPlanetURI("Earth2.gif");
+    
+    public static URL PORTA_URL = TTGIconUtils.getUPPURI("port_a.gif");
+    public static URL PORTB_URL = TTGIconUtils.getUPPURI("port_b.gif");
+    public static URL PORTG_URL = TTGIconUtils.getUPPURI("port_g.gif");
+    public static URL POPM_URL = TTGIconUtils.getUPPURI("pop_med.gif");
+    public static URL POPH_URL = TTGIconUtils.getUPPURI("pop_hi.gif");
+
 	private BodyBean	mBody;
 	
 	public BodyView()
@@ -100,6 +121,18 @@ public class BodyView extends LinearMixedCtrl
 	    }
 	    return null;
 	}
+
+    public static URL getIconURI(BodyBean b)
+    {
+        for (Iterator<BodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
+        {
+            BodyViewHandler h = (BodyViewHandler)i.next();
+            URL ret = h.getIconURI(b);
+            if (ret != null)
+                return ret;
+        }
+        return null;
+    }
 	
 	public static void addHandler(BodyViewHandler h)
 	{
@@ -161,6 +194,60 @@ class DefaultBodyViewHandler implements BodyViewHandler
 		    }
             return BodyView.STAR_IMG;
 		}
+    }
+    public URL getIconURI(BodyBean b)
+    {
+        if (b instanceof BodyWorldBean)
+        {
+            BodyWorldBean w = (BodyWorldBean)b;
+            if (w.isOuterZone())
+                return BodyView.OUTER_URL;
+            else if (w.isInnerZone())
+                return BodyView.INNER_URL;
+            else // if (w.isHabitableZone())
+            {
+                if (w.getPopulatedStats().getUPP().getPop().getValue() > 0)
+                    return BodyView.POPULATED_URL;
+                else
+                    return BodyView.HABITABLE_URL;
+            }
+        }
+        else if (b instanceof BodyToidsBean)
+        {
+            return BodyView.TOIDS_URL;
+        }
+        else if (b instanceof BodyGiantBean)
+        {
+            BodyGiantBean g = (BodyGiantBean)b;
+            if (g.getSize() == BodyGiantBean.GS_S)
+                return BodyView.SGG_URL;
+            else
+                return BodyView.LGG_URL;
+        }
+        else if (b instanceof BodyStarBean)
+        {
+            int st = ((BodyStarBean)b).getStarDecl().getStarType();
+            st -= (st%10);
+            switch (st)
+            {
+                case StarDeclBean.ST_A:
+                    return BodyView.STAR_A_URL;
+                case StarDeclBean.ST_B:
+                    return BodyView.STAR_A_URL;
+                case StarDeclBean.ST_F:
+                    return BodyView.STAR_F_URL;
+                case StarDeclBean.ST_G:
+                    return BodyView.STAR_G_URL;
+                case StarDeclBean.ST_K:
+                    return BodyView.STAR_K_URL;
+                case StarDeclBean.ST_M:
+                    return BodyView.STAR_M_URL;
+                case StarDeclBean.ST_O:
+                    return BodyView.STAR_A_URL;
+            }
+            return BodyView.STAR_URL;
+        }
+        return null;
     }
     
     public Object[] getView(BodyBean body)

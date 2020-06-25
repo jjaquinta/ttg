@@ -6,6 +6,9 @@
  */
 package ttg.view.adv.ctrl;
 
+import java.util.List;
+
+import jo.ttg.beans.chr.CharBean;
 import jo.ttg.core.ui.swing.ctrl.CharTableModel;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
 import jo.ttg.utils.URIUtils;
@@ -95,4 +98,12 @@ public class PassengerTableModel extends CharTableModel
 	    else
 	        return super.getColumnName(col);
 	}
+
+    public void setPassengers(List<PassengerBean> newList)
+    {
+        mChars.clear();
+        if (newList != null)
+            mChars.addAll(newList);
+        fireTableStructureChanged();
+    }
 }

@@ -167,7 +167,7 @@ public class TMGenScheme extends ImpGenScheme
         UniverseBean uni = gen.getGeneratorUniverse().generateUniverse();
         SectorBean sec = (SectorBean)uni.findSector(ords);
 System.out.println(ords+"->"+sec.getUpperBound());
-        sec = (SectorBean)uni.findByURI("sec://"+ords.toString());
+        sec = (SectorBean)uni.findByURI("sec://"+ords.toURIString());
         List mws = sec.findMainWorlds(sec.getUpperBound(), sec.getLowerBound());
         System.out.println("#worlds =  "+mws.size());
         */

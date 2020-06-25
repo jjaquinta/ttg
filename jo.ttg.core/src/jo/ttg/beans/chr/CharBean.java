@@ -8,6 +8,7 @@ package jo.ttg.beans.chr;
 
 import jo.ttg.beans.HashBean;
 import jo.util.beans.PCSBean;
+import jo.util.utils.obj.IntegerUtils;
 
 /**
  * @author jjaquinta
@@ -99,7 +100,7 @@ public class CharBean extends PCSBean
 			return 0;
 		if (isStat(what))
 			return getStat(what)/4;
-		Integer i = (Integer)mSkills.get(what);
+		Integer i = IntegerUtils.parseInt(mSkills.get(what));
 		if (i == null)
 			return -1;
 		return i.intValue();

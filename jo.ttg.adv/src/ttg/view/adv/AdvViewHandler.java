@@ -6,7 +6,9 @@
  */
 package ttg.view.adv;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -38,6 +40,19 @@ public class AdvViewHandler implements BodyViewHandler
 	public static ImageIcon BASER_IMG = TTGIconUtils.getUPP("base_ref.gif");
 	public static ImageIcon BASEM_IMG = TTGIconUtils.getUPP("base_mil.gif");
 
+    public static URL UPPORTA_URI = TTGIconUtils.getUPPURI("upport_a.gif");
+    public static URL UPPORTC_URI = TTGIconUtils.getUPPURI("upport_c.gif");
+    public static URL UPPORTE_URI = TTGIconUtils.getUPPURI("upport_e.gif");
+    public static URL DNPORTA_URI = TTGIconUtils.getUPPURI("dnport_a.gif");
+    public static URL DNPORTC_URI = TTGIconUtils.getUPPURI("dnport_c.gif");
+    public static URL DNPORTE_URI = TTGIconUtils.getUPPURI("dnport_e.gif");
+
+    public static URL BASEN_URI = TTGIconUtils.getUPPURI("base_navy.gif");
+    public static URL BASES_URI = TTGIconUtils.getUPPURI("base_scout.gif");
+    public static URL BASEL_URI = TTGIconUtils.getUPPURI("base_lab.gif");
+    public static URL BASER_URI = TTGIconUtils.getUPPURI("base_ref.gif");
+    public static URL BASEM_URI = TTGIconUtils.getUPPURI("base_mil.gif");
+
     /* (non-Javadoc)
      * @see ttg.view.ctrl.BodyViewHandler#getIcon(ttg.beans.sys.BodyBean)
      */
@@ -58,6 +73,30 @@ public class AdvViewHandler implements BodyViewHandler
                 return BASER_IMG;
             else if (special.getSubType() == BodySpecialBean.ST_LOCALBASE)
                 return BASEM_IMG;
+        }
+        return null;
+    }
+
+    /* (non-Javadoc)
+     * @see ttg.view.ctrl.BodyViewHandler#getIcon(ttg.beans.sys.BodyBean)
+     */
+    public URL getIconURI(BodyBean b)
+    {
+        if (b instanceof BodySpecialAdvBean)
+        {
+            BodySpecialAdvBean special = (BodySpecialAdvBean)b;
+            if ((special.getSubType() == BodySpecialBean.ST_STARPORT) || (special.getSubType() == BodySpecialBean.ST_SPACEPORT))
+                return getStationIconURI(special);
+            else if (special.getSubType() == BodySpecialBean.ST_NAVYBASE)
+                return BASEN_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_SCOUTBASE)
+                return BASES_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_LABBASE)
+                return BASEL_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_REFINERY)
+                return BASER_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_LOCALBASE)
+                return BASEM_URI;
         }
         return null;
     }
@@ -90,6 +129,35 @@ public class AdvViewHandler implements BodyViewHandler
         }
         return null;
     }
+    
+    private URL getStationIconURI(BodySpecialAdvBean special)
+    {
+        UPPPorBean port = (UPPPorBean)special.getSpecialInfo();
+        switch (port.getValue())
+        {
+            case 'A':
+            case 'B':
+            case 'F':
+                if (special.getOrbitalRadius() > 0)
+                    return UPPORTA_URI;
+                else
+                    return DNPORTA_URI;
+            case 'C':
+            case 'D':
+            case 'G':
+                if (special.getOrbitalRadius() > 0)
+                    return UPPORTC_URI;
+                else
+                    return DNPORTC_URI;
+            case 'E':
+            case 'H':
+                if (special.getOrbitalRadius() > 0)
+                    return UPPORTE_URI;
+                else
+                    return DNPORTE_URI;
+        }
+        return null;
+    }
 
     /* (non-Javadoc)
      * @see ttg.view.ctrl.BodyViewHandler#getView(ttg.beans.sys.BodyBean)
@@ -99,7 +167,7 @@ public class AdvViewHandler implements BodyViewHandler
         if (b instanceof BodySpecialAdvBean)
         {
             BodySpecialAdvBean special = (BodySpecialAdvBean)b;
-            ArrayList list = new ArrayList();
+            List<Object> list = new ArrayList<>();
             list.add(getIcon(b));
             switch (special.getSubType())
             {
@@ -115,7 +183,7 @@ public class AdvViewHandler implements BodyViewHandler
         return null;
     }
 
-    private void getStationView(BodySpecialAdvBean special, ArrayList list)
+    private void getStationView(BodySpecialAdvBean special, List<Object> list)
     {
         list.add(special.getOneLineDesc());
     }

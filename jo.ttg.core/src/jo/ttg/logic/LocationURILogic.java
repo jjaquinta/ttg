@@ -102,24 +102,24 @@ public class LocationURILogic
                 break;
             case LocationURI.SECTOR:
                 ret.append("sec://");
-                ret.append(l.getOrds().toString());
+                ret.append(l.getOrds().toURIString());
                 break;
             case LocationURI.SUBSECTOR:
                 ret.append("sub://");
-                ret.append(l.getOrds().toString());
+                ret.append(l.getOrds().toURIString());
                 break;
             case LocationURI.MAINWORLD:
                 ret.append("mw://");
-                ret.append(l.getOrds().toString());
+                ret.append(l.getOrds().toURIString());
                 break;
             case LocationURI.SYSTEM:
                 ret.append("sys://");
-                ret.append(l.getOrds().toString());
+                ret.append(l.getOrds().toURIString());
                 ret.append('/');
                 break;
             case LocationURI.BODY:
                 ret.append(BodyBean.SCHEME);
-                ret.append(l.getOrds().toString());
+                ret.append(l.getOrds().toURIString());
                 ret.append('/');
                 ret.append(l.getPath());
                 break;

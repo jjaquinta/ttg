@@ -210,9 +210,9 @@ public class ForSaleLogic
 		return ret;
 	}
 	
-	public static List<CargoBean> genCargosForSale(Game game, BodyBean dest, DateBean date)
+	public static List<CargoBean> genCargosForSale(Game game, BodyBean ori, DateBean date)
 	{
-		List<CargoBean> ret = ((IGenCargoEx)game.getScheme().getGeneratorCargo()).generateCargo(dest, date);
+		List<CargoBean> ret = ((IGenCargoEx)game.getScheme().getGeneratorCargo()).generateCargo(ori, date);
 		UNIDLogic.purgeUsed(game, ret, UNIDInst.CARGO);
 		return ret;
 	}
@@ -224,7 +224,7 @@ public class ForSaleLogic
 		return ret;
 	}
 	
-	public static ArrayList genPassengersForSale(Game game, BodyBean ori, BodyBean dest, DateBean date)
+	public static List<PassengerBean> genPassengersForSale(Game game, BodyBean ori, BodyBean dest, DateBean date)
 	{
 		ArrayList ret = new ArrayList();
 		if (ori.getURI().equals(dest.getURI()))

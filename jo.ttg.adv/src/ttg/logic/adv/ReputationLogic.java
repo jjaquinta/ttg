@@ -51,15 +51,15 @@ public class ReputationLogic
         // system
         LocationURI loc = new LocationURI(uri);
         OrdBean ords = loc.getOrds();
-        incrementReputation(game, "sys://"+ords.toString(), amnt*.66);
+        incrementReputation(game, "sys://"+ords.toURIString(), amnt*.66);
         amnt *= .33;
         // subsector
         game.getScheme().nearestSub(ords);
-        incrementReputation(game, "sub://"+ords.toString(), amnt*.66);
+        incrementReputation(game, "sub://"+ords.toURIString(), amnt*.66);
         amnt *= .33;
         // sector
         game.getScheme().nearestSec(ords);
-        incrementReputation(game, "sec://"+ords.toString(), amnt);
+        incrementReputation(game, "sec://"+ords.toURIString(), amnt);
     }
     
     public static void decrementLocation(Game game, String uri, double amnt)
@@ -73,13 +73,13 @@ public class ReputationLogic
         // system
         LocationURI loc = new LocationURI(uri);
         OrdBean ords = loc.getOrds();
-        rep += getReputation(game, "sys://"+ords.toString());
+        rep += getReputation(game, "sys://"+ords.toURIString());
         // subsector
         game.getScheme().nearestSub(ords);
-        rep += getReputation(game, "sub://"+ords.toString());
+        rep += getReputation(game, "sub://"+ords.toURIString());
         // sector
         game.getScheme().nearestSec(ords);
-        rep += getReputation(game, "sec://"+ords.toString());
+        rep += getReputation(game, "sec://"+ords.toURIString());
         return rep;
     }
     

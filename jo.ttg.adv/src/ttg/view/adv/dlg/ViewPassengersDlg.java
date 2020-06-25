@@ -120,7 +120,7 @@ public class ViewPassengersDlg extends JDialog
 			mPassengerModel.setChars(null);
 			return;
 		}
-		mPassengerModel.setChars(mShip.getPassengers());
+		mPassengerModel.setPassengers(mShip.getPassengers());
 	}
 
 	protected void doCancel()
@@ -133,9 +133,9 @@ public class ViewPassengersDlg extends JDialog
 		int[] sel = mPassengers.getSelectedRows();
 		mPassengerSorter.mapRows(sel);
 		List<CharBean> passengers = mPassengerModel.getChars();
-		List<CharBean> disembarked = new ArrayList();
+		List<PassengerBean> disembarked = new ArrayList<>();
 		for (int i = 0; i < sel.length; i++)
-		    disembarked.add(passengers.get(sel[i]));
+		    disembarked.add((PassengerBean)passengers.get(sel[i]));
 		PassengerLogic.disembarkPassengers(mGame, disembarked);
 		updateLists();
 	}

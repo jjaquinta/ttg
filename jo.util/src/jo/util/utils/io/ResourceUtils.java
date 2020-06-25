@@ -47,6 +47,20 @@ public class ResourceUtils
     {
         return loadSystemResourceStream(path, ResourceUtils.class);
     }
+
+    private static String resolveRelative(String path, Class<?> source)
+    {
+        StringTokenizer st = new StringTokenizer(source.getName(), ".");
+        int toks = st.countTokens();
+        StringBuffer newPath = new StringBuffer();
+        for (int i = 0; i < toks - 1; i++)
+        {
+            newPath.append(st.nextToken());
+            newPath.append("/");
+        }
+        newPath.append(path);
+        return newPath.toString();
+    }
     
     public static InputStream loadSystemResourceStream(String path, Class<?> source)
     {
@@ -54,15 +68,7 @@ public class ResourceUtils
         InputStream is = loader.getResourceAsStream(path);
         if (is == null)
         {
-            StringTokenizer st = new StringTokenizer(source.getName(), ".");
-            int toks = st.countTokens();
-            StringBuffer newPath = new StringBuffer();
-            for (int i = 0; i < toks - 1; i++)
-            {
-                newPath.append(st.nextToken());
-                newPath.append("/");
-            }
-            newPath.append(path);
+            String newPath = resolveRelative(path, source);
             is = loader.getResourceAsStream(newPath.toString());
         }
         return is;
@@ -76,7 +82,13 @@ public class ResourceUtils
     public static URL loadSystemResourceURL(String path, Class<?>  source)
     {
         ClassLoader loader = source.getClassLoader();
-        return loader.getResource(path);
+        URL ret = loader.getResource(path);
+        if (ret == null)
+        {
+            String newPath = resolveRelative(path, source);
+            ret = loader.getResource(newPath);
+        }
+        return ret;
     }
 
 

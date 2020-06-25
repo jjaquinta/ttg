@@ -182,7 +182,7 @@ public class ForSalePassengersDlg extends JDialog
 	        		LocationURI thereURI = new LocationURI(there.getURI());
 	                if (here.getURI().equals(thereURI.getURI()))
 	                    continue;
-	        		ArrayList pasengers = ForSaleLogic.genPassengersForSale(mGame, here, there, date);
+	        		List<PassengerBean> pasengers = ForSaleLogic.genPassengersForSale(mGame, here, there, date);
 	        		if (pasengers.size() == 0)
 	        		    continue;	        		
 	        		String name = there.getName();

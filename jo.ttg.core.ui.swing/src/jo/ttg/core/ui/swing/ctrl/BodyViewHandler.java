@@ -6,6 +6,8 @@
  */
 package jo.ttg.core.ui.swing.ctrl;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 import jo.ttg.beans.sys.BodyBean;
@@ -19,5 +21,6 @@ import jo.ttg.beans.sys.BodyBean;
 public interface BodyViewHandler
 {
     public ImageIcon getIcon(BodyBean b);
+    public URL getIconURI(BodyBean b);
     public Object[] getView(BodyBean b);
 }

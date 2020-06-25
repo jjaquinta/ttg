@@ -69,7 +69,7 @@ public class LocationURI
 //      ret.append(",");
 //      ret.append(mOrds.getZ());
 //      return ret.toString();
-        return mOrds.toString();
+        return mOrds.toURIString();
     }
 
     public String getURI()

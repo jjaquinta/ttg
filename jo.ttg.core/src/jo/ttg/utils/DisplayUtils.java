@@ -17,6 +17,7 @@ import jo.ttg.gen.IGenScheme;
 import jo.ttg.logic.LocationURILogic;
 import jo.ttg.logic.OrdLogic;
 import jo.ttg.logic.gen.SchemeLogic;
+import jo.util.html.URLLogic;
 import jo.util.utils.FormatUtils;
 import jo.util.utils.obj.DoubleUtils;
 import jo.util.utils.obj.IntegerUtils;
@@ -306,6 +307,7 @@ public class DisplayUtils extends FormatUtils
             int o = primary.lastIndexOf("/");
             if (o >= 0)
                 primary = primary.substring(o+1);
+            primary = URLLogic.decode(primary);
             String orbit = uri.getParam("orbit");
             if (orbit == null)
                 return "At "+primary+" in the "+mw.getName()+" system.";

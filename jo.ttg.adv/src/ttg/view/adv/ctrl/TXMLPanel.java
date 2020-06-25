@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -39,138 +40,147 @@ import jo.util.utils.xml.XMLTransUtils;
  */
 public class TXMLPanel extends JPanel implements HyperlinkListener
 {
-    private JTextPane	mClient;
-    private JButton		mHome;
-    private JButton		mNext;
-    private JButton		mPrev;
-    private JPanel		mStatusBar;
-    
-    private String		mSystemResourceRoot;
-    private HashMap		mValueMap;
-    private String		mHomePage;
-    private ArrayList	mPages;
-    private int			mPageOffset;
-    
-	/**
-	 *
-	 */
+    private JTextPane           mClient;
+    private JButton             mHome;
+    private JButton             mNext;
+    private JButton             mPrev;
+    private JPanel              mStatusBar;
 
-	public TXMLPanel()
-	{
-		initInstantiate();
-		initLink();
-		initLayout();
-	}
+    private String              mSystemResourceRoot;
+    private Map<String, Object> mValueMap;
+    private String              mHomePage;
+    private List<String>        mPages;
+    private int                 mPageOffset;
 
-	private void initInstantiate()
-	{
-	    mSystemResourceRoot = "";
-	    mHomePage = "index.html";
-	    mPages = new ArrayList();
-	    mPageOffset = 0;
-	    
-	    mClient = new JTextPane();
-	    mClient.setContentType("text/html");
-	    mClient.setEditable(false);
-	    mClient.setEditorKit(new XHTMLEditorKit());
-	    mHome = new JButton("Home");
-	    mNext = new JButton("Next");
-	    mPrev = new JButton("Prev");
-	}
+    /**
+     *
+     */
 
-	private void initLink()
-	{
-	    mClient.addHyperlinkListener(this);
-	    ListenerUtils.listen(mHome, (ev) -> goHome());
-	    ListenerUtils.listen(mNext, (ev) -> goNext());
-	    ListenerUtils.listen(mPrev, (ev) -> goPrev());
-	}
+    public TXMLPanel()
+    {
+        initInstantiate();
+        initLink();
+        initLayout();
+    }
 
-	private void initLayout()
-	{
-	    mStatusBar = new JPanel();
-	    mStatusBar.add(mHome);
-	    mStatusBar.add(mNext);
-	    mStatusBar.add(mPrev);
+    private void initInstantiate()
+    {
+        mSystemResourceRoot = "";
+        mHomePage = "index.html";
+        mPages = new ArrayList<>();
+        mPageOffset = 0;
 
-	    setLayout(new BorderLayout());
-	    add("Center", mClient);
-	    add("North", mStatusBar);
-	}
-	
-	public void go(String basePage)
-	{
-	    String page = basePage;
-	    if (getSystemResourceRoot().length() > 0)
-	        page = getSystemResourceRoot() + basePage;
-	    String txml;
+        mClient = new JTextPane();
+        mClient.setContentType("text/html");
+        mClient.setEditable(false);
+        mClient.setEditorKit(new XHTMLEditorKit());
+        mHome = new JButton("Home");
+        mNext = new JButton("Next");
+        mPrev = new JButton("Prev");
+    }
+
+    private void initLink()
+    {
+        mClient.addHyperlinkListener(this);
+        ListenerUtils.listen(mHome, (ev) -> goHome());
+        ListenerUtils.listen(mNext, (ev) -> goNext());
+        ListenerUtils.listen(mPrev, (ev) -> goPrev());
+    }
+
+    private void initLayout()
+    {
+        mStatusBar = new JPanel();
+        mStatusBar.add(mHome);
+        mStatusBar.add(mNext);
+        mStatusBar.add(mPrev);
+
+        setLayout(new BorderLayout());
+        add("Center", mClient);
+        add("North", mStatusBar);
+    }
+
+    public void go(String basePage)
+    {
+        String page = basePage;
+        if (getSystemResourceRoot().length() > 0)
+            page = getSystemResourceRoot() + basePage;
+        String txml;
         try
         {
-            txml = ResourceUtils.loadSystemResourceString(page, TXMLPanel.class);
+            txml = ResourceUtils.loadSystemResourceString(page,
+                    TXMLPanel.class);
         }
         catch (IOException e)
         {
             e.printStackTrace();
             return;
         }
-	    HashMap valueMap = getValueMap();
-	    valueMap.put("xml.root.ref", TXMLPanel.class);
+        Map<String,Object> valueMap = getValueMap();
+        valueMap.put("xml.root.ref", TXMLPanel.class);
         String html = XMLTransUtils.transform(txml, valueMap);
+        //System.out.println(html);
         mClient.setText(html);
-	    updateHistory(basePage);
-	}
-	
-	private void updateHistory(String page)
-	{
-	    // test for forward
-	    if ((mPages.size() > mPageOffset) && page.equals(mPages.get(mPageOffset)))
-	        mPageOffset++;
-	    // test for backward
-	    else if ((mPages.size() > 0)  && page.equals(mPages.get(mPageOffset-1)))
-	        mPageOffset--;
-	    // else new page
-	    else
-	    {
-	        while (mPages.size() > mPageOffset)
-	            mPages.remove(mPageOffset);
-	        mPages.add(mPageOffset, page);
-	        mPageOffset++;
-	    }
-	    mPrev.setEnabled(mPageOffset > 1);
-	    mNext.setEnabled(mPageOffset < mPages.size());
-	}
-	
-	public void goPrev()
-	{
-	    if (mPageOffset > 0)
-	        go((String)mPages.get(mPageOffset - 1));
-	}
-	
-	public void goNext()
-	{
-	    if (mPageOffset < mPages.size())
-	        go((String)mPages.get(mPageOffset));
-	}
-	
-	public void goHome()
-	{
-	    go(getHomePage());
-	}
-	
-	public void flushHistory()
-	{
-	    mPages.clear();
-	    mPageOffset = 0;
-	}
+        updateHistory(basePage);
+    }
 
-    /* (non-Javadoc)
-     * @see javax.swing.event.HyperlinkListener#hyperlinkUpdate(javax.swing.event.HyperlinkEvent)
+    private void updateHistory(String page)
+    {
+        // test for forward
+        if ((mPages.size() > mPageOffset)
+                && page.equals(mPages.get(mPageOffset)))
+            mPageOffset++;
+        // test for backward
+        else if ((mPages.size() > 0)
+                && page.equals(mPages.get(mPageOffset - 1)))
+            mPageOffset--;
+        // else new page
+        else
+        {
+            while (mPages.size() > mPageOffset)
+                mPages.remove(mPageOffset);
+            mPages.add(mPageOffset, page);
+            mPageOffset++;
+        }
+        mPrev.setEnabled(mPageOffset > 1);
+        mNext.setEnabled(mPageOffset < mPages.size());
+    }
+
+    public void goPrev()
+    {
+        if (mPageOffset > 0)
+            go((String)mPages.get(mPageOffset - 1));
+    }
+
+    public void goNext()
+    {
+        if (mPageOffset < mPages.size())
+            go((String)mPages.get(mPageOffset));
+    }
+
+    public void goHome()
+    {
+        go(getHomePage());
+    }
+
+    public void flushHistory()
+    {
+        mPages.clear();
+        mPageOffset = 0;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * javax.swing.event.HyperlinkListener#hyperlinkUpdate(javax.swing.event.
+     * HyperlinkEvent)
      */
     public void hyperlinkUpdate(HyperlinkEvent ev)
     {
         if (ev.getEventType() == HyperlinkEvent.EventType.ACTIVATED)
             go(ev.getDescription());
     }
+
     /**
      * @return Returns the systemResourceRoot.
      */
@@ -178,8 +188,10 @@ public class TXMLPanel extends JPanel implements HyperlinkListener
     {
         return mSystemResourceRoot;
     }
+
     /**
-     * @param systemResourceRoot The systemResourceRoot to set.
+     * @param systemResourceRoot
+     *            The systemResourceRoot to set.
      */
     public void setSystemResourceRoot(String systemResourceRoot)
     {
@@ -188,20 +200,24 @@ public class TXMLPanel extends JPanel implements HyperlinkListener
             mSystemResourceRoot += "/";
         mValueMap.put("xml.root", mSystemResourceRoot);
     }
+
     /**
      * @return Returns the valueMap.
      */
-    public HashMap getValueMap()
+    public Map<String,Object> getValueMap()
     {
         return mValueMap;
     }
+
     /**
-     * @param valueMap The valueMap to set.
+     * @param valueMap
+     *            The valueMap to set.
      */
-    public void setValueMap(HashMap valueMap)
+    public void setValueMap(Map<String,Object> valueMap)
     {
         mValueMap = valueMap;
     }
+
     /**
      * @return Returns the homePage.
      */
@@ -209,21 +225,24 @@ public class TXMLPanel extends JPanel implements HyperlinkListener
     {
         return mHomePage;
     }
+
     /**
-     * @param homePage The homePage to set.
+     * @param homePage
+     *            The homePage to set.
      */
     public void setHomePage(String homePage)
     {
         mHomePage = homePage;
-        URL url = ResourceUtils.loadSystemResourceURL(mSystemResourceRoot+mHomePage, TXMLPanel.class);
-	    ((HTMLDocument)mClient.getDocument()).setBase(url);
+        URL url = ResourceUtils.loadSystemResourceURL(
+                mSystemResourceRoot + mHomePage, TXMLPanel.class);
+        ((HTMLDocument)mClient.getDocument()).setBase(url);
     }
-    
+
     public void setShowStatusBar(boolean show)
     {
         mStatusBar.setVisible(show);
     }
-    
+
     /**
      * @author Peter De Bruycker
      */
@@ -282,8 +301,8 @@ public class TXMLPanel extends JPanel implements HyperlinkListener
                 SimpleAttributeSet attributeSet = new SimpleAttributeSet();
                 for (int i = 0; i < atts.getLength(); i++)
                 {
-                    HTML.Attribute attribute = HTML.getAttributeKey(atts
-                            .getQName(i));
+                    HTML.Attribute attribute = HTML
+                            .getAttributeKey(atts.getQName(i));
                     attributeSet.addAttribute(attribute, atts.getValue(i));
                 }
                 return attributeSet;

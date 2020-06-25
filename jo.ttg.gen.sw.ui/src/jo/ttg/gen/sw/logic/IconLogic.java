@@ -3,6 +3,8 @@ package jo.ttg.gen.sw.logic;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -58,6 +60,24 @@ public class IconLogic
         catch (IOException e)
         {
             e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public static URL getIconURI(BodyBean body)
+    {
+        File dir = new File(RuntimeLogic.getDataDir(), "icons");
+        dir.mkdirs();
+        String name = toBaseName(body);
+        File iconFile = new File(dir, name+"_icon.png");
+        if (!iconFile.exists())
+            return null;
+        try
+        {
+            return iconFile.toURI().toURL();
+        }
+        catch (MalformedURLException e)
+        {
             return null;
         }
     }

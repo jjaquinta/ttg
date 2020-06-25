@@ -3,6 +3,7 @@ package jo.ttg.gen.sw.logic;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 import java.util.function.BiConsumer;
 
@@ -82,6 +83,12 @@ public class RuntimeLogic
                 if (img == null)
                     return null;
                 return new ImageIcon(img);                        
+            }
+            
+            @Override
+            public URL getIconURI(BodyBean b)
+            {
+                return IconLogic.getIconURI(b);
             }
         });
         BodyPanel.setHandler(new HTMLBodyPanelHandler());

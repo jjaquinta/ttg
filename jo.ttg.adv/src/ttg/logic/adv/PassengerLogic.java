@@ -31,7 +31,7 @@ public class PassengerLogic
      * @param passengers
      * @return
      */
-    public static int totalBerths(ArrayList passengers)
+    public static int totalBerths(List<PassengerBean> passengers)
     {
         int ret = 0;
         for (Iterator i = passengers.iterator(); i.hasNext(); )
@@ -47,7 +47,7 @@ public class PassengerLogic
      * @param passengers
      * @return
      */
-    public static int totalCabins(ArrayList passengers)
+    public static int totalCabins(List<PassengerBean> passengers)
     {
         int ret = 0;
         for (Iterator i = passengers.iterator(); i.hasNext(); )
@@ -63,7 +63,7 @@ public class PassengerLogic
      * @param passengers
      * @return
      */
-    public static PassengerBean getYoungestMiddle(ArrayList passengers)
+    public static PassengerBean getYoungestMiddle(List<PassengerBean> passengers)
     {
         PassengerBean youngest = null;
         for (Iterator i = passengers.iterator(); i.hasNext(); )
@@ -139,7 +139,7 @@ public class PassengerLogic
 		game.getShip().firePassengersChange();
     }
     
-    public static void disembarkPassengers(Game game, List<CharBean> passengers)
+    public static void disembarkPassengers(Game game, List<PassengerBean> passengers)
     {
         if (!game.getShip().isDocked())
             return;
@@ -153,9 +153,8 @@ public class PassengerLogic
         int numInterHigh = 0;
         int numInterMiddle = 0;
         int numInterLow = 0;
-        for (Iterator i = passengers.iterator(); i.hasNext(); )
+        for (PassengerBean pass : passengers.toArray(new PassengerBean[0]))
         {
-            PassengerBean pass = (PassengerBean)i.next();
             if (pass.getDestination().equals(here))
             {
                 if (disembark.length() > 0)
