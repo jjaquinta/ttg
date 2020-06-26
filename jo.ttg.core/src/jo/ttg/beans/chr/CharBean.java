@@ -100,10 +100,10 @@ public class CharBean extends PCSBean
 			return 0;
 		if (isStat(what))
 			return getStat(what)/4;
-		Integer i = IntegerUtils.parseInt(mSkills.get(what));
-		if (i == null)
-			return -1;
-		return i.intValue();
+		if (!mSkills.containsKey(what))
+            return -1;
+		int i = IntegerUtils.parseInt(mSkills.get(what));
+		return i;
 	}
     
     public int getBaseSkill(String what)

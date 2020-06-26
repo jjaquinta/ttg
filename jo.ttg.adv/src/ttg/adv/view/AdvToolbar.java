@@ -105,7 +105,7 @@ public class AdvToolbar extends JPanel
 			if (ret != JOptionPane.YES_OPTION)
 				return;
 		}
-		File f = FileOpenUtils.selectFile(this, "Open", "TTG Adventure", ".adv.xml");
+		File f = FileOpenUtils.selectFile(this, "Open", "TTG Adventure", ".adv.json");
 		if (f == null)
 			return;
 		mFrame.setGame(GameLogic.open(f));
@@ -128,7 +128,7 @@ public class AdvToolbar extends JPanel
 	 */
 	public void doSaveAs()
 	{
-		File f = FileOpenUtils.selectFile(this, "Save", "TTG Adventure", ".adv.xml");
+		File f = FileOpenUtils.selectFile(this, "Save", "TTG Adventure", ".adv.json");
 		if (f == null)
 			return;
 		mFrame.getGame().setSaveFile(f.toString());
