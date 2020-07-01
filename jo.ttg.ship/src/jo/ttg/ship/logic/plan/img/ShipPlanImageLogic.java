@@ -26,6 +26,7 @@ import jo.ttg.ship.beans.plan.ShipPlanPerimeterBean;
 import jo.ttg.ship.beans.plan.ShipSquareBean;
 import jo.ttg.ship.logic.plan.ShipPlanUtils;
 import jo.util.utils.ArrayUtils;
+import jo.util.utils.ThreadHelper;
 import jo.vecmath.data.SparseMatrix;
 
 public class ShipPlanImageLogic
@@ -36,18 +37,20 @@ public class ShipPlanImageLogic
     
     public synchronized static List<BufferedImage> printShipImage(ShipPlanBean ship, ShipImageSettingsBean settings)
     {
+        ThreadHelper.setCanCancel(true);
         mData = new ShipData();
         mData.setShip(ship);
         mData.settings = settings;
         if (mData.settings == null)
             mData.settings = new ShipImageSettingsBean();
         mData.rnd = new Random(mData.settings.getSeed());
+        ThreadHelper.setTotalUnits(mData.sUpper.z - mData.sLower.z + 2);
         List<BufferedImage> decks = new ArrayList<>();
         int totalX = 0;
         int totalY = 0;
         for (int z = mData.sLower.z; z <= mData.sUpper.z; z++)
         {
-            //System.out.println("Deck "+z);
+            ThreadHelper.setSubTask("Deck "+z);
             SparseMatrix<ShipSquareBean> level = new SparseMatrix<ShipSquareBean>();
             for (int y = mData.sLower.y; y <= mData.sUpper.y; y++)
                 for (int x = mData.sLower.x; x <= mData.sUpper.x; x++)
@@ -60,6 +63,9 @@ public class ShipPlanImageLogic
             decks.add(deck);
             totalX = Math.max(totalX, deck.getWidth());
             totalY += deck.getHeight();
+            ThreadHelper.work(1);
+            if (ThreadHelper.isCanceled())
+                return null;
         }
         BufferedImage everything = new BufferedImage(totalX, totalY, BufferedImage.TYPE_INT_ARGB);
         mData.setG(everything.getGraphics());
@@ -72,6 +78,7 @@ public class ShipPlanImageLogic
             y += deck.getHeight();
         }
         decks.add(0, everything);
+        ThreadHelper.work(1);
         return decks;
     }
     

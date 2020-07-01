@@ -6,6 +6,8 @@
  */
 package ttg.war.view;
 
+import ttg.war.logic.SetupLogic;
+
 /**
  * @author jjaquinta
  *
@@ -14,10 +16,11 @@ package ttg.war.view;
  */
 public class War
 {
-	public static String VERSION = "1.0.5.1";
+	public static String VERSION = "1.0.5.2";
 
 	public War()
 	{
+	    SetupLogic.init();
 	}
 	
 	public void run()

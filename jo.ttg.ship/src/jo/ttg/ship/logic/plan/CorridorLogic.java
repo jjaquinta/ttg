@@ -13,6 +13,7 @@ import jo.ttg.ship.beans.plan.ShipPlanComponentBean;
 import jo.ttg.ship.beans.plan.ShipPlanPerimeterBean;
 import jo.ttg.ship.beans.plan.ShipSquareBean;
 import jo.util.utils.DebugUtils;
+import jo.util.utils.ThreadHelper;
 
 public class CorridorLogic
 {
@@ -34,6 +35,8 @@ public class CorridorLogic
             step++;
             if (!didIt)
                 break; // stuck
+            if (ThreadHelper.isCanceled())
+                return;
         }
         joinCloseCorridors(stats);
     }

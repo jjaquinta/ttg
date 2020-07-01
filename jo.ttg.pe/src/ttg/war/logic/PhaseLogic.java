@@ -22,22 +22,30 @@ public class PhaseLogic extends Thread
 {
 	private GameInst	mGame;
 	private Random		mRnd;
+	private boolean     mFresh;
 	
 	public static void start(GameInst game)
 	{
-		Thread t = new PhaseLogic(game);
+		Thread t = new PhaseLogic(game, true);
 		t.start(); 
 	}
     
     public static void start(GameInst game, long seed)
     {
-        Thread t = new PhaseLogic(game, seed);
+        Thread t = new PhaseLogic(game, seed, true);
+        t.start(); 
+    }
+    
+    public static void resume(GameInst game)
+    {
+        Thread t = new PhaseLogic(game, false);
         t.start(); 
     }
 	
-	public PhaseLogic(GameInst game)
+	public PhaseLogic(GameInst game, boolean fresh)
 	{
 		mGame = game;
+		mFresh = fresh;
 		mRnd = new Random();
 	}
     
@@ -46,28 +54,48 @@ public class PhaseLogic extends Thread
         mGame = game;
         mRnd = new Random(seed);
     }
+    
+    public PhaseLogic(GameInst game, long seed, boolean fresh)
+    {
+        mGame = game;
+        mFresh = fresh;
+        mRnd = new Random(seed);
+    }
 	
 	public void run()
+	{
+	    if (mFresh)
+	        runFresh();
+	    else
+	        runStale();
+	}
+	
+	private void runFresh()
 	{
 		mGame.setTurn(0);
 		setupPhase();
 		mGame.setTurn(1);
-		for (;;)
-		{
-			movementPhase();
-			combatPhase();
-			constructionPhase();
-			repairPhase();
-			findLosers();
-			sendMessage(PlayerMessage.ENDOFTURN, "End of turn "+mGame.getTurn(), null);
-			mGame.setTurn(mGame.getTurn()+1);
-			if ((mGame.getGame().getGameLength() > 0)
-				&& (mGame.getTurn() > mGame.getGame().getGameLength()))
-					break;
-		}
-		mGame.getGame().setAllowOmniscentSensors(true);
-		sendMessage(PlayerMessage.GAMEOVER, null, null);
+		runStale();
 	}
+    
+    private void runStale()
+    {
+        for (;;)
+        {
+            movementPhase();
+            combatPhase();
+            constructionPhase();
+            repairPhase();
+            findLosers();
+            sendMessage(PlayerMessage.ENDOFTURN, "End of turn "+mGame.getTurn(), null);
+            mGame.setTurn(mGame.getTurn()+1);
+            if ((mGame.getGame().getGameLength() > 0)
+                && (mGame.getTurn() > mGame.getGame().getGameLength()))
+                    break;
+        }
+        mGame.getGame().setAllowOmniscentSensors(true);
+        sendMessage(PlayerMessage.GAMEOVER, null, null);
+    }
 	
 	private void movementPhase()
 	{

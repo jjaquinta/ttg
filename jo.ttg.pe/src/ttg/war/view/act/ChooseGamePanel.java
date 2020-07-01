@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Frame;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.List;
@@ -14,11 +15,14 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 import jo.util.ui.swing.TableLayout;
+import jo.util.ui.swing.utils.FileOpenUtils;
 import jo.util.ui.swing.utils.ListenerUtils;
 import ttg.war.beans.Game;
 import ttg.war.beans.GameInst;
 import ttg.war.logic.DefaultGame;
+import ttg.war.logic.GameLogic;
 import ttg.war.logic.IconLogic;
+import ttg.war.logic.PhaseLogic;
 import ttg.war.logic.SetupLogic;
 import ttg.war.view.HelpPanel;
 import ttg.war.view.WarButton;
@@ -31,6 +35,7 @@ public class ChooseGamePanel extends HelpPanel
 	
 	private JList<Game> mGames;
 	private JButton		mAddCustom;
+    private JButton     mLoad;
 	private JButton		mOK;
 	
 	/**
@@ -64,6 +69,8 @@ public class ChooseGamePanel extends HelpPanel
 		mGames.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		mAddCustom = new WarButton("Add Custom", IconLogic.mButtonAdd);
 		mAddCustom.setToolTipText("Launch custom game editor");
+        mLoad = new WarButton("Load...", IconLogic.mButtonLoad);
+        mLoad.setToolTipText("Load game from disk");
 		mOK = new WarButton("OK", IconLogic.mButtonDone);
 	}
 
@@ -71,6 +78,7 @@ public class ChooseGamePanel extends HelpPanel
 	{
 	    ListenerUtils.listen(mOK, (ev) -> doOK());
         ListenerUtils.listen(mAddCustom, (ev) -> doAddCustom());
+        ListenerUtils.listen(mLoad, (ev) -> doLoad());
         ListenerUtils.change(mGames, (ev) -> doSelect());
 	}
 
@@ -80,6 +88,7 @@ public class ChooseGamePanel extends HelpPanel
 		add("1,+ fill=h", makeTitle("Pick game:", "ActionChooseGame.htm"));
 		add("1,+ fill=hv weighty=30", new JScrollPane(mGames));
 		add("1,+ fill=h", mAddCustom);
+        add("1,+ fill=h", mLoad);
 		add("1,+ fill=h", mOK);
 	}
 
@@ -99,6 +108,17 @@ public class ChooseGamePanel extends HelpPanel
         {
         }
 	}
+
+    protected void doLoad()
+    {
+        File f = FileOpenUtils.selectFile(this, "Open", "TTG Pocket Empires", ".pe.json");
+        if (f == null)
+            return;
+        GameInst gameInst = GameLogic.load(f);
+        mPanel.setGame(gameInst);
+        mPanel.setMode(WarPanel.MESSAGE);
+        PhaseLogic.resume(gameInst);
+    }
 	
 	protected void doSelect()
 	{

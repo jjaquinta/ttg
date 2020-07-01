@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
+import org.json.simple.FromJSONLogic;
+import org.json.simple.ToJSONLogic;
+
 import jo.ttg.beans.OrdBean;
 import jo.ttg.beans.mw.MainWorldBean;
 import jo.ttg.beans.mw.UPPBean;
@@ -23,9 +26,25 @@ import ttg.war.beans.ShipInst;
 import ttg.war.beans.Side;
 import ttg.war.beans.SideInst;
 import ttg.war.beans.WorldInst;
+import ttg.war.logic.h.GameInstHandler;
+import ttg.war.logic.h.ShipInstHandler;
+import ttg.war.logic.h.SideInstHandler;
+import ttg.war.logic.h.WorldInstHandler;
 
 public class SetupLogic
 {
+    public static void init()
+    {
+        ToJSONLogic.addHandler(new GameInstHandler());
+        ToJSONLogic.addHandler(new WorldInstHandler());
+        ToJSONLogic.addHandler(new ShipInstHandler());
+        ToJSONLogic.addHandler(new SideInstHandler());
+        FromJSONLogic.addHandler(new GameInstHandler());
+        FromJSONLogic.addHandler(new WorldInstHandler());
+        FromJSONLogic.addHandler(new ShipInstHandler());
+        FromJSONLogic.addHandler(new SideInstHandler());
+    }
+    
 	public static GameInst newGame() throws IOException
 	{
 		return newGame(DefaultGame.getDefaultGame());

@@ -622,7 +622,7 @@ public class ShipPlanScanMTLogic
         return Hull.HULL_CYLINDER; // shrug
     }
     
-    private static int getVolume(Map<String,String> text)
+    public static int getVolume(Map<String,String> text)
     {
         String v = getValue(HULL, "Disp", text);
         if (v == null)
@@ -647,7 +647,7 @@ public class ShipPlanScanMTLogic
         return (int)volume;
     }
     
-    private static String getValue(String section, String ident, Map<String,String> chunks)
+    public static String getValue(String section, String ident, Map<String,String> chunks)
     {
         String text = chunks.get(section);
         return getValue(ident, text);
@@ -695,17 +695,17 @@ public class ShipPlanScanMTLogic
         return nearest;
     }
     
-    private static final String CRAFTID = "CraftID";
-    private static final String HULL = "Hull";
-    private static final String POWER = "Power";
-    private static final String LOCO = "Loco";
-    private static final String COMM = "Comm";
-    private static final String SENSORS = "Sensors";
-    private static final String OFF = "Off";
-    private static final String DEF = "Def";
-    private static final String CONTROL = "Control";
-    private static final String ACCOM = "Accom";
-    private static final String OTHER = "Other";
+    public static final String CRAFTID = "CraftID";
+    public static final String HULL = "Hull";
+    public static final String POWER = "Power";
+    public static final String LOCO = "Loco";
+    public static final String COMM = "Comm";
+    public static final String SENSORS = "Sensors";
+    public static final String OFF = "Off";
+    public static final String DEF = "Def";
+    public static final String CONTROL = "Control";
+    public static final String ACCOM = "Accom";
+    public static final String OTHER = "Other";
     private static final String[] SECTIONS = {
             CRAFTID,
             HULL,
@@ -720,7 +720,7 @@ public class ShipPlanScanMTLogic
             OTHER,
     };
 
-    private static Map<String,String> chunkText(String text)
+    public static Map<String,String> chunkText(String text)
     {
         Map<String,String> chunks = new HashMap<String, String>();
         chunks.put("ALL", text);

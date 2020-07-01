@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
+import javax.swing.JTable;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -34,6 +35,17 @@ public class ListUtils
     public static void onSelect(JList<?> scenes, Consumer<ListSelectionEvent> listener)
     {
         scenes.addListSelectionListener(new ListSelectionListener() {            
+            @Override
+            public void valueChanged(ListSelectionEvent e)
+            {
+                listener.accept(e);
+            }
+        });
+    }
+
+    public static void onSelect(JTable scenes, Consumer<ListSelectionEvent> listener)
+    {
+        scenes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {            
             @Override
             public void valueChanged(ListSelectionEvent e)
             {

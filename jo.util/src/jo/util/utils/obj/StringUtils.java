@@ -288,7 +288,7 @@ public class StringUtils
 				//OutputLogic.println("nest="+nest+", index="+index);
 				//OutputLogic.println(ret.substring(index, index+50));
 				int openOff = ret.toLowerCase().indexOf(openTagType, index + 1);
-				int endOff = ret.toLowerCase().indexOf(endTag, index + 1);
+				int endOff = ret.toLowerCase().indexOf(endTag.toLowerCase(), index + 1);
 				if ((openOff < 0) && (endOff < 0))
 				{
 					index = ret.length();

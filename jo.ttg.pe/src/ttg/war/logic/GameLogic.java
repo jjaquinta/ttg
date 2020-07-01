@@ -6,8 +6,17 @@
  */
 package ttg.war.logic;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import org.json.simple.FromJSONLogic;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONUtils;
+import org.json.simple.ToJSONLogic;
+
+import jo.ttg.gen.gni.GNIGenSchemeKnownWorld;
+import jo.ttg.logic.gen.SchemeLogic;
 import ttg.war.beans.GameInst;
 
 /**
@@ -26,4 +35,36 @@ public class GameLogic
 		history.add(newStatus);
 		game.setStatus(newStatus);
 	}
+	
+	public static GameInst load(File file)
+	{
+	    if (!file.exists())	        
+	        return null;
+	    try
+        {
+            JSONObject json = JSONUtils.readJSON(file);
+            GameInst game = new GameInst();
+            game.setScheme(new GNIGenSchemeKnownWorld());
+            FromJSONLogic.fromJSONInto(json, game);
+            SchemeLogic.setDefaultScheme(game.getScheme());
+            return game;
+        }
+        catch (IOException e)
+        {
+            return null;
+        }
+	}
+    
+    public static void save(GameInst game, File file)
+    {
+        JSONObject json = (JSONObject)ToJSONLogic.toJSON(game);
+        try
+        {
+            JSONUtils.writeJSON(file, json);
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

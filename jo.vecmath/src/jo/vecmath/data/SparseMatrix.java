@@ -153,6 +153,13 @@ public class SparseMatrix<T>
         return mMatrix.size();
     }
     
+    public void clear()
+    {
+        mMatrix.clear();
+        mLower = null;
+        mUpper = null;
+    }
+    
     public static long toHashCode(int x, int y, int z)
     {
         byte[] buffer = new byte[8];

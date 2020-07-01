@@ -17,6 +17,7 @@ import jo.ttg.ship.logic.plan.place.AmorphousStrategy;
 import jo.ttg.ship.logic.plan.place.AxialStrategy;
 import jo.ttg.ship.logic.plan.place.FillStrategy;
 import jo.ttg.ship.logic.plan.place.SurfaceStrategy;
+import jo.util.utils.ThreadHelper;
 
 public class ShipPlanLogic
 {
@@ -55,6 +56,8 @@ public class ShipPlanLogic
     }
     public static void generateFrame(ShipScanBean scan, ShipPlanBean plan)
     {
+        ThreadHelper.setCanCancel(true);
+        ThreadHelper.setTotalUnits(18);
         plan.setScan(scan);
         int volume = scan.getVolume();
         int configuration = scan.getConfiguration();
@@ -71,45 +74,112 @@ public class ShipPlanLogic
             plan.println(pi.toString()+" "+(int)(vol*100/volume)+"%");
         }
         plan.println("Contents volume: "+used+" "+(int)(used*100/volume)+"%");
+        ThreadHelper.work(1);
 
         List<PlanItem> todo = new ArrayList<>(items);
         plan.println("Allocating spine");
         allocate(ShipSquareBean.SPINE, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Axial Corridors");
         AxisLogic.allocateAxialCorridors(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating weapons");
         allocate(ShipSquareBean.BAY, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
         allocate(ShipSquareBean.TURRET, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Connecting weapons");
         CorridorLogic.allocateCorridors(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating maneuver");
         allocate(ShipSquareBean.MANEUVER, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Connecting maneuver");
         CorridorLogic.allocateCorridors(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating jump");
         allocate(ShipSquareBean.JUMP, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Connecting jump");
         CorridorLogic.allocateCorridors(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating power");
         allocate(ShipSquareBean.POWER, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
         //CorridorLogic.dump = true;
+        
         plan.println("Connecting power");
         CorridorLogic.allocateCorridors(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating staterooms");
         //CorridorLogic.dump = true;
         StateroomLogic.allocateStaterooms(plan, todo);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
         //CorridorLogic.dump = false;
+        
         plan.println("Allocating hanger");
         allocate(ShipSquareBean.HANGER, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating cargo");
         allocate(ShipSquareBean.CARGO, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Connecting cargo");
         CorridorLogic.allocateCorridors(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
+        
         plan.println("Allocating fuel");
         allocate(ShipSquareBean.FUEL, todo, plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
         if (todo.size() > 0)
             plan.println("Could not handle remaining "+todo.size()+" items");
+        
         plateShip(plan);
+        ThreadHelper.work(1);
+        if (ThreadHelper.isCanceled())
+            return;
         //CorridorLogic.removeExcessHatches(plan);
         plan.println("Done Planning");
     }
@@ -135,7 +205,11 @@ public class ShipPlanLogic
             for (List<PlanItem> split : splits)
             {
                 strategy.place(plan, split);
+                if (ThreadHelper.isCanceled())
+                    return;
                 CorridorLogic.allocateCorridors(plan);
+                if (ThreadHelper.isCanceled())
+                    return;
             }
         }
     }

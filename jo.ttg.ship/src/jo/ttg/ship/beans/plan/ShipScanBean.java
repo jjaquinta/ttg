@@ -8,6 +8,7 @@ import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import jo.ttg.ship.beans.comp.Hull;
 import jo.util.beans.PCSBean;
 import jo.util.utils.obj.IntegerUtils;
 
@@ -15,8 +16,8 @@ public class ShipScanBean extends PCSBean
 {
     private String      mURI;
     private Map<Object,Object>     mMetadata = new HashMap<>();
-    private int mVolume;
-    private int mConfiguration;
+    private int mVolume = 1350;
+    private int mConfiguration = Hull.HULL_BOX;
     private List<PlanItem> mItems = new ArrayList<PlanItem>();
     
     // constructors
@@ -67,13 +68,14 @@ public class ShipScanBean extends PCSBean
             for (String key : md.keySet())
                 mMetadata.put(key, md.get(key));
         }
-        mVolume = IntegerUtils.parseInt(json.get("volume"));
-        mConfiguration = IntegerUtils.parseInt(json.get("configuration"));
+        setVolume(IntegerUtils.parseInt(json.get("volume")));
+        setConfiguration(IntegerUtils.parseInt(json.get("configuration")));
         if (json.containsKey("items"))
         {
             JSONArray items = (JSONArray)json.get("items");
             for (int i = 0; i < items.size(); i++)
                 mItems.add(new PlanItem((JSONObject)items.get(i)));
+            fireMonotonicPropertyChange("items", mItems);
         }
     }
     
@@ -106,7 +108,9 @@ public class ShipScanBean extends PCSBean
 
     public void setVolume(int volume)
     {
+        queuePropertyChange("volume", mVolume, volume);
         mVolume = volume;
+        firePropertyChange();
     }
 
     public int getConfiguration()
@@ -116,7 +120,9 @@ public class ShipScanBean extends PCSBean
 
     public void setConfiguration(int configuration)
     {
+        queuePropertyChange("configuration", mConfiguration, configuration);
         mConfiguration = configuration;
+        firePropertyChange();
     }
 
     public List<PlanItem> getItems()
@@ -126,6 +132,8 @@ public class ShipScanBean extends PCSBean
 
     public void setItems(List<PlanItem> items)
     {
+        queuePropertyChange("items", mItems, items);
         mItems = items;
+        firePropertyChange();
     }
 }

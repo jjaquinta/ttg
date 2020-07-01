@@ -27,7 +27,7 @@ public class ShipPlanConvert
         File dean = new File(dir, "deanfiles");
         //scanShips(dir, dean);
         //ShipPlanLogic.debug = true; dumpShip(new File(dean, "ship0315.htm"), true);
-        ShipPlanLogic.debug = true; dumpShip(new File(dean, "ship0339.htm"), true); // 3:16
+        ShipPlanLogic.debug = true; dumpShip(new File(dean, "ship0311.htm"), true); // 3:16
     }
     
     private static int MAX_THREADS = 1;

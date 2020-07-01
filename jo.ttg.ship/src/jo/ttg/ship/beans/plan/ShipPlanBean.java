@@ -16,6 +16,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import jo.util.beans.PCSBean;
+import jo.util.utils.ThreadHelper;
 import jo.vecmath.data.SparseMatrix;
 
 public class ShipPlanBean extends PCSBean implements IJSONAble
@@ -158,6 +159,7 @@ public class ShipPlanBean extends PCSBean implements IJSONAble
 
     public void println(String msg)
     {
+        ThreadHelper.setSubTask(msg);
         setLog(mLog + TIMESTAMP.format(new Date()) + msg + "\n");
     }
     
@@ -256,9 +258,9 @@ public class ShipPlanBean extends PCSBean implements IJSONAble
     public void fromJSON(JSONObject json)
     {
         mURI = json.getString("uri");
+        mMetadata = new HashMap<>();
         if (json.containsKey("metadata"))
         {
-            mMetadata = new HashMap<>();
             JSONObject md = (JSONObject)json.get("metadata");
             for (String key : md.keySet())
                 mMetadata.put(key, md.get(key));
@@ -269,6 +271,7 @@ public class ShipPlanBean extends PCSBean implements IJSONAble
             mScan = new ShipScanBean((JSONObject)json.get("scan"));
         if (json.containsKey("squares"))
         {
+            mSquares.clear();
             JSONArray squares = (JSONArray)json.get("squares");
             for (int i = 0; i < squares.size(); i++)
             {
@@ -277,6 +280,7 @@ public class ShipPlanBean extends PCSBean implements IJSONAble
                 setSquare(sq);
             }
         }
+        mComponents.clear();
     }
 
     // getters and setters
