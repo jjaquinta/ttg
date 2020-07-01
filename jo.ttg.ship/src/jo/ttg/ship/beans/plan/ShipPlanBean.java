@@ -269,6 +269,7 @@ public class ShipPlanBean extends PCSBean implements IJSONAble
         mErrors = json.getString("errors");
         if (json.containsKey("scan"))
             mScan = new ShipScanBean((JSONObject)json.get("scan"));
+        mComponents.clear();
         if (json.containsKey("squares"))
         {
             mSquares.clear();
@@ -280,7 +281,6 @@ public class ShipPlanBean extends PCSBean implements IJSONAble
                 setSquare(sq);
             }
         }
-        mComponents.clear();
     }
 
     // getters and setters
