@@ -1,0 +1,32 @@
+{
+	"title": "TTG Launcher",
+	"options":[
+		{
+			"title":"Adventure",
+			"hover":"Traveller Adventure Game",
+			"main": "ttg.adv.view.Adv"
+		},
+		{
+			"title":"Pocket Empires",
+			"hover":"Pocket Empires War Game",
+			"main": "ttg.war.view.War"
+		},
+		{
+			"title":"Imperial Atlas",
+			"hover":"Third Imperiuam Atlas",
+			"main": "jo.ttg.gen.imp.ui.swing.ui.IMP"
+		},
+		{
+			"title":"Decker",
+			"hover":"Deckplan Generator",
+			"main": "jo.ttg.deckplans.ui.Decker"
+		}
+	],
+	"beta":[
+		{
+			"title":"3D Atlas",
+			"hover":"3D Universe Atlas",
+			"main": "jo.ttg.gen.sw.ui.SW"
+		}
+	]
+}

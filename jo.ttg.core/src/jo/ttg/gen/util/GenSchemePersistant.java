@@ -53,11 +53,11 @@ public class GenSchemePersistant implements IGenScheme
     {
         mRoot = root;
         mDataDir = dataDir;
-        mGeneratorSector = new GenSectorPersistant(getGeneratorSector());
-        mGeneratorSubSector = new GenSubSectorPersistant(getGeneratorSubSector());
-        mGeneratorMainWorld = new GenMainWorldPersistant(getGeneratorMainWorld());
-        mGeneratorSystem = new GenSystemPersistant(getGeneratorSystem());
-        mGeneratorSurface = new GenSurfacePersistant(getGeneratorSurface());
+        mGeneratorSector = new GenSectorPersistant(mRoot.getGeneratorSector());
+        mGeneratorSubSector = new GenSubSectorPersistant(mRoot.getGeneratorSubSector());
+        mGeneratorMainWorld = new GenMainWorldPersistant(mRoot.getGeneratorMainWorld());
+        mGeneratorSystem = new GenSystemPersistant(mRoot.getGeneratorSystem());
+        mGeneratorSurface = new GenSurfacePersistant(mRoot.getGeneratorSurface());
     }
 
     protected String toFileOrd(long x)

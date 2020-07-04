@@ -102,7 +102,6 @@ public class BeanHandler implements IToJSONHandler, IFromJSONHandler
             Object val = propDesc.getReadMethod().invoke(bean);
             if (val != null)
             {
-                System.out.println("Serializing "+bean.hashCode()+"#"+bean.getClass().getName()+"."+propName);
                 Object jval = ToJSONLogic.toJSON(val);
                 if (jval != null)
                     json.put(propName, jval);

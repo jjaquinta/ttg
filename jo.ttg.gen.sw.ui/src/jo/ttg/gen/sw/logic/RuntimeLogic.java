@@ -178,17 +178,22 @@ public class RuntimeLogic
             if (zoom >= RuntimeBean.ZOOM_SYSTEM)
             {
                 setZoom(RuntimeBean.ZOOM_SYSTEM);
-                if (mRuntime.getSettings().containsKey("focusWorld"))
+                if (mRuntime.getSystem() == null)
+                    setZoom(RuntimeBean.ZOOM_SUBSECTOR);
+                else
                 {
-                    String uri = (String)mRuntime.getSettings().get("focusWorld");
-                    BodyBean focusWorld = SystemLogic.findFromURI(mRuntime.getSystem(), uri);
-                    mRuntime.setFocusWorld(focusWorld);
-                }
-                if (mRuntime.getSettings().containsKey("cursorWorld"))
-                {
-                    String uri = (String)mRuntime.getSettings().get("cursorWorld");
-                    BodyBean cursorWorld = SystemLogic.findFromURI(mRuntime.getSystem(), uri);
-                    mRuntime.setCursorWorld(cursorWorld);
+                    if (mRuntime.getSettings().containsKey("focusWorld"))
+                    {
+                        String uri = (String)mRuntime.getSettings().get("focusWorld");
+                        BodyBean focusWorld = SystemLogic.findFromURI(mRuntime.getSystem(), uri);
+                        mRuntime.setFocusWorld(focusWorld);
+                    }
+                    if (mRuntime.getSettings().containsKey("cursorWorld"))
+                    {
+                        String uri = (String)mRuntime.getSettings().get("cursorWorld");
+                        BodyBean cursorWorld = SystemLogic.findFromURI(mRuntime.getSystem(), uri);
+                        mRuntime.setCursorWorld(cursorWorld);
+                    }
                 }
             }
             if (zoom >= RuntimeBean.ZOOM_SURFACE)
@@ -339,11 +344,14 @@ public class RuntimeLogic
             if (newZoom == RuntimeBean.ZOOM_SYSTEM)
             {
                 SWSystemBean sys = (SWSystemBean)SystemLogic.getFromOrds(mRuntime.getCursorPoint());
-                BodyBean mw = SystemLogic.findMainworld(sys);
-                mRuntime.setSystem(sys);
-                mRuntime.setFocusWorld(mw.getPrimary());
-                mRuntime.setCursorWorld(mw);
-                IconLogic.ensureIcons(sys);
+                if (sys != null)
+                {
+                    BodyBean mw = SystemLogic.findMainworld(sys);
+                    mRuntime.setSystem(sys);
+                    mRuntime.setFocusWorld(mw.getPrimary());
+                    mRuntime.setCursorWorld(mw);
+                    IconLogic.ensureIcons(sys);
+                }
             }
         }
         else if (oldZoom == RuntimeBean.ZOOM_SYSTEM)
