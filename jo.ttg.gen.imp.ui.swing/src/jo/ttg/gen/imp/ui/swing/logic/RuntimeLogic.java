@@ -24,12 +24,13 @@ import jo.ttg.beans.surf.SurfaceBean;
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.sys.SystemBean;
 import jo.ttg.core.ui.swing.ctrl.BodyView;
-import jo.ttg.core.ui.swing.ctrl.BodyViewHandler;
+import jo.ttg.core.ui.swing.ctrl.IBodyViewHandler;
 import jo.ttg.core.ui.swing.ctrl.body.BodyPanel;
 import jo.ttg.core.ui.swing.ctrl.body.HTMLBodyPanelHandler;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
 import jo.ttg.gen.IGenScheme;
 import jo.ttg.gen.gni.GNIGenSchemeKnownWorld;
+import jo.ttg.gen.imp.ImpGenScheme;
 import jo.ttg.gen.imp.ui.swing.data.RuntimeBean;
 import jo.ttg.logic.gen.SchemeLogic;
 import jo.ttg.logic.gen.SurfaceLogic;
@@ -70,7 +71,7 @@ public class RuntimeLogic
         HTMLCtrlDetails.addModifierFunction("upp", (val,arg) -> String.valueOf(FormatUtils.int2upp(IntegerUtils.parseInt(val))));
         HTMLCtrlDetails.addModifierFunction("upplaw", (val,arg) -> UPPLawBean.getValueDescription(IntegerUtils.parseInt(val)));
         HTMLCtrlDetails.addModifierFunction("upptech", (val,arg) -> UPPTecBean.getValueDescription(IntegerUtils.parseInt(val)));
-        BodyView.addHandler(new BodyViewHandler() {            
+        BodyView.addHandler(new IBodyViewHandler() {            
             @Override
             public Object[] getView(BodyBean b)
             {
@@ -93,7 +94,7 @@ public class RuntimeLogic
                 return IconLogic.getIconURI(b);
             }
         });
-        BodyPanel.setHandler(new HTMLBodyPanelHandler());
+        BodyPanel.addHandler(new HTMLBodyPanelHandler());
     }
 
     static File getDataDir()
@@ -168,6 +169,8 @@ public class RuntimeLogic
                 e.printStackTrace();
             }
         }
+        if (mRuntime.getSettings().containsKey("extended"))
+            setExtended((BooleanUtils.parseBoolean(mRuntime.getSettings().get("extended"))));
         if (mRuntime.getSettings().containsKey("date"))
             setDate((DateBean)FromJSONLogic.fromJSON(mRuntime.getSettings().get("date"), DateBean.class));
         if (mRuntime.getSettings().containsKey("displayGrid"))
@@ -221,10 +224,19 @@ public class RuntimeLogic
             }
         }
     }
+
+    public static void setExtended(boolean extended)
+    {
+        mRuntime.setExtended(extended);
+        mRuntime.setDirty(true);
+        if (SchemeLogic.getDefaultScheme() instanceof ImpGenScheme)
+                ((ImpGenScheme)SchemeLogic.getDefaultScheme()).setExtendedSystemGeneration(mRuntime.isExtended());
+    }
     
     private static void serializeToSettings()
     {
         mRuntime.getSettings().put("generator", SchemeLogic.getDefaultScheme().getClass().getName());
+        mRuntime.getSettings().put("extended", mRuntime.isExtended());
         if (mRuntime.getFocusPoint() != null)
             mRuntime.getSettings().put("focusPoint", ToJSONLogic.toJSON(mRuntime.getFocusPoint()));
         if (mRuntime.getCursorPoint() != null)

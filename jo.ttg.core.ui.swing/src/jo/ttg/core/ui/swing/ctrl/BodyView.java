@@ -16,9 +16,11 @@ import javax.swing.ImageIcon;
 
 import jo.ttg.beans.mw.PopulatedStatsBean;
 import jo.ttg.beans.mw.StarDeclBean;
+import jo.ttg.beans.mw.UPPPorBean;
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.sys.BodyGiantBean;
 import jo.ttg.beans.sys.BodyPopulated;
+import jo.ttg.beans.sys.BodySpecialBean;
 import jo.ttg.beans.sys.BodyStarBean;
 import jo.ttg.beans.sys.BodyToidsBean;
 import jo.ttg.beans.sys.BodyWorldBean;
@@ -34,7 +36,7 @@ import jo.util.ui.swing.ctrl.LinearMixedCtrl;
  */
 public class BodyView extends LinearMixedCtrl
 {
-    private static List<BodyViewHandler> mHandlers = new ArrayList<BodyViewHandler>();
+    private static List<IBodyViewHandler> mHandlers = new ArrayList<IBodyViewHandler>();
     static
     {
         mHandlers.add(new DefaultBodyViewHandler());
@@ -80,6 +82,33 @@ public class BodyView extends LinearMixedCtrl
     public static URL POPM_URL = TTGIconUtils.getUPPURI("pop_med.gif");
     public static URL POPH_URL = TTGIconUtils.getUPPURI("pop_hi.gif");
 
+    public static ImageIcon UPPORTA_IMG = TTGIconUtils.getUPP("upport_a.gif");
+    public static ImageIcon UPPORTC_IMG = TTGIconUtils.getUPP("upport_c.gif");
+    public static ImageIcon UPPORTE_IMG = TTGIconUtils.getUPP("upport_e.gif");
+    public static ImageIcon DNPORTA_IMG = TTGIconUtils.getUPP("dnport_a.gif");
+    public static ImageIcon DNPORTC_IMG = TTGIconUtils.getUPP("dnport_c.gif");
+    public static ImageIcon DNPORTE_IMG = TTGIconUtils.getUPP("dnport_e.gif");
+
+    public static ImageIcon BASEN_IMG = TTGIconUtils.getUPP("base_navy.gif");
+    public static ImageIcon BASES_IMG = TTGIconUtils.getUPP("base_scout.gif");
+    public static ImageIcon BASEL_IMG = TTGIconUtils.getUPP("base_lab.gif");
+    public static ImageIcon BASER_IMG = TTGIconUtils.getUPP("base_ref.gif");
+    public static ImageIcon BASEM_IMG = TTGIconUtils.getUPP("base_mil.gif");
+
+    public static URL UPPORTA_URI = TTGIconUtils.getUPPURI("upport_a.gif");
+    public static URL UPPORTC_URI = TTGIconUtils.getUPPURI("upport_c.gif");
+    public static URL UPPORTE_URI = TTGIconUtils.getUPPURI("upport_e.gif");
+    public static URL DNPORTA_URI = TTGIconUtils.getUPPURI("dnport_a.gif");
+    public static URL DNPORTC_URI = TTGIconUtils.getUPPURI("dnport_c.gif");
+    public static URL DNPORTE_URI = TTGIconUtils.getUPPURI("dnport_e.gif");
+
+    public static URL BASEN_URI = TTGIconUtils.getUPPURI("base_navy.gif");
+    public static URL BASES_URI = TTGIconUtils.getUPPURI("base_scout.gif");
+    public static URL BASEL_URI = TTGIconUtils.getUPPURI("base_lab.gif");
+    public static URL BASER_URI = TTGIconUtils.getUPPURI("base_ref.gif");
+    public static URL BASEM_URI = TTGIconUtils.getUPPURI("base_mil.gif");
+
+
 	private BodyBean	mBody;
 	
 	public BodyView()
@@ -99,9 +128,9 @@ public class BodyView extends LinearMixedCtrl
             return;
         }
         Object[] list = null;
-	    for (Iterator<BodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
+	    for (Iterator<IBodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
 	    {
-	        BodyViewHandler h = (BodyViewHandler)i.next();
+	        IBodyViewHandler h = (IBodyViewHandler)i.next();
 	        list = h.getView(body);
 	        if (list != null)
 	            break;
@@ -112,9 +141,9 @@ public class BodyView extends LinearMixedCtrl
 
 	public static ImageIcon getIcon(BodyBean b)
 	{
-	    for (Iterator<BodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
+	    for (Iterator<IBodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
 	    {
-	        BodyViewHandler h = (BodyViewHandler)i.next();
+	        IBodyViewHandler h = (IBodyViewHandler)i.next();
 	        ImageIcon ret = h.getIcon(b);
 	        if (ret != null)
 	            return ret;
@@ -124,9 +153,9 @@ public class BodyView extends LinearMixedCtrl
 
     public static URL getIconURI(BodyBean b)
     {
-        for (Iterator<BodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
+        for (Iterator<IBodyViewHandler> i = mHandlers.iterator(); i.hasNext(); )
         {
-            BodyViewHandler h = (BodyViewHandler)i.next();
+            IBodyViewHandler h = (IBodyViewHandler)i.next();
             URL ret = h.getIconURI(b);
             if (ret != null)
                 return ret;
@@ -134,13 +163,13 @@ public class BodyView extends LinearMixedCtrl
         return null;
     }
 	
-	public static void addHandler(BodyViewHandler h)
+	public static void addHandler(IBodyViewHandler h)
 	{
 	    mHandlers.add(0, h);
 	}
 }
 
-class DefaultBodyViewHandler implements BodyViewHandler
+class DefaultBodyViewHandler implements IBodyViewHandler
 {
     public ImageIcon getIcon(BodyBean b)
     {
@@ -171,7 +200,7 @@ class DefaultBodyViewHandler implements BodyViewHandler
 			else
 				return BodyView.LGG_IMG;
 		}
-		// else if (b instanceof BodyStarBean)
+		else if (b instanceof BodyStarBean)
 		{
 		    int st = ((BodyStarBean)b).getStarDecl().getStarType();
 		    st -= (st%10);
@@ -194,6 +223,52 @@ class DefaultBodyViewHandler implements BodyViewHandler
 		    }
             return BodyView.STAR_IMG;
 		}
+        if (b instanceof BodySpecialBean)
+        {
+            BodySpecialBean special = (BodySpecialBean)b;
+            if ((special.getSubType() == BodySpecialBean.ST_STARPORT) || (special.getSubType() == BodySpecialBean.ST_SPACEPORT))
+                return getStationIcon(special);
+            else if (special.getSubType() == BodySpecialBean.ST_NAVYBASE)
+                return BodyView.BASEN_IMG;
+            else if (special.getSubType() == BodySpecialBean.ST_SCOUTBASE)
+                return BodyView.BASES_IMG;
+            else if (special.getSubType() == BodySpecialBean.ST_LABBASE)
+                return BodyView.BASEL_IMG;
+            else if (special.getSubType() == BodySpecialBean.ST_REFINERY)
+                return BodyView.BASER_IMG;
+            else if (special.getSubType() == BodySpecialBean.ST_LOCALBASE)
+                return BodyView.BASEM_IMG;
+        }
+        return BodyView.INNER_IMG;
+    }
+    
+    private ImageIcon getStationIcon(BodySpecialBean special)
+    {
+        UPPPorBean port = (UPPPorBean)special.getSpecialInfo();
+        switch (port.getValue())
+        {
+            case 'A':
+            case 'B':
+            case 'F':
+                if (special.getOrbitalRadius() > 0)
+                    return BodyView.UPPORTA_IMG;
+                else
+                    return BodyView.DNPORTA_IMG;
+            case 'C':
+            case 'D':
+            case 'G':
+                if (special.getOrbitalRadius() > 0)
+                    return BodyView.UPPORTC_IMG;
+                else
+                    return BodyView.DNPORTC_IMG;
+            case 'E':
+            case 'H':
+                if (special.getOrbitalRadius() > 0)
+                    return BodyView.UPPORTE_IMG;
+                else
+                    return BodyView.DNPORTE_IMG;
+        }
+        return null;
     }
     public URL getIconURI(BodyBean b)
     {
@@ -246,6 +321,51 @@ class DefaultBodyViewHandler implements BodyViewHandler
                     return BodyView.STAR_A_URL;
             }
             return BodyView.STAR_URL;
+        }
+        else if (b instanceof BodySpecialBean)
+        {
+            BodySpecialBean special = (BodySpecialBean)b;
+            if ((special.getSubType() == BodySpecialBean.ST_STARPORT) || (special.getSubType() == BodySpecialBean.ST_SPACEPORT))
+                return getStationIconURI(special);
+            else if (special.getSubType() == BodySpecialBean.ST_NAVYBASE)
+                return BodyView.BASEN_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_SCOUTBASE)
+                return BodyView.BASES_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_LABBASE)
+                return BodyView.BASEL_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_REFINERY)
+                return BodyView.BASER_URI;
+            else if (special.getSubType() == BodySpecialBean.ST_LOCALBASE)
+                return BodyView.BASEM_URI;
+        }
+        return BodyView.INNER_URL;
+    }
+    
+    private URL getStationIconURI(BodySpecialBean special)
+    {
+        UPPPorBean port = (UPPPorBean)special.getSpecialInfo();
+        switch (port.getValue())
+        {
+            case 'A':
+            case 'B':
+            case 'F':
+                if (special.getOrbitalRadius() > 0)
+                    return BodyView.UPPORTA_URI;
+                else
+                    return BodyView.DNPORTA_URI;
+            case 'C':
+            case 'D':
+            case 'G':
+                if (special.getOrbitalRadius() > 0)
+                    return BodyView.UPPORTC_URI;
+                else
+                    return BodyView.DNPORTC_URI;
+            case 'E':
+            case 'H':
+                if (special.getOrbitalRadius() > 0)
+                    return BodyView.UPPORTE_URI;
+                else
+                    return BodyView.DNPORTE_URI;
         }
         return null;
     }

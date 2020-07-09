@@ -24,6 +24,7 @@ public class RuntimeBean extends PCSBean
     private String          mError;
     private int             mZoom;
     private boolean         mDirty;
+    private boolean         mExtended;
     // sector
     private OrdBean         mFocusPoint = GNIGenScheme.REGINA;
     private OrdBean         mCursorPoint = GNIGenScheme.REGINA;
@@ -268,5 +269,17 @@ public class RuntimeBean extends PCSBean
     public void setHexSide(int hexSide)
     {
         mHexSide = hexSide;
+    }
+
+    public boolean isExtended()
+    {
+        return mExtended;
+    }
+
+    public void setExtended(boolean extended)
+    {
+        queuePropertyChange("extended", mExtended, extended);
+        mExtended = extended;
+        firePropertyChange();
     }
 }

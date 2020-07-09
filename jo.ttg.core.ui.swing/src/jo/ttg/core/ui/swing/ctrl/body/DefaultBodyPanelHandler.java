@@ -10,9 +10,9 @@ import jo.ttg.beans.sys.BodySpecialBean;
 import jo.ttg.beans.sys.BodyStarBean;
 import jo.ttg.beans.sys.BodyToidsBean;
 import jo.ttg.beans.sys.BodyWorldBean;
-import jo.ttg.core.ui.swing.ctrl.body.ext.HTMLBodySpecialPanel;
+import jo.ttg.core.ui.swing.ctrl.body.ext.BodySpecialPanel;
 
-public class HTMLBodyPanelHandler implements IBodyPanelHandler
+class DefaultBodyPanelHandler implements IBodyPanelHandler
 {
 
     /*
@@ -23,11 +23,11 @@ public class HTMLBodyPanelHandler implements IBodyPanelHandler
      */
     public void getBodyPanels(Map<String, JPanel> map)
     {
-        map.put("html.world", new HTMLBodyWorldPanel());
-        map.put("html.toids", new HTMLBodyToidsPanel());
-        map.put("html.giant", new HTMLBodyGiantPanel());
-        map.put("html.star", new HTMLBodyStarPanel());
-        map.put("html.special", new HTMLBodySpecialPanel());
+        map.put("world", new BodyWorldPanel());
+        map.put("toids", new BodyToidsPanel());
+        map.put("giant", new BodyGiantPanel());
+        map.put("star", new BodyStarPanel());
+        map.put("special", new BodySpecialPanel());
     }
 
     /*
@@ -40,28 +40,28 @@ public class HTMLBodyPanelHandler implements IBodyPanelHandler
     {
         if (b instanceof BodyWorldBean)
         {
-            ((HTMLBodyWorldPanel)map.get("html.world")).setBody((BodyWorldBean)b);
-            return "html.world";
+            ((BodyWorldPanel)map.get("world")).setBody((BodyWorldBean)b);
+            return "world";
         }
         else if (b instanceof BodyToidsBean)
         {
-            ((HTMLBodyToidsPanel)map.get("html.toids")).setBody((BodyToidsBean)b);
-            return "html.toids";
+            ((BodyToidsPanel)map.get("toids")).setBody((BodyToidsBean)b);
+            return "toids";
         }
         else if (b instanceof BodyGiantBean)
         {
-            ((HTMLBodyGiantPanel)map.get("html.giant")).setBody((BodyGiantBean)b);
-            return "html.giant";
+            ((BodyGiantPanel)map.get("giant")).setBody((BodyGiantBean)b);
+            return "giant";
         }
         else if (b instanceof BodyStarBean)
         {
-            ((HTMLBodyStarPanel)map.get("html.star")).setBody((BodyStarBean)b);
-            return "html.star";
+            ((BodyStarPanel)map.get("star")).setBody((BodyStarBean)b);
+            return "star";
         }
         else if (b instanceof BodySpecialBean)
         {
-            ((HTMLBodySpecialPanel)map.get("html.special")).setBody((BodySpecialBean)b);
-            return "html.special";
+            ((BodySpecialPanel)map.get("special")).setBody((BodySpecialBean)b);
+            return "special";
         }
         return null;
     }

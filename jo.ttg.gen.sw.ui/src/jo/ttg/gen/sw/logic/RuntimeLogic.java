@@ -22,7 +22,7 @@ import jo.ttg.beans.surf.SurfaceBean;
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.core.report.logic.TTGReportLogic;
 import jo.ttg.core.ui.swing.ctrl.BodyView;
-import jo.ttg.core.ui.swing.ctrl.BodyViewHandler;
+import jo.ttg.core.ui.swing.ctrl.IBodyViewHandler;
 import jo.ttg.core.ui.swing.ctrl.body.BodyPanel;
 import jo.ttg.core.ui.swing.ctrl.body.HTMLBodyPanelHandler;
 import jo.ttg.core.ui.swing.logic.FormatUtils;
@@ -68,7 +68,7 @@ public class RuntimeLogic
         HTMLCtrlDetails.addModifierFunction("upp", (val,arg) -> String.valueOf(FormatUtils.int2upp(IntegerUtils.parseInt(val))));
         HTMLCtrlDetails.addModifierFunction("upplaw", (val,arg) -> UPPLawBean.getValueDescription(IntegerUtils.parseInt(val)));
         HTMLCtrlDetails.addModifierFunction("upptech", (val,arg) -> UPPTecBean.getValueDescription(IntegerUtils.parseInt(val)));
-        BodyView.addHandler(new BodyViewHandler() {            
+        BodyView.addHandler(new IBodyViewHandler() {            
             @Override
             public Object[] getView(BodyBean b)
             {

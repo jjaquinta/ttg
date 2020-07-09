@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 import jo.ttg.beans.mw.UPPPorBean;
 import jo.ttg.beans.sys.BodyBean;
 import jo.ttg.beans.sys.BodySpecialBean;
-import jo.ttg.core.ui.swing.ctrl.BodyViewHandler;
+import jo.ttg.core.ui.swing.ctrl.IBodyViewHandler;
 import jo.ttg.core.ui.swing.logic.TTGIconUtils;
 import ttg.adv.beans.BodySpecialAdvBean;
 
@@ -25,7 +25,7 @@ import ttg.adv.beans.BodySpecialAdvBean;
  * To change the template for this generated type comment go to
  * Window&gt;Preferences&gt;Java&gt;Code Generation&gt;Code and Comments
  */
-public class AdvViewHandler implements BodyViewHandler
+public class AdvViewHandler implements IBodyViewHandler
 {
 	public static ImageIcon UPPORTA_IMG = TTGIconUtils.getUPP("upport_a.gif");
 	public static ImageIcon UPPORTC_IMG = TTGIconUtils.getUPP("upport_c.gif");

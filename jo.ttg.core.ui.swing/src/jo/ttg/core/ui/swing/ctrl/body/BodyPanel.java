@@ -16,10 +16,6 @@ import java.util.Map;
 import javax.swing.JPanel;
 
 import jo.ttg.beans.sys.BodyBean;
-import jo.ttg.beans.sys.BodyGiantBean;
-import jo.ttg.beans.sys.BodyStarBean;
-import jo.ttg.beans.sys.BodyToidsBean;
-import jo.ttg.beans.sys.BodyWorldBean;
 
 /**
  * @author jjaquinta
@@ -110,54 +106,5 @@ public class BodyPanel extends JPanel
     {
         mHandlers.clear();
         addHandler(h);
-    }
-}
-
-class DefaultBodyPanelHandler implements IBodyPanelHandler
-{
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see ttg.view.ctrl.BodyPanelHandler#initLayout(ttg.view.ctrl.BodyPanel,
-     * java.util.HashMap)
-     */
-    public void getBodyPanels(Map<String, JPanel> map)
-    {
-        map.put("world", new BodyWorldPanel());
-        map.put("toids", new BodyToidsPanel());
-        map.put("giant", new BodyGiantPanel());
-        map.put("star", new BodyStarPanel());
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see ttg.view.ctrl.BodyPanelHandler#handleBody(ttg.view.ctrl.BodyPanel,
-     * java.util.HashMap, ttg.beans.sys.BodyBean)
-     */
-    public String handleBody(Map<String, JPanel> map, BodyBean b)
-    {
-        if (b instanceof BodyWorldBean)
-        {
-            ((BodyWorldPanel)map.get("world")).setBody((BodyWorldBean)b);
-            return "world";
-        }
-        else if (b instanceof BodyToidsBean)
-        {
-            ((BodyToidsPanel)map.get("toids")).setBody((BodyToidsBean)b);
-            return "toids";
-        }
-        else if (b instanceof BodyGiantBean)
-        {
-            ((BodyGiantPanel)map.get("giant")).setBody((BodyGiantBean)b);
-            return "giant";
-        }
-        else if (b instanceof BodyStarBean)
-        {
-            ((BodyStarPanel)map.get("star")).setBody((BodyStarBean)b);
-            return "star";
-        }
-        return null;
     }
 }

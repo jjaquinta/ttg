@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -23,6 +24,7 @@ public class SettingsDlg extends JDialog
 {
     private ButtonGroup  mGeneratorGroup;
     private List<JRadioButton> mGeneratorButtons = new ArrayList<>();
+    private JCheckBox   mExtended;
     private JButton   mOK;
     private JButton   mCancel;
 
@@ -52,6 +54,8 @@ public class SettingsDlg extends JDialog
         initInstantiateRadio("Traveller Map Spinward Marches", "jo.ttg.gen.tm.TMGenSchemeSpinward");
         initInstantiateRadio("Traveller Map Everything", "jo.ttg.gen.tm.TMGenSchemeEverything");
         initInstantiateRadio("Generated", "jo.ttg.gen.imp.ImpGenScheme");
+        mExtended = new JCheckBox("Extended Generation", RuntimeLogic.getInstance().isExtended());
+        mExtended.setToolTipText("Add in bases, ports, labs, and refineries");
         mOK = new JButton("OK");
         mCancel = new JButton("Cancel");
     }
@@ -84,9 +88,10 @@ public class SettingsDlg extends JDialog
         buttonBar1.add(mCancel);
 
         JPanel client = new JPanel();
-        client.setLayout(new GridLayout(mGeneratorButtons.size(),1));
+        client.setLayout(new GridLayout(mGeneratorButtons.size() + 1,1));
         for (Component c : mGeneratorButtons)
             client.add(c);
+        client.add(mExtended);
         
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add("Center", client);
@@ -116,6 +121,7 @@ public class SettingsDlg extends JDialog
                 e.printStackTrace();
             }
         }
+        RuntimeLogic.setExtended(mExtended.isSelected());
         mAccepted = true;
         dispose();
     }
