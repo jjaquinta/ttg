@@ -30,9 +30,9 @@ public class Box3D extends Volume3D
     {
         if ((p.x < -mAspectRatio.x) || (p.x > mAspectRatio.x))
             return false;
-        if ((p.y < -mAspectRatio.y) || (p.x > mAspectRatio.y))
+        if ((p.y < -mAspectRatio.y) || (p.y > mAspectRatio.y))
             return false;
-        if ((p.z < -mAspectRatio.z) || (p.x > mAspectRatio.z))
+        if ((p.z < -mAspectRatio.z) || (p.z > mAspectRatio.z))
             return false;
         return true;
     }

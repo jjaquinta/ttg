@@ -190,6 +190,15 @@ public class Block3D
             setZupper(vec.z);
     }
     
+    public double getLower(int o)
+    {
+        if (o == 0)
+            return getXlower();
+        else if (o == 1)
+            return getYlower();
+        return getZlower();
+    }
+    
     public double getXlower()
     {
         return x;
@@ -221,6 +230,15 @@ public class Block3D
     {
         depth = getZupper() - zl;
         z = zl;
+    }
+    
+    public double getUpper(int o)
+    {
+        if (o == 0)
+            return getXupper();
+        else if (o == 1)
+            return getYupper();
+        return getZupper();
     }
 
     public double getXupper()

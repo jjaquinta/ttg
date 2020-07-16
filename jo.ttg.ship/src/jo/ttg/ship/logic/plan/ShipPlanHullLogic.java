@@ -24,6 +24,7 @@ public class ShipPlanHullLogic
 // volume in cubic meters
     public static void generateHull(ShipPlanBean plan, int volume, int configuration, Point3D aspectRatio, int orientation)
     {
+        System.out.println("Generating hull");
         Volume3D config = null;
         switch (configuration)
         {
