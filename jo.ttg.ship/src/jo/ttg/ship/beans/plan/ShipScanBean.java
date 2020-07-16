@@ -9,15 +9,35 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import jo.ttg.ship.beans.comp.Hull;
+import jo.ttg.ship.logic.plan.ShipPlanScanMTLogic;
 import jo.util.beans.PCSBean;
+import jo.util.geom3d.Point3D;
+import jo.util.utils.obj.DoubleUtils;
 import jo.util.utils.obj.IntegerUtils;
 
 public class ShipScanBean extends PCSBean
 {
+    public static final int XP = 0;
+    public static final int XM = 1;
+    public static final int YP = 2;
+    public static final int YM = 3;
+    public static final int ZP = 4;
+    public static final int ZM = 5;
+    public static final String[] orientationDescription = {
+            "+X fore",
+            "-X fore",
+            "+Y fore",
+            "-Y fore",
+            "+Z fore",
+            "-Z fore"
+    };
+    
     private String      mURI;
     private Map<Object,Object>     mMetadata = new HashMap<>();
     private int mVolume = 1350;
     private int mConfiguration = Hull.HULL_BOX;
+    private Point3D mAspectRatio = new Point3D(1,1,1);
+    private int mOrientation;
     private List<PlanItem> mItems = new ArrayList<PlanItem>();
     
     // constructors
@@ -51,6 +71,10 @@ public class ShipScanBean extends PCSBean
             json.put("uri", mURI);
         json.put("volume", mVolume);
         json.put("configuration", mConfiguration);
+        json.put("orientation", mOrientation);
+        json.put("aspectX", mAspectRatio.x);
+        json.put("aspectY", mAspectRatio.y);
+        json.put("aspectZ", mAspectRatio.z);
         if (md.size() > 0)
             json.put("metadata", md);
         if (items.size() > 0)
@@ -70,6 +94,18 @@ public class ShipScanBean extends PCSBean
         }
         setVolume(IntegerUtils.parseInt(json.get("volume")));
         setConfiguration(IntegerUtils.parseInt(json.get("configuration")));
+        if (json.containsKey("orientation"))
+            setOrientation(IntegerUtils.parseInt(json.get("orientation")));
+        else
+            setOrientation(ShipPlanScanMTLogic.getOrientation(getConfiguration()));
+        if (json.containsKey("aspectX"))
+        {
+            getAspectRatio().x = DoubleUtils.parseDouble(json.get("aspectX"));
+            getAspectRatio().y = DoubleUtils.parseDouble(json.get("aspectY"));
+            getAspectRatio().z = DoubleUtils.parseDouble(json.get("aspectZ"));
+        }
+        else
+            setAspectRatio(ShipPlanScanMTLogic.getAspectRatio(getConfiguration()));
         if (json.containsKey("items"))
         {
             JSONArray items = (JSONArray)json.get("items");
@@ -134,6 +170,30 @@ public class ShipScanBean extends PCSBean
     {
         queuePropertyChange("items", mItems, items);
         mItems = items;
+        firePropertyChange();
+    }
+
+    public Point3D getAspectRatio()
+    {
+        return mAspectRatio;
+    }
+
+    public void setAspectRatio(Point3D aspectRatio)
+    {
+        queuePropertyChange("aspectRatio", mAspectRatio, aspectRatio);
+        mAspectRatio = aspectRatio;
+        firePropertyChange();
+    }
+
+    public int getOrientation()
+    {
+        return mOrientation;
+    }
+
+    public void setOrientation(int orientation)
+    {
+        queuePropertyChange("orientation", mOrientation, orientation);
+        mOrientation = orientation;
         firePropertyChange();
     }
 }

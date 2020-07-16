@@ -28,6 +28,9 @@ public class Block3D
 		x = _x;
 		y = _y;
 		z = _z;
+		width = _width;
+		height = _height;
+		depth = _depth;
 	}
 	
 	public Block3D(Block3D p)

@@ -47,8 +47,9 @@ public class CorridorLogic
         stats.ship.getSquares().getBounds(stats.lower, stats.upper);
         stats.corridors = stats.ship.getComponent(ShipSquareBean.CORRIDOR);
         stats.unset = stats.ship.getComponent(ShipSquareBean.UNSET);
-        for (Point3i p : stats.corridors.getSquares().toArray(new Point3i[0]))
-            setCorridor(stats, p);
+        if (stats.corridors != null)
+            for (Point3i p : stats.corridors.getSquares().toArray(new Point3i[0]))
+                setCorridor(stats, p);
         stats.needsAir.clear();
         for (ShipPlanComponentBean comp : stats.ship.getComponents().values())
         {

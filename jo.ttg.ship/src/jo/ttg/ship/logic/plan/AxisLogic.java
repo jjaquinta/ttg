@@ -35,6 +35,8 @@ public class AxisLogic
     private static void linkCorridors(CorridorStats stats,
             List<Set<Point3i>> corridors)
     {
+        if (corridors.size() == 0)
+            return;
         Collections.sort(corridors, new Comparator<Set<Point3i>>() {
             @Override
             public int compare(Set<Point3i> o1, Set<Point3i> o2)

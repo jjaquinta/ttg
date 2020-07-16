@@ -13,6 +13,7 @@ import jo.ttg.ship.beans.comp.Hull;
 import jo.ttg.ship.beans.plan.PlanItem;
 import jo.ttg.ship.beans.plan.ShipScanBean;
 import jo.ttg.ship.beans.plan.ShipSquareBean;
+import jo.util.geom3d.Point3D;
 import jo.util.utils.io.FileUtils;
 import jo.util.utils.obj.DoubleUtils;
 import jo.util.utils.obj.IntegerUtils;
@@ -68,6 +69,8 @@ public class ShipPlanScanMTLogic
         if (scan.getVolume() < 13)
             return null;
         scan.setConfiguration(getConfiguration(text));
+        scan.setAspectRatio(getAspectRatio(scan.getConfiguration()));
+        scan.setOrientation(getOrientation(scan.getConfiguration()));
         
         scanManeuver(scan.getItems(), scan.getVolume(), text);
         scanJump(scan.getItems(), scan.getVolume(), text);
@@ -620,6 +623,36 @@ public class ShipPlanScanMTLogic
             case '9': return Hull.HULL_BUFFERED_PLANETOID;
         }
         return Hull.HULL_CYLINDER; // shrug
+    }
+
+    public static Point3D getAspectRatio(int config)
+    {
+        switch (config)
+        {
+            case Hull.HULL_NEEDLE:
+            case Hull.HULL_CONE:
+            case Hull.HULL_CYLINDER:
+                return new Point3D(1,8,1);
+            case Hull.HULL_BOX:
+                return new Point3D(4,5,3);
+        }
+        return new Point3D(1,1,1);
+    }
+
+    public static int getOrientation(int config)
+    {
+        /*
+        switch (config)
+        {
+            case Hull.HULL_NEEDLE:
+            case Hull.HULL_CONE:
+            case Hull.HULL_CYLINDER:
+                return ShipScanBean.ZP;
+            case Hull.HULL_DOME:
+                return ShipScanBean.ZM;
+        }
+        */
+        return ShipScanBean.XP;
     }
     
     public static int getVolume(Map<String,String> text)

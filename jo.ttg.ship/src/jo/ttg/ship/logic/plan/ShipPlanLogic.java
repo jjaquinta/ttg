@@ -62,7 +62,7 @@ public class ShipPlanLogic
         int volume = scan.getVolume();
         int configuration = scan.getConfiguration();
         List<PlanItem> items = scan.getItems();
-        ShipPlanHullLogic.generateHull(plan, volume, configuration);        
+        ShipPlanHullLogic.generateHull(plan, volume, configuration, scan.getAspectRatio(), scan.getOrientation());   
         int actualVolume = (int)(plan.getSquares().size()*6.75);
         int residual = actualVolume - volume;
         plan.println("Target Volume="+volume+", actual volume="+actualVolume+", Residual="+residual+", "+(int)(residual*100/volume)+"%");
