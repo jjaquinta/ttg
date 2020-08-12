@@ -38,14 +38,14 @@ public class LanguageLogic
         }
         buf.append(sylbuf[t]);
     }
-    public static String   getName(LanguageBean lang, RandBean r)
+    private static String   getText(LanguageBean lang, RandBean r, int sylMod)
     {
         StringBuffer    nbuf;
         int leng, type;
 
         if (r == null)
             r = mRND;
-        leng = syslookup(lang.getLanguageStats().getWordLength(), RandLogic.rand(r)%36) + 1;//assume names one extra syllable
+        leng = syslookup(lang.getLanguageStats().getWordLength(), RandLogic.rand(r)%36) + sylMod;
         nbuf = new StringBuffer();
         type = 0;
         do {
@@ -66,7 +66,17 @@ public class LanguageLogic
             type = type/2;
         } while (leng-- > 0);
         String s = nbuf.toString();
+        return s;
+    }
+    public static String   getName(LanguageBean lang, RandBean r)
+    {
+        String s = getText(lang, r, 1);
         return s.substring(0, 1).toUpperCase() + s.substring(1);
+    }
+    public static String   getWord(LanguageBean lang, RandBean r)
+    {
+        String s = getText(lang, r, 0);
+        return s;
     }
     private static int     syslookup(int arr[], int tot)
     {
