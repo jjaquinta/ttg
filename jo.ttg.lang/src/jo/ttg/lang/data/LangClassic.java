@@ -1,26 +1,48 @@
 package jo.ttg.lang.data;
 
-import org.json.simple.JSONArray;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.simple.JSONObject;
 
-import jo.ttg.beans.LanguageBean;
-import jo.ttg.beans.LanguageStatsBean;
 import jo.util.utils.obj.IntegerUtils;
 
 public class LangClassic implements ILanguage
 {
     public static final String VERSION = "TravClassic";
-    private LanguageBean    mLanguage;
-    private boolean         mIsDefault;
+
+    private String                mName;
+    private String                mCode;
+    private Map<String, Integer>  mWordLength = new HashMap<String, Integer>();
+    private Map<String, Integer>  mInitialSyllableTable = new HashMap<String, Integer>();
+    private Map<String, Integer>  mFinalSyllableTable = new HashMap<String, Integer>();
+    private Map<String, Integer>  mFirstConsonant = new HashMap<String, Integer>();
+    private Map<String, Integer>  mLastConsonant = new HashMap<String, Integer>();
+    private Map<String, Integer>  mVowel = new HashMap<String, Integer>();
+    private boolean               mIsDefault;
 
     // constructors
     public LangClassic()
     {
-    }
-    
-    public LangClassic(LanguageBean lang)
-    {
-        mLanguage = lang;
+        mName = "Simlish";
+        mCode = "Si";
+        mWordLength.put("1", 1);
+        mWordLength.put("2", 1);
+        mWordLength.put("3", 1);
+        mWordLength.put("4", 1);
+        mWordLength.put("5", 1);
+        mWordLength.put("6", 1);
+        mInitialSyllableTable.put("v", 1);
+        mInitialSyllableTable.put("cv", 1);
+        mInitialSyllableTable.put("vc", 1);
+        mInitialSyllableTable.put("cvc", 1);
+        mFinalSyllableTable.put("v", 1);
+        mFinalSyllableTable.put("cv", 1);
+        mFinalSyllableTable.put("vc", 1);
+        mFinalSyllableTable.put("cvc", 1);
+        mFirstConsonant.put("f", 1);
+        mVowel.put("u", 1);
+        mLastConsonant.put("k", 1);
     }
     
     public LangClassic(JSONObject json)
@@ -35,84 +57,44 @@ public class LangClassic implements ILanguage
     {
         JSONObject json = new JSONObject();
         json.put("$version", VERSION);
-        json.put("name", mLanguage.getName());
-        json.put("code", mLanguage.getAlliegence());
-        LanguageStatsBean stats = mLanguage.getLanguageStats();
-        json.put("wordLength", toJSONArray(stats.getWordLength()));
-        json.put("initialSyllableTable", toJSONArray(stats.getInitialSyllableTable()));
-        json.put("finalSyllableTable", toJSONArray(stats.getFinalSyllableTable()));
-        json.put("firstConsonant", toJSONArray(stats.getFirstConsonant()));
-        json.put("lastConsonant", toJSONArray(stats.getLastConsonant()));
-        json.put("vowel", toJSONArray(stats.getVowel()));
-        json.put("firstConsonantText", toJSONArray(stats.getFirstConsonantText()));
-        json.put("lastConsonantText", toJSONArray(stats.getLastConsonantText()));
-        json.put("vowelText", toJSONArray(stats.getVowelText()));
+        json.put("name", mName);
+        json.put("code", mCode);
+        json.put("wordLength", toJSONObject(mWordLength));
+        json.put("initialSyllableTable", toJSONObject(mInitialSyllableTable));
+        json.put("finalSyllableTable", toJSONObject(mFinalSyllableTable));
+        json.put("firstConsonant", toJSONObject(mFirstConsonant));
+        json.put("lastConsonant", toJSONObject(mLastConsonant));
+        json.put("vowel", toJSONObject(mVowel));
         return json;
     }
     
-    @SuppressWarnings("unchecked")
-    private JSONArray toJSONArray(int[] arr)
+    private JSONObject toJSONObject(Map<String,Integer> map)
     {
-        JSONArray json = new JSONArray();
-        for (int i : arr)
-            json.add(i);
-        return json;
-    }
-    
-    @SuppressWarnings("unchecked")
-    private JSONArray toJSONArray(String[] arr)
-    {
-        JSONArray json = new JSONArray();
-        for (String i : arr)
-            json.add(i);
+        JSONObject json = new JSONObject();
+        for (String key : map.keySet())
+            json.put(key, map.get(key));
         return json;
     }
 
     @Override
     public void fromJSON(JSONObject json)
     {
-        if (mLanguage == null)
-            mLanguage = new LanguageBean();
-        mLanguage.setName((String)json.get("name"));
-        mLanguage.setAlliegence((String)json.get("code"));
-        LanguageStatsBean stats = mLanguage.getLanguageStats();
-        stats.setWordLength(toIntArray((JSONArray)json.get("wordLength")));
-        stats.setInitialSyllableTable(toIntArray((JSONArray)json.get("initialSyllableTable")));
-        stats.setFinalSyllableTable(toIntArray((JSONArray)json.get("finalSyllableTable")));
-        stats.setFirstConsonant(toIntArray((JSONArray)json.get("firstConsonant")));
-        stats.setLastConsonant(toIntArray((JSONArray)json.get("lastConsonant")));
-        stats.setVowel(toIntArray((JSONArray)json.get("vowel")));
-        stats.setFirstConsonantText(toStringArray((JSONArray)json.get("firstConsonantText")));
-        stats.setLastConsonantText(toStringArray((JSONArray)json.get("lastConsonantText")));
-        stats.setVowelText(toStringArray((JSONArray)json.get("vowelText")));
+        mName = (String)json.get("name");
+        mCode = (String)json.get("code");
+        mWordLength = toMap((JSONObject)json.get("wordLength"));
+        mInitialSyllableTable = toMap((JSONObject)json.get("initialSyllableTable"));
+        mFinalSyllableTable = toMap((JSONObject)json.get("finalSyllableTable"));
+        mFirstConsonant = toMap((JSONObject)json.get("firstConsonant"));
+        mLastConsonant = toMap((JSONObject)json.get("lastConsonant"));
+        mVowel = toMap((JSONObject)json.get("vowel"));
     }
     
-    private int[] toIntArray(JSONArray arr)
+    private Map<String,Integer> toMap(JSONObject obj)
     {
-        int[] iarr = new int[arr.size()];
-        for (int i = 0; i < arr.size(); i++)
-            iarr[i] = IntegerUtils.parseInt(arr.get(i));
-        return iarr;
-    }
-    
-    private String[] toStringArray(JSONArray arr)
-    {
-        String[] sarr = new String[arr.size()];
-        for (int i = 0; i < arr.size(); i++)
-            sarr[i] = arr.get(i).toString();
-        return sarr;
-    }
-
-    @Override
-    public String getName()
-    {
-        return mLanguage.getName();
-    }
-
-    @Override
-    public String getCode()
-    {
-        return mLanguage.getAlliegence();
+        Map<String,Integer> map = new HashMap<>();
+        for (String key : obj.keySet())
+            map.put(key, IntegerUtils.parseInt(obj.get(key)));
+        return map;
     }
     
     // utilities
@@ -124,16 +106,6 @@ public class LangClassic implements ILanguage
     }
 
     // getters and setters
-    
-    public LanguageBean getLanguage()
-    {
-        return mLanguage;
-    }
-
-    public void setLanguage(LanguageBean language)
-    {
-        mLanguage = language;
-    }
 
     public boolean isDefault()
     {
@@ -141,6 +113,96 @@ public class LangClassic implements ILanguage
     }
 
     public void setDefault(boolean isDefault)
+    {
+        mIsDefault = isDefault;
+    }
+
+    public String getName()
+    {
+        return mName;
+    }
+
+    public void setName(String name)
+    {
+        mName = name;
+    }
+
+    public String getCode()
+    {
+        return mCode;
+    }
+
+    public void setCode(String code)
+    {
+        mCode = code;
+    }
+
+    public Map<String, Integer> getWordLength()
+    {
+        return mWordLength;
+    }
+
+    public void setWordLength(Map<String, Integer> wordLength)
+    {
+        mWordLength = wordLength;
+    }
+
+    public Map<String, Integer> getInitialSyllableTable()
+    {
+        return mInitialSyllableTable;
+    }
+
+    public void setInitialSyllableTable(Map<String, Integer> initialSyllableTable)
+    {
+        mInitialSyllableTable = initialSyllableTable;
+    }
+
+    public Map<String, Integer> getFinalSyllableTable()
+    {
+        return mFinalSyllableTable;
+    }
+
+    public void setFinalSyllableTable(Map<String, Integer> finalSyllableTable)
+    {
+        mFinalSyllableTable = finalSyllableTable;
+    }
+
+    public Map<String, Integer> getFirstConsonant()
+    {
+        return mFirstConsonant;
+    }
+
+    public void setFirstConsonant(Map<String, Integer> firstConsonant)
+    {
+        mFirstConsonant = firstConsonant;
+    }
+
+    public Map<String, Integer> getLastConsonant()
+    {
+        return mLastConsonant;
+    }
+
+    public void setLastConsonant(Map<String, Integer> lastConsonant)
+    {
+        mLastConsonant = lastConsonant;
+    }
+
+    public Map<String, Integer> getVowel()
+    {
+        return mVowel;
+    }
+
+    public void setVowel(Map<String, Integer> vowel)
+    {
+        mVowel = vowel;
+    }
+
+    public boolean isIsDefault()
+    {
+        return mIsDefault;
+    }
+
+    public void setIsDefault(boolean isDefault)
     {
         mIsDefault = isDefault;
     }

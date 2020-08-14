@@ -1,0 +1,72 @@
+Traveller (gioco di ruolo)
+
+Traveller, è una serie di correlati giochi di ruolo di fantascienza, il primo dei quali pubblicato nel 1977 dalla Game Designers' Workshop. È uno dei primi giochi di ruolo di fantascienza ed il più popolare fino alla metà degli anni ottanta.[1]
+
+Ambientato in un lontano mondo futuro che pare attingere fortemente dalle opere di Isaac Asimov, da Dune, Star Trek, Guerre stellari e da innumerevoli altre opere di fantascienza, Traveller fornisce un universo di gioco in cui i personaggi possono viaggiare da mondo a mondo, ingaggiare battaglie in terra e nei cieli ed essere coinvolti nell'economia interstellare. Mentre ogni versione dei vari sistemi di gioco utilizzati può essere usata in qualunque ambientazione di fantascienza, una delle caratteristiche chiave e suo principale punto di forza è stato il grande dettaglio della sua ambientazione ufficiale di gioco, costruita nel corso di molti anni.
+
+Generalità
+
+La prima edizione di Traveller usa un sistema di generazione del personaggio e un meccanismo di avanzamento in cui il giocatore costruisce la carriera e determina le esperienze di vita precedenti del personaggio. Diversamente da Dungeons & Dragons e dai suoi derivati, in Traveller l'abilità del personaggio e il loro avanzamento ha meno importanza rispetto all'accumulo del miglioramento della propria posizione sociale, l'ottenimento di titoli, fama, denaro, potere, gadget, e così via. Anziché limitarsi a tirare delle statistiche, scegliere una classe e qualche incantesimo, comprare dell'equipaggiamento, per poi gettarsi all'avventura, in Traveller la creazione del personaggio è di per sé un vero e proprio sotto-gioco. Il giocatore non crea solo delle statistiche vitali per il suo personaggio, ma anche un'intera storia, che segue tutta la sua carriera nella milizia interstellare attraverso i suoi incarichi ufficiali. Ogni incarico porta abilità ed esperienza, ma anche età, che dopo un po' inizierà ad avere i suoi effetti debilitanti. Il giocatore deve così bilanciare l'esperienza con l'età, decidendo quando è il momento opportuno per abbandonare il servizio militare e iniziare la propria carriera d'avventuriero. La creazione del personaggio era così dettagliata da occupare più di 20 pagine del manuale originale. Comunque nel corso del tempo il regolamento ha subito diverse modifiche per adattarsi al sistema di gioco della GDW. Inoltre è stata pubblicata anche una versione di Traveller con il regolamento di GURPS e una con il regolamento D20 system.
+Ambientazione originale
+
+Traveller è ambientato nel futuro remoto — oltre tremila anni in avanti dal nostro tempo. Il viaggio interstellare è facilitato e limitato, dall'uso di una tecnologia conosciuta come motore di balzo. I motori di balzo sono capaci di spingere un'astronave fino a ad una distanza da uno a sei parsec, a seconda delle specifiche della macchina. Indifferentemente dalla distanza la durata del viaggio è di circa una settimana. Le comunicazioni sono limitate alla velocità del viaggio; non esiste un "subspazio" o altra forma di comunicazione più veloce della luce. Questo è uno dei principi centrali dell'ambientazione originale di Traveller. I limiti sulla velocità dell'informazione portano ad una decentralizzazione ed all'investimento di un potere significativo nelle mani dei funzionari locali.
+
+La nazione principale di Traveller è il Third Imperium (Terzo Impero) governato al momento dal 43º Imperatore, Strephon Aella Alkhalikoi. L'Impero è la più potente entità interstellare, ma è circondato su tutti i lati da nemici potenzialmente ostili. La nobiltà locale opera generalmente libera da supervisione, limitata dalle convenzioni, dalle obbligazioni feudali e dalla paura di essere colta in fallo.
+
+L'ambientazione stessa ha subito cambiamenti significativi con l'introduzione di ogni nuova edizione. Megatraveller racconta la storia della grande Ribellione iniziata con l'assassinio dell'imperatore da parte dell'Arciduca Dulinor in un tentativo di impossessarsi del trono imperiale. Questo evento scatenò un terribile conflitto che comprese non solo la lotta dinastica per il trono, ma anche l'avanzata di poteri stranieri a spesa dell'impero. La Ribellione terminò infine a causa dell'inavvertito rilascio del Virus, una superarma elettronica che faceva impazzire e rivoltare contro i propri padroni i computer.
+
+La Ribellione è un punto estremamente controverso tra i fans di Traveller. Alcuni pensano che la guerra civile (e la conseguente apocalisse) abbiano rovinato un'ambientazione più dinamica e sviluppata. Questo sentimento ha portato infine alla produzione di GURPS: Traveller una linea temporale alternativa in cui l'Imperatore Strephon vive. Comunque la linea temporale canonica stabilita ha una sua propria base di fan ed ha recentemente goduto dello sviluppo di materiale aggiuntivo da parte della QuikLink Interactive's.
+
+L'edizione attuale, detta Mongoose Traveller, riprende la linea temporale classica, con l'Imperatore Strephon saldamente insediato sul trono, e non fa cenno della Ribellione.
+Caratteristiche dell'Universo di Traveller
+
+Numerose caratteristiche chiave rendono unico l'Universo di Traveller. Da queste caratteristiche nasce il dettagliata e specifica ambientazione disponibile per i membri dell'impero e per gli alieni.
+
+    Mancanza di un mezzo di comunicazione più veloce della luce: le astronavi sono la sola cosa in grado di viaggiare più veloce della luce. Intere guerre possono essere combattute, vinte o perse alla frontiera prima che un messaggio riesca a giungere alla Capitale per far sapere all'Imperatore che la Guerra è iniziata. Questo significa che tutti i tipi di agenti, dai mercanti ai generali, devono mostrare iniziativa ed essere ragionevolmente indipendenti dai loro superiori, corporativi o politici.
+    Non esiste una Prima Direttiva: non esistono proibizioni sul contatto o l'interferenza con altre razze, che le protegga dalla tecnologia avanzata. L'economia ed altri fattori che si applicano alla colonizzazione sulla Terra sono gli stessi fattori che danno forma all'Universo di Traveller. Comunque i governi possono interdire l'accesso a pianeti con specie native intelligenti primitive.
+    Gli esseri umani sono diffusi in tutto l'Universo: a causa di una razza antica che ha diffuso l'umanità in tutte le stelle, ogni tipo di razza umana può essere incontrata, a tutti gli stadi di sviluppo, da uomini delle caverne ad imperi altamente tecnologici.
+
+Alieni
+
+Mentre alcune razze aliene erano ovviamente ben poco ispirate in quanto le prime ad essere state create, gran parte dell'informazione di base è stata usata per sviluppare le altre razze in qualcosa di più complesso di un umano con sembianze aliene.
+Razze Maggiori
+
+Una Razza Maggiore è una che ha sviluppato indipendentemente la tecnologia di balzo. Mentre c'è accordo generale sul fatto che esistano 6 razze maggiori, il modo in cui vengono definite varia leggermente. La lista standard include:
+
+    Aslan: una razza bipede di aspetto felino, leggermente più grossi di un umano. Il loro nome significa Leone in Turco, ed è dovuto al fatto che il primo contatto avvenne con l'equipaggio di una nave stellare Turca. La società Aslan ha stringenti codici di onore e forti differenze di comportamento tra i due sessi. Durante il periodo della Ribellione fu postulato che gli Aslan non siano tecnicamente una Razza Maggiore in quanto ricostruirono come costruire un motore a balzo da una nave Terrana.
+    Droyne: razza bipede di aspetto rettiloide dalle corte ali. Sebbene la loro razza sia la più antica tra quelle capaci di balzo, i Droyne sono stati gli ultimi ad essere stati riconosciuti come tali, probabilmente perché non controllano imperi o regioni spaziali. La loro razza è sparsa per tutto l'universo conosciuto ed il loro mondo di origine è sconosciuto. I Droyne controllano alcuni mondi ma li condividono con altre razze. Gli studiosi del Terzo Impero confermarono che i Droyne appartengono alla stessa genia degli Antichi.
+    Hiver (in italiano Alveariani): sono una razza a simmetria sestupla. Di tutte razze maggiori sono quelli che appaiono e pensano in modo più “alieno” della maggior parte degli umani. Nonostante il loro nome (in inglese "Hive" significa "Alveare"), gli Alveariani sono una razza molto individualistica. Evitano quando possibile la violenza diretta e la guerra, preferendo lavorare dietro le quinte usano ogni metodo di manipolazione nascosta.
+    Humaniti è il nome usato per la razza umana nell'Universo di Traveller. Quando gli umani hanno raggiunto per la prima volta le stelle sono rimasti sorpresi dallo scoprire che altri vi erano già arrivati. Tre sottospecie di esseri umani hanno sviluppato la tecnologia del balzo indipendentemente e sono pertanto classificate come razze maggiori. I Solomani il cui nome deriva da “Uomini del Sistema Solare”. Si ritiene che la Terra sia il pianeta madre degli Humaniti e che da questa siano stati diffusi tra le stelle migliaia di anni fa ad opera degli Antichi. Gli Zhodani sono conosciuti per il loro alto livello di capacità psichiche e per l'integrazione formale della loro società.
+    I K'kree sono una razza di esseri con 2 braccia e 4 gambe e ricordano vagamente i centauri delle leggende. Sono esseri gregari e raramente viaggiano da soli. Sono erbivori militanti e spesso aggressivi, disprezzano i carnivori.
+    I Vargr sono una razza canina bipede i cui membri sono leggermente più piccoli degli esseri umani. Questa specie somiglia ai lupi terrestri perché discendono da essi: dei lupi provenienti dalla Terra furono geneticamente manipolati dagli Antichi per dare loro forma bipede in un tentativo di creare una razza di servi.
+
+Razze Minori
+
+Esistono numerose razze minori, alcune completamente sviluppate, altre solo brevemente accennate, di seguito ne sono elencate alcune:
+Razze Umane Minori
+
+Oltre alle tre razze umane riconosciute come Maggiori ci sono almeno altre 22 razze classificate come minori (sebbene alcuni non siano d'accordo con questa classificazione). Molte razze umane sono indistinguibili le une dalle altre sebbene alcune provengano da un pool genetico limitato e/o si siano sviluppate in un ambiente estremo sviluppando capacità uniche. Razze umane degne di nota includono i Darrians, Suerrat e Geonee.
+Altre Razze Minori
+
+Alcune delle altre razze minori su cui è disponibile molto materiale sono:
+
+    Ithklur
+    Mahkahraik
+    Schalli
+    Vegans
+
+Edizioni
+Scatola, libri di regole e manuali aggiuntivi
+
+    1977 La Game Designers' Workshop (GDW) pubblica Classic Traveller di Marc Miller, ambientato nell'Età d'Oro dell'Impero. I manuali erano stampati nell'inusuale formato di piccoli libretti neri formato A5
+    1986 La GDW pubblica MegaTraveller, revisione del sistema di gioco per consolidare tutto il materiale pubblicato negli anni precedenti (oltre 60 supplementi), viene anche introdotto nelle meccaniche di gioco il sistema di risoluzione dei compiti. L'ambientazione viene spostata in avanti durante la Ribellione che frantumò l'Impero in seguito all'assassinio dell'imperatore.
+    1992 La GDW pubblica Traveller: The New Era di Frank Chadwick, Dave Nilsen. Una revisione del gioco per conformarlo al sistema di gioco della GDW (in sostanza quello usato in Twilight 2000). Introduzione del Virus.
+    1996 La Imperium Games ottiene da Marc Miller la licenza di Traveller (a cui i diritti erano tornati dopo la chiusura della GDW) e pubblica Marc Miller's Traveller (conosciuto anche come T4). Prodotto dopo la chiusura della GDW. Ambientato nei primi giorni del Terzo Impero.
+    1996 La Steve Jackson Games pubblica GURPS Traveller: "Creato con una stretta di mano con Steve Jackson". Utilizza il sistema di gioco di GURPS (3ª edizione) ed è ambientato in una linea temporale alternativa in cui la Ribellione non è avvenuta ed il Virus è molto meno efficace.
+    2002 La QuikLink Interactive pubblica Traveller 20, versione D20 system di Traveller ambientata alla fine del millennio con un prossimo seguito nella Nuova Era nel 1248.
+    2008 La Mongoose Publishing pubblica Traveller, versione di Traveller molto fedele a Classic Traveller, ma con alcune migliorie, soprattutto nella creazione del personaggio.
+    2008 Alla fine dell'anno, Wild Boar Edizioni pubblica per la prima volta in italiano Traveller, traduzione della versione Mongoose con ulteriori migliorie, ottenute riorganizzando parte dei contenuti.
+
+Nonostante il titolo il gioco della GDW Traveller: 2300 non appartiene allo stesso universo è fu successivamente ripubblicato come 2300 AD.
+
+Nel 1994, Traveller: The New Era ottenne il Premio Origins per le Migliori Regole di un Gioco di Ruolo del 1993. Nel 1997 Traveller fu registrato nella Hall of Fame di Origins. 

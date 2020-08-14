@@ -1,0 +1,50 @@
+Traveller (Rollenspiel)
+
+Traveller war eines der ersten Pen-&-Paper-Rollenspiele und wurde 1977 von Game Designers' Workshop veröffentlicht. Das ursprüngliche Werk stammt von Marc Miller. Traveller ist inspiriert von Science-Fiction-Geschichten wie denen von Isaac Asimov und Frank Herberts Dune, sowie später von Star Trek und Star Wars.
+
+Die Rechte an Traveller liegen bei Far Future Enterprises. QLI/RPGRealms Publishing, Mongoose Publishing und Steve Jackson Games vertreiben Traveller-Produkte in Lizenz.
+
+Handlung und Hintergrund
+
+Traveller spielt in der fernen Zukunft, über 3000 Jahre nach unserer Zeit. Interstellare Reisen sind Realität, ermöglicht durch die Technologie des Raumsprungs. Solche Sprünge überbrücken eine Entfernung von ein bis sechs Parsecs in einer Woche. Kommunikation ist nur auf hergebrachte Art möglich, es gibt keine Hyperraumkommunikation oder eine ähnliche Technologie. Daher können sich Informationen nur so schnell verbreiten, wie ein Raumschiff reisen kann. Das bekannte Universum umfasst ein etwa 500 mal 300 Parsec großes Gebiet des Orionarms, dessen Zentrum vom Dritten Imperium des Menschen beherrscht wird.
+Interstellarer Feudalismus
+
+Durch die begrenzten Möglichkeiten der interstellaren Kommunikation ist eine zentrale Lenkung jedes interstellaren Staates unmöglich. Nachrichten aus der Hauptstadt des Dritten Imperiums brauchen selbst mit schnellen Kurierschiffen Monate bis zu den Randgebieten. Das Dritte Imperium beherrscht daher nur den Raum zwischen den Sternen und verlässt sich dabei auf feudale Strukturen. Diese dezentrale Herrschaftsform erlaubt eine Vielzahl unterschiedlicher planetarer Regierungssysteme und die Entstehung von lokalen Mächten. Der Raumhafen eines Planeten genießt dabei Extraterritorialität und untersteht als Freihafen imperialem Gesetz.
+Währung
+
+Der imperiale Credit ist eine durch die imperiale subventionierte Handelsflotte gedeckte Währung. Ein Credit entspricht dem Transport von einem Kilogramm über ein Parsec. Spielercharaktere besitzen meist gemeinsam ein kleines Handelsraumschiff, dessen Wartung und Unterhalt auf Grund der imperialen Subventionierung nicht mit normalen Handel gedeckt werden kann, wodurch sie gezwungen sind, lukrative, risikoreiche und nicht immer legale Aufträge anzunehmen.
+Bevölkerung und Technologie
+
+Der so genannte Bevölkerungsgrad (eng. population level) ist der abgerundete Zehnerlogarithmus der Bevölkerungszahl eines Planeten. Dieser liegt zumeist zwischen 1 und 9. (Die heutige Erde hätte 9). Ohne Handel ist dies der maximale Techgrad (eng. tech level) den ein Planet nachhaltig aus eigener Kraft produzieren und erhalten kann. Ab Techgrad 9 ist der Bau von Sprungtriebwerken und damit interstellarer Handel möglich. Der maximale Techgrad einer Zivilisation ist der abgerundete Zehnerlogarithmus der Gesamtbevölkerungszahl dieser Zivilisation. Das dritte Imperium hatte zum Zeitpunkt seiner Blüte einen maximalen Techgrad von 16. In der sog. „Langen Nacht“ nach dem Solomanischen zweiten Imperium und der sog. „Harten Zeit“ nach dem Syleanischen dritten Imperium, sank der Techgrad auf vielen Planeten auf einen Stand des Mittelalters oder früher Industrialisierung ab, da der Handel zwischen den Welten unterbrochen war. Planeten auf denen ohne Technologie kein Leben möglich ist, wurden zu Massengräbern, deren Bauwerke und Artefakte in späteren Zeiten von Spielercharakteren untersucht werden können.
+Keine Utopie
+
+Auch im 6. Jahrtausend haben sich die Menschen psychologisch und gesellschaftlich nicht wesentlich weiterentwickelt. Auch im Dritten Imperium wird betrogen, gestohlen und Krieg geführt. Die Wünsche, Ziele und Probleme der Menschen sind dieselben geblieben. Die vorherrschende Wirtschaftsform ist der Kapitalismus. Die Gesellschaft unterscheidet sich daher im Grunde nicht wesentlich von den westlichen Gesellschaften der Erde des 20. Jahrhunderts.
+Neue Technologien
+
+Technologisch dagegen hat die Menschheit große Fortschritte gemacht. Aber auch die nach heutigen Maßstäben weit fortgeschrittene Technologie erlaubt es nicht, die Gesetze der Physik zu brechen – von der Technologie des Raumsprungs und der Erfindung der künstlichen Gravitation einmal abgesehen. Viele fantastische Technologien wurden aber realisiert: Fusionsreaktoren, Laserwaffen, künstliche Intelligenz, Raumschiffe und Antigrav-Fahrzeuge sind ein alltäglicher Anblick.
+Außerirdische Intelligenz
+
+An den Grenzen des Imperiums gibt es eine Vielzahl außerirdischer Rassen. Zu den wichtigsten Völkern zählen neben den Menschen (v. a. Solomani, Vilani und Zhodani) die hundeartigen Vargr, die löwenähnlichen Aslan, die sechsgliedrigen polypenartigen Hiver und die K'kree, die Zentauren ähneln.
+Veröffentlichungsgeschichte
+
+    Traveller (CT, 1977–1986, Far Future Enterprises) – Das originale Traveller-Spielsystem, welches das sogenannte Goldene Zeitalter des Dritten Imperiums behandelt. Hiervon sind auch einige deutschsprachige Bücher erschienen. Das Setting, später Classic Traveller (CT) genannt, konzentriert sich auf die Spinwärts-Marken des Imperiums und die angrenzenden Gebiete.
+
+    Megatraveller (MT, 1986–1991, Far Future Enterprises) – Überarbeitete Version des Regelsystems. Hier wird die Zeit der Rebellion behandelt. Es wurde kaum deutschsprachiges Material herausgebracht.
+
+    Traveller: The New Era (TNE, 1992–1995, Far Future Enterprises) – Die dritte Generation des Regelsystems. Etwa ein Jahrhundert später als CT angesiedelt, wird hier die Zeit des erneuten Aufbruchs zu einer interstellaren Gesellschaft behandelt.
+
+    Marc Miller's Traveller (T4, 1996–1998, Far Future Enterprises) – Die vierte Generation des Regelsystems. Angesiedelt etwa 1100 Jahre vor CT spielt es in den Anfangstagen des Dritten Imperiums.
+
+    GURPS Traveller (GT, seit 1998, Steve Jackson Games) – Die Ausgabe im Regelsystem GURPS von Steve Jackson Games verwendet das modifizierte Setting von CT.
+
+    Traveller 20 (T20, seit 2001, QLI/RPGRealms Publishing) – Die Ausgabe in einem modifizierten d20-Regelsystem von Wizards of the Coast. Es ist circa 150 Jahre vor CT angesiedelt und spielt im Gateway-Sektor des Imperiums statt in den Spinwärts-Marken.
+
+    GURPS Interstellar Wars (GTIW, seit 2006, Steve Jackson Games) – Die Ausgabe in der 4th Edition des GURPS von Steve Jackson Games. Es beschreibt die frühe Geschichte der Erde und den Erstkontakt mit dem Vilani-Imperium.
+
+    Traveller5 (T5, Far Future Enterprises) – Die fünfte Generation sollte ursprünglich im Juni 2007, zum 30. Jubiläum, erscheinen. Der Termin konnte nicht eingehalten werden. Die Veröffentlichung konnte erst 2012, zum 35. Jubiläum, durch Crowdfunding erfolgreich umgesetzt werden.
+
+    Mongoose Traveller (seit 2008, Mongoose Publishing) – Parallel zu Traveller5 ist im Mai 2008 eine überarbeitete Fassung von CT bei Mongoose Publishing erschienen. Lizenznehmer der im August 2008 erschienenen deutschen Ausgabe war bis 2019 der 13Mann Verlag.
+
+    Mongoose Traveller 2nd Edition (seit 2016, Mongoose Publishing) – Die im Jahr 2016 veröffentlichte zweite Auflage des Mongoose Traveller basiert im Wesentlichen auf der Vorgängerauflage von 2008, wurde jedoch insbesondere im Bereich der Regeln und des Designs überarbeitet.
+
+Das Spiel Traveller:2300, das später in 2300AD umbenannt wurde, ist kein Teil des Traveller-Hintergrundes, sondern stellt ein eigenständiges Universum mit anderer Technologie, Zeitlinie und Alien-Rassen dar. Es führt die Ereignisse in Twilight:2000 weiter, beginnt also am Ende des, in der Traveller-Zeitlinie nicht vorkommenden, dritten Weltkrieges. 

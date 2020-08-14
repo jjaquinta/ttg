@@ -1,0 +1,48 @@
+Traveller
+
+Traveller es el primer título de una serie de juegos de rol de ciencia ficción, publicada inicialmente en 1977 por Game Designers' Workshop. Originariamente se pretendía que Traveller fuera un sistema de juego para aventuras de ciencia ficción con temática genérica de space opera, de la misma forma que Dungeons & Dragons es un sistema para aventuras de fantasía genérica. Sin embargo, una ambientación denominada El Tercer Imperio fue desarrollada con la publicación de diversos suplementos y a partir de entonces se ha identificado con el juego, de forma que para los seguidores el nombre Traveller y Tercer Imperio son sinónimos.
+
+Las reglas de Traveller permiten construir una sociedad del futuro lejano que extrae su inspiración de las historias de la Fundación de Isaac Asimov, Dune de Frank Herbert, Espacio conocido de Larry Niven, CoDominio de Jerry Pournelle, la Liga Polesotécnica de Poul Anderson y varias otras obras de literatura de ciencia ficción. Se espera que los personajes viajen entre sistemas estelares, luchen en batallas terrestres y espaciales y se involucren en la economía interestelar. Los personajes de Traveller se definen en menor medida por la necesidad de incrementar las habilidades y capacidades iniciales. En cambio intentan lograr ventajas posicionales en forma de riquezas, aparatos tecnológicos, títulos y poder político. A pesar de que cualquiera de los sistemas de juego podría ser usado en muchas ambientaciones de ciencia ficción, la mayoría de los suplementos publicados ha tenido que ver en alguna forma con el Tercer Imperio, también denominado habitualmente «Universo Oficial de Traveller» (OTU, Official Traveller universe).
+
+Ambientación
+
+El Tercer Imperio se sitúa en el futuro distante - cerca de tres mil años después de nuestros días. Los viajes de interestelares se desarrollan gracias al uso de una tecnología conocida como Motor de Salto. Los motores de salto son capaces de impulsar una nave espacial entre uno y seis parsecs, dependiendo de las especificaciones del motor en cuestión. Independientemente de la distancia de un salto, el tiempo requerido para el viaje es aproximadamente de una semana. Las comunicaciones están limitadas por la velocidad de viaje; no existen formas de transmisión de información como el «sub-espacio» u otras formas de propagación más veloces que la velocidad de la luz. Esto conduce al principio central de la ambientación original de Traveller, la restricción de la velocidad de la transmisión de la información conduce a la descentralización y acopio de cuotas significativas de poder en las manos de los dirigentes locales.
+
+La unidad primaria de la sociedad galáctica es el Imperio, una unión feudal dominada por la humanidad que comprende más de once mil mundos actualmente regido (según se describe en GURPS Traveller) por su cuadragésimo tercer emperador, Strephon Aella Alkhalikoi. El imperio es la forma de gobierno interestelar más poderosa, pero está rodeado en todo su perímetro por vecinos potencialmente hostiles.
+
+En la ambientación original de Traveller, se tendía a ver al Tercer Imperio como algo monolítico e inmutable. Los personajes podían trabajar en su interior, pero eran considerados demasiado insignificantes para afectar los sucesos a escala galáctica. Sin embargo, la publicación de Mega Traveller sacudió el statu quo introduciendo la Gran Rebelión, que inició cuando el Archiduque Dulinor asesinó al Emperador Strephon en un intento de acceder al trono imperial(año 1116). La muerte de Strephon detonó en un terrible conflicto que degeneró en una lucha dinástica, la secesión de grandes regiones del Imperio y el avance de potencias extranjeras dentro del territorio imperial. En otras palabras, la clase de «tiempos interesantes» que da a los personajes una oportunidad de estar involucrados en apasionantes e importantes eventos.
+
+La Rebelión terminó finalmente, en la conclusión de la línea temporal de Mega Traveller, por la inintencionada liberación del Virus, una super-arma electrónica que insufla a cualquier hardware computerizado que infecte una autoconsciencia inteligente y malévola. Desafortunadamente, esto también redujo a gran número de mundos a un estado pre-tecnológico. El juego siguiente de la serie, Traveller: La Nueva Era (ano 1200), presenta el periodo setenta años posterior a la aparición del Virus en el que se comienzan a realizar los primeros intentos de restablecer el comercio interestelar.
+
+La Rebelión es un asunto extremadamente controvertido para los seguidores de Traveller. Algunos piensan que la guerra civil (y el subsiguiente tecno-apocalipsis) arruinó la ambientación más dinámica y desarrollada para el juego de rol. Este sentimiento fue expresado públicamente en GURPS Traveller, que se mantiene en una línea temporal alternativa en la que el asesinato y posterior debacle nunca ocurrió. Sin embargo, la línea establecida como canon tiene su propia base de seguidores, y recientemente disfruta de un desarrollo adicional con el material para el año 1248 de QuikLink Interactive.
+Ediciones
+Traveller o Traveller Clásico
+
+Publicado por Game Designers' Workshop (1977-1986). Es el sistema de juego original, con ambientación genérica aunque posteriores suplementos describían el Tercer Imperio en su cenit. Este sistema y sus suplementos asociados son denominados habitualmente como «Traveller Clásico» (CT, Classic Traveller). Esta primera edición fue publicada en castellano en 1989 por Diseños Orbitales.1​
+
+La mayor parte de los libros de Traveller Clásico están disponibles en recopilatorios de Far Future Enterprises, que es la poseedora actual del copyright y marca registrada de Traveller.
+Mega Traveller
+
+Publicado por GDW (1986-1991) pero diseñado por Digest Group Publications que editaba el popular Traveller's Digest (que se convertiría en Mega Traveller Journal). Su denominación habitual es MT.
+
+El juego estaba ambientado durante la era de la Rebelión que fracturó el Imperio. Los suplementos y revistas producidos durante esta era detallaban la progresión de la Rebelión desde el asesinato del Emperador, en 1116, al colapso del comercio interestelar a gran escala sobre el 1124 (comienzo del suplemento Hard Times, «tiempos difíciles»).
+Traveller: La Nueva Era
+
+1992-1995 Publicado por GDW. El sistema de juego fue modificado por el sistema de reglas estándar que apareció originalmente en la segunda edición de Twilight: 2000. Se presentaba el Virus y se describía la situación del antiguo Tercer Imperio después de que la sociedad interestelar hubiera colapsado completamente. A este juego se le denomina TNE. En 1994, Traveller: La Nueva Era ganó el premio Origins a las mejores Reglas de Rol de 1993; sin embargo, un importante número de seguidores de Traveller se quejaban de los enormes cambios realizados en la ambientación original. El desarrollo del Virus causaba especial resentimiento, ya que muchos sentían que la difusión del Virus dependía de muchas desviaciones de los axiomas precedentes del universo Traveller y por ello no se ajustaba a la temática de ciencia ficción dura.
+Marc Miller's Traveller
+
+Publicado entre 1996 y 1998 por Imperium Games después que se disolviera GDW y los derechos de Traveller revertieran a Marc Miller, creador original del juego. Se volvió a una versión fuertemente modificada de las reglas originales y fue ambientado en los primeros tiempos del Tercer Imperio (Milieu 0). Se le denomina T4. La publicación de esta edición sufría de una notoriamente paupérrimas escritura y edición que requirieron la subsecuente impresión de 25 páginas de erratas.
+GURPS Traveller
+
+1998- Creado en un acuerdo con Steve Jackson de Steve Jackson Games. El juego usa el sistema de juego de la tercera edición de GURPS y tiene lugar en una línea temporal alternativa en la que no ocurre la Rebelión y nunca se libera el Virus. La línea de productos GURPS Traveller ha sido parcialmente actualizada en la cuarta edición de GURPS en parte gracias al lanzamiento de GURPS Traveller: Interstellar Wars. A este juego se le denomina GT.
+Traveller 20
+
+2002- Publicado por QLI/RPG Realms Publishing. La versión con sistema d20 se ambienta algo antes de la era mostrada en el juego original. Un nuevo suplemento, ambientado en el periodo posterior al descrito en Traveller: La Nueva Era, ha sido recientemente publicado por Comstar Games y Avenger Enterprises. Es conocido como Traveller 1248.
+GURPS Traveller: Interstellar Wars
+
+Se concentra en los siglos XXII y XXIII, mucho antes de las ambientaciones habituales de Traveller, en el momento en que La Tierra comenzaba a enviar naves interestelares y acababan de encontrarse con el Imperio Vilani. Esta ambientación utiliza las reglas de la cuarta versión de GURPS.
+Traveller5
+
+Traveller5 (T5 para abreviar) es la quinta edición de Traveller y está actualmente en desarrollo. Esta edición estaba prevista para ser lanzada en junio de 2007 con ocasión del trigésimo aniversario de la primera edición, la de 1977. Sin embargo un retraso en la producción ha impedido su publicación. Se prevé que T5 será próximamente publicado junto a Mongoose Traveller.
+Traveller: 2300
+A pesar de su título, este juego de rol de GDW no estaba directamente relacionado con la línea Traveller y no usaba su mismo sistema de reglas ni ambientación. Estaba en realidad enfocado como una secuela de Twilight 2000 que proponía un entorno de ciencia ficción dura en lugar del Space Opera ofrecida por Traveller. Para acabar con la confusión fue posteriormente rebautizado como 2300 AD. 

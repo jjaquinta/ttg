@@ -1,0 +1,73 @@
+Traveller
+
+Traveller är en serie rollspel med science fiction-tema. De olika spelen utspelas alla i samma universum men under olika tidsåldrar. De flesta av spelen utspelas i det intergalaktiska kejsardömet det tredje imperiet. Tillverkaren Game Designers Workshop (GDW) gick 1998 i konkurs varpå rättigheterna återgick till skaparen Marc Miller. Denne sålde sedan licenser till ett flertal olika tillverkare som alla gav ut egna versioner av spelet.
+
+Det tredje imperiet
+
+Det tredje imperiet, från början skapad av Marc Miller, dök för första gången upp i brädspelet Imperium som släpptes 1977 av GDW. Traveller hade från början ingen egen spelvärld utan den introducerades först som officiell Traveller-värld ett par år senare. Inspirationen till Det tredje imperiet var från början den äldre tidens mer äventyrliga och romantiska science fiction, även känd som rymdopera, än den mer moderna varianten som var förhärskande på 1970-talet.
+
+Imperiet självt är ett feodalt kejsardöme som sträcker sig över stora delar av vintergatan ungefär 3.000 år in i framtiden. Dess stora yta i kombination med vissa teknologiska begränsningar, som till exempel att det inte finns något sätt att omedelbart kommunicera över stora avstånd, gör att imperiets olika delar mest på pappret styrs av kejsaren. I realiteten är många delar av imperiet i praktiken självstyrande.
+
+Teknologiskt sett är tredje imperiet både högtstående och förvånansvärt primitivt. För att behålla den rymdoperakänsla som är spelvärldens grund har skaparna avsiktligt uteslutit vissa högteknologiska företeelser som annars är standard inom science fiction-genren, som till exempel artificiell intelligens. Andra, som till exempel rymdfarkoster som kan färdas snabbare än ljusets hastighet, är däremot inkluderade.
+Raser
+
+Även om Det tredje imperiet nästan helt domineras av mänskligheten så finns det ett stort antal icke-mänskliga folkslag i det kända universat. Vanliga sådana är:
+
+    Vargr som är humanoida hundar som är framtagna genom genetisk modellering. Vargr är utpräglade flockdjur.
+    Aslans som är stora humanoida varelser till viss del påminnandes om lejon.
+    Hivers som är sexbenta varelser som inte liknar humanoider över huvud taget.
+    Zhodani som har utvecklats ur människosläktet och har psioniska krafter.
+    Droyne som är kortväxta reptiloida tvåbenta varelser med vingar.
+    K'kree som är kentaurliknande varelser med mycket stark flockkänsla.
+
+Utöver dessa finns det en uppsjö med mindre betydande icke-mänskliga arter.
+Utgåvor
+Traveller (Klassiska Traveller)
+
+Det första Travellerspelet skrevs av Marc Miller och gavs ut för första gången 1977 av Game Designers Workshop. Det använde ett egenproducerat regelsystem av en för perioden traditionell typ. Spelet gavs ut som en serie om åtta häftade böcker i A5-format (kallade "LBB"). Från början fanns det ingen färdig spelvärld utan varje spelledare förväntades skapa en egen. Det var först i och med att Game Designers Workshop började publicera färdigskrivna äventyr som Det tredje imperiet introducerades som Travellers officiella spelvärld.
+
+Det Tredje Imperiet samt dess "communication routes" (kejserliga rymd-farleder som band samman detta nya imperium och ersatte första utgåvans regler för skapande av "space lanes") infördes officiellt i 1981- utgåvan. Även om 1977-upplagan ("proto-Traveller") och 1981-upplagan ("CT", eller Klassiska Traveller) är regelmekaniskt identiska så innebär de nya detaljerade och ganska realistiska miljöbeskrivningarna av en kartlagd galax styrd av ett mänskligt kejsardöme att spelvärlden förändrades betydligt från den minimalistiska förstautgåvan. Förskjutningen från 70-talets framslumpade möten improviserade av spelledaren till 80-talets färdigskrivna äventyr innebar också att sättet som man rollspelade Traveller förändrades. Det finns därför ibland en god anledning att göra en åtskillnad på proto-Traveller och Klassiska Traveller.
+
+1986 upphörde tillverkaren att ge ut material till denna version av spelet. I allt väsentligt är dock denna version av Klassiska Traveller identisk med Mongoose Traveller (se nedan).
+MegaTraveller
+
+MegaTraveller kan regelmässigt ses som version 2 av det ursprungliga Traveller, med ett antal förändringar och förbättringar. De flesta av dessa ändringar hämtades från Traveller-magazinet Journal of Travellers' Aid Society (senare omdöpt till Challenge). Spelet utspelas även detta i Det tredje imperiet men efter tidspannet för klassiska Traveller. I MegaTraveller har kejsaren just mördats och Tredje Imperiet skakas av ett förödande inbördeskrig mellan olika fraktioner som vill ta makten.
+
+MegaTraveller gavs ut 1987 av Game Designers Workshop och lades ner 1992.
+Traveller: The New Era
+
+Traveller: The New Era var Game Designers Workshop försök att bygga vidare på den nya premissen från MegaTravellers krigshärjade version av det Tredje Imperiet. Detta gjorde man genom att skruva förstörelsen ett varv till genom att införa ett vapenteknologiskt experiment som slog fel. I ett försök att slutligen vinna inbördeskriget så tillverkade den ena sidan ett intelligent datavirus som skulle slå ut fiendens operationsförmåga. Dock så löpte det amok och slog istället ut hela imperiet vilket kort därefter kollapsade. Traveller: The New Era beskriver den värld som av de överlevande byggs på askan av det fallna imperiet.
+
+Man introducerade även ett helt nytt regelsystem (som man även använde i det militärinspirerade rollspelet Twilight 2000), och utgåvan räknas som den tredje versionen av Traveller.
+
+Traveller: The New Era blev aldrig populärt och gavs bara ut mellan åren 1993-1995.
+Marc Miller's Traveller
+
+Marc Miller's Traveller gavs 1996 ut av Imperium Games och var baserat på Klassiska Traveller. Spelvärlden var återigen det välbekanta Tredje Imperiet, men denna gången utspelades det under imperiets tidiga dagar. Utgåvan räknas som Travellers fjärde version.
+
+Spelet lades ner 1998, men Imperium Games hann dessförinnan släppa en del äventyr.
+GURPS Traveller
+
+GURPS Traveller gavs ut 1998 av Steve Jackson Games och använder det regelsystem som används i alla GURPS-produkter. Världen är återigen Travellers klassiska imperium (=utan inbördeskrig och civilisationsraserande datavirus).
+
+Åtminstone är det mesta av det Tredje Imperiet sig likt. Emellertid erkändes det material som GURPS publicerade aldrig som officiell canon av Marc Miller och blev därför ifrågasatt av äldre Traveller-fans. Motståndet kunde ibland handla om små detaljer som motsade Marc Millers officiella Traveller- universum men oftast bottnade kritiken i att en del spelledare tyckte att vissa nya GURPS-skildringar (t.ex. av interstellär handel) inte var lika bra som annat inofficiellt material som tidigare publicerats i diverse rollspelstidningar. Även om många Traveller-fans uppskattade GURPS Traveller så var motståndet mot GURPS makt över canon också principiellt betingat. Många Traveller-fans ville nämligen kunna skriva egna Traveller-äventyr och -artiklar som kanske motsade GURPS skildringar och sälja in dessa till rollspelstidningar eller utomstående förlag, och det blev då viktigt att veta vad som var den minsta gemensamma nämnaren i Tredje Imperiet och var den egna friheten som spelledare och författare började. De nya skildringar som GURPS Traveller bidragit med till det Tredje Imperiet kallas allmänt för LorenVerse (efter GURPS Travellers chefsdesigner).
+
+Det skall också sägas att även det tidiga Games Designers Workshop- materialet ibland innehöll självmotsägelser, så det är inte alltid helt lätt att avgöra vad som är canon.
+Traveller 20
+
+Traveller 20 är en utgåva som utspelas i det Tredje Imperiet men ett århundrade innan Klassiska Traveller. Det använder inte originalreglerna utan D20-systemet och gavs ut 2002 av QLI/RPGRealms Publishing.
+Traveller Hero
+
+Traveller Hero är en utgåva som utspelas i samma tid och rum som Klassiska Traveller. Det använder det så kallade Hero System-systemet och gavs ut 2007 av tillverkaren Comstar Games.
+Traveller5
+
+Marc Millers företag Far Future Enterprises skapade 2008 en ny version av Traveller. Rent kronologiskt är det den åttonde Traveller-produkten, men som namnet anger så räknar i vart fall Marc Miller sitt Traveller5 som den femte versionen (så han räknar inte GURPS Traveller, Traveller 20 eller Traveller Hero som officiella versioner).
+
+Traveller5 är en mycket tekniskt komplicerad och detaljerad regelbok på drygt 750 sidor som får räknas som en nisch-produkt. En del erfarna spelledare använder Traveller5 som en sorts referensram för regelkonstruktion, men nya spelare rekommenderas att välja någon av Mongoose båda upplagor.
+Mongoose Traveller
+
+Mongoose Publishing gav 2008 ut en lätt omarbetad nyutgivning av Klassiska Traveller. Man bör därför inte beskriva Mongoose Traveller som en ny version, utan denna ("MgT1e") är en högst medveten retro-klon av första Traveller. De som idag säger att de spelar "CT" kan alltså lika gärna syfta på Mongoose Traveller som på Game Designers Workshop's version från 1981.
+
+Stilmässigt lade sig Mongoose Traveller inledningsvis nära de gamla svarta LBB-häftena. Emellertid innebar Kickstarter och print-on-demand helt nya möjligheter till utgivning av rollspel, och då inte bara i form av billiga svartvita häften utan allt fler konkurrerade med kvalitet. 2016 släppte därför Mongoose en påkostad och sidmässigt utökad 2:a upplaga ("MgT2e") i hårdinbunden fyrfärg. Regelmekaniskt är MgT2e närmast identisk med MgT1e, men Mongoose valde att lyfta ut reglerna för rymdskeppskonstruktion och lägga dessa i den fristående volymen "High Guard". Detta, i kombination med det betydligt högre priset, irriterar en del Traveller-fans som i protest håller fast vid MgT1e. Det är dock värt att notera att reglerna för rymdskeppskonstruktion även under den ursprungliga 1977-upplagan låg i ett separat LBB-häfte betitlat "High Guard".
+
+Mongoose har gett ut en hel del äventyr både till MgT1e och nya MgT2e. Det rör sig ibland om rena återutgivningar av gamla Game Designers Workshop- äventyr (såsom "Aramis - The Traveller Adventure") alternativt kraftigt expanderade återutgivningar (t.ex. "Secrets of the Ancients"), men också om helt nya äventyr (t.ex. "Theories of Everything"). Det är också värt att påpeka att en del rollspelsmaterial numera enbart släpps digitalt, och detta säljer Mongoose som pdf'er över DriveThruRPG. 

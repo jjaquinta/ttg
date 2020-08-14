@@ -1,0 +1,50 @@
+ {
+	"code": "Bw",
+	"initialSyllableTable": {
+		"cvc": 12,
+		"cv": 13,
+		"v": 2,
+		"vc": 9
+	},
+	"firstConsonant": {
+		"p": 42,
+		"w": 66,
+		"s": 24,
+		"t": 24,
+		"d": 6,
+		"k": 30,
+		"b": 15,
+		"f": 9
+	},
+	"vowel": {
+		"a":132,
+		"e":72,
+		"o":12
+	},
+	"wordLength": {
+		"1": 1,
+		"2": 1,
+		"3": 1,
+		"4": 1,
+		"5": 1,
+		"6": 1
+	},
+	"name": "Bwap",
+	"finalSyllableTable": {
+		"cvc": 12,
+		"cv": 13,
+		"v": 2,
+		"vc": 9
+	},
+	"$version": "TravClassic",
+	"lastConsonant": {
+		"-":72,
+		"b":78,
+		"s":24,
+		"t":12,
+		"th":12,
+		"k":6,
+		"r":6,
+		"p":6	
+	}
+}

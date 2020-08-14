@@ -140,13 +140,14 @@ public class PCSBean extends Bean
     
 	protected void firePropertyChange()
 	{
-        PropertyChangeListener[] pcls = getPropertyChangeListeners(queueEvent.getPropertyName());
+        String propertyName = queueEvent.getPropertyName();
+        PropertyChangeListener[] pcls = getPropertyChangeListeners(propertyName);
         PropertyChangeEvent ev = queueEvent;
         queueEvent = null;
         for (int i = 0; i < pcls.length; i++)
         {
             if (debug)
-                System.out.println(shortName(pcls[i])+" hears change on "+shortName(this)+" for "+queueEvent.getPropertyName());
+                System.out.println(shortName(pcls[i])+" hears change on "+shortName(this)+" for "+propertyName);
             if (!mSuspendNotifications)
                 pcls[i].propertyChange(ev);
         }

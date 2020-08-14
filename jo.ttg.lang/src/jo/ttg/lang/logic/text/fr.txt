@@ -1,0 +1,74 @@
+Traveller (jeu de rôle)
+
+Traveller est un jeu de rôle dans le genre space opera créé par Marc Miller, publié en 1977 par la compagnie aujourd'hui disparue Game Designers' Workshop (GDW). Traveller est le troisième jeu de rôle ayant comme thème la science-fiction, les premiers étant Metamorphosis Alpha (en) et Starfaring (en), tous deux publiés en 1976.
+
+Les inspirations dominantes étaient la SF de l'Âge d'or, notamment un grand Empire interstellaire comme dans les romans d'Isaac Asimov ou dans Dune de Frank Herbert. Le jeu se voulait ouvert à plusieurs univers de SF possibles mais était accompagné d'un arrière-fond, l'Imperium qui se développa au fil des années depuis 1977 et qui doit être l'un des univers de SF les plus détaillés.
+
+Des passages de cette section sont obsolètes ou annoncent des événements désormais passés. Améliorez-la ou discutez-en.
+
+La première édition de 1977 se présentait comme d'austères petits livrets noirs, presque sans illustrations, ce qu'on appelle Classic Traveller.
+
+Le système était assez simple et modulaire, utilisant deux dés à six faces. Il fallait faire plus qu'un certain score avec des modificateurs de caractéristiques et de compétences.
+
+L'originalité du système est qu'il ne reposait pas sur une classe de personnage comme Donjons et Dragons, mais sur des compétences.
+
+Le personnage était créé avec 6 caractéristiques tirés avec 2 dés à six faces. Les caractéristiques étaient notées en hexadécimal, ce qui permettait d'utiliser un seul chiffre sur la feuille de personnage (A=10, B=11, …).
+
+Le joueur choisissait combien de temps il laissait son personnage accomplir son service dans des organisations militaires comme la Navy, l'Armée ou les Scouts (plus tard on introduisit des organisations civiles, généralement la pègre). Il y avait une chance de voir son personnage mourir pendant sa création, qui devenait donc une sorte de mini-jeu de hasard préalable au jeu.
+
+Les autres règles montraient comment créer des vaisseaux spatiaux, des mondes et des animaux. Toutes les valeurs étaient uniformisées en un code hexadécimal conventionnel.
+
+En 1987, GDW publia une nouvelle édition appelée MegaTraveller. Du point de vue des règles, il n'y avait surtout qu'une rationalisation des divers suppléments et un système de « tâches » (venu de Twilight 2000) pour évaluer plus précisément non seulement si l'action réussit mais le temps est nécessaire à son accomplissement et la qualité de la réussite. Le grand changement était que l'Imperium était désormais en guerre civile après l'assassinat de l'Empereur Strephon.
+
+En 1993, Frank Chadwick écrivit une nouvelle version, Traveller: The New Era, qui se situe après la fin de la guerre civile, alors qu'un virus informatique a détruit toute la civilisation de l'Imperium et que les planètes sont isolées et à redécouvrir. GDW fit ensuite faillite et cela mit fin à cette édition.
+
+En 1996, Marc Miller écrivit une quatrième édition, appelée Marc Miller's Traveller ou T4. Il proposa de reprendre l'univers de Traveller aux origines de l'Empire, dans une période qui est donc sauvage comme celle de New Era mais sans les aspects cyberpunks sombres de ce jeu.
+
+Traveller existe aussi dans une version avec les règles de GURPS (1998) qui se déroule dans un passé alternatif avant le Virus, après la version Classic Traveller mais sans que l'Empereur ait été assassiné comme dans MegaTraveller.
+
+Il existe aussi une autre version qui utilise un système basé sur un dé à 20 faces, Traveller T20 (2002). Les règles sont celles d'un jeu avec classes de personnages comme D&D et les personnages peuvent être des Universitaires, Barbares, Prospecteurs d'astéroïdes, Mercenaires, Marchands, Nobles, Profession libérale, Bandit, Chasseur de grands fauves, Pilote, Voyageur ou Explorateur. L'univers de l'Imperium est laissé peu détaillé mais il existe une description du secteur Gateway.
+
+En juin 2008 Mongoose Publishing a commencé à publier une nouvelle gamme pour Traveller, surnommée Mongoose Traveller. Cette gamme utilise des règles similaires au Classic Traveller avec certaines modifications. L'univers du troisième Imperium est repris du Classic Traveller, mais d'autres univers sont apparemment prévus. Le moteur du système est publié sous licence ludique libre dans un document de référence du système (DRS, anglais : SRD, system reference document).
+
+On annonce encore d'autres éditions. Marc Miller prépare T5, dont le développement peut être suivi sur un site internet1. GURPS va donner GURPS Interstellar Wars, qui se déroulera aux origines de l'univers de Traveller, à la fondation du Second Empire, au XXIIIe siècle.
+
+En 2016, Jason « Flynn » Kemp publie une version du DRS appelée Cepheus Engine chez Samardan Press2.
+Traductions
+
+Traveller, dans sa version classique, fut traduit :
+
+    en allemand au milieu des années 1980 par Fantasy Productions, avec une vingtaine de suppléments et d'aventures ;
+    en espagnol à la fin des années 1980 par Diseños Orbitales, avec quelques suppléments ;
+    en japonais dans les années 1980 par Hobby Japan, et dans les années 2000 par Kokusaitsushin-sya.
+
+Mongoose Publishing publia une traduction française de sa version de Traveller.
+Univers
+
+L'univers de l'Imperium était censé être assez générique mais il a acquis certains traits propres.
+
+L'Imperium se déroule dans un lointain, lointain futur (dans environ trois milliers d'années) où l'humanité a eu le temps de se répandre à travers des centaines de milliers de mondes. C'est un Empire assez décentralisé où les systèmes peuvent avoir des gouvernements très différents.
+
+La technologie date de la « vieille » SF avant la vogue cyberpunk. Les ordinateurs n'ont pas d'Intelligence artificielle (sauf dans The New Era) et pas de nanotechnologies. Les vaisseaux peuvent faire des « sauts » pour aller plus vite que la lumière, mais ils vont seulement à 1 à 6 parsecs par semaine. Il n'y a pas de communication supra-luminique sans ces vaisseaux (et le transport de courrier audio ou vidéo est donc redevenu le moyen de communication). Il faut au minimum des mois pour avoir des nouvelles de la Capitale impériale quand on est dans les Frontières.
+
+Les personnages jouent généralement des marchands ou mercenaires assez âgés (plus on commençait vieux, plus on avait de compétences), payant les traites de leurs vaisseaux, faisant de la contrebande et du trafic, explorant les mondes. Tout le monde joue donc des Han Solo cyniques, mais on ne joue généralement pas de Luke Skywalker rebelles (sauf peut-être à l'époque de la Rébellion dans MegaTraveller). L'Empire n'est pas vu comme fondamentalement tyrannique, tout au plus parfois corrompu et inégalitaire dans un cadre de jeu résolument cynique et amoral.
+
+Les personnages ont la possibilité d'utiliser des drogues pour améliorer leurs capacités physiques et mentales.
+
+L'Empire est en guerre contre le Consulat Zhodani, une civilisation aristocratique fondée sur les pouvoirs psioniques. Cela a pour conséquence que les pouvoirs psis sont très mal vus dans l'Imperium et que tout télépathe est considéré comme un traître vendu aux Zhodanis. Cette intolérance permet de garder un certain équilibre si des personnages ont de tels pouvoirs, car ils devront les dissimuler.
+
+L'espèce dominante est l'humanité. Elle se divise notamment en Impériaux (tolérants, sauf pour les psis), en Solomani (descendants de Terriens racistes et xénophobes), Zhodani (humains fondant toute leur société sur les psioniques). Il existe également des peuples humains mineurs, comme les Darrians (d'aspect « elfique ») à qui un ouvrage entier fut consacré.
+
+Outre l'Humanité, il existe aussi d'autres races majeures, qui ont eu accès à la technologie du Saut assez tôt pour se répandre dans l'univers :
+
+    Les Aslans : des créatures qui ressemblent à des félins humanoïdes.
+    Les Droynes : de petits reptiles ailés, télépathes.
+    Les Hivers : des créatures manipulatrices qui ressemblent à des étoiles de mer.
+    Les K'kree : des centaures herbivores, qui ont un dégoût instinctif contre tout carnivore.
+    Les Vargrs : des canidés bipèdes, issus de manipulations génétiques.
+
+À côté de ces races majeures, il existe de nombreuses autres races dites mineures, dont :
+
+    Les Chirpers, cousins primitifs des Droynes.
+    Les Vegans, une race voisine de notre Terre.
+
+NB : Le jeu Traveller 2300AD ne se déroule pas dans l'univers de Traveller mais dans le futur de celui de Twilight 2000. Il fut ensuite réédité sous le titre moins trompeur de 2300AD. 

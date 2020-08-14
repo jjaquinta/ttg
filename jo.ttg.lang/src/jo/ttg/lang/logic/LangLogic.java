@@ -16,9 +16,15 @@ public class LangLogic
 {
     private static ILanguageDriver[] DRIVERS = {
             new LangClassicDriver(),
+            new LangTrigramDriver(),
     };
     private static Random mRND = new Random();
 
+    public static ILanguageDriver[] getDrivers()
+    {
+        return DRIVERS;
+    }
+    
     private static ILanguageDriver getDriverFor(JSONObject l)
     {
         for (ILanguageDriver driver : DRIVERS)
@@ -27,7 +33,7 @@ public class LangLogic
         return null;
     }
     
-    private static ILanguageDriver getDriverFor(ILanguage l)
+    public static ILanguageDriver getDriverFor(ILanguage l)
     {
         for (ILanguageDriver driver : DRIVERS)
             if (driver.isDriverFor(l))
@@ -63,15 +69,23 @@ public class LangLogic
     public static void addLanguage(ILanguage lang)
     {
         getAllLanguages().add(lang);
+        RuntimeLogic.updateLanguages();
     }
     
     public static void removeLanguage(ILanguage lang)
     {
         getAllLanguages().remove(lang);
+        RuntimeLogic.updateLanguages();
     }
     
-    @SuppressWarnings("unchecked")
     public static void saveLanguages(File f) throws IOException
+    {
+        JSONObject json = saveToJSON();
+        JSONUtils.writeJSON(f, json);
+    }
+
+    @SuppressWarnings("unchecked")
+    public static JSONObject saveToJSON()
     {
         JSONObject json = new JSONObject();
         JSONArray languages = new JSONArray();
@@ -82,12 +96,17 @@ public class LangLogic
                 JSONObject l = lang.toJSON();
                 languages.add(l);
             }
-        JSONUtils.writeJSON(f, json);
+        return json;
     }
     
     public static void loadLanguages(File f) throws IOException
     {
         JSONObject json = JSONUtils.readJSON(f);
+        readFromJSON(json);
+    }
+    
+    public static void readFromJSON(JSONObject json)
+    {        
         JSONArray languages = (JSONArray)json.get("languages");
         // clean out old
         for (ILanguage lang : getAllLanguages().toArray(new ILanguage[0]))

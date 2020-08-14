@@ -131,4 +131,13 @@ public class IntegerUtils
         }
         */
     }
+
+    public static int[] copy(int[] src)
+    {
+        if (src == null)
+            return null;
+        int[] dest = new int[src.length];
+        System.arraycopy(src, 0, dest, 0, src.length);
+        return dest;
+    }
 }

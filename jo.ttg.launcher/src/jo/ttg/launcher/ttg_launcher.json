@@ -20,6 +20,11 @@
 			"title":"Decker",
 			"hover":"Deckplan Generator",
 			"main": "jo.ttg.deckplans.ui.Decker"
+		},
+		{
+			"title":"Linguistics",
+			"hover":"Language Generator",
+			"main": "jo.ttg.lang.ui.Linguistics"
 		}
 	],
 	"beta":[

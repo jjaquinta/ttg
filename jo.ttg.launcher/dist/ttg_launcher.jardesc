@@ -21,6 +21,7 @@
         <javaElement handleIdentifier="=jo.ttg.core.ui.swing/src"/>
         <javaElement handleIdentifier="=jo.ttg.gen.sw.ui/src"/>
         <javaElement handleIdentifier="=jo.ttg.gen.imp.ui.swing/src"/>
+        <javaElement handleIdentifier="=jo.ttg.lang/src"/>
         <javaElement handleIdentifier="=jo.vecmath/src"/>
         <javaElement handleIdentifier="=jo.ttg.adv/src"/>
         <javaElement handleIdentifier="=jo.ttg.launcher/src"/>

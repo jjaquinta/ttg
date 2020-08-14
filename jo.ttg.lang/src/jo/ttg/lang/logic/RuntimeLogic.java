@@ -31,6 +31,11 @@ public class RuntimeLogic
         loadSettings();
     }
     
+    public static void save()
+    {
+        saveSettings();
+    }
+    
     public static void term()
     {
         saveSettings();
@@ -76,8 +81,14 @@ public class RuntimeLogic
     
     private static void serializeFromSettings()
     {
-        if (mRuntime.getSettings().containsKey("selectedLanguage"))
-            updateSelectedLanguage(mRuntime.getSettings().getString("selectedLanguage"));
+        JSONObject settings = mRuntime.getSettings();
+        if (settings.containsKey("languages"))
+        {
+            LangLogic.readFromJSON(((JSONObject)settings.get("languages")));
+            RuntimeLogic.updateLanguages();
+        }
+        if (settings.containsKey("selectedLanguage"))
+            updateSelectedLanguage(settings.getString("selectedLanguage"));
     }
     
     private static void serializeToSettings()
@@ -86,6 +97,7 @@ public class RuntimeLogic
             mRuntime.getSettings().remove("selectedLanguage");
         else
             mRuntime.getSettings().put("selectedLanguage", mRuntime.getSelectedLanguage().getName());
+        mRuntime.getSettings().put("languages", LangLogic.saveToJSON());
     }
     
     public static Object getSetting(String path)
@@ -103,7 +115,7 @@ public class RuntimeLogic
         PCSBeanUtils.listen(RuntimeLogic.getInstance(), prop, action);
     }
     
-    private static void updateLanguages()
+    static void updateLanguages()
     {
         String selected = null;
         if (mRuntime.getSelectedLanguage() != null)

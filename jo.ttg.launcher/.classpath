@@ -19,5 +19,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.util.ui.swing"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.vecmath"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.util.net"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jo.ttg.lang"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
