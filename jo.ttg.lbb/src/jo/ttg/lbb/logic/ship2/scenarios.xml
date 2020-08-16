@@ -1,0 +1,236 @@
+<scenarios>
+  <scenario id="test" name="Test Scenario">
+  	<designs>
+  		<design id="std001" shipName="Scout/Courier" shipClass="Scout" size="100"
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  			<hardpoints>
+  			   <hardpoint turretSize="2" missiles="1" sandcasters="1" beamLasers="" pulseLasers="" />
+  			</hardpoints>
+  		</design>
+  		<design id="std002" shipName="Free Trader" shipClass="Merchant" size="200" 
+  			jumpType="A" manType="A" powType="A" fuelSize="30" comp="1" cabins="10" berths="20"
+  			holdSize="82" cost="37080000" streamlined="true" military="false" >
+  			<hardpoints>
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" sandcasters="2" />
+  			</hardpoints>
+  		</design>
+  		<design id="std004" shipName="Subsidized Merchant" shipClass="Merchant" size="400" 
+  			jumpType="C" manType="C" powType="C" fuelSize="50" comp="1" cabins="13" berths="9"
+  			holdSize="200" cost="101030000" streamlined="true" military="false" >
+  			<hardpoints>
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" sandcasters="2" />
+  			</hardpoints>
+  		</design>
+  		<design id="std005" shipName="Subsidized Liner" shipClass="Merchant" size="600" 
+  			jumpType="J" manType="C" powType="J" fuelSize="210" comp="3" cabins="30" berths="20"
+  			holdSize="129" cost="236970000" streamlined="false" military="false" >
+  			<hardpoints>
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" missiles="2" />
+  			   <hardpoint turretSize="2" sandcasters="2" />
+  			   <hardpoint turretSize="2" sandcasters="2" />
+  			</hardpoints>
+  		</design>
+  		<design id="std003" shipName="Yacht" shipClass="Noble" size="200" 
+  			jumpType="A" manType="A" powType="A" fuelSize="50" comp="1" cabins="14" berths="0"
+  			holdSize="11" cost="51057000" streamlined="false" military="false" >
+  			<hardpoints>
+  			   <hardpoint turretSize="1" pulseLasers="1" />
+  			   <hardpoint turretSize="3" sandcasters="3" />
+  			</hardpoints>
+  		</design>
+  		<design id="std006" shipName="Mercenary Cruiser" shipClass="Mercenary" size="800" 
+  			jumpType="M" manType="M" powType="M" fuelSize="318" comp="5" cabins="25" berths="0"
+  			holdSize="80" cost="445950000" streamlined="false" military="false" >
+  			<hardpoints>
+  			   <hardpoint turretSize="2" pulseLasers="2" />
+  			   <hardpoint turretSize="2" pulseLasers="2" />
+  			   <hardpoint turretSize="3" missiles="3" />
+  			   <hardpoint turretSize="3" missiles="3" />
+  			   <hardpoint turretSize="3" missiles="3" />
+  			   <hardpoint turretSize="3" missiles="3" />
+  			   <hardpoint turretSize="3" sandcasters="3" />
+  			   <hardpoint turretSize="3" sandcasters="3" />
+  			</hardpoints>
+  		</design>
+  		<design id="std007" shipName="Patrol Cruiser" shipClass="Naval" size="400" 
+  			jumpType="F" manType="H" powType="H" fuelSize="120" comp="3" cabins="12" berths="4"
+  			holdSize="50" cost="221040000" streamlined="true" military="true" >
+  			<hardpoints>
+  			   <hardpoint turretSize="3" pulseLasers="3" />
+  			   <hardpoint turretSize="3" pulseLasers="3" />
+  			   <hardpoint turretSize="3" missiles="3" />
+  			   <hardpoint turretSize="3" missiles="3" />
+  			</hardpoints>
+  		</design>
+  		<!-- 
+  		<design id="std008" shipName="Launch" shipClass="Small Craft" size="20" 
+  			jumpType="A" manType="A" powType="A" fuelSize="30" comp="1" cabins="10" berths="20"
+  			holdSize="82" cost="37080000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std009" shipName="Ship's Boat" shipClass="Small Craft" size="30" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std010" shipName="Slow Boat" shipClass="Small Craft" size="30" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std011" shipName="Pinnace" shipClass="Small Craft" size="40" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std012" shipName="Slow Pinnace" shipClass="Small Craft" size="40" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std013" shipName="Cutter" shipClass="Small Craft" size="50" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std014" shipName="Shuttle" shipClass="Small Craft" size="95" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		<design id="std015" shipName="Fighter" shipClass="Naval" size="10" 
+  			jumpType="A" manType="A" powType="A" fuelSize="40" holdSize="3" cabins="4" berths="0"
+  			comp="1bis" cost="29430000" streamlined="true" military="false" >
+  		</design>
+  		 -->
+  	</designs>
+  	<sides>
+  		<side id="side01" name="Intruder">
+  			<ships>
+  			  <ship id="s2.1" name="Blue Leader" design="std006" sx="1000" sy="0" sz="0" pilotSkill="2" missiles="36" sands="18">
+  			    <turrets>
+	  			   <turret gunnerSkill="1" />
+	  			   <turret gunnerSkill="1" />
+	  			   <turret missiles="9" gunnerSkill="1" />
+	  			   <turret missiles="9" gunnerSkill="1" />
+	  			   <turret missiles="9" gunnerSkill="1" />
+	  			   <turret missiles="9" gunnerSkill="1" />
+	  			   <turret sand="9" gunnerSkill="1" />
+	  			   <turret sand="9" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 2</program>
+  			    	<program>Multi-target 2</program>
+  			    	<program>Auto/evade</program>
+  			    </loadedPrograms>
+  			    <storedPrograms>
+  			    	<program>Return Fire</program>
+  			    	<program>Anti-Missile</program>
+  			    	<program>Gunner Interact</program>
+  			    </storedPrograms>  			    
+  			  </ship>
+  			  <ship id="s2.2" name="Blue Wing 1" design="std001" sx="1100" sy="100" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			  </ship>
+  			  <ship id="s2.3" name="Blue Wing 2" design="std001" sx="1100" sy="-100" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			  </ship>
+  			</ships>
+  		</side>
+  		<side id="side02" name="Native">
+  			<ships>
+  			  <ship id="s1.1" name="Red Leader" design="std007" sx="-1000" sy="0" sz="0" pilotSkill="2" missiles="18">
+  			    <turrets>
+	  			   <turret gunnerSkill="1" />
+	  			   <turret gunnerSkill="1" />
+	  			   <turret missiles="9" gunnerSkill="1" />
+	  			   <turret missiles="9" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 2</program>
+  			    	<program>Multi-target 2</program>
+  			    	<program>Auto/evade</program>
+  			    </loadedPrograms>
+  			    <storedPrograms>
+  			    	<program>Return Fire</program>
+  			    	<program>Anti-Missile</program>
+  			    	<program>Gunner Interact</program>
+  			    </storedPrograms>  			    
+  			  </ship>
+  			  <ship id="s1.2" name="Red Wing 1" design="std001" sx="-1100" sy="100" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 1</program>
+  			    </loadedPrograms>
+  			  </ship>
+  			  <ship id="s1.3" name="Red Wing 2" design="std001" sx="-1100" sy="-100" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 1</program>
+  			    </loadedPrograms>
+  			  </ship>
+  			  <ship id="s1.4" name="Red Wing 3" design="std001" sx="-1100" sy="200" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 1</program>
+  			    </loadedPrograms>
+  			  </ship>
+  			  <ship id="s1.5" name="Red Wing 4" design="std001" sx="-1100" sy="-200" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 1</program>
+  			    </loadedPrograms>
+  			  </ship>
+  			  <ship id="s1.6" name="Red Wing 5" design="std001" sx="-1100" sy="300" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 1</program>
+  			    </loadedPrograms>
+  			  </ship>
+  			  <ship id="s1.7" name="Red Wing 6" design="std001" sx="-1100" sy="-300" sz="0" pilotSkill="2" missiles="12" sands="6">
+  			    <turrets>
+  			        <turret missiles="6" sand="3" gunnerSkill="1" />
+  			    </turrets>
+  			    <loadedPrograms>
+  			    	<program>Launch</program>
+  			    	<program>Target</program>
+  			    	<program>Maneuver/evade 1</program>
+  			    </loadedPrograms>
+  			  </ship>
+  			</ships>
+  		</side>
+  	</sides>
+  	<planets>
+  		<planet id="planet1" name="Daitona" sx="0" sy="0" sz="0" vx="0" vy="0" vz="0" size="4" density="1.0" atmosphere="true"/>
+  	</planets>
+  </scenario>
+</scenarios>
