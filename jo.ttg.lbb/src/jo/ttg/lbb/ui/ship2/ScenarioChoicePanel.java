@@ -9,16 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
 import jo.ttg.lbb.data.ship2.Combat;
 import jo.ttg.lbb.data.ship2.Scenario;
 import jo.ttg.lbb.logic.ship2.CombatLogic;
 import jo.ttg.lbb.logic.ship2.ScenarioLogic;
-import jo.ttg.lbb.ui.util.TableLayout;
+import jo.util.ui.swing.TableLayout;
 import jo.util.utils.obj.StringUtils;
 import jo.util.utils.xml.XMLUtils;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 
 @SuppressWarnings("serial")
 public class ScenarioChoicePanel extends Container

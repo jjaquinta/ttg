@@ -12,7 +12,7 @@ import java.awt.event.ComponentListener;
 import jo.ttg.lbb.data.ship2.Combat;
 import jo.ttg.lbb.logic.ship2.CombatLogic;
 import jo.ttg.lbb.logic.ship2.PhaseLogic;
-import jo.ttg.lbb.ui.util.TableLayout;
+import jo.util.ui.swing.TableLayout;
 
 @SuppressWarnings("serial")
 public class CombatPanel extends Container

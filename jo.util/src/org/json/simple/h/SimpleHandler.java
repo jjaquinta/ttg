@@ -32,6 +32,8 @@ public class SimpleHandler implements IToJSONHandler, IFromJSONHandler
     {
         if ((o instanceof IJSONAble))
             return ((IJSONAble)o).toJSON();
+        if (o instanceof Character)
+            return o.toString();
         return o;
     }
 

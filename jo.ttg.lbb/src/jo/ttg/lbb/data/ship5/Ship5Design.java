@@ -3,10 +3,9 @@ package jo.ttg.lbb.data.ship5;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.simple.FromJSONLogic;
 import org.json.simple.IJSONAble;
 import org.json.simple.JSONObject;
-import org.json.simple.ToJSONLogic;
+import org.json.simple.h.BeanHandler;
 
 import jo.util.beans.PCSBean;
 
@@ -48,11 +47,119 @@ public class Ship5Design extends PCSBean implements IJSONAble
     public static final char            MAJOR_MESON               = 'M';
     public static final char            MAJOR_PARTICLE            = 'P';
 
+    public static final String[] TYPE_PRIMARY = {
+            "A - Merchant",
+            "B - Battle",
+            "C - Cruiser; Carrier",
+            "D - Destroyer",
+            "E - Escort",
+            "F - Frigate; Fighter",
+            "G - Gig; Refinery",
+            "H - ",
+            "I,J - Intruder",
+            "K - Pinnace",
+            "L - Corvette; Lab",
+            "M - Merchant",
+            "N - ",
+            "P - Planetoid",
+            "Q - Auxiliary",
+            "R - Liner",
+            "S - Scout; Station",
+            "T - Tanker; Tender",
+            "U - ",
+            "V - ",
+            "W - Barge",
+            "X - Express",
+            "Y - Yacht",
+            "Z - ",
+    };
+
+    public static final String[] TYPE_QUALIFIER = {
+            "A - Armored",
+            "B - Battle; Boat",
+            "C - Cruiser; Close",
+            "D - Destroyer",
+            "E - Escort",
+            "F - Fast; Fleet",
+            "G - Gunned",
+            "H - Heavy",
+            "I,J - ",
+            "K - ",
+            "L - Leader; Light",
+            "M - Missile",
+            "N - Non-standard",
+            "P - Provincial",
+            "Q - Decoy",
+            "R - Raider",
+            "S - Strike",
+            "T - Troop; Transport",
+            "U - Unpowered",
+            "V - Vehicle",
+            "W - ",
+            "X - ",
+            "Y - Shuttle; Cutter",
+            "Z - Experimental",
+    };
+
+    public static final String[] CONFIG_NAMES = {
+        "1 Needle/Wedge",
+        "2 Cone",
+        "3 Cylinder",
+        "4 Close",
+        "5 Sphere",
+        "6 Flat Sphere",
+        "7 Dispersed",
+        "8 Planetoid",
+        "9 Buffered Planetoid",
+    };
+
+    public static final String[] COMPUTER_NAMES = {
+            "0 None",
+            "1 Computer I",
+            "A Computer Ifib",
+            "R Computer Ibis",
+            "2 Computer II",
+            "B Computer IIfib",
+            "S Computer IIbis",
+            "3 Computer III",
+            "C Computer IIIbis",
+            "4 Computer IV",
+            "D Computer IVbis",
+            "5 Computer V",
+            "E Computer Vbis",
+            "6 Computer VI",
+            "F Computer VIbis",
+            "7 Computer VII",
+            "G Computer VIIbis",
+            "8 Computer VIII",
+            "H Computer VIIIbis",
+            "9 Computer IX",
+            "J Computer IXbis",
+    };
+
+    public static final String[] MAJOR_NAMES = {
+        " None",
+        "Meson",
+        "Particle Accelerator",
+    };
+
+    public static final String[] MAJOR_CODES = {
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+    };
+    
     private String                      mShipName;
     private String                      mShipType;
     private String                      mShipURI;
     private String                      mClassName;
-    private boolean                     mFirstInClass;
     private String                      mOwnerURI;
     private String                      mShipyardURI;
     private int                         mTechLevel;
@@ -101,20 +208,33 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public Ship5Design()
     {
-
+        mShipName = "Lollipop";
+        mShipType = "ML";
+        mShipURI = "";
+        mClassName = "Sweetums";
+        mOwnerURI = "";
+        mShipyardURI = "";
+        mTechLevel = 15;
+        mHullTonnage = 1000;
+        mHullConfigurationCode = CONFIG_CLOSE;
+        mComputerCode = COMPUTER_1;
+        mMajorWeapon = MAJOR_NONE;
+        mScreenNuclearCode = '0';
+        mScreenMesonCode = '0';
+        mScreenForceCode = '0';
     }
     
     // io
     @Override
     public JSONObject toJSON()
     {
-        return (JSONObject)ToJSONLogic.toJSON(this);
+        return BeanHandler.doToJSON(this);
     }
     
     @Override
     public void fromJSON(JSONObject o)
     {
-        FromJSONLogic.fromJSONInto(o, this);
+        BeanHandler.doFromJSONInto(o, this);
     }
 
     // utility
@@ -217,6 +337,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
     {
         queuePropertyChange("shipName", mShipName, shipName);
         mShipName = shipName;
+        firePropertyChange();
     }
 
     public String getClassName()
@@ -226,19 +347,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setClassName(String className)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("className", mClassName, className);
         mClassName = className;
-    }
-
-    public boolean isFirstInClass()
-    {
-        return mFirstInClass;
-    }
-
-    public void setFirstInClass(boolean firstInClass)
-    {
-        queuePropertyChange("shipName", mShipName, shipName);
-        mFirstInClass = firstInClass;
+        firePropertyChange();
     }
 
     public String getOwnerURI()
@@ -248,8 +359,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setOwnerURI(String ownerURI)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("ownerURI", mOwnerURI, ownerURI);
         mOwnerURI = ownerURI;
+        firePropertyChange();
     }
 
     public String getShipyardURI()
@@ -259,8 +371,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setShipyardURI(String shipyardURI)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("shipyardURI", mShipyardURI, shipyardURI);
         mShipyardURI = shipyardURI;
+        firePropertyChange();
     }
 
     public int getTechLevel()
@@ -270,8 +383,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTechLevel(int techLevel)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("techLevel", mTechLevel, techLevel);
         mTechLevel = techLevel;
+        firePropertyChange();
     }
 
     public char getHullConfigurationCode()
@@ -281,8 +395,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setHullConfigurationCode(char hullConfigurationCode)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("hullConfigurationCode", mHullConfigurationCode, hullConfigurationCode);
         mHullConfigurationCode = hullConfigurationCode;
+        firePropertyChange();
     }
 
     public int getManeuverDriveNumber()
@@ -292,8 +407,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setManeuverDriveNumber(int maneuverDriveNumber)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("maneuverDriveNumber", mManeuverDriveNumber, maneuverDriveNumber);
         mManeuverDriveNumber = maneuverDriveNumber;
+        firePropertyChange();
     }
 
     public int getJumpDriveNumber()
@@ -303,8 +419,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setJumpDriveNumber(int jumpDriveNumber)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("jumpDriveNumber", mJumpDriveNumber, jumpDriveNumber);
         mJumpDriveNumber = jumpDriveNumber;
+        firePropertyChange();
     }
 
     public int getPowerPlantNumber()
@@ -314,7 +431,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setPowerPlantNumber(int powerPlantNumber)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("powerPlantNumber", mPowerPlantNumber, powerPlantNumber);
         mPowerPlantNumber = powerPlantNumber;
         firePropertyChange();
     }
@@ -326,7 +443,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setHullTonnage(int hullTonnage)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("hullTonnage", mHullTonnage, hullTonnage);
         mHullTonnage = hullTonnage;
         firePropertyChange();
     }
@@ -338,7 +455,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setFuelTankage(int fuelTankage)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("fuelTankage", mFuelTankage, fuelTankage);
         mFuelTankage = fuelTankage;
         firePropertyChange();
     }
@@ -350,7 +467,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setFuelScoops(boolean fuelScoops)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("fuelScoops", mFuelScoops, fuelScoops);
         mFuelScoops = fuelScoops;
         firePropertyChange();
     }
@@ -362,7 +479,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setFuelPurification(boolean fuelPurification)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("fuelPurification", mFuelPurification, fuelPurification);
         mFuelPurification = fuelPurification;
         firePropertyChange();
     }
@@ -374,7 +491,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBridgeAuxiliaryCount(int bridgeAuxiliaryCount)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bridgeAuxiliaryCount", mBridgeAuxiliaryCount, bridgeAuxiliaryCount);
         mBridgeAuxiliaryCount = bridgeAuxiliaryCount;
         firePropertyChange();
     }
@@ -386,7 +503,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setComputerCode(char computerCode)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("computerCode", mComputerCode, computerCode);
         mComputerCode = computerCode;
         firePropertyChange();
     }
@@ -398,7 +515,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setArmorFactors(int armorFactors)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("armorFactors", mArmorFactors, armorFactors);
         mArmorFactors = armorFactors;
         firePropertyChange();
     }
@@ -410,7 +527,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setMajorWeapon(char majorWeapon)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("majorWeapon", mMajorWeapon, majorWeapon);
         mMajorWeapon = majorWeapon;
         firePropertyChange();
     }
@@ -422,7 +539,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setMajorCode(char majorCode)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("majorCode", mMajorCode, majorCode);
         mMajorCode = majorCode;
         firePropertyChange();
     }
@@ -434,7 +551,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays100Meson(int bays100Meson)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays100Meson", mBays100Meson, bays100Meson);
         mBays100Meson = bays100Meson;
         firePropertyChange();
     }
@@ -446,7 +563,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays100Particle(int bays100Particle)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays100Particle", mBays100Particle, bays100Particle);
         mBays100Particle = bays100Particle;
         firePropertyChange();
     }
@@ -458,7 +575,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays100Repulsor(int bays100Repulsor)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays100Repulsor", mBays100Repulsor, bays100Repulsor);
         mBays100Repulsor = bays100Repulsor;
         firePropertyChange();
     }
@@ -470,7 +587,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays100Missile(int bays100Missile)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays100Missile", mBays100Missile, bays100Missile);
         mBays100Missile = bays100Missile;
         firePropertyChange();
     }
@@ -482,7 +599,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays50Meson(int bays50Meson)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays50Meson", mBays50Meson, bays50Meson);
         mBays50Meson = bays50Meson;
         firePropertyChange();
     }
@@ -494,7 +611,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays50Particle(int bays50Particle)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays50Particle", mBays50Particle, bays50Particle);
         mBays50Particle = bays50Particle;
         firePropertyChange();
     }
@@ -506,7 +623,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays50Repulsor(int bays50Repulsor)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays50Repulsor", mBays50Repulsor, bays50Repulsor);
         mBays50Repulsor = bays50Repulsor;
         firePropertyChange();
     }
@@ -518,7 +635,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays50Missile(int bays50Missile)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays50Missile", mBays50Missile, bays50Missile);
         mBays50Missile = bays50Missile;
         firePropertyChange();
     }
@@ -530,7 +647,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays50Plasma(int bays50Plasma)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays50Plasma", mBays50Plasma, bays50Plasma);
         mBays50Plasma = bays50Plasma;
         firePropertyChange();
     }
@@ -542,7 +659,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBays50Fusion(int bays50Fusion)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("bays50Fusion", mBays50Fusion, bays50Fusion);
         mBays50Fusion = bays50Fusion;
         firePropertyChange();
     }
@@ -554,7 +671,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretMissile(int turretMissile)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretMissile", mTurretMissile, turretMissile);
         mTurretMissile = turretMissile;
         firePropertyChange();
     }
@@ -566,7 +683,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretBeamLaser(int turretBeamLaser)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretBeamLaser", mTurretBeamLaser, turretBeamLaser);
         mTurretBeamLaser = turretBeamLaser;
         firePropertyChange();
     }
@@ -578,7 +695,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretPulseLaser(int turretPulseLaser)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretPulseLaser", mTurretPulseLaser, turretPulseLaser);
         mTurretPulseLaser = turretPulseLaser;
         firePropertyChange();
     }
@@ -590,7 +707,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretPlasmaGun(int turretPlasmaGun)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretPlasmaGun", mTurretPlasmaGun, turretPlasmaGun);
         mTurretPlasmaGun = turretPlasmaGun;
         firePropertyChange();
     }
@@ -602,7 +719,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretFusionGun(int turretFusionGun)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretFusionGun", mTurretFusionGun, turretFusionGun);
         mTurretFusionGun = turretFusionGun;
         firePropertyChange();
     }
@@ -614,7 +731,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretSandcaster(int turretSandcaster)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretSandcaster", mTurretSandcaster, turretSandcaster);
         mTurretSandcaster = turretSandcaster;
         firePropertyChange();
     }
@@ -626,7 +743,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setTurretParticle(int turretParticle)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("turretParticle", mTurretParticle, turretParticle);
         mTurretParticle = turretParticle;
         firePropertyChange();
     }
@@ -638,7 +755,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setBarbetteParticle(int barbetteParticleGun)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("barbetteParticleGun", mBarbetteParticle, barbetteParticleGun);
         mBarbetteParticle = barbetteParticleGun;
         firePropertyChange();
     }
@@ -650,7 +767,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setScreenNuclearCode(char screenNuclearCode)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("screenNuclearCode", mScreenNuclearCode, screenNuclearCode);
         mScreenNuclearCode = screenNuclearCode;
         firePropertyChange();
     }
@@ -662,7 +779,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setScreenMesonCode(char screenMesonCode)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("screenMesonCode", mScreenMesonCode, screenMesonCode);
         mScreenMesonCode = screenMesonCode;
         firePropertyChange();
     }
@@ -674,7 +791,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setScreenForceCode(char screenForceCode)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("screenForceCode", mScreenForceCode, screenForceCode);
         mScreenForceCode = screenForceCode;
         firePropertyChange();
     }
@@ -686,7 +803,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setShipURI(String shipURI)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("shipURI", mShipURI, shipURI);
         mShipURI = shipURI;
         firePropertyChange();
     }
@@ -707,9 +824,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setShipName(String shipName)
-        {
-            mShipName = shipName;
-        }
+    {
+        queuePropertyChange("shipName", mShipName, shipName);
+        mShipName = shipName;
+        firePropertyChange();
+    }
 
         public String getShipURI()
         {
@@ -717,9 +836,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setShipURI(String shipURI)
-        {
-            mShipURI = shipURI;
-        }
+    {
+        queuePropertyChange("shipURI", mShipURI, shipURI);
+        mShipURI = shipURI;
+        firePropertyChange();
+    }
 
         public int getHullTonnage()
         {
@@ -727,9 +848,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setHullTonnage(int hullTonnage)
-        {
-            mHullTonnage = hullTonnage;
-        }
+    {
+        queuePropertyChange("hullTonnage", mHullTonnage, hullTonnage);
+        mHullTonnage = hullTonnage;
+        firePropertyChange();
+    }
 
         public int getCrew()
         {
@@ -737,9 +860,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setCrew(int crew)
-        {
-            mCrew = crew;
-        }
+    {
+        queuePropertyChange("crew", mCrew, crew);
+        mCrew = crew;
+        firePropertyChange();
+    }
 
         public int getQuantity()
         {
@@ -747,9 +872,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setQuantity(int quantity)
-        {
-            mQuantity = quantity;
-        }
+    {
+        queuePropertyChange("quantity", mQuantity, quantity);
+        mQuantity = quantity;
+        firePropertyChange();
+    }
 
         public long getCost()
         {
@@ -757,9 +884,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setCost(long cost)
-        {
-            mCost = cost;
-        }
+    {
+        queuePropertyChange("cost", mCost, cost);
+        mCost = cost;
+        firePropertyChange();
+    }
 
         public boolean isVehicle()
         {
@@ -767,9 +896,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setVehicle(boolean vehicle)
-        {
-            mVehicle = vehicle;
-        }
+    {
+        queuePropertyChange("vehicle", mVehicle, vehicle);
+        mVehicle = vehicle;
+        firePropertyChange();
+    }
     }
 
     public class Ship5DesignLaunchTube
@@ -783,9 +914,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setCapacity(int capacity)
-        {
-            mCapacity = capacity;
-        }
+    {
+        queuePropertyChange("capacity", mCapacity, capacity);
+        mCapacity = capacity;
+        firePropertyChange();
+    }
 
         public int getQuantity()
         {
@@ -793,9 +926,11 @@ public class Ship5Design extends PCSBean implements IJSONAble
         }
 
         public void setQuantity(int quantity)
-        {
-            mQuantity = quantity;
-        }
+    {
+        queuePropertyChange("quantity", mQuantity, quantity);
+        mQuantity = quantity;
+        firePropertyChange();
+    }
     }
 
     public List<Ship5DesignSubCraft> getSubCraft()
@@ -805,7 +940,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setSubCraft(List<Ship5DesignSubCraft> subCraft)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("subCraft", mSubCraft, subCraft);
         mSubCraft = subCraft;
         firePropertyChange();
     }
@@ -817,7 +952,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setLaunchTubes(List<Ship5DesignLaunchTube> launchTubes)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("launchTubes", mLaunchTubes, launchTubes);
         mLaunchTubes = launchTubes;
         firePropertyChange();
     }
@@ -829,7 +964,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setCrewTroops(int crewTroops)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("crewTroops", mCrewTroops, crewTroops);
         mCrewTroops = crewTroops;
         firePropertyChange();
     }
@@ -841,7 +976,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setStaterooms(int staterooms)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("staterooms", mStaterooms, staterooms);
         mStaterooms = staterooms;
         firePropertyChange();
     }
@@ -853,7 +988,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setLowBerths(int lowBerths)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("lowBerths", mLowBerths, lowBerths);
         mLowBerths = lowBerths;
         firePropertyChange();
     }
@@ -865,7 +1000,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setEmergencyLowBerths(int emergencyLowBerths)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("emergencyLowBerths", mEmergencyLowBerths, emergencyLowBerths);
         mEmergencyLowBerths = emergencyLowBerths;
         firePropertyChange();
     }
@@ -877,8 +1012,9 @@ public class Ship5Design extends PCSBean implements IJSONAble
 
     public void setShipType(String shipType)
     {
-        queuePropertyChange("shipName", mShipName, shipName);
+        queuePropertyChange("shipType", mShipType, shipType);
         mShipType = shipType;
         firePropertyChange();
     }
 }
+

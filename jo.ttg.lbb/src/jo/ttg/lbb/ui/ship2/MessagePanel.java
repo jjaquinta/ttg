@@ -11,7 +11,7 @@ import java.beans.PropertyChangeListener;
 
 import jo.ttg.lbb.data.ship2.Combat;
 import jo.ttg.lbb.data.ship2.CombatMessage;
-import jo.ttg.lbb.ui.util.TableLayout;
+import jo.util.ui.swing.TableLayout;
 
 @SuppressWarnings("serial")
 public class MessagePanel extends Container implements PropertyChangeListener, ItemListener

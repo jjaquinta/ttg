@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import jo.ttg.lbb.logic.ship5.Ship5DesignLogic;
+import jo.util.beans.PCSBean;
 
-public class Ship5Stats
+public class Ship5Stats extends PCSBean
 {
     private Ship5Design mDesign;
     private List<String> mErrors = new ArrayList<String>();
@@ -613,7 +614,9 @@ public class Ship5Stats
 
     public void setDesign(Ship5Design design)
     {
+        queuePropertyChange("design", mDesign, design);
         mDesign = design;
+        firePropertyChange();
     }
 
     public List<String> getErrors()
@@ -623,7 +626,9 @@ public class Ship5Stats
 
     public void setErrors(List<String> errors)
     {
+        queuePropertyChange("errors", mErrors, errors);
         mErrors = errors;
+        firePropertyChange();
     }
 
     public Map<String, Integer> getSpaceUsage()
@@ -633,7 +638,9 @@ public class Ship5Stats
 
     public void setSpaceUsage(Map<String, Integer> spaceUsage)
     {
+        queuePropertyChange("spaceUsage", mSpaceUsage, spaceUsage);
         mSpaceUsage = spaceUsage;
+        firePropertyChange();
     }
 
     public Map<String, Integer> getFuelUsage()
@@ -643,7 +650,9 @@ public class Ship5Stats
 
     public void setFuelUsage(Map<String, Integer> fuelUsage)
     {
+        queuePropertyChange("fuelUsage", mFuelUsage, fuelUsage);
         mFuelUsage = fuelUsage;
+        firePropertyChange();
     }
 
     public Map<String, Long> getCostUsage()
@@ -653,7 +662,9 @@ public class Ship5Stats
 
     public void setCostUsage(Map<String, Long> costUsage)
     {
+        queuePropertyChange("costUsage", mCostUsage, costUsage);
         mCostUsage = costUsage;
+        firePropertyChange();
     }
 
     public Map<String, Integer> getEnergyUsage()
@@ -663,7 +674,9 @@ public class Ship5Stats
 
     public void setEnergyUsage(Map<String, Integer> energyUsage)
     {
+        queuePropertyChange("Integer> energyUsage", mEnergyUsage, energyUsage);
         mEnergyUsage = energyUsage;
+        firePropertyChange();
     }
 
     public int getCrewCommand()
@@ -673,7 +686,9 @@ public class Ship5Stats
 
     public void setCrewCommand(int crewCommand)
     {
+        queuePropertyChange("crewCommand", mCrewCommand, crewCommand);
         mCrewCommand = crewCommand;
+        firePropertyChange();
     }
 
     public int getCrewExecutive()
@@ -683,7 +698,9 @@ public class Ship5Stats
 
     public void setCrewExecutive(int crewExecutive)
     {
+        queuePropertyChange("crewExecutive", mCrewExecutive, crewExecutive);
         mCrewExecutive = crewExecutive;
+        firePropertyChange();
     }
 
     public int getCrewComputer()
@@ -693,7 +710,9 @@ public class Ship5Stats
 
     public void setCrewComputer(int crewComputer)
     {
+        queuePropertyChange("crewComputer", mCrewComputer, crewComputer);
         mCrewComputer = crewComputer;
+        firePropertyChange();
     }
 
     public int getCrewNavigation()
@@ -703,7 +722,9 @@ public class Ship5Stats
 
     public void setCrewNavigation(int crewNavigation)
     {
+        queuePropertyChange("crewNavigation", mCrewNavigation, crewNavigation);
         mCrewNavigation = crewNavigation;
+        firePropertyChange();
     }
 
     public int getCrewMedicalOfficer()
@@ -713,7 +734,9 @@ public class Ship5Stats
 
     public void setCrewMedicalOfficer(int crewMedicalOfficer)
     {
+        queuePropertyChange("crewMedicalOfficer", mCrewMedicalOfficer, crewMedicalOfficer);
         mCrewMedicalOfficer = crewMedicalOfficer;
+        firePropertyChange();
     }
 
     public int getCrewCommunications()
@@ -723,7 +746,9 @@ public class Ship5Stats
 
     public void setCrewCommunications(int crewCommunications)
     {
+        queuePropertyChange("crewCommunications", mCrewCommunications, crewCommunications);
         mCrewCommunications = crewCommunications;
+        firePropertyChange();
     }
 
     public int getCrewSupport()
@@ -733,7 +758,9 @@ public class Ship5Stats
 
     public void setCrewSupport(int crewSupport)
     {
+        queuePropertyChange("crewSupport", mCrewSupport, crewSupport);
         mCrewSupport = crewSupport;
+        firePropertyChange();
     }
 
     public int getCrewChiefEngineer()
@@ -743,7 +770,9 @@ public class Ship5Stats
 
     public void setCrewChiefEngineer(int crewChiefEngineer)
     {
+        queuePropertyChange("crewChiefEngineer", mCrewChiefEngineer, crewChiefEngineer);
         mCrewChiefEngineer = crewChiefEngineer;
+        firePropertyChange();
     }
 
     public int getCrewSecondEngineer()
@@ -753,7 +782,9 @@ public class Ship5Stats
 
     public void setCrewSecondEngineer(int crewSecondEngineer)
     {
+        queuePropertyChange("crewSecondEngineer", mCrewSecondEngineer, crewSecondEngineer);
         mCrewSecondEngineer = crewSecondEngineer;
+        firePropertyChange();
     }
 
     public int getCrewEngineer()
@@ -763,7 +794,9 @@ public class Ship5Stats
 
     public void setCrewEngineer(int crewEngineer)
     {
+        queuePropertyChange("crewEngineer", mCrewEngineer, crewEngineer);
         mCrewEngineer = crewEngineer;
+        firePropertyChange();
     }
 
     public int getCrewEngineerOfficer()
@@ -773,7 +806,9 @@ public class Ship5Stats
 
     public void setCrewEngineerOfficer(int crewEngineerOfficer)
     {
+        queuePropertyChange("crewEngineerOfficer", mCrewEngineerOfficer, crewEngineerOfficer);
         mCrewEngineerOfficer = crewEngineerOfficer;
+        firePropertyChange();
     }
 
     public int getCrewEngineerPettyOfficer()
@@ -783,7 +818,9 @@ public class Ship5Stats
 
     public void setCrewEngineerPettyOfficer(int crewEngineerPettyOfficer)
     {
+        queuePropertyChange("crewEngineerPettyOfficer", mCrewEngineerPettyOfficer, crewEngineerPettyOfficer);
         mCrewEngineerPettyOfficer = crewEngineerPettyOfficer;
+        firePropertyChange();
     }
 
     public int getCrewChiefGunner()
@@ -793,7 +830,9 @@ public class Ship5Stats
 
     public void setCrewChiefGunner(int crewChiefGunner)
     {
+        queuePropertyChange("crewChiefGunner", mCrewChiefGunner, crewChiefGunner);
         mCrewChiefGunner = crewChiefGunner;
+        firePropertyChange();
     }
 
     public int getCrewGunnerOfficer()
@@ -803,7 +842,9 @@ public class Ship5Stats
 
     public void setCrewGunnerOfficer(int crewGunnerOfficer)
     {
+        queuePropertyChange("crewGunnerOfficer", mCrewGunnerOfficer, crewGunnerOfficer);
         mCrewGunnerOfficer = crewGunnerOfficer;
+        firePropertyChange();
     }
 
     public int getCrewGunnerPettyOfficer()
@@ -813,7 +854,9 @@ public class Ship5Stats
 
     public void setCrewGunnerPettyOfficer(int crewGunnerPettyOfficer)
     {
+        queuePropertyChange("crewGunnerPettyOfficer", mCrewGunnerPettyOfficer, crewGunnerPettyOfficer);
         mCrewGunnerPettyOfficer = crewGunnerPettyOfficer;
+        firePropertyChange();
     }
 
     public int getCrewGunner()
@@ -823,7 +866,9 @@ public class Ship5Stats
 
     public void setCrewGunner(int crewGunner)
     {
+        queuePropertyChange("crewGunner", mCrewGunner, crewGunner);
         mCrewGunner = crewGunner;
+        firePropertyChange();
     }
 
     public int getCrewFlightControlOfficer()
@@ -833,7 +878,9 @@ public class Ship5Stats
 
     public void setCrewFlightControlOfficer(int crewFlightControlOfficer)
     {
+        queuePropertyChange("crewFlightControlOfficer", mCrewFlightControlOfficer, crewFlightControlOfficer);
         mCrewFlightControlOfficer = crewFlightControlOfficer;
+        firePropertyChange();
     }
 
     public int getCrewFlightMaintenence()
@@ -843,7 +890,9 @@ public class Ship5Stats
 
     public void setCrewFlightMaintenence(int crewFlightMaintenence)
     {
+        queuePropertyChange("crewFlightMaintenence", mCrewFlightMaintenence, crewFlightMaintenence);
         mCrewFlightMaintenence = crewFlightMaintenence;
+        firePropertyChange();
     }
 
     public int getCrewFlightCrew()
@@ -853,7 +902,9 @@ public class Ship5Stats
 
     public void setCrewFlightCrew(int crewFlightCrew)
     {
+        queuePropertyChange("crewFlightCrew", mCrewFlightCrew, crewFlightCrew);
         mCrewFlightCrew = crewFlightCrew;
+        firePropertyChange();
     }
 
     public int getCrewFlightDriver()
@@ -863,7 +914,9 @@ public class Ship5Stats
 
     public void setCrewFlightDriver(int crewFlightDriver)
     {
+        queuePropertyChange("crewFlightDriver", mCrewFlightDriver, crewFlightDriver);
         mCrewFlightDriver = crewFlightDriver;
+        firePropertyChange();
     }
 
     public int getCrewService()
@@ -873,7 +926,9 @@ public class Ship5Stats
 
     public void setCrewService(int crewService)
     {
+        queuePropertyChange("crewService", mCrewService, crewService);
         mCrewService = crewService;
+        firePropertyChange();
     }
 
     public int getCrewFozenWatch()
@@ -883,7 +938,9 @@ public class Ship5Stats
 
     public void setCrewFozenWatch(int crewFozenWatch)
     {
+        queuePropertyChange("crewFozenWatch", mCrewFozenWatch, crewFozenWatch);
         mCrewFozenWatch = crewFozenWatch;
+        firePropertyChange();
     }
 
     public int getCrewCommandCount()
@@ -914,7 +971,9 @@ public class Ship5Stats
 
     public void setCrewMedical(int crewMedical)
     {
+        queuePropertyChange("crewMedical", mCrewMedical, crewMedical);
         mCrewMedical = crewMedical;
+        firePropertyChange();
     }
 
     public int getCrewPassengers()
@@ -924,6 +983,9 @@ public class Ship5Stats
 
     public void setCrewPassengers(int crewPassengers)
     {
+        queuePropertyChange("crewPassengers", mCrewPassengers, crewPassengers);
         mCrewPassengers = crewPassengers;
+        firePropertyChange();
     }
 }
+
