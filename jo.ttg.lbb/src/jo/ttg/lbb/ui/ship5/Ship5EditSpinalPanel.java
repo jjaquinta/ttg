@@ -32,10 +32,10 @@ public class Ship5EditSpinalPanel extends JPanel
 
     private void initLayout()
     {
-        setLayout(new TableLayout());
-        add("1,+", new JLabel("Major Weapon:"));
+        setLayout(new TableLayout("anchor=w,ipadw=4,ipadh=2"));
+        add("1,+ anchor=e", new JLabel("Major Weapon:"));
         add("+,.", mMajorWeapon);
-        add("+,.", new JLabel("Major Code"));
+        add("+,. anchor=e", new JLabel("Major Code:"));
         add("+,.", mMajorCode);
     }
 

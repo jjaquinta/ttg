@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.util"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/jo.util.ui.swing"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jo.ttg.core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/jo.ttg.core.ui.swing"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

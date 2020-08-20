@@ -74,6 +74,18 @@ public class BeanMap
             System.err.println("Cannot find mapper for "+mCtrl.getClass().getName()+"/"+mCtrl.getName());
     }
 
+    public static void unindex(Component ctrl, PCSBean bean, String prop)
+    {
+        mComponentIndex.remove(ctrl);
+        Map<String, BeanMap> propIndex = mBeanIndex.get(bean);
+        if (propIndex != null)
+        {
+            propIndex.remove(prop);
+            if (propIndex.size() == 0)
+                mBeanIndex.remove(bean);
+        }        
+    }
+
     private boolean different(Object o1, Object o2)
     {
         if ((o1 == null) && (o2 == null))

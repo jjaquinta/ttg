@@ -41,6 +41,38 @@ public class Ship5Stats extends PCSBean
     private int mCrewMedical;
     private int mCrewPassengers;
 
+    // utilities
+    public Map<String,Integer> getCrewUsage()
+    {
+        Map<String, Integer> crew = new HashMap<>();
+        if (mCrewCommand > 0) crew.put("Command", mCrewCommand);
+        if (mCrewExecutive > 0) crew.put("Executive", mCrewExecutive);
+        if (mCrewComputer > 0) crew.put("Computer", mCrewComputer);
+        if (mCrewNavigation > 0) crew.put("Navigation", mCrewNavigation);
+        if (mCrewMedicalOfficer > 0) crew.put("Medical Officer", mCrewMedicalOfficer);
+        if (mCrewCommunications > 0) crew.put("Communications", mCrewCommunications);
+        if (mCrewSupport > 0) crew.put("Support", mCrewSupport);
+        if (mCrewChiefEngineer > 0) crew.put("Chief Engineer", mCrewChiefEngineer);
+        if (mCrewSecondEngineer > 0) crew.put("Second Engineer", mCrewSecondEngineer);
+        if (mCrewEngineer > 0) crew.put("Engineer", mCrewEngineer);
+        if (mCrewEngineerOfficer > 0) crew.put("Engineer Officer", mCrewEngineerOfficer);
+        if (mCrewEngineerPettyOfficer > 0) crew.put("Engineer Petty Officer", mCrewEngineerPettyOfficer);
+        if (mCrewChiefGunner > 0) crew.put("Chief Gunner", mCrewChiefGunner);
+        if (mCrewGunnerOfficer > 0) crew.put("Gunner Officer", mCrewGunnerOfficer);
+        if (mCrewGunnerPettyOfficer > 0) crew.put("Gunner Petty Officer", mCrewGunnerPettyOfficer);
+        if (mCrewGunner > 0) crew.put("Gunner", mCrewGunner);
+        if (mCrewFlightControlOfficer > 0) crew.put("Flight Control Officer", mCrewFlightControlOfficer);
+        if (mCrewFlightMaintenence > 0) crew.put("Flight Maintenence", mCrewFlightMaintenence);
+        if (mCrewFlightCrew > 0) crew.put("Flight Crew", mCrewFlightCrew);
+        if (mCrewFlightDriver > 0) crew.put("Driver", mCrewFlightDriver);
+        if (mCrewService > 0) crew.put("Service", mCrewService);
+        if (mCrewFozenWatch > 0) crew.put("Fozen Watch", mCrewFozenWatch);
+        if (mCrewMedical > 0) crew.put("Medical", mCrewMedical);
+        if (mCrewPassengers > 0) crew.put("Passengers", mCrewPassengers);
+        if (mDesign.getCrewTroops() > 0) crew.put("Ship Troops", mDesign.getCrewTroops());
+        return crew;
+    }
+    
     // calculated values
     public int getTotalSpaceUsage()
     {

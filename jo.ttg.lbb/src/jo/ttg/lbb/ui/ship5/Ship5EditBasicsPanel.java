@@ -55,25 +55,25 @@ public class Ship5EditBasicsPanel extends JPanel
 
     private void initLayout()
     {
-        setLayout(new TableLayout());
-        add("1,+", new JLabel("Ship Name:"));
-        add("+,.", mShipName);
-        add("+,.", new JLabel("Ship Type:"));
+        setLayout(new TableLayout("anchor=w,ipadw=4,ipadh=2"));
+        add("1,+ anchor=e", new JLabel("Ship Name:"));
+        add("+,. gridwidth=2 fill=h", mShipName);
+        add("+,. anchor=e", new JLabel("Ship Type:"));
         add("+,.", mShipType1);
         add("+,.", mShipType2);
-        add("1,+", new JLabel("Ship Class:"));
-        add("+,.", mShipClass);
-        add("1,+", new JLabel("Tech Level:"));
+        add("1,+ anchor=e", new JLabel("Ship Class:"));
+        add("+,. 2x1 fill=h", mShipClass);
+        add("1,+ anchor=e", new JLabel("Tech Level:"));
         add("+,.", mTechLevel);
-        add("+,.", new JLabel("Hull Size:"));
+        add("+,. anchor=e", new JLabel("Hull Size:"));
         add("+,.", mHullTonnage);
-        add("+,.", new JLabel("Hull Configuration:"));
+        add("+,. anchor=e", new JLabel("Hull Configuration:"));
         add("+,.", mHullConfiguration);
-        add("1,+", new JLabel("Armor Factors:"));
+        add("1,+ anchor=e", new JLabel("Armor Factors:"));
         add("+,.", mArmorFactors);
-        add("+,.", new JLabel("Computer:"));
+        add("+,. anchor=e", new JLabel("Computer:"));
         add("+,.", mComputerCode);
-        add("+,.", new JLabel("Aux Bridges:"));
+        add("+,. anchor=e", new JLabel("Aux Bridges:"));
         add("+,.", mBridgeAuxiliaryCount);
     }
 

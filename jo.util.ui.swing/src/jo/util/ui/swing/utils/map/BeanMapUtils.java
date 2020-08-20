@@ -71,6 +71,12 @@ public class BeanMapUtils
         map.getMapper().linkToCtrl(ctrl);
     }
     
+    public static void unmap(Component ctrl, PCSBean bean, String prop)
+    {
+        bean.removePropertyChangeListener(prop);
+        BeanMap.unindex(ctrl, bean, prop);
+    }
+    
     private static void doPropertyChange(PropertyChangeEvent evt)
     {
         PCSBean bean = (PCSBean)evt.getSource();

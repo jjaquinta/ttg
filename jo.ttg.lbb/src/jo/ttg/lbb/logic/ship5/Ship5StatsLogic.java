@@ -16,8 +16,6 @@ public class Ship5StatsLogic
     public static Ship5Stats updateStats(Ship5Stats stats)
     {
         Ship5Design design = stats.getDesign();
-        stats.getErrors().clear();
-        
         doErrorChecking(stats, design);
         doFuelUsage(stats, design);
         doSpaceUsage(stats, design);
@@ -38,9 +36,11 @@ public class Ship5StatsLogic
         int spaceRequired = stats.getTotalSpaceUsage();
         if (spaceRequired > design.getHullTonnage())
             stats.getErrors().add("Space required is "+spaceRequired+", which exceedes the space available of "+design.getHullTonnage());
+        stats.fireMonotonicPropertyChange("errors", stats.getErrors());
     }
     private static void doCosts(Ship5Stats stats, Ship5Design design)
     {
+        stats.getCostUsage().clear();
         stats.getCostUsage().put("Hull", stats.getHullCost());
         if (design.getManeuverDriveNumber() > 0)
             stats.getCostUsage().put("Maneuver Driver", stats.getDriveManeuverCost());
@@ -97,11 +97,11 @@ public class Ship5StatsLogic
             stats.getCostUsage().put("Particle Accelerator Turrets", stats.getTurretParticleCost());
         if (design.getBarbetteParticle() > 0)
             stats.getCostUsage().put("Particle Accelerator Barbettes", stats.getBarbetteParticleCost());
-        if (design.getScreenNuclearCode() > 0)
+        if (design.getScreenNuclearCode() > '0')
             stats.getCostUsage().put("Nuclear Damper Screens", stats.getScreenNuclearCost());
-        if (design.getScreenMesonCode() > 0)
+        if (design.getScreenMesonCode() > '0')
             stats.getCostUsage().put("Meson Screens", stats.getScreenMesonCost());
-        if (design.getScreenForceCode() > 0)
+        if (design.getScreenForceCode() > '0')
             stats.getCostUsage().put("Force Screens", stats.getScreenForceCost());
         for (Ship5DesignSubCraft subCraft : design.getSubCraft())
         {
@@ -121,9 +121,11 @@ public class Ship5StatsLogic
             stats.getCostUsage().put("Low Berths", design.getLowBerths()*50000L);
         if (design.getEmergencyLowBerths() > 0)
             stats.getCostUsage().put("Emergency Low Berths", design.getEmergencyLowBerths()*100000L);
+        stats.fireMonotonicPropertyChange("costUsage", stats.getCostUsage());
     }
     private static void doEnergyUsage(Ship5Stats stats, Ship5Design design)
     {
+        stats.getEnergyUsage().clear();
         if (design.getComputerCode() > Ship5Design.COMPUTER_NONE)
             stats.getEnergyUsage().put("Computer", stats.getComputerEnergy());
         if (design.getMajorWeapon() != Ship5Design.MAJOR_NONE) 
@@ -164,13 +166,15 @@ public class Ship5StatsLogic
             stats.getEnergyUsage().put("Particle Accelerator Turrets", stats.getTurretParticleEnergy());
         if (design.getBarbetteParticle() > 0)
             stats.getEnergyUsage().put("Particle Accelerator Barbettes", stats.getBarbetteParticleEnergy());
-        if (design.getScreenNuclearCode() > 0)
+        if (design.getScreenNuclearCode() > '0')
             stats.getEnergyUsage().put("Nuclear Damper Screens", stats.getScreenNuclearEnergy());
-        if (design.getScreenMesonCode() > 0)
+        if (design.getScreenMesonCode() > '0')
             stats.getEnergyUsage().put("Meson Screens", stats.getScreenMesonEnergy());
+        stats.fireMonotonicPropertyChange("energyUsage", stats.getEnergyUsage());
     }
     private static void doSpaceUsage(Ship5Stats stats, Ship5Design design)
     {
+        stats.getSpaceUsage().clear();
         if (design.getHullConfigurationCode() == Ship5Design.CONFIG_PLANETOID)
             stats.getSpaceUsage().put("Planetoid Buffering", design.getHullTonnage()*20/100);
         else if (design.getHullConfigurationCode() == Ship5Design.CONFIG_BUFFERED_PLANETOID)
@@ -214,11 +218,11 @@ public class Ship5StatsLogic
         if (design.getBays50Fusion() > 0)
             stats.getSpaceUsage().put("50t Fusion Bays", design.getBays50Fusion()*50);
         // TODO: turret volumes. Depends on how split into groups
-        if (design.getScreenNuclearCode() > 0)
+        if (design.getScreenNuclearCode() > '0')
             stats.getSpaceUsage().put("Nuclear Damper Screens", stats.getScreenNuclearVolume());
-        if (design.getScreenMesonCode() > 0)
+        if (design.getScreenMesonCode() > '0')
             stats.getSpaceUsage().put("Meson Screens", stats.getScreenMesonVolume());
-        if (design.getScreenForceCode() > 0)
+        if (design.getScreenForceCode() > '0')
             stats.getSpaceUsage().put("Force Screens", stats.getScreenForceVolume());
         for (Ship5DesignSubCraft subCraft : design.getSubCraft())
         {
@@ -238,16 +242,20 @@ public class Ship5StatsLogic
             stats.getSpaceUsage().put("Low Berths", design.getLowBerths()/2);
         if (design.getEmergencyLowBerths() > 0)
             stats.getSpaceUsage().put("Emergency Low Berths", design.getEmergencyLowBerths());
+        stats.fireMonotonicPropertyChange("spaceUsage", stats.getSpaceUsage());
     }
     private static void doFuelUsage(Ship5Stats stats, Ship5Design design)
     {
+        stats.getFuelUsage().clear();
         if (design.getJumpDriveNumber() > 0)
             stats.getFuelUsage().put("Jump Drive", stats.getFuelJumpVolume());
         if (design.getPowerPlantNumber() > 0)
             stats.getFuelUsage().put("Power Plant", stats.getFuelPowerPlantVolume());
+        stats.fireMonotonicPropertyChange("fuelUsage", stats.getFuelUsage());
     }
     private static void doErrorChecking(Ship5Stats stats, Ship5Design design)
     {
+        stats.getErrors().clear();
         int tlForManeuver = stats.getDriveManeuverMinimumTechLevel();
         if (tlForManeuver > design.getTechLevel())
             stats.getErrors().add("A minimum tech level of "+tlForManeuver+" is needed for maneuver drive number "+design.getManeuverDriveNumber()+", ship tech level is "+design.getTechLevel());
@@ -341,6 +349,7 @@ public class Ship5StatsLogic
             doCrewBook2(stats, design);
         else
             doCrewBook5(stats, design);
+        stats.fireMonotonicPropertyChange("crew");
     }
     private static void doCrewBook2(Ship5Stats stats, Ship5Design design)
     {

@@ -311,7 +311,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
     {
         return getTurretBeamLaser() + getTurretFusionGun() + getTurretMissile()
             + getTurretParticle() + getTurretPlasmaGun() + getTurretPulseLaser()
-            + getTurretSandcaster() + getTurretWeaponCount();
+            + getTurretSandcaster();
     }
 
     public int getScreenCount()
@@ -808,7 +808,7 @@ public class Ship5Design extends PCSBean implements IJSONAble
         firePropertyChange();
     }
 
-    public class Ship5DesignSubCraft
+    public class Ship5DesignSubCraft extends PCSBean
     {
         private String  mShipName;
         private String  mShipURI;
@@ -817,6 +817,17 @@ public class Ship5Design extends PCSBean implements IJSONAble
         private int     mCrew;
         private int     mQuantity;
         private boolean mVehicle;
+        
+        public Ship5DesignSubCraft()
+        {
+            mShipName = "Lollipop";
+            mShipURI = "";
+            mHullTonnage = 10;
+            mCost = 1000000;
+            mCrew = 1;
+            mQuantity = 1;
+            mVehicle = false;
+        }
 
         public String getShipName()
         {
@@ -903,10 +914,16 @@ public class Ship5Design extends PCSBean implements IJSONAble
     }
     }
 
-    public class Ship5DesignLaunchTube
+    public class Ship5DesignLaunchTube extends PCSBean
     {
         private int mCapacity;
         private int mQuantity;
+        
+        public Ship5DesignLaunchTube()
+        {
+            mCapacity = 100;
+            mQuantity = 1;
+        }
 
         public int getCapacity()
         {

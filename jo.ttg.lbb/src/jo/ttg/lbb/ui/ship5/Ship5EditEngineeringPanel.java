@@ -41,19 +41,17 @@ public class Ship5EditEngineeringPanel extends JPanel
 
     private void initLayout()
     {
-        setLayout(new TableLayout());
-        add("1,+", new JLabel("Maneuver Drive:"));
+        setLayout(new TableLayout("anchor=w,ipadw=4,ipadh=2"));
+        add("1,+ anchor=e", new JLabel("Maneuver Drive:"));
         add("+,.", mDriveManeuver);
-        add("+,.", new JLabel("Jump Drive:"));
+        add("+,. anchor=e", new JLabel("Jump Drive:"));
         add("+,.", mDriveJump);
-        add("+,.", new JLabel("Power Plant:"));
+        add("+,. anchor=e", new JLabel("Power Plant:"));
         add("+,.", mDrivePower);
-        add("1,+", new JLabel("Fuel Tankage:"));
+        add("1,+ anchor=e", new JLabel("Fuel Tankage:"));
         add("+,.", mFuelTankage);
-        add("+,.", new JLabel(""));
-        add("+,.", mFuelScoops);
-        add("+,.", new JLabel(""));
-        add("+,.", mFuelPurification);
+        add("+,.,2,1", mFuelScoops);
+        add("+,.,2,1", mFuelPurification);
     }
 
     private void initLink()

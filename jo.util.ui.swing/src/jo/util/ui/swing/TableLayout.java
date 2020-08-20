@@ -37,9 +37,6 @@ public class TableLayout extends GridBagLayout
         while (st.hasMoreTokens())
         {
             String tok = st.nextToken().toLowerCase();
-//            int o;
-//            String key;
-//            String val;
             parseToken(defaultGBC, "", tok);
         }    	
     }
@@ -59,12 +56,11 @@ public class TableLayout extends GridBagLayout
         for (int i = 0; st.hasMoreTokens(); i++)
         {
             String tok = st.nextToken().toLowerCase();
-//            int o;
-//            String key;
-//            String val;
             parseToken(gbc, defaults[i], tok);
         }
         currentX = gbc.gridx;
+        if (gbc.gridwidth > 1)
+            currentX += gbc.gridwidth - 1;
 		currentY = gbc.gridy;
         super.addLayoutComponent(comp, gbc);
     }
@@ -120,13 +116,13 @@ public class TableLayout extends GridBagLayout
             gbc.gridwidth = v;
         else if (key.equals("gridheight") || key.equals("height"))
             gbc.gridheight = v;
-        else if (key.equals("weightx"))
+        else if (key.equals("weightx") || key.equals("weightw"))
             gbc.weightx = v;
-        else if (key.equals("weighty"))
+        else if (key.equals("weighty") || key.equals("weighth"))
             gbc.weighty = v;
-        else if (key.equals("ipadx"))
+        else if (key.equals("ipadw"))
             gbc.ipadx = v;
-        else if (key.equals("ipady"))
+        else if (key.equals("ipadh"))
             gbc.ipady = v;
         else if (key.equals("fill"))
         {
@@ -138,6 +134,8 @@ public class TableLayout extends GridBagLayout
                 gbc.fill = GridBagConstraints.VERTICAL;
             else if (val.equals("both") || val.equals("hv"))
                 gbc.fill = GridBagConstraints.BOTH;
+            else
+                System.err.println("Unknown table setting fill='"+val+"'");
         }
         else if (key.equals("anchor"))
         {
@@ -159,7 +157,11 @@ public class TableLayout extends GridBagLayout
                 gbc.anchor = GridBagConstraints.WEST;
             else if (val.equals("northwest") || val.equals("nw"))
                 gbc.anchor = GridBagConstraints.NORTHWEST;
+            else
+                System.err.println("Unknown table setting anchor='"+val+"'");
         }
+        else
+            System.err.println("Unknown table setting '"+key+"'");
     }
     
     void copy(GridBagConstraints lvalue, GridBagConstraints rvalue)
